@@ -1,0 +1,116 @@
+/* Dashboard Page */
+.section-title {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+    text-align: center;
+}
+
+.charts-row {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.chart-container {
+    position: relative;
+    height: 250px;
+    width: 100%;
+}
+
+/* Progress Bar */
+.progress-container {
+    margin: 1rem 0;
+}
+
+.progress-bar-bg {
+    width: 100%;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 100px;
+    overflow: hidden;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent-color), var(--mode-short));
+    border-radius: 100px;
+    transition: width 1s ease-in-out;
+}
+
+.progress-text {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin-top: 0.5rem;
+}
+
+.streak-badge {
+    color: #fbbf24;
+    font-weight: 600;
+}
+
+/* Heatmap */
+.heatmap-container {
+    display: grid;
+    grid-template-columns: repeat(53, 1fr);
+    grid-gap: 3px;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+    margin-top: 1rem;
+}
+
+/* Heatmap Cells */
+.day-cell {
+    width: 100%;
+    aspect-ratio: 1; /* Make them square */
+    border-radius: 2px;
+    background: rgba(255, 255, 255, 0.05); /* Level 0 */
+}
+
+.day-cell.level-1 { background: rgba(56, 189, 248, 0.3); } /* 1-2 sessions */
+.day-cell.level-2 { background: rgba(56, 189, 248, 0.5); } /* 3-5 sessions */
+.day-cell.level-3 { background: rgba(56, 189, 248, 0.7); } /* 6-9 sessions */
+.day-cell.level-4 { background: #38bdf8; box-shadow: 0 0 5px #38bdf8; } /* 10+ sessions */
+
+.heatmap-legend {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+    margin-top: 0.5rem;
+}
+
+.legend-scale {
+    display: flex;
+    gap: 3px;
+}
+
+.legend-scale div {
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+}
+
+.legend-scale .level-0 { background: rgba(255, 255, 255, 0.05); }
+.legend-scale .level-1 { background: rgba(56, 189, 248, 0.3); }
+.legend-scale .level-2 { background: rgba(56, 189, 248, 0.5); }
+.legend-scale .level-3 { background: rgba(56, 189, 248, 0.7); }
+.legend-scale .level-4 { background: #38bdf8; }
+
+.btn-link {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    cursor: pointer;
+    text-decoration: underline;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+
+.btn-link:hover {
+    opacity: 1;
+}

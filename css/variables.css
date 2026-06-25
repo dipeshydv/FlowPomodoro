@@ -1,0 +1,87 @@
+:root {
+    /* =====================
+       BRAND COLORS
+    ===================== */
+    --bg-main:        #060608;
+    --bg-secondary:   #0c0c10;
+    --bg-card:        rgba(255, 255, 255, 0.03);
+    --bg-card-hover:  rgba(255, 255, 255, 0.055);
+    --bg-input:       rgba(0, 0, 0, 0.35);
+
+    --text-primary:   #f0f2f8;
+    --text-secondary: #7a839e;
+    --text-muted:     #3d4460;
+
+    /* =====================
+       ACCENTS
+    ===================== */
+    --accent-cyan:    #00d4ff;
+    --accent-purple:  #a855f7;
+    --accent-success: #22d3a0;
+    --accent-warning: #f59e0b;
+    --accent-danger:  #f43f5e;
+
+    /* =====================
+       MODE COLORS
+    ===================== */
+    --mode-focus:  var(--accent-cyan);
+    --mode-short:  var(--accent-purple);
+    --mode-long:   var(--accent-success);
+
+    /* =====================
+       GRADIENTS
+    ===================== */
+    --gradient-primary:     linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+    --gradient-focus:       linear-gradient(135deg, #00d4ff, #0099cc);
+    --gradient-short:       linear-gradient(135deg, #a855f7, #7c3aed);
+    --gradient-long:        linear-gradient(135deg, #22d3a0, #059669);
+    --gradient-hero:        radial-gradient(ellipse at 30% 30%, rgba(0, 212, 255, 0.08) 0%, transparent 60%),
+                            radial-gradient(ellipse at 70% 70%, rgba(168, 85, 247, 0.06) 0%, transparent 60%);
+
+    /* =====================
+       GLASS & SURFACE
+    ===================== */
+    --glass-bg:        rgba(12, 12, 20, 0.7);
+    --glass-border:    rgba(255, 255, 255, 0.07);
+    --glass-border-hover: rgba(255, 255, 255, 0.14);
+    --glass-highlight: rgba(255, 255, 255, 0.025);
+    --surface-hover:   rgba(255, 255, 255, 0.05);
+    --border-color:    rgba(255, 255, 255, 0.07);
+
+    /* =====================
+       SHADOWS / GLOWS
+    ===================== */
+    --glow-focus:   0 0 40px rgba(0, 212, 255, 0.18);
+    --glow-short:   0 0 40px rgba(168, 85, 247, 0.18);
+    --glow-long:    0 0 40px rgba(34, 211, 160, 0.18);
+    --shadow-card:  0 4px 24px rgba(0, 0, 0, 0.4), 0 1px 4px rgba(0, 0, 0, 0.3);
+    --shadow-modal: 0 25px 80px rgba(0, 0, 0, 0.7);
+
+    /* =====================
+       SPACING & RADIUS
+    ===================== */
+    --radius-xs:   4px;
+    --radius-sm:   8px;
+    --radius-md:   14px;
+    --radius-lg:   20px;
+    --radius-xl:   28px;
+    --radius-full: 9999px;
+
+    /* =====================
+       TRANSITIONS
+    ===================== */
+    --ease-out:     cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --ease-spring:  cubic-bezier(0.34, 1.56, 0.64, 1);
+    --duration-fast:   150ms;
+    --duration-normal: 250ms;
+    --duration-slow:   400ms;
+
+    /* =====================
+       Z-INDEX SCALE
+    ===================== */
+    --z-base:    1;
+    --z-sticky:  50;
+    --z-overlay: 100;
+    --z-modal:   1000;
+    --z-toast:   2000;
+}

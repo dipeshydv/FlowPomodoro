@@ -1,0 +1,165 @@
+/* ============================================
+   Blog Page Styles
+   ============================================ */
+
+/* ── Hero ──────────────────────────────────── */
+.blog-hero {
+  padding: clamp(120px,15vw,180px) 0 clamp(3rem,5vw,4rem);
+  text-align: center;
+}
+
+.blog-hero h1 { margin-bottom: 1rem; }
+.blog-hero .hero-subtitle { margin-top: 0.75rem; }
+
+/* ── Filters ────────────────────────────────── */
+.blog-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.filter-btn {
+  padding: 0.45rem 1rem;
+  border-radius: var(--radius-full);
+  background: var(--bg-card);
+  border: 1px solid var(--glass-border);
+  color: var(--text-secondary);
+  font-size: 0.82rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.filter-btn:hover {
+  border-color: var(--accent-cyan);
+  color: var(--accent-cyan);
+}
+
+.filter-btn.active {
+  background: rgba(0,212,255,0.1);
+  border-color: var(--accent-cyan);
+  color: var(--accent-cyan);
+}
+
+/* ── Blog Grid ──────────────────────────────── */
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+/* ── Blog Card ──────────────────────────────── */
+.blog-card {
+  background: var(--bg-card);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: border-color 0.2s, transform 0.25s var(--ease-out);
+}
+
+.blog-card:hover {
+  border-color: rgba(255,255,255,0.13);
+  transform: translateY(-3px);
+}
+
+.blog-card--featured {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  border-color: rgba(0,212,255,0.15);
+  background: rgba(0,212,255,0.03);
+}
+
+.blog-card--featured .blog-card__title {
+  font-size: clamp(1.3rem,2.5vw,1.75rem);
+}
+
+.blog-card__body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.blog-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--accent-cyan);
+  background: rgba(0,212,255,0.08);
+  border: 1px solid rgba(0,212,255,0.15);
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 0.875rem;
+  width: fit-content;
+}
+
+.blog-card__title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.35;
+  margin-bottom: 0.75rem;
+  flex-grow: 1;
+}
+
+.blog-card__title a {
+  color: var(--text-primary);
+  transition: color 0.2s;
+}
+
+.blog-card__title a:hover { color: var(--accent-cyan); }
+
+.blog-card__excerpt {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin-bottom: 1.25rem;
+}
+
+.blog-card__meta {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-top: auto;
+}
+
+.blog-card__meta i { margin-right: 0.3rem; }
+
+/* ── CTA Banner ─────────────────────────────── */
+.blog-cta-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  background: linear-gradient(135deg, rgba(0,212,255,0.07), rgba(168,85,247,0.07));
+  border: 1px solid rgba(0,212,255,0.15);
+  border-radius: var(--radius-xl);
+  padding: 2rem 2.5rem;
+  margin-bottom: 4rem;
+}
+
+.blog-cta-banner h3 { margin-bottom: 0.35rem; font-size: 1.25rem; }
+.blog-cta-banner p  { margin: 0; font-size: 0.9rem; }
+
+/* ── Responsive ─────────────────────────────── */
+@media (max-width: 640px) {
+  .blog-grid {
+    grid-template-columns: 1fr;
+  }
+  .blog-card--featured {
+    grid-column: 1;
+  }
+  .blog-cta-banner {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem;
+  }
+}

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FlowPomodoro — Free Focus Timer & Deep Work App</title>
+  <meta name="description" content="FlowPomodoro is a premium, distraction-free Pomodoro timer for deep work, study, and focus sessions. No signup required.">
+  <meta name="theme-color" content="#060608">
+  <link rel="canonical" href="https://flowpomodoro.xyz/app/">
+  <link rel="manifest" href="../public/manifest.json">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://flowpomodoro.xyz/app/">
+  <meta property="og:title" content="FlowPomodoro — Free Focus Timer">
+  <meta property="og:description" content="Distraction-free Pomodoro timer for deep work.">
+  <meta property="og:image" content="https://flowpomodoro.xyz/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Schema -->
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"FlowPomodoro","url":"https://flowpomodoro.xyz/app/","applicationCategory":"ProductivityApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous">
+
+  <!-- App CSS -->
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/features.css">
+  <link rel="stylesheet" href="../css/animations.css">
+
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
+</head>
+
+<body data-mode="focus">
+
+<main id="app-section" class="active">
+
+  <!-- ── Header ───────────────────────────────── -->
+  <header class="app-header">
+    <a href="/" class="app-logo" aria-label="FlowPomodoro Home">
+      <i class="fas fa-circle-dot" aria-hidden="true"></i>
+      <span>FlowPomodoro</span>
+    </a>
+
+    <nav class="app-nav-tools" aria-label="App tools">
+      <button class="btn-reset btn-glass" id="open-audio-btn"
+              title="Ambient Sounds" aria-label="Open Ambient Sounds">
+        <i class="fas fa-headphones" aria-hidden="true"></i>
+      </button>
+      <button class="btn-reset btn-glass" id="fullscreen-btn"
+              title="Fullscreen (F)" aria-label="Toggle fullscreen">
+        <i class="fas fa-expand" aria-hidden="true"></i>
+      </button>
+      <button class="btn-reset btn-glass" id="open-stats-btn"
+              title="Stats & Goals" aria-label="View statistics">
+        <i class="fas fa-chart-simple" aria-hidden="true"></i>
+      </button>
+      <button class="btn-reset btn-glass" id="open-settings-btn"
+              title="Settings" aria-label="Open settings">
+        <i class="fas fa-sliders" aria-hidden="true"></i>
+      </button>
+    </nav>
+  </header>
+
+  <!-- ── Timer ────────────────────────────────── -->
+  <div class="timer-container">
+
+    <!-- Mode Tabs -->
+    <div class="mode-tabs" role="tablist" aria-label="Timer modes">
+      <button class="btn-reset tab-btn active"
+              data-mode="focus" role="tab" aria-selected="true">Focus</button>
+      <button class="btn-reset tab-btn"
+              data-mode="short" role="tab" aria-selected="false">Short Break</button>
+      <button class="btn-reset tab-btn"
+              data-mode="long"  role="tab" aria-selected="false">Long Break</button>
+    </div>
+
+    <!-- Timer Ring -->
+    <div class="timer-visual" aria-hidden="true">
+      <svg class="ring-svg" viewBox="0 0 360 360" xmlns="http://www.w3.org/2000/svg">
+        <circle class="ring-bg"       cx="180" cy="180" r="160"/>
+        <circle class="ring-progress" cx="180" cy="180" r="160"/>
+      </svg>
+      <div class="timer-text-overlay">
+        <div class="time-big" id="time-display">25:00</div>
+        <div class="time-label" id="status-display" aria-live="polite">Ready to Focus</div>
+        <div class="streak-text" id="streak-display" aria-live="polite"></div>
+      </div>
+    </div>
+
+    <!-- Controls -->
+    <div class="timer-controls">
+      <button id="reset-btn" class="btn-reset btn-control-sm"
+              title="Reset (R)" aria-label="Reset timer">
+        <i class="fas fa-rotate-left" aria-hidden="true"></i>
+      </button>
+
+      <button id="toggle-btn" class="btn-reset btn-control-lg"
+              title="Play / Pause (Space)" aria-label="Play or pause timer">
+        <i class="fas fa-play" id="toggle-icon" aria-hidden="true"></i>
+      </button>
+
+      <button id="skip-btn" class="btn-reset btn-control-sm"
+              title="Skip session (S)" aria-label="Skip current session">
+        <i class="fas fa-forward-step" aria-hidden="true"></i>
+      </button>
+    </div>
+
+    <p class="kbd-hint" aria-hidden="true">
+      <kbd>Space</kbd> play/pause &nbsp;·&nbsp;
+      <kbd>R</kbd> reset &nbsp;·&nbsp;
+      <kbd>S</kbd> skip &nbsp;·&nbsp;
+      <kbd>F</kbd> fullscreen
+    </p>
+  </div>
+
+  <!-- ── Tasks Panel ───────────────────────────── -->
+  <aside class="card-glass tasks-panel" aria-label="Task list">
+    <div class="tasks-header">
+      <h3>Today's Focus</h3>
+    </div>
+
+    <div class="tasks-body" id="tasks-list" role="list"></div>
+
+    <div class="task-input-row">
+      <input type="text" id="task-input" class="input"
+             placeholder="Add a task and press Enter…"
+             maxlength="120" aria-label="New task">
+      <button id="task-submit" class="task-submit-btn btn-reset"
+              aria-label="Add task">
+        <i class="fas fa-plus" aria-hidden="true"></i>
+      </button>
+    </div>
+  </aside>
+
+</main>
+
+<!-- ── Settings Modal ────────────────────────────────────────────────────── -->
+<div id="settings-modal" class="modal-overlay hidden"
+     role="dialog" aria-modal="true" aria-labelledby="settings-title">
+  <div class="modal-content card-glass">
+    <div class="modal-header">
+      <h2 id="settings-title">Settings</h2>
+      <button class="btn-reset close-modal-btn" aria-label="Close settings">
+        <i class="fas fa-xmark" aria-hidden="true"></i>
+      </button>
+    </div>
+
+    <div class="modal-body">
+      <p style="font-size:.82rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.06em;font-weight:500;margin-bottom:.6rem;">Quick Presets</p>
+      <div class="preset-grid">
+        <button class="preset-btn" data-preset="25">25 / 5</button>
+        <button class="preset-btn" data-preset="50">50 / 10</button>
+        <button class="preset-btn" data-preset="90">90 / 20</button>
+      </div>
+
+      <div class="setting-group">
+        <label for="setting-focus">Focus Duration (min)</label>
+        <input type="number" id="setting-focus" class="input" min="1" max="180" value="25">
+      </div>
+      <div class="setting-group">
+        <label for="setting-short">Short Break (min)</label>
+        <input type="number" id="setting-short" class="input" min="1" max="60" value="5">
+      </div>
+      <div class="setting-group">
+        <label for="setting-long">Long Break (min)</label>
+        <input type="number" id="setting-long" class="input" min="1" max="90" value="15">
+      </div>
+
+      <hr style="border:none;border-top:1px solid var(--glass-border);margin:1.25rem 0;">
+
+      <div class="setting-group">
+        <label for="setting-goal">Daily Goal (sessions)</label>
+        <input type="number" id="setting-goal" class="input" min="1" max="20" value="4">
+      </div>
+    </div>
+
+    <div class="modal-footer">
+      <button id="save-settings-btn" class="btn-reset btn-primary" style="width:100%;">
+        Save Settings
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ── Stats Modal ───────────────────────────────────────────────────────── -->
+<div id="stats-modal" class="modal-overlay hidden"
+     role="dialog" aria-modal="true" aria-labelledby="stats-title">
+  <div class="modal-content card-glass modal-lg">
+    <div class="modal-header">
+      <h2 id="stats-title">Productivity Stats</h2>
+      <button class="btn-reset close-modal-btn" aria-label="Close stats">
+        <i class="fas fa-xmark" aria-hidden="true"></i>
+      </button>
+    </div>
+
+    <div class="modal-body">
+      <div class="goal-meta">
+        <span id="daily-goal-text">0 / 4 sessions today</span>
+        <span id="streak-text">0 day streak 🔥</span>
+      </div>
+      <div class="progress-bar" aria-hidden="true">
+        <div class="progress-fill" id="daily-goal-fill"></div>
+      </div>
+
+      <div class="stats-overview">
+        <div class="stat-box">
+          <span class="stat-num" id="stat-sessions">0</span>
+          <span class="stat-lbl">Sessions</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-num" id="stat-hours">0.0</span>
+          <span class="stat-lbl">Hours</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-num" id="stat-best">0</span>
+          <span class="stat-lbl">Best Streak</span>
+        </div>
+      </div>
+
+      <h3 style="font-size:.9rem;color:var(--text-secondary);text-transform:uppercase;letter-spacing:.07em;font-weight:500;margin-bottom:.25rem;">
+        Focus Consistency – Last 60 Days
+      </h3>
+      <div class="heatmap-grid" id="heatmap-grid" aria-label="Activity heatmap"></div>
+      <div class="heatmap-legend" aria-hidden="true">
+        Less
+        <div class="legend-scale">
+          <span class="l0"></span>
+          <span class="l1"></span>
+          <span class="l2"></span>
+          <span class="l3"></span>
+        </div>
+        More
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── Audio Modal ───────────────────────────────────────────────────────── -->
+<div id="audio-modal" class="modal-overlay hidden"
+     role="dialog" aria-modal="true" aria-labelledby="audio-title">
+  <div class="modal-content card-glass">
+    <div class="modal-header">
+      <h2 id="audio-title">Ambient Sounds</h2>
+      <button class="btn-reset close-modal-btn" aria-label="Close audio">
+        <i class="fas fa-xmark" aria-hidden="true"></i>
+      </button>
+    </div>
+
+    <div class="modal-body">
+      <p style="color:var(--text-secondary);font-size:.9rem;margin-bottom:0;">
+        Background audio to help you enter flow state. Click to toggle.
+      </p>
+
+      <div class="audio-grid" role="group" aria-label="Ambient sound options">
+        <button class="btn-reset audio-btn" data-audio="rain" aria-label="Toggle rain sounds">
+          <i class="fas fa-cloud-rain" aria-hidden="true"></i>
+          Rain
+        </button>
+        <button class="btn-reset audio-btn" data-audio="forest" aria-label="Toggle forest sounds">
+          <i class="fas fa-tree" aria-hidden="true"></i>
+          Forest
+        </button>
+        <button class="btn-reset audio-btn" data-audio="coffee" aria-label="Toggle coffee shop sounds">
+          <i class="fas fa-mug-hot" aria-hidden="true"></i>
+          Coffee
+          <span class="premium-badge">Pro</span>
+        </button>
+        <button class="btn-reset audio-btn" data-audio="noise" aria-label="Toggle white noise">
+          <i class="fas fa-wave-square" aria-hidden="true"></i>
+          White Noise
+          <span class="premium-badge">Pro</span>
+        </button>
+      </div>
+
+      <!-- Hidden audio elements -->
+      <audio id="audio-rain"   loop preload="none"
+        src="https://cdn.pixabay.com/download/audio/2021/08/04/audio_0625c1539c.mp3"></audio>
+      <audio id="audio-forest" loop preload="none"
+        src="https://cdn.pixabay.com/download/audio/2022/05/23/audio_0c9bc2ba0c.mp3"></audio>
+      <audio id="audio-coffee" loop preload="none"
+        src="https://cdn.pixabay.com/download/audio/2021/09/06/audio_279bf35a0d.mp3"></audio>
+      <audio id="audio-noise"  loop preload="none"
+        src="https://cdn.pixabay.com/download/audio/2022/01/18/audio_282f1430dd.mp3"></audio>
+    </div>
+  </div>
+</div>
+
+<!-- ── Alarm Audio ───────────────────────────────────────────────────────── -->
+<audio id="alarm-sound" preload="none"
+  src="https://actions.google.com/sounds/v1/alarms/beep_short.ogg"></audio>
+
+<!-- ── App Script ───────────────────────────────────────────────────────── -->
+<script type="module" src="../js/main.js"></script>
+</body>
+</html>

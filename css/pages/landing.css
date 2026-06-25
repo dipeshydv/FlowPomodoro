@@ -1,0 +1,310 @@
+/* =========================================
+   DESIGN TOKENS
+========================================= */
+
+:root {
+  --bg-main: #050505;
+  --bg-secondary: #0a0a0a;
+
+  --text-primary: #ffffff;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+
+  --accent-cyan: #00f0ff;
+  --accent-purple: #bd00ff;
+  --accent-success: #00ff9d;
+
+  --glass-bg: rgba(20, 20, 20, 0.6);
+  --glass-border: rgba(255, 255, 255, 0.08);
+
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  --radius-full: 9999px;
+
+  --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* =========================================
+   BASE
+========================================= */
+
+body {
+  background: var(--bg-main);
+  color: var(--text-primary);
+  font-family: 'Outfit', sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+  margin-bottom: 1rem;
+}
+
+.section {
+  padding: 6rem 0;
+}
+
+/* =========================================
+   UTILITIES
+========================================= */
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.flex { display: flex; }
+.flex-between { display: flex; justify-content: space-between; align-items: center; }
+.flex-center { display: flex; justify-content: center; align-items: center; }
+
+.grid { display: grid; gap: 2rem; }
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-4 { grid-template-columns: repeat(4, 1fr); }
+
+.text-center { text-align: center; }
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.btn {
+  border-radius: var(--radius-full);
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.btn-primary {
+  background: linear-gradient(45deg, var(--accent-cyan), var(--accent-purple));
+  color: #000;
+  padding: 1rem 2.6rem;
+  box-shadow: 0 0 40px rgba(0,240,255,0.25);
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 60px rgba(189,0,255,0.35);
+}
+
+.btn-lg { font-size: 1.1rem; }
+.btn-xl { font-size: 1.25rem; padding: 1.2rem 3rem; }
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+.lp-nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 1.5rem 0;
+  background: rgba(5,5,5,0.8);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--glass-border);
+  z-index: 100;
+}
+
+.nav-link {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.nav-link:hover {
+  color: var(--text-primary);
+}
+
+/* =========================================
+   HERO SECTION (10M SaaS Level)
+========================================= */
+
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 160px;
+  padding-bottom: 120px;
+  overflow: hidden;
+
+  background:
+    radial-gradient(circle at 20% 30%, rgba(0,240,255,0.06), transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(189,0,255,0.06), transparent 50%);
+}
+
+/* Animated glow layers */
+
+.hero-section::before,
+.hero-section::after {
+  content: '';
+  position: absolute;
+  inset: -20%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-section::before {
+  background: radial-gradient(circle at 30% 30%, rgba(0,240,255,0.12), transparent 40%);
+  animation: floatOne 14s ease-in-out infinite alternate;
+}
+
+.hero-section::after {
+  background: radial-gradient(circle at 70% 60%, rgba(189,0,255,0.12), transparent 40%);
+  animation: floatTwo 18s ease-in-out infinite alternate;
+}
+
+@keyframes floatOne {
+  from { transform: translateY(0px) translateX(0px); }
+  to { transform: translateY(-40px) translateX(20px); }
+}
+
+@keyframes floatTwo {
+  from { transform: translateY(0px) translateX(0px); }
+  to { transform: translateY(40px) translateX(-20px); }
+}
+
+/* Hero Layout */
+
+.hero-container {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 4rem;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-content h1 {
+  font-size: clamp(3rem, 6vw, 4.5rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+
+  background: linear-gradient(
+    90deg,
+    #ffffff 0%,
+    #00f0ff 40%,
+    #bd00ff 80%
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+  font-size: 1.3rem;
+  max-width: 580px;
+  color: var(--text-secondary);
+  margin: 2rem 0 3rem;
+}
+
+/* =========================================
+   HERO MOCKUP
+========================================= */
+
+.glass-mockup {
+  background: linear-gradient(
+    180deg,
+    rgba(30,30,30,0.6),
+    rgba(20,20,20,0.4)
+  );
+
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-xl);
+  padding: 2rem;
+  backdrop-filter: blur(18px);
+
+  box-shadow:
+    0 40px 80px rgba(0,0,0,0.6),
+    0 0 60px rgba(0,240,255,0.08);
+
+  position: relative;
+  overflow: hidden;
+}
+
+.timer-preview {
+  font-size: 5rem;
+  font-weight: 200;
+  color: var(--accent-cyan);
+  text-shadow: 0 0 30px rgba(0,240,255,0.3);
+}
+
+/* =========================================
+   CARDS
+========================================= */
+
+.card {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* =========================================
+   PRICING
+========================================= */
+
+.pricing-grid {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  align-items: flex-end;
+}
+
+.pricing-card {
+  max-width: 350px;
+}
+
+.pricing-card--featured {
+  border-color: var(--accent-cyan);
+  transform: scale(1.05);
+  box-shadow: 0 0 40px rgba(0,240,255,0.08);
+}
+
+.price {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.lp-footer {
+  border-top: 1px solid var(--glass-border);
+  padding: 4rem 0 2rem;
+  background: #020202;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+
+  .hero-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: 1fr;
+  }
+
+  .pricing-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+}

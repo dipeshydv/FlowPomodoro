@@ -1,0 +1,4 @@
+# Netlify configurations
+/index.html / 200
+/landing /landing.html 200
+/blog/* /blog/template.html 200!
