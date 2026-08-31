@@ -1,13 +1,29 @@
 // ── Cache version: bump this string to force all clients to evict old cache ──
-const CACHE_NAME = 'flowpomodoro-v4';
+const CACHE_NAME = 'flowpomodoro-v5';
 
 // Static assets that are safe to serve from cache (rarely change)
 const PRECACHE_ASSETS = [
   '/',
   '/index.html',
+  '/app/',
   '/app/index.html',
+  '/app/dashboard.html',
+  '/app/today.html',
+  '/app/pomodoro.html',
+  '/app/goals.html',
+  '/app/planner.html',
+  '/app/analytics.html',
+  '/app/challenges.html',
+  '/app/reviews.html',
+  '/app/settings.html',
   '/style.css',
-  '/blog/',
+  '/css/variables.css',
+  '/css/base.css',
+  '/css/layout.css',
+  '/css/components.css',
+  '/css/features.css',
+  '/css/animations.css',
+  '/css/platform.css',
   '/blog/index.html',
   '/public/manifest.json',
   '/assets/favicon.svg',
@@ -15,7 +31,7 @@ const PRECACHE_ASSETS = [
   '/icons/icon-512.png'
 ];
 
-// JS/CSS/HTML files: always network-first so code updates are never masked
+// Same-origin JS/CSS/HTML files: always network-first so code updates are never masked
 const NETWORK_FIRST_PATTERNS = [/\.js$/, /\.mjs$/, /\.css$/, /\.html$/];
 
 self.addEventListener('install', (event) => {
@@ -41,8 +57,15 @@ self.addEventListener('fetch', (event) => {
 
   const url = new URL(event.request.url);
 
-  // Network-first for JS/CSS/HTML: always try network, fall back to cache
-  if (NETWORK_FIRST_PATTERNS.some(re => re.test(url.pathname))) {
+  // CRITICAL: Do NOT intercept cross-origin requests (e.g. Google Fonts, Font Awesome CDN, Analytics, audio).
+  // Let the browser handle cross-origin requests natively in page context.
+  // This prevents Service Worker connect-src CSP violations and prevents returning HTML fallbacks for stylesheets/fonts.
+  if (url.origin !== self.location.origin) {
+    return;
+  }
+
+  // Network-first for same-origin JS/CSS/HTML & navigation requests: always try network, fall back to cache
+  if (NETWORK_FIRST_PATTERNS.some(re => re.test(url.pathname)) || event.request.mode === 'navigate') {
     event.respondWith(
       fetch(event.request)
         .then((response) => {
@@ -52,16 +75,46 @@ self.addEventListener('fetch', (event) => {
           }
           return response;
         })
-        .catch(() => caches.match(event.request))
+        .catch(async () => {
+          const cached = await caches.match(event.request);
+          if (cached) return cached;
+
+          // For HTML navigation requests when offline, return offline fallback page
+          if (event.request.mode === 'navigate') {
+            const offlinePage = await caches.match('/app/dashboard.html') ||
+                               await caches.match('/app/index.html') ||
+                               await caches.match('/index.html');
+            if (offlinePage) return offlinePage;
+          }
+
+          // Return an actual Response on network failure instead of undefined
+          return new Response('Network error occurred', {
+            status: 408,
+            headers: { 'Content-Type': 'text/plain' }
+          });
+        })
     );
     return;
   }
 
-  // Cache-first for static assets (images, fonts, icons)
+  // Cache-first for same-origin static assets (images, icons, fonts)
   event.respondWith(
     caches.match(event.request)
-      .then((response) => response || fetch(event.request))
-      .catch(() => caches.match('/index.html'))
+      .then((cachedResponse) => {
+        if (cachedResponse) return cachedResponse;
+        return fetch(event.request).then((networkResponse) => {
+          if (networkResponse && networkResponse.ok) {
+            const clone = networkResponse.clone();
+            caches.open(CACHE_NAME).then(cache => cache.put(event.request, clone));
+          }
+          return networkResponse;
+        });
+      })
+      .catch(async () => {
+        // Return 404 response if static asset is missing rather than HTML index
+        return new Response('Not found', { status: 404, statusText: 'Not Found' });
+      })
   );
 });
+
 
