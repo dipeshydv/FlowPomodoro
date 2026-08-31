@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr" data-theme="light">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ESNYBTJ98S"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ESNYBTJ98S');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Metadata -->
+  <title>Técnicas de enfoque para desarrolladores: Mantente en flujo | FlowPomodoro</title>
+  <meta name="description" content="Técnicas de enfoque diseñadas específicamente para desarrolladores. Cómo entrar y proteger el estado de flujo durante la programación compleja, la depuración y el trabajo de arquitectura.">
+  <link rel="canonical" href="https://flowpomodoro.xyz/blog/es/focus-techniques-for-developers.html">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#FAFAF7">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="FlowPomodoro">
+  <meta property="og:title" content="Técnicas de enfoque para desarrolladores: Mantente en flujo">
+  <meta property="og:description" content="Técnicas de enfoque diseñadas específicamente para desarrolladores. Cómo entrar y proteger el estado de flujo durante la programación compleja, la depuración y el trabajo de arquitectura.">
+  <meta property="og:url" content="https://flowpomodoro.xyz/blog/es/focus-techniques-for-developers.html">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80">
+  <meta property="og:locale" content="es_ES">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@FlowPomodoro">
+  <meta name="twitter:title" content="Técnicas de enfoque para desarrolladores: Mantente en flujo">
+  <meta name="twitter:description" content="Técnicas de enfoque diseñadas específicamente para desarrolladores. Cómo entrar y proteger el estado de flujo durante la programación compleja, la depuración y el trabajo de arquitectura.">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80">
+
+  <!-- Hreflang Multilingual Links -->
+  <link rel="alternate" hreflang="en" href="https://flowpomodoro.xyz/blog/en/focus-techniques-for-developers.html" />
+  <link rel="alternate" hreflang="hi" href="https://flowpomodoro.xyz/blog/hi/focus-techniques-for-developers.html" />
+  <link rel="alternate" hreflang="ne" href="https://flowpomodoro.xyz/blog/ne/focus-techniques-for-developers.html" />
+  <link rel="alternate" hreflang="es" href="https://flowpomodoro.xyz/blog/es/focus-techniques-for-developers.html" />
+  <link rel="alternate" hreflang="vi" href="https://flowpomodoro.xyz/blog/vi/focus-techniques-for-developers.html" />
+  <link rel="alternate" hreflang="ru" href="https://flowpomodoro.xyz/blog/ru/focus-techniques-for-developers.html" />
+  <link rel="alternate" hreflang="x-default" href="https://flowpomodoro.xyz/blog/en/focus-techniques-for-developers.html" />
+
+  <!-- Structured Data: Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Técnicas de enfoque para desarrolladores: Mantente en flujo",
+    "description": "Técnicas de enfoque diseñadas específicamente para desarrolladores. Cómo entrar y proteger el estado de flujo durante la programación compleja, la depuración y el trabajo de arquitectura.",
+    "author": {
+      "@type": "Person",
+      "name": "FlowPomodoro Team"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "FlowPomodoro",
+      "url": "https://flowpomodoro.xyz",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://flowpomodoro.xyz/assets/favicon.svg"
+      }
+    },
+    "datePublished": "Mar 30, 2024",
+    "dateModified": "Mar 30, 2024",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://flowpomodoro.xyz/blog/es/focus-techniques-for-developers.html"
+    },
+    "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80"
+  }
+  </script>
+
+  <!-- Structured Data: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://flowpomodoro.xyz/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://flowpomodoro.xyz/blog/es/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Técnicas de enfoque para desarrolladores: Mantente en flujo",
+        "item": "https://flowpomodoro.xyz/blog/es/focus-techniques-for-developers.html"
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Cuánto tiempo le toma a un desarrollador volver al flujo después de una interrupción?","acceptedAnswer":{"@type":"Answer","text":"La investigación de la Universidad de California, Irvine, descubrió que toma un promedio de 23 minutos y 15 segundos recuperar completamente el enfoque después de una interrupción. Para los desarrolladores que mantienen estructuras de código complejas en la memoria de trabajo, la recuperación cognitiva real puede tomar aún más tiempo, especialmente si la interrupción estuvo cargada emocionalmente."}},{"@type":"Question","name":"¿Qué es el horario del creador (maker schedule) para los desarrolladores?","acceptedAnswer":{"@type":"Answer","text":"El horario del creador, un término acuñado por Paul Graham, divide el día en grandes bloques ininterrumpidos en lugar de espacios para reuniones por horas. Los desarrolladores necesitan períodos de varias horas para cargar contexto, escribir código y depurar eficazmente. Una sola reunión que caiga en medio de un bloque matutino puede destruir la producción de trabajo profundo de medio día."}},{"@type":"Question","name":"¿Deberían los desarrolladores usar la técnica Pomodoro?","acceptedAnswer":{"@type":"Answer","text":"Sí, pero con adaptación. Los Pomodoros estándar de 25 minutos son ideales para definir el alcance de las tareas y gestionar la carga cognitiva durante la codificación compleja. Algunos desarrolladores prefieren bloques de 50 minutos para sesiones de flujo más profundas. El beneficio clave es la estructura de descanso forzado, que evita la acumulación de fatiga mental y crea puntos de control naturales para evaluar la dirección."}},{"@type":"Question","name":"¿Cuál es la mejor música de concentración para programar?","acceptedAnswer":{"@type":"Answer","text":"Las investigaciones sugieren que la música instrumental sin letra es la mejor para programar. El hip hop Lo-fi, el ruido marrón, los ritmos binaurales y la música electrónica ambiental son opciones populares y efectivas. La música con letras activa áreas de procesamiento del lenguaje del cerebro, lo que compite directamente con la lectura y escritura requeridas durante la programación."}},{"@type":"Question","name":"¿Cómo manejo los mensajes urgentes de Slack sin interrumpir mi flujo?","acceptedAnswer":{"@type":"Answer","text":"Establece un estado claro en Slack que indique tus horas de concentración y el tiempo de respuesta esperado. Usa la función No Molestar de Slack durante tus bloques de trabajo profundo. Comunícale a tu equipo que, para emergencias genuinas, deben llamarte directamente, no enviar un mensaje. En la práctica, la mayoría de los mensajes \"urgentes\" de Slack pueden esperar 90 minutos sin consecuencias."}}]}
+  </script>
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous">
+
+  <!-- Global Styles -->
+  <link rel="stylesheet" href="/css/variables.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/layout.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/style.css">
+  
+  <!-- Blog Article Styles -->
+  <link rel="stylesheet" href="/blog/css/article.css">
+</head>
+<body class="editorial-theme">
+
+  <!-- Reading Progress Bar -->
+  <div id="reading-progress-bar" role="progressbar" aria-label="Reading progress"></div>
+
+  <!-- ── Navigation ────────────────────────────────────────────────────────── -->
+  <nav class="lp-nav" aria-label="Main navigation" id="main-nav">
+    <div class="nav-inner">
+      <a href="/" class="logo" aria-label="FlowPomodoro home">
+        <div class="logo-dot"><i class="fas fa-stopwatch"></i></div>
+        FlowPomodoro
+      </a>
+
+      <div class="nav-links" id="nav-links">
+        <a href="/app/index.html" class="nav-link">Timer</a>
+        <a href="/#features" class="nav-link">Features</a>
+        <a href="/blog/es/" class="nav-link" aria-current="page" style="color:var(--brand-primary); font-weight:700;">Blog</a>
+        <a href="/pages/pricing.html" class="nav-link">Pricing</a>
+        <a href="/pages/about.html" class="nav-link">About</a>
+      </div>
+
+      <div class="nav-actions">
+        <div class="lang-switcher" style="position:relative; display:inline-block;">
+          <button class="btn-icon lang-btn" id="lang-menu-btn" aria-label="Select Language" title="Select Language">
+            <i class="fas fa-globe"></i>
+          </button>
+          <div class="lang-dropdown" id="lang-dropdown" style="display:none; position:absolute; top:120%; right:0; background:var(--bg-surface); border:1px solid var(--border-color); border-radius:12px; padding:0.5rem; min-width:150px; z-index:999; flex-direction:column; gap:0.2rem; box-shadow:var(--shadow-lg);">
+            <a href="/blog/en/focus-techniques-for-developers.html" class="lang-option" style="display:block; padding:0.5rem 1rem; color:var(--text-primary); text-decoration:none; border-radius:6px; font-size:0.85rem;">🇺🇸 English</a>
+            <a href="/blog/hi/focus-techniques-for-developers.html" class="lang-option" style="display:block; padding:0.5rem 1rem; color:var(--text-primary); text-decoration:none; border-radius:6px; font-size:0.85rem;">🇮🇳 Hindi</a>
+            <a href="/blog/ne/focus-techniques-for-developers.html" class="lang-option" style="display:block; padding:0.5rem 1rem; color:var(--text-primary); text-decoration:none; border-radius:6px; font-size:0.85rem;">🇳🇵 Nepali</a>
+            <a href="/blog/es/focus-techniques-for-developers.html" class="lang-option" style="display:block; padding:0.5rem 1rem; color:var(--text-primary); text-decoration:none; border-radius:6px; font-size:0.85rem;">🇪🇸 Spanish</a>
+            <a href="/blog/vi/focus-techniques-for-developers.html" class="lang-option" style="display:block; padding:0.5rem 1rem; color:var(--text-primary); text-decoration:none; border-radius:6px; font-size:0.85rem;">🇻🇳 Vietnamese</a>
+            <a href="/blog/ru/focus-techniques-for-developers.html" class="lang-option" style="display:block; padding:0.5rem 1rem; color:var(--text-primary); text-decoration:none; border-radius:6px; font-size:0.85rem;">🇷🇺 Русский</a>
+          </div>
+        </div>
+
+        <button class="btn-icon" id="theme-toggle" aria-label="Toggle theme">
+          <i class="fas fa-sun"></i>
+        </button>
+        <a href="/pages/login.html" class="nav-link">Log in</a>
+        <a href="/app/index.html" class="btn-primary">Start Focusing</a>
+      </div>
+
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Drawer -->
+  <div class="nav-drawer" id="nav-drawer" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+    <a href="/app/index.html" class="nav-drawer-link">Timer</a>
+    <a href="/#features" class="nav-drawer-link">Features</a>
+    <a href="/blog/es/" class="nav-drawer-link" style="color:var(--brand-primary); font-weight:700;">Blog</a>
+    <a href="/pages/pricing.html" class="nav-drawer-link">Pricing</a>
+    <a href="/pages/about.html" class="nav-drawer-link">About</a>
+    <div style="display:flex; gap:1rem; margin-top:2rem;">
+      <a href="/pages/login.html" class="btn-secondary">Log in</a>
+      <a href="/app/index.html" class="btn-primary">Start Focusing</a>
+    </div>
+  </div>
+
+  <main id="main-content">
+
+    <!-- ── Breadcrumb ──────────────────────────────────────────────────────── -->
+    <nav class="editorial-breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a> 
+      <span class="breadcrumb-separator"><i class="fas fa-chevron-right"></i></span> 
+      <a href="/blog/es/">Blog</a>
+      <span class="breadcrumb-separator"><i class="fas fa-chevron-right"></i></span> 
+      <span class="breadcrumb-current" aria-current="page">Técnicas de enfoque para desarrolladores: Mantente en flujo</span>
+    </nav>
+
+    <!-- ── Article Header ──────────────────────────────────────────────────── -->
+    <header class="editorial-header">
+      <div class="article-badge-row">
+        <span class="article-category">Focus</span>
+        <div class="article-header-actions">
+          <button class="action-btn" id="btn-bookmark-toggle" aria-label="Bookmark article" data-slug="focus-techniques-for-developers" title="Save article">
+            <i class="far fa-bookmark"></i>
+          </button>
+          <button class="action-btn" id="btn-share-toggle" aria-label="Share article" title="Share article">
+            <i class="fas fa-share-nodes"></i>
+          </button>
+        </div>
+      </div>
+
+      <h1 class="article-h1">Técnicas de enfoque para desarrolladores: Mantente en flujo</h1>
+      <p class="article-intro">Técnicas de enfoque diseñadas específicamente para desarrolladores. Cómo entrar y proteger el estado de flujo durante la programación compleja, la depuración y el trabajo de arquitectura.</p>
+
+      <div class="author-meta-row">
+        <div class="author-avatar" aria-hidden="true">
+          F
+        </div>
+        <div class="author-info">
+          <span class="author-name">FlowPomodoro Team</span>
+          <span class="author-details">Mar 30, 2024 · 6 min read</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- ── Hero Image ──────────────────────────────────────────────────────── -->
+    <figure class="article-hero-figure">
+      <img 
+        src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80" 
+        alt="Técnicas de enfoque para desarrolladores: Mantente en flujo" 
+        width="1000" 
+        height="560" 
+        loading="eager"
+      >
+    </figure>
+
+    <!-- ── Editorial Reading Layout ────────────────────────────────────────── -->
+    <div class="editorial-layout">
+      
+      <!-- Sticky Sidebar Table of Contents -->
+      <aside class="layout-sidebar" aria-label="Table of contents">
+        <nav class="editorial-toc">
+          <div class="toc-header">
+            <span class="toc-title">In This Article</span>
+            <i class="fas fa-list-ol" style="color:var(--brand-primary); font-size:0.85rem;" aria-hidden="true"></i>
+          </div>
+          <ul class="toc-list">
+            
+      <li>
+        <a href="#attention-crisis">
+          <span class="toc-number">01</span>
+          <span class="toc-text">La crisis de atención de los desarrolladores</span>
+        </a>
+      </li>
+    
+
+      <li>
+        <a href="#cost-of-interruption">
+          <span class="toc-number">02</span>
+          <span class="toc-text">El costo real de la interrupción para los desarrolladores</span>
+        </a>
+      </li>
+    
+
+      <li>
+        <a href="#10-techniques">
+          <span class="toc-number">03</span>
+          <span class="toc-text">10 Técnicas de enfoque para desarrolladores</span>
+        </a>
+      </li>
+    
+
+      <li>
+        <a href="#impulsa-tus-sesiones-de-enfoque">
+          <span class="toc-number">04</span>
+          <span class="toc-text">Impulsa tus sesiones de enfoque</span>
+        </a>
+      </li>
+    
+
+      <li>
+        <a href="#protecting-deep-work">
+          <span class="toc-number">05</span>
+          <span class="toc-text">Proteger el trabajo profundo de las reuniones</span>
+        </a>
+      </li>
+    
+
+      <li>
+        <a href="#psychological-safety">
+          <span class="toc-number">06</span>
+          <span class="toc-text">Crear seguridad psicológica para desconectarse</span>
+        </a>
+      </li>
+    
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- Main Article Body -->
+      <article class="layout-content">
+        
+        <!-- Mobile Collapsible TOC -->
+        <details class="mobile-toc-details">
+          <summary class="mobile-toc-summary">
+            <span><i class="fas fa-list-ol" style="color:var(--brand-primary); margin-right:0.5rem;" aria-hidden="true"></i> Table of Contents</span>
+            <i class="fas fa-chevron-down" aria-hidden="true"></i>
+          </summary>
+          <ul class="toc-list" style="margin-top:0.75rem;">
+            
+      <li>
+        <a href="#attention-crisis">
+          <span class="toc-number">01</span>
+          <span class="toc-text">La crisis de atención de los desarrolladores</span>
+        </a>
+      </li>
+    
+
+      <li>
+        <a href="#cost-of-interruption">
+          <span class="toc-number">02</span>
+          <span class="toc-text">El costo real de la interrupción para los desarrolladores</span>
+        </a>
+      </li>
+    
+
+      <li>
+        <a href="#10-techniques">
+          <span class="toc-number">03</span>
+          <span class="toc-text">10 Técnicas de enfoque para desarrolladores</span>
+        </a>
+      </li>
+    
+
+      <li>
+        <a href="#impulsa-tus-sesiones-de-enfoque">
+          <span class="toc-number">04</span>
+          <span class="toc-text">Impulsa tus sesiones de enfoque</span>
+        </a>
+      </li>
+    
+
+      <li>
+        <a href="#protecting-deep-work">
+          <span class="toc-number">05</span>
+          <span class="toc-text">Proteger el trabajo profundo de las reuniones</span>
+        </a>
+      </li>
+    
+
+      <li>
+        <a href="#psychological-safety">
+          <span class="toc-number">06</span>
+          <span class="toc-text">Crear seguridad psicológica para desconectarse</span>
+        </a>
+      </li>
+    
+          </ul>
+        </details>
+
+        <div class="article-body">
+          
+      <h2 id="attention-crisis">La crisis de atención de los desarrolladores</h2>
+
+      <p class="drop-cap">Los desarrolladores de software modernos operan en un entorno que es arquitectónicamente hostil al tipo de pensamiento que exige su trabajo. Las herramientas diseñadas para ayudar a los equipos a comunicarse —Slack, notificaciones de GitHub, comentarios de Jira, correos electrónicos, revisiones de solicitudes de extracción (PR)— han creado una capa constante de interrupción de bajo grado que hace que la concentración sostenida sea casi imposible sin contramedidas deliberadas.</p>
+
+      <p>El trabajador del conocimiento promedio revisa su correo electrónico 74 veces al día, según una investigación de Gloria Mark en la Universidad de California, Irvine. Para los desarrolladores, multiplica eso por los canales de Slack, las menciones en GitHub, las alertas de implementación, las notificaciones de CI/CD y las reuniones diarias (standups). Un ingeniero senior en una startup mediana puede enfrentarse fácilmente a más de 150 eventos de notificación antes del almuerzo.</p>
+
+      <p>El problema es estructural, no personal. Las oficinas de planta abierta premian estar visiblemente ocupado. La configuración predeterminada de Slack te notifica de cada mensaje en cada canal al que te has unido. Las ceremonias de sprint (standups, planificación, retrospectivas, refinamiento) pueden consumir de 6 a 10 horas de la semana de un desarrollador. ¿Qué queda para el trabajo que realmente hace avanzar el código?</p>
+
+      <div class="callout">
+        <p><strong>El problema central:</strong> La programación requiere cargar estados complejos en la memoria de trabajo: valores de variables, pilas de llamadas, casos extremos, dependencias del sistema. Este modelo mental tarda entre 15 y 30 minutos en construirse y colapsa casi instantáneamente cuando la atención cambia. Cada interrupción no es solo una pausa, es un reinicio.</p>
+      </div>
+
+      <h2 id="cost-of-interruption">El costo real de la interrupción para los desarrolladores</h2>
+
+      <p>La investigación histórica de la Dra. Gloria Mark en UC Irvine descubrió que, después de una interrupción, se tarda en promedio <strong>23 minutos y 15 segundos</strong> en regresar a la tarea original. Para los desarrolladores, el costo cognitivo es aún mayor. No solo regresas a un documento, sino que reconstruyes un modelo mental de un sistema complejo.</p>
+
+      <p>Considera lo que sucede cuando llevas 25 minutos depurando una condición de carrera en un sistema distribuido. Has rastreado la ruta de ejecución a través de tres servicios, has identificado la ventana de tiempo aproximada y estás a punto de formar la hipótesis que lo resolverá. Tu gerente te toca el hombro para preguntarte sobre la velocidad del sprint. El modelo mental, todo ese contexto ensamblado con tanto esfuerzo, se evapora. Pasas los siguientes 20 minutos reconstruyéndolo, y esta vez es más difícil porque también estás frustrado.</p>
+
+      <p>Jason Fried y David Heinemeier Hansson cuantificaron esto en su libro <em>Rework</em>: un desarrollador interrumpido incluso por 1 minuto pierde hasta 15 minutos de tiempo de codificación productiva cuando se toma en cuenta el período de recuperación. A 4 interrupciones por la mañana, eso es una hora entera de producción perdida, todos los días.</p>
+
+      <p>El costo económico es asombroso. Si un desarrollador senior que gana $150,000/año pierde 2 horas de trabajo profundo diariamente por interrupciones, la organización está pagando $75,000 por año por la distracción. La mayoría de los gerentes de ingeniería no lo ven de esta manera, pero deberían.</p>
+
+      <h2 id="10-techniques">10 Técnicas de enfoque para desarrolladores</h2>
+
+      <div class="step-block">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h3>Adopta el horario del Creador vs. Gerente</h3>
+          <p>El ensayo de Paul Graham de 2009 "El horario del creador, el horario del gerente" sigue siendo la pieza sobre productividad más importante para los desarrolladores de software. Los gerentes operan en franjas horarias de reuniones; una interrupción de 1 hora es solo una franja. Los creadores (desarrolladores, escritores, diseñadores) necesitan bloques de medio día. Una reunión a las 11 am no solo toma 30 minutos: hace que toda la mañana sea difícil de usar para un trabajo profundo porque te estás anticipando mentalmente a la interrupción.</p>
+          <p>La solución: bloquea tu calendario en trozos de medio día. Trata esos bloques como citas no negociables con tu trabajo más importante. Programa todas las reuniones por la tarde, agrúpalas y protege ferozmente tus mañanas.</p>
+        </div>
+      </div>
+
+      <div class="step-block">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <h3>Defiende los bloques de codificación matutinos</h3>
+          <p>Tu corteza prefrontal —la región del cerebro responsable del razonamiento complejo, la detección de errores y la memoria de trabajo— opera a su máxima capacidad dentro de las primeras 2 a 4 horas después de despertar. El cortisol alcanza su punto máximo de forma natural por la mañana (la "respuesta al despertar del cortisol"), proporcionando alerta e impulso cognitivo. Esta es tu ventana cognitiva más preciada.</p>
+          <p>Reserva de 8:00 a 11:00 a.m. (o cualesquiera que sean tus primeras 2-3 horas) exclusivamente para las tareas de codificación más difíciles: decisiones de arquitectura, depuración de problemas complejos, redacción de algoritmos críticos. Trata este bloque como sagrado. Sin reuniones (standups) antes de las 10 am si puedes evitarlo. Sin revisión de correos electrónicos antes de tu primer 'commit'.</p>
+        </div>
+      </div>
+
+      <div class="step-block">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <h3>Implementa un apagón de notificaciones</h3>
+          <p>Durante los bloques de trabajo profundo, apaga por completo las notificaciones. En macOS, usa el modo de concentración (Focus Mode). En Windows, usa el Asistente de concentración (Focus Assist). En tu teléfono, activa No Molestar. En Slack, establece tu estado en "Trabajo profundo - regreso a las [hora]" y activa No molestar por períodos de 2 horas. Cierra la pestaña de tu correo electrónico. Desactiva las notificaciones de escritorio de GitHub.</p>
+          <p>Esto parece radical hasta que te das cuenta: en un apagón de notificaciones de 2 horas, casi no sucede nada genuinamente urgente que no pueda esperar 2 horas. ¿Esa interrupción del servicio de producción que temes perderte? Tu sistema de guardias te avisará. Todo lo demás puede esperar.</p>
+        </div>
+      </div>
+
+      <div class="step-block">
+        <div class="step-num">4</div>
+        <div class="step-content">
+          <h3>Comunícate asincrónicamente primero</h3>
+          <p>Adopta una filosofía de comunicación donde lo asincrónico sea la prioridad. Responde mensajes de Slack en 2 o 3 bloques durante el día (por ejemplo, 9:00 a.m., 12:30 p.m., 4:30 p.m.) en lugar de continuamente. Usa videos de Loom para explicaciones complejas en lugar de reuniones improvisadas. Escribe descripciones detalladas de los 'Pull Requests' en lugar de programar una "llamada rápida". Escribe las decisiones en Notion/Confluence en lugar de anunciarlas verbalmente en Slack.</p>
+          <p>Empresas como GitLab (totalmente remota, más de 1500 empleados) y Basecamp han demostrado que la comunicación "async-first" funciona a escala. El resultado es menos interrupciones, mejor documentación y una cultura donde el trabajo profundo es la norma y no la excepción.</p>
+        </div>
+      </div>
+
+      <div class="step-block">
+        <div class="step-num">5</div>
+        <div class="step-content">
+          <h3>Usa Pomodoro para delimitar el alcance de las tareas</h3>
+          <p>La técnica Pomodoro —25 minutos de trabajo concentrado seguidos de un descanso de 5 minutos— ofrece una ventaja específica para los desarrolladores: obliga a la descomposición de las tareas. Antes de comenzar una sesión, debes definir qué harás en ese bloque de 25 minutos. "Trabajar en el sistema de autenticación" no es una tarea de Pomodoro. "Escribir la función middleware de validación JWT" sí lo es.</p>
+          <p>Este proceso de definir el alcance es en sí mismo una forma de planificación que reduce los falsos comienzos, las vueltas vagas y la desviación del contexto. Usa <a href="/app/index.html">FlowPomodoro</a> para configurar tu sesión, nombrar tu tarea explícitamente y comprometerte con esa única unidad de trabajo. Muchos desarrolladores encuentran que 4 Pomodoros bien definidos producen más resultados que una mañana completa sin estructura.</p>
+        </div>
+      </div>
+
+      <div class="cta-box">
+        <h2 id="impulsa-tus-sesiones-de-enfoque">Impulsa tus sesiones de enfoque</h2>
+        <p>Utiliza nuestras herramientas dedicadas para controlar el tiempo y mantenerte en la zona durante tu trabajo de codificación más profundo.</p>
+        <a href="/app/index.html" class="btn btn-primary btn-lg">Comienza tu sesión gratis →</a>
+      </div>
+
+      <div class="step-block">
+        <div class="step-num">6</div>
+        <div class="step-content">
+          <h3>Un Pull Request por sesión</h3>
+          <p>La fragmentación del contexto es un asesino silencioso de la productividad. Cambiar entre tres PR (Pull Requests) abiertos, cada uno en una etapa diferente de revisión, cada uno tocando diferentes partes del código base, significa que estás constantemente recargando el contexto. Adopta la disciplina de <strong>un PR por sesión de enfoque</strong>.</p>
+          <p>Inicia una sesión, elige el PR que vas a terminar y no toques otro hasta que se envíe para revisión o se fusione ('merge'). Esto reduce drásticamente la sobrecarga cognitiva de "¿por dónde iba?" y produce un código más limpio y reflexivo porque tu mente estaba completamente inmersa en un solo problema.</p>
+        </div>
+      </div>
+
+      <div class="step-block">
+        <div class="step-num">7</div>
+        <div class="step-content">
+          <h3>Depuración con el patito de goma ('Rubber Duck Debugging') durante los descansos</h3>
+          <p>Cuando te quedas atascado en un problema, tu descanso Pomodoro es el momento perfecto para la depuración del patito de goma: explicar el problema en voz alta (o por escrito) a un oyente imaginario. Esta técnica funciona porque articular un problema te obliga a organizar tu modelo mental de manera explícita, lo que a menudo revela la falla lógica que no estabas viendo.</p>
+          <p>Mantén un bloc de notas de depuración junto a tu escritorio. Durante tu descanso de 5 minutos, anota: "El error es X. Espero que ocurra Y debido a Z. En cambio, ocurre A". El acto de escribir esto frecuentemente produce la solución antes de que termines la oración.</p>
+        </div>
+      </div>
+
+      <div class="step-block">
+        <div class="step-num">8</div>
+        <div class="step-content">
+          <h3>Usa la música de concentración estratégicamente</h3>
+          <p>Investigaciones de la Universidad de Cambridge y otras instituciones muestran que la música con letras activa centros de procesamiento del lenguaje que compiten con la lectura y escritura de código. El entorno de audio óptimo para codificar es la <strong>música instrumental sin letra</strong>: hip hop lo-fi, ruido marrón, ritmos binaurales en el rango gamma de 40 Hz o música electrónica ambiental.</p>
+          <p>El ruido marrón (más profundo que el ruido blanco) es particularmente efectivo para enmascarar los sonidos impredecibles de la oficina, el enemigo del flujo. Muchos desarrolladores confían en las "8 horas de ruido marrón" de YouTube o en aplicaciones como Brain.fm. La clave es la constancia: tu cerebro comienza a asociar la señal de audio con el modo de trabajo profundo, lo que facilita el ingreso al flujo en cada sesión.</p>
+        </div>
+      </div>
+
+      <div class="step-block">
+        <div class="step-num">9</div>
+        <div class="step-content">
+          <h3>Intervalos en escritorios de pie (Standing Desk)</h3>
+          <p>Estar sentado durante un tiempo prolongado reduce el flujo sanguíneo a la corteza prefrontal hasta en un 20%, según un estudio de 2020 publicado en el <em>Journal of Applied Physiology</em>. Alternar entre estar sentado y de pie cada 30-60 minutos mantiene un mejor flujo sanguíneo cerebral y sostiene la concentración en sesiones de trabajo más largas.</p>
+          <p>Usa las transiciones de los descansos Pomodoro como desencadenantes para usar el escritorio de pie. Cuando suene el temporizador, levántate. Durante el descanso de 5 minutos, manténte de pie o camina. Cuando comience la siguiente sesión, puedes sentarte o permanecer de pie. Este ritmo simple previene el colapso de energía que normalmente ocurre alrededor de la marca de 2 horas de estar sentado continuamente.</p>
+        </div>
+      </div>
+
+      <div class="step-block">
+        <div class="step-num">10</div>
+        <div class="step-content">
+          <h3>El ritual de apagado del desarrollador</h3>
+          <p>Cal Newport describe el ritual de apagado en su libro <em>Deep Work</em> como una práctica crucial para el cierre psicológico. Para los desarrolladores, esto es especialmente importante porque los problemas de código sin terminar tienen una tendencia documentada a permanecer "activos" en la mente (el efecto Zeigarnik), lo que hace que sea difícil dejar de pensar en el trabajo.</p>
+          <p>Crea un ritual de fin de jornada de 15 minutos: realiza el 'commit' de tu trabajo en progreso con un mensaje detallado sobre lo que falta, agrega un comentario en tu código explicando dónde te detuviste y cuál es el siguiente paso, actualiza tu rastreador de tareas y di en voz alta: "Apagado completo". Esta señal verbal suena tonta pero es genuinamente efectiva para señalar a tu cerebro que el trabajo cognitivo ha terminado por el día.</p>
+        </div>
+      </div>
+
+      <h2 id="protecting-deep-work">Proteger el trabajo profundo de las reuniones</h2>
+
+      <p>Las reuniones son el destructor número uno de los estados de flujo de los desarrolladores. El desarrollador promedio pasa entre 15 y 20 horas a la semana en reuniones, aproximadamente la mitad de sus horas de trabajo, según una investigación de Atlassian. La mayoría de esas reuniones podrían reemplazarse con un video de Loom o un documento escrito.</p>
+
+      <p>Comienza a negociar tu carga de reuniones. Cuando te inviten a una reunión, pregunta: "¿Podría ser esto un video de Loom o un documento escrito en su lugar?". Muchas respuestas serán que sí. Cuando debas asistir, agrupa todas las reuniones en una ventana de 2 horas por la tarde. Bloquea tus mañanas en el calendario compartido como "Bloque de Enfoque" para hacerlas visibles y más difíciles de sobreescribir con reuniones.</p>
+
+      <p>Específicamente para los standups diarios: presiona por hacerlos asincrónicos a través de Slack o Geekbot. Un standup escrito toma 3 minutos en lugar de 15, deja un registro en el que se pueden hacer búsquedas y no requiere que todos cambien de contexto a las 9:30 AM. Muchos equipos remotos ya han hecho este cambio con excelentes resultados.</p>
+
+      <div class="callout">
+        <p><strong>Consejo práctico:</strong> Usa un sistema de codificación de colores en el calendario. Bloquea las sesiones de trabajo profundo en azul oscuro (intocables), las reuniones en naranja (fricción necesaria) y el trabajo superficial en gris (baja prioridad). Cuando tu semana es visible de esta manera, el desequilibrio generalmente se vuelve obvio de inmediato, y es motivador solucionarlo.</p>
+      </div>
+
+      <h2 id="psychological-safety">Crear seguridad psicológica para desconectarse</h2>
+
+      <p>Una de las barreras más subestimadas para el enfoque de los desarrolladores es la expectativa no expresada de disponibilidad constante. En muchas culturas de ingeniería, responder lentamente a Slack se interpreta como falta de compromiso. Cerrar las notificaciones se siente como ausentarse sin permiso (AWOL). Esto crea un entorno donde los desarrolladores no se sienten psicológicamente seguros para proteger su tiempo de concentración.</p>
+
+      <p>La solución es hacer explícitas las normas. Si estás en una posición de liderazgo, da el ejemplo: establece plazos prolongados de respuesta en Slack de forma pública, celebra a los miembros del equipo que entregan un trabajo profundo sin comunicación constante y dile explícitamente a tus subordinados: "Espero que protejan sus bloques de enfoque". Si eres un contribuidor individual, ten una conversación directa con tu gerente sobre tu tiempo de enfoque y la investigación sobre productividad que lo respalda.</p>
+
+      <p>Comparte el estudio de UC Irvine de los 23 minutos con tu equipo. Muestra las matemáticas: 4 interrupciones × 23 minutos de recuperación = 92 minutos perdidos diariamente por desarrollador. En un equipo de 6, eso es más de 9 horas de capacidad de ingeniería perdida todos los días. La mayoría de los gerentes, al confrontar las matemáticas, se convierten en aliados en lugar de obstáculos.</p>
+
+      <p>Las mejores culturas de ingeniería tratan el trabajo profundo e ininterrumpido no como un lujo, sino como un estándar profesional, tan no negociable como las revisiones de código o las pruebas. Construir esa cultura lleva tiempo, pero comienza con los desarrolladores individuales nombrando el problema y proponiendo normas concretas. No necesitas el permiso de la gerencia para poner un estado de "Enfoque: Vuelvo al mediodía" en Slack. Empieza por ahí.</p>
+
+      <p>En <a href="/">FlowPomodoro</a>, cada característica está diseñada en torno a este principio: crear un contenedor claro para el trabajo profundo, hacer visible el compromiso y facilitar al máximo el inicio y la protección de tus sesiones de enfoque. Usa el <a href="/app/index.html">temporizador gratuito</a> para anclar tu bloque de codificación matutino: el ritual de iniciar un Pomodoro es en sí mismo un poderoso desencadenante psicológico para entrar en el estado de flujo.</p>
+
+    
+<!-- FlowPomodoro Focus CTA -->
+
+
+<!-- FlowPomodoro Focus CTA Widget -->
+<div class="focus-cta">
+  <h3>Ready to Focus?</h3>
+  <p>Choose your interval and start a focused session right now.</p>
+  <div class="timer-preview">
+    <span class="control">−</span>
+    <span>25:00</span>
+    <span class="control">+</span>
+  </div>
+  <a href="/app/index.html" class="btn-focus"><i class="fas fa-play" style="font-size:0.85rem;" aria-hidden="true"></i> Start Focus Session →</a>
+</div>
+
+        </div>
+
+        <!-- ── Bottom Components ───────────────────────────────────────────── -->
+        <div class="bottom-components">
+          
+          <!-- Related Articles -->
+          <section class="related-articles" aria-label="Related articles">
+            <div class="section-label">Keep Reading</div>
+            <h3>Related Articles</h3>
+            <div class="related-grid">
+              
+        <a href="/blog/es/adhd-focus.html" class="related-card">
+          <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1200&q=80" alt="Pomodoro para TDAH: Cómo lograr enfocarse por fin" class="related-thumb" loading="lazy">
+          <div class="related-info">
+            <h4>Pomodoro para TDAH: Cómo lograr enfocarse por fin</h4>
+            <div class="related-meta">Focus · 5 min read</div>
+          </div>
+        </a>
+      
+
+        <a href="/blog/es/distraction-control.html" class="related-card">
+          <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=1200&q=80" alt="Control de distracciones: Protege tu trabajo profundo" class="related-thumb" loading="lazy">
+          <div class="related-info">
+            <h4>Control de distracciones: Protege tu trabajo profundo</h4>
+            <div class="related-meta">Focus · 5 min read</div>
+          </div>
+        </a>
+      
+
+        <a href="/blog/es/flow-state-explained.html" class="related-card">
+          <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1200&q=80" alt="Estado de flujo explicado: Ciencia de la concentración máxima" class="related-thumb" loading="lazy">
+          <div class="related-info">
+            <h4>Estado de flujo explicado: Ciencia de la concentración máxima</h4>
+            <div class="related-meta">Focus · 6 min read</div>
+          </div>
+        </a>
+      
+            </div>
+          </section>
+
+          <!-- Prev / Next Navigation -->
+          <nav class="prev-next-nav" aria-label="Previous and next article navigation">
+            
+      <a href="/blog/es/flow-state-explained.html" class="pn-link prev">
+        <span class="pn-label">&larr; Previous</span>
+        <h4 class="pn-title">Estado de flujo explicado: Ciencia de la concentración máxima</h4>
+      </a>
+      <a href="/blog/es/focus-techniques.html" class="pn-link next">
+        <span class="pn-label">Next &rarr;</span>
+        <h4 class="pn-title">10 Técnicas de enfoque que duplican la productividad</h4>
+      </a>
+    
+          </nav>
+
+          <!-- Newsletter Signup -->
+          <aside class="editorial-newsletter" aria-label="Newsletter">
+            <h3>Get better at focusing.</h3>
+            <p>Practical productivity ideas delivered occasionally. No spam.</p>
+            <form class="newsletter-form" onsubmit="handleNewsletterSubmit(event)">
+              <input type="email" placeholder="Enter your email" required aria-label="Email address">
+              <button type="submit" class="btn-primary">Subscribe</button>
+            </form>
+          </aside>
+
+          <!-- End of Article FlowPomodoro CTA -->
+          <div class="blog-product-cta" style="margin: 2.5rem 0 1rem 0;">
+            <h3>Ready to put it into practice?</h3>
+            <p>Start a focused session and turn what you learned into action.</p>
+            <a href="/app/index.html" class="btn-primary"><i class="fas fa-play" aria-hidden="true"></i> Start Focusing</a>
+          </div>
+
+        </div><!-- .bottom-components -->
+
+      </article>
+    </div><!-- .editorial-layout -->
+
+  </main>
+
+  <!-- ── Mobile Floating Action Bar ────────────────────────────────────────── -->
+  <div class="mobile-article-bar" aria-label="Article actions">
+    <button class="mobile-like-btn" id="mobile-like-btn" aria-label="Like article">
+      <i class="fas fa-heart"></i> <span id="like-count">128</span>
+    </button>
+    <a href="/app/index.html" class="mobile-start-focus-btn">
+      <i class="fas fa-play"></i> Start Focusing
+    </a>
+  </div>
+
+  <!-- ── Footer ────────────────────────────────────────────────────────────── -->
+  <footer class="lp-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="/" class="logo">
+            <div class="logo-dot"><i class="fas fa-stopwatch"></i></div>
+            FlowPomodoro
+          </a>
+          <p>A beautiful Pomodoro timer to help you focus deeply, beat procrastination, and build better habits.</p>
+        </div>
+        <div class="footer-col">
+          <div class="fc-title">Product</div>
+          <ul>
+            <li><a href="/app/index.html">Timer</a></li>
+            <li><a href="/#features">Features</a></li>
+            <li><a href="/pages/pricing.html">Pricing</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <div class="fc-title">Resources</div>
+          <ul>
+            <li><a href="/blog/es/">Blog</a></li>
+            <li><a href="/pages/about.html">About</a></li>
+            <li><a href="/pages/download.html">Download</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <div class="fc-title">Legal</div>
+          <ul>
+            <li><a href="/pages/privacy.html">Privacy</a></li>
+            <li><a href="/pages/terms.html">Terms</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2026 FlowPomodoro. All rights reserved.</div>
+        <div class="fb-links">
+          <a href="/pages/privacy.html">Privacy</a>
+          <a href="/pages/terms.html">Terms</a>
+          <a href="/blog/es/">Blog</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ── Interactive Client Scripts ────────────────────────────────────────── -->
+  <script>
+    // Theme Management
+    const themeBtn = document.getElementById('theme-toggle');
+    const html = document.documentElement;
+    const savedTheme = localStorage.getItem('flow_theme') || 'light';
+    html.setAttribute('data-theme', savedTheme);
+    if (themeBtn) {
+      themeBtn.innerHTML = savedTheme === 'dark' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+      themeBtn.addEventListener('click', () => {
+        const isDark = html.getAttribute('data-theme') === 'dark';
+        const newTheme = isDark ? 'light' : 'dark';
+        html.setAttribute('data-theme', newTheme);
+        localStorage.setItem('flow_theme', newTheme);
+        themeBtn.innerHTML = newTheme === 'dark' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+      });
+    }
+
+    // Mobile Navigation Drawer
+    const hamburger = document.getElementById('nav-hamburger');
+    const drawer = document.getElementById('nav-drawer');
+    if (hamburger && drawer) {
+      hamburger.addEventListener('click', () => {
+        const isOpen = drawer.classList.toggle('open');
+        hamburger.setAttribute('aria-expanded', isOpen);
+      });
+    }
+
+    // Language Dropdown
+    const langBtn = document.getElementById('lang-menu-btn');
+    const langDropdown = document.getElementById('lang-dropdown');
+    if (langBtn && langDropdown) {
+      langBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        langDropdown.style.display = langDropdown.style.display === 'flex' ? 'none' : 'flex';
+      });
+      document.addEventListener('click', () => {
+        langDropdown.style.display = 'none';
+      });
+    }
+
+    // Reading Progress Indicator
+    const progressBar = document.getElementById('reading-progress-bar');
+    window.addEventListener('scroll', () => {
+      const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      if (docHeight > 0 && progressBar) {
+        const progress = (window.scrollY / docHeight) * 100;
+        progressBar.style.width = Math.min(100, Math.max(0, progress)) + '%';
+      }
+    }, { passive: true });
+
+    // Table of Contents Scrollspy
+    const headings = document.querySelectorAll('.article-body h2');
+    const tocLinks = document.querySelectorAll('.toc-list a');
+    if (headings.length > 0 && tocLinks.length > 0) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const id = entry.target.getAttribute('id');
+            tocLinks.forEach(link => {
+              if (link.getAttribute('href') === '#' + id) {
+                link.classList.add('active');
+              } else {
+                link.classList.remove('active');
+              }
+            });
+          }
+        });
+      }, { rootMargin: '-80px 0px -60% 0px' });
+      headings.forEach(h => observer.observe(h));
+    }
+
+    // Bookmark Functionality
+    const bookmarkBtn = document.getElementById('btn-bookmark-toggle');
+    const currentSlug = 'focus-techniques-for-developers';
+    function updateBookmarkUI() {
+      const bookmarks = JSON.parse(localStorage.getItem('flow_bookmarks') || '[]');
+      const isSaved = bookmarks.includes(currentSlug);
+      if (bookmarkBtn) {
+        bookmarkBtn.classList.toggle('bookmarked', isSaved);
+        bookmarkBtn.innerHTML = isSaved ? '<i class="fas fa-bookmark"></i>' : '<i class="far fa-bookmark"></i>';
+      }
+    }
+    if (bookmarkBtn) {
+      updateBookmarkUI();
+      bookmarkBtn.addEventListener('click', () => {
+        let bookmarks = JSON.parse(localStorage.getItem('flow_bookmarks') || '[]');
+        if (bookmarks.includes(currentSlug)) {
+          bookmarks = bookmarks.filter(s => s !== currentSlug);
+        } else {
+          bookmarks.push(currentSlug);
+        }
+        localStorage.setItem('flow_bookmarks', JSON.stringify(bookmarks));
+        updateBookmarkUI();
+      });
+    }
+
+    // Share Functionality
+    const shareBtn = document.getElementById('btn-share-toggle');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', async () => {
+        if (navigator.share) {
+          try {
+            await navigator.share({
+              title: document.title,
+              text: 'Técnicas de enfoque diseñadas específicamente para desarrolladores. Cómo entrar y proteger el estado de flujo durante la programación compleja, la depuración y el trabajo de arquitectura.',
+              url: window.location.href
+            });
+          } catch (err) {}
+        } else {
+          navigator.clipboard.writeText(window.location.href);
+          const origIcon = shareBtn.innerHTML;
+          shareBtn.innerHTML = '<i class="fas fa-check"></i>';
+          setTimeout(() => { shareBtn.innerHTML = origIcon; }, 2000);
+        }
+      });
+    }
+
+    // Interactive Interval Controls in Focus CTA Widget
+    document.querySelectorAll('.focus-cta').forEach(widget => {
+      let minutes = 25;
+      const display = widget.querySelector('.timer-preview span:nth-child(2)');
+      const minus = widget.querySelector('.timer-preview .control:first-child');
+      const plus = widget.querySelector('.timer-preview .control:last-child');
+      if (display && minus && plus) {
+        minus.addEventListener('click', () => {
+          if (minutes > 5) {
+            minutes -= 5;
+            display.textContent = minutes + ':00';
+          }
+        });
+        plus.addEventListener('click', () => {
+          if (minutes < 90) {
+            minutes += 5;
+            display.textContent = minutes + ':00';
+          }
+        });
+      }
+    });
+
+    // Mobile Like Button
+    const mobileLikeBtn = document.getElementById('mobile-like-btn');
+    const likeCountSpan = document.getElementById('like-count');
+    if (mobileLikeBtn && likeCountSpan) {
+      let liked = localStorage.getItem('liked_' + currentSlug) === 'true';
+      let count = 128 + (liked ? 1 : 0);
+      likeCountSpan.textContent = count;
+      if (liked) mobileLikeBtn.style.color = '#ef4444';
+      mobileLikeBtn.addEventListener('click', () => {
+        liked = !liked;
+        localStorage.setItem('liked_' + currentSlug, liked);
+        count = 128 + (liked ? 1 : 0);
+        likeCountSpan.textContent = count;
+        mobileLikeBtn.style.color = liked ? '#ef4444' : '';
+      });
+    }
+
+    function handleNewsletterSubmit(e) {
+      e.preventDefault();
+      const input = e.target.querySelector('input');
+      if (input) {
+        input.value = '';
+        alert('Thank you for subscribing to FlowPomodoro Journal!');
+      }
+    }
+  </script>
+</body>
+</html>

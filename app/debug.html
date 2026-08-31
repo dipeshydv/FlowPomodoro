@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FlowPomodoro — Storage Diagnostic & Repair</title>
+  <link rel="stylesheet" href="/css/variables.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <style>
+    body { font-family: monospace; padding: 24px; background: var(--bg-main); color: var(--text-primary); max-width: 900px; margin: 0 auto; }
+    h1 { color: var(--brand-primary); font-size: 1.4rem; margin-bottom: 4px; }
+    h2 { color: #4ecdc4; font-size: 0.95rem; margin-top: 24px; border-bottom: 1px solid var(--border-color); padding-bottom: 6px; text-transform: uppercase; letter-spacing: 0.06em; }
+    pre { background: var(--bg-surface); padding: 12px; border-radius: 8px; overflow-x: auto; font-size: 0.78rem; line-height: 1.6; white-space: pre-wrap; word-break: break-all; }
+    .match-ok  { color: #22d3a0; }
+    .match-fail{ color: #ff6b6b; }
+    .warn      { color: #FFB800; }
+    .section   { margin-bottom: 20px; }
+    .btn-row   { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+    button { background: var(--brand-primary); color: #000; border: none; padding: 8px 18px; border-radius: 6px; font-size: 0.88rem; cursor: pointer; font-weight: 700; }
+    button:hover { opacity: 0.85; }
+    .btn-teal  { background: #4ecdc4; }
+    .btn-red   { background: #ff6b6b; color: #fff; }
+    .btn-gray  { background: var(--bg-surface-hover); color: var(--text-primary); }
+
+    /* Manual assignment table */
+    #assign-table { width: 100%; border-collapse: collapse; margin-top: 12px; font-size: 0.8rem; }
+    #assign-table th { text-align: left; padding: 8px 10px; color: var(--text-secondary); border-bottom: 1px solid var(--border-color); }
+    #assign-table td { padding: 8px 10px; border-bottom: 1px solid var(--border-color); vertical-align: middle; }
+    #assign-table select { background: var(--bg-surface); color: var(--text-primary); border: 1px solid var(--border-color); border-radius: 4px; padding: 4px 8px; font-size: 0.78rem; cursor: pointer; }
+    #assign-table tr:hover td { background: var(--bg-surface-hover); }
+    .session-id-cell { font-size: 0.7rem; color: var(--text-muted); }
+    .already-linked { color: #22d3a0; font-weight: 600; }
+
+    #status-bar { margin-top: 12px; padding: 10px 14px; border-radius: 8px; font-size: 0.85rem; display: none; }
+    #status-bar.ok  { background: rgba(34,211,160,0.12); color: #22d3a0; display: block; }
+    #status-bar.err { background: rgba(255,107,107,0.12); color: #ff6b6b; display: block; }
+  </style>
+</head>
+<body>
+
+<h1>🔬 FlowPomodoro — Storage Diagnostic & Repair</h1>
+<p style="color:var(--text-secondary);font-size:0.82rem;margin-bottom:4px;">
+  Reads actual localStorage data. No data is modified unless you click Save.
+</p>
+<p style="color:#ff6b6b;font-size:0.82rem;margin-bottom:16px;">
+  ⚠ Hard-refresh the Pomodoro page (Ctrl+Shift+R) before running a new session to ensure the latest JS is loaded.
+</p>
+
+<div class="btn-row">
+  <button onclick="clearSWCache()" style="background:#ff6b6b;color:#fff;">🗑 Clear Service Worker Cache (Do This First!)</button>
+  <button onclick="runDiagnostic()">▶ Run Diagnostic</button>
+  <button class="btn-teal" onclick="showAssignTable()">🔧 Assign Goals to Existing Sessions</button>
+  <button class="btn-gray" onclick="verifyFix()">✓ Verify After New Session</button>
+</div>
+
+<div id="status-bar"></div>
+
+<!-- Manual assignment UI -->
+<div id="assign-section" style="display:none;">
+  <h2>Manual Goal Assignment</h2>
+  <p style="color:var(--text-secondary);font-size:0.82rem;">
+    Select which goal each unlinked session belongs to. Leave "— Skip —" for sessions you don't want to attribute.
+    Click <strong>Save Assignments</strong> when done.
+  </p>
+  <table id="assign-table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Date</th>
+        <th>Duration</th>
+        <th>Current Goal</th>
+        <th>Assign To</th>
+      </tr>
+    </thead>
+    <tbody id="assign-body"></tbody>
+  </table>
+  <div class="btn-row" style="margin-top:16px;">
+    <button onclick="saveAssignments()">💾 Save Assignments</button>
+    <button class="btn-gray" onclick="document.getElementById('assign-section').style.display='none'">Cancel</button>
+  </div>
+</div>
+
+<div id="output"></div>
+
+<script type="module">
+import { GoalStore, SessionStore } from '/js/platform/store.js';
+
+window._GoalStore = GoalStore;
+window._SessionStore = SessionStore;
+
+function fmt(v) {
+  if (v === null || v === undefined) return '<span class="match-fail">null</span>';
+  return `<span class="match-ok">${JSON.stringify(v)}</span>`;
+}
+
+function fmtDuration(secs) {
+  if (!secs) return '?';
+  const m = Math.round(secs / 60);
+  return m >= 60 ? `${Math.floor(m/60)}h ${m%60}m` : `${m}m`;
+}
+
+window.runDiagnostic = function() {
+  const out = document.getElementById('output');
+  const goals = GoalStore.getAll();
+  const rawStr = localStorage.getItem('flow_history');
+  const rawSessions = rawStr ? JSON.parse(rawStr) : [];
+
+  let html = '';
+
+  // ── RAW Sessions ─────────────────────────────────────────────────────────
+  html += `<div class="section">
+    <h2>📦 RAW localStorage Sessions — ${rawSessions.length} records</h2>
+    <pre>`;
+  rawSessions.forEach((s, i) => {
+    html += `SESSION ${i+1}  id=${s.id}  date=${s.date}  duration=${s.duration}s=${fmtDuration(s.duration)}\n`;
+    html += `  durationMinutes: ${JSON.stringify(s.durationMinutes)}  goalId: ${JSON.stringify(s.goalId)}  goalName: ${JSON.stringify(s.goalName)}\n\n`;
+  });
+  html += `</pre></div>`;
+
+  // ── Goals ─────────────────────────────────────────────────────────────────
+  html += `<div class="section">
+    <h2>🎯 GoalStore — ${goals.length} goals</h2>
+    <pre>`;
+  goals.forEach(g => {
+    html += `${g.icon || '🎯'} ${g.name}  id="${g.id}"  active=${g.isActive}\n`;
+  });
+  html += `</pre></div>`;
+
+  // ── Match Analysis ────────────────────────────────────────────────────────
+  const focusSessions = rawSessions.filter(s => s.type === 'focus');
+  const nullGoal   = focusSessions.filter(s => !s.goalId);
+  const withGoal   = focusSessions.filter(s => s.goalId && goals.some(g => String(g.id) === String(s.goalId)));
+  const badGoal    = focusSessions.filter(s => s.goalId && !goals.some(g => String(g.id) === String(s.goalId)));
+  const recoverableByName = nullGoal.filter(s => s.goalName && goals.some(g => g.name.toLowerCase().trim() === String(s.goalName).toLowerCase().trim()));
+
+  html += `<div class="section">
+    <h2>🩺 Root Cause Summary</h2>
+    <pre>`;
+  html += `Total sessions:                    ${rawSessions.length}\n`;
+  html += `Focus sessions:                    ${focusSessions.length}\n`;
+  html += `Sessions with NULL/missing goalId: ${nullGoal.length}\n`;
+  html += `  └ recoverable via goalName:      ${recoverableByName.length}\n`;
+  html += `  └ NO recovery info:              ${nullGoal.length - recoverableByName.length}\n`;
+  html += `Sessions with valid goalId:        ${withGoal.length}\n`;
+  html += `Sessions with stale/bad goalId:    ${badGoal.length}\n\n`;
+
+  const totalMins = focusSessions.reduce((sum, s) => {
+    const norm = SessionStore.normalizeSession(s);
+    return sum + (norm ? norm.durationMinutes : 0);
+  }, 0);
+  html += `Total focus time (normalized):     ${Math.floor(totalMins/60)}h ${totalMins%60}m (${totalMins}m)\n\n`;
+
+  if (nullGoal.length > 0) {
+    if (recoverableByName.length > 0) {
+      html += `<span class="warn">CASE B: ${recoverableByName.length} sessions have goalName but no goalId — auto-patch can recover these.</span>\n`;
+    }
+    if (nullGoal.length - recoverableByName.length > 0) {
+      html += `<span class="match-fail">CASE A: ${nullGoal.length - recoverableByName.length} sessions have NO goal info at all.\nThese were saved by old code before goal-association was implemented.\nUse "Assign Goals to Existing Sessions" to manually attribute them.</span>\n`;
+    }
+  }
+  if (withGoal.length === focusSessions.length && focusSessions.length > 0) {
+    html += `<span class="match-ok">✓ All sessions correctly linked. Check Analytics date range filter.</span>\n`;
+  }
+  html += `</pre></div>`;
+
+  // ── Per-Goal Breakdown ────────────────────────────────────────────────────
+  html += `<div class="section">
+    <h2>📊 Per-Goal Breakdown (after normalization)</h2>
+    <pre>`;
+  const allNorm = rawSessions.map(s => SessionStore.normalizeSession(s)).filter(s => s && s.type === 'focus');
+  goals.filter(g => g.isActive !== false).forEach(goal => {
+    const gs = allNorm.filter(s => s.goalId && String(s.goalId).trim() === String(goal.id).trim());
+    const mins = gs.reduce((sum, s) => sum + (s.durationMinutes || 0), 0);
+    html += `${goal.name}: ${gs.length} sessions, ${mins}m (${Math.floor(mins/60)}h ${mins%60}m)\n`;
+  });
+  const unattributed = allNorm.filter(s => !s.goalId);
+  const unattribMins = unattributed.reduce((sum, s) => sum + (s.durationMinutes || 0), 0);
+  html += `\nUnattributed: ${unattributed.length} sessions, ${unattribMins}m\n`;
+  html += `</pre></div>`;
+
+  // ── New session check ─────────────────────────────────────────────────────
+  html += `<div class="section">
+    <h2>🆕 Latest Session Check (most recent 3)</h2>
+    <pre>`;
+  const recent = [...rawSessions].reverse().slice(0, 3);
+  recent.forEach((s, i) => {
+    const norm = SessionStore.normalizeSession(s);
+    html += `Session (recent ${i+1}): goalId=${JSON.stringify(s.goalId)} → norm.goalId=${JSON.stringify(norm?.goalId)}  duration=${fmtDuration(s.duration)}\n`;
+  });
+  html += `</pre></div>`;
+
+  out.innerHTML = html;
+};
+
+window.showAssignTable = function() {
+  const goals = GoalStore.getAll().filter(g => g.isActive !== false);
+  const rawStr = localStorage.getItem('flow_history');
+  const rawSessions = rawStr ? JSON.parse(rawStr) : [];
+
+  const section = document.getElementById('assign-section');
+  const tbody = document.getElementById('assign-body');
+  section.style.display = 'block';
+  section.scrollIntoView({ behavior: 'smooth' });
+
+  const focusSessions = rawSessions.filter(s => s.type === 'focus');
+
+  const goalOpts = goals.map(g => `<option value="${g.id}">${g.icon || '🎯'} ${g.name}</option>`).join('');
+
+  tbody.innerHTML = focusSessions.map((s, i) => {
+    const rawIdx = rawSessions.indexOf(s);
+    const currentGoal = s.goalId ? goals.find(g => String(g.id) === String(s.goalId)) : null;
+    const durationLabel = `${Math.round((s.duration || 0) / 60)}m`;
+    const alreadyLinked = !!currentGoal;
+
+    return `<tr>
+      <td>${i + 1}</td>
+      <td>${s.date || '?'}</td>
+      <td>${durationLabel}</td>
+      <td class="${alreadyLinked ? 'already-linked' : 'match-fail'}">${currentGoal ? `✓ ${currentGoal.name}` : '— None —'}</td>
+      <td>
+        <select data-idx="${rawIdx}">
+          <option value="">— Skip —</option>
+          ${alreadyLinked ? `<option value="${currentGoal.id}" selected>✓ Keep: ${currentGoal.name}</option>` : ''}
+          ${goalOpts}
+        </select>
+      </td>
+    </tr>`;
+  }).join('');
+};
+
+window.saveAssignments = function() {
+  const status = document.getElementById('status-bar');
+  const rawStr = localStorage.getItem('flow_history');
+  if (!rawStr) { status.className = 'err'; status.textContent = 'No sessions found.'; return; }
+
+  const rawSessions = JSON.parse(rawStr);
+  const goals = GoalStore.getAll();
+  const selects = document.querySelectorAll('#assign-body select');
+
+  let count = 0;
+  selects.forEach(sel => {
+    const rawIdx = parseInt(sel.dataset.idx);
+    const goalId = sel.value;
+    if (!goalId) return; // skip
+    const goal = goals.find(g => String(g.id) === goalId);
+    if (!goal) return;
+    const s = rawSessions[rawIdx];
+    if (!s) return;
+    s.goalId = String(goal.id);
+    s.goalName = goal.name;
+    // Also populate durationMinutes and completedAt if missing
+    if (!s.durationMinutes && s.duration) {
+      s.durationMinutes = s.duration >= 300 ? Math.round(s.duration / 60) : Math.round(s.duration);
+    }
+    if (!s.completedAt && s.id) {
+      s.completedAt = new Date(s.id).toISOString();
+    }
+    count++;
+  });
+
+  localStorage.setItem('flow_history', JSON.stringify(rawSessions));
+  status.className = 'ok';
+  status.textContent = `✓ ${count} sessions updated. Reload Goals / Dashboard / Analytics to see updated progress.`;
+
+  // Re-run diagnostic
+  setTimeout(() => window.runDiagnostic(), 300);
+  document.getElementById('assign-section').style.display = 'none';
+};
+
+window.verifyFix = function() {
+  const rawStr = localStorage.getItem('flow_history');
+  const rawSessions = rawStr ? JSON.parse(rawStr) : [];
+  const latest = rawSessions[rawSessions.length - 1];
+  const status = document.getElementById('status-bar');
+
+  if (!latest) {
+    status.className = 'err';
+    status.textContent = 'No sessions found in localStorage.';
+    return;
+  }
+
+  if (latest.goalId) {
+    status.className = 'ok';
+    status.textContent = `✓ Latest session has goalId="${latest.goalId}", goalName="${latest.goalName}", durationMinutes=${latest.durationMinutes}. New sessions are saving correctly!`;
+  } else {
+    status.className = 'err';
+    status.textContent = `✗ Latest session still has no goalId. Raw: ${JSON.stringify(latest)}. Hard-refresh the Pomodoro page (Ctrl+Shift+R) and try again.`;
+  }
+
+  window.runDiagnostic();
+};
+
+window.clearSWCache = async function() {
+  const status = document.getElementById('status-bar');
+  try {
+    // Unregister all service workers
+    const regs = await navigator.serviceWorker.getRegistrations();
+    for (const reg of regs) await reg.unregister();
+
+    // Delete all caches
+    const keys = await caches.keys();
+    await Promise.all(keys.map(k => caches.delete(k)));
+
+    status.className = 'ok';
+    status.textContent = `✓ Cleared ${regs.length} service worker(s) and ${keys.length} cache(s). Now do a HARD REFRESH (Ctrl+Shift+R) on the Pomodoro page, then come back here and run Verify.`;
+  } catch(e) {
+    status.className = 'err';
+    status.textContent = 'Error: ' + e.message;
+  }
+};
+
+// Auto-run diagnostic on load
+window.runDiagnostic();
+</script>
+
+<script>
+  (function() {
+    const saved = localStorage.getItem('flow_theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', saved);
+  })();
+</script>
+</body>
+</html>

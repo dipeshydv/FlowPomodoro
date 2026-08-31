@@ -1,123 +1,251 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" dir="ltr" data-theme="light">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Article Title | FlowPomodoro Blog</title>
-    <meta name="description" content="Article description goes here. Optimized for SEO and click-through rates.">
-    <link rel="canonical" href="https://flowpomodoro.com/blog/template.html">
-    <meta name="theme-color" content="#050505">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Article Title | FlowPomodoro</title>
+  <meta name="description" content="Article description goes here.">
+  <link rel="canonical" href="https://flowpomodoro.xyz/blog/en/article-title.html">
+  
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous">
 
-    <!-- Styles -->
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" href="../blog.css">
+  <!-- Global Styles -->
+  <link rel="stylesheet" href="/css/variables.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/layout.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/style.css">
+  
+  <!-- Blog Styles -->
+  <link rel="stylesheet" href="/blog/css/article.css">
 </head>
+<body class="editorial-theme">
 
-<body data-mode="focus">
-    <!-- Nav -->
-    <nav class="app-header">
-        <div class="app-logo"><a href="../index.html"
-                style="text-decoration:none; color:inherit; display:flex; gap:0.5rem; align-items:center;"><i
-                    class="fas fa-layer-group"></i> <span>FlowPomodoro</span></a></div>
-        <div class="nav-links">
-            <a href="../index.html" class="btn-reset btn-glass">Back to App</a>
-            <a href="../index.html" class="btn-reset btn-primary">Start Flow</a>
-        </div>
-    </nav>
-
-    <article class="blog-container">
-        <!-- Header -->
-        <header class="blog-header">
-            <div class="badge-pill" style="margin: 0 auto 1rem; display: table;">Productivity</div>
-            <h1>Article Keyword Title Goes Here</h1>
-            <div class="blog-meta">By Flow Team &bull; 10 min read</div>
-            <p class="intro">
-                This is the introduction paragraph. It should be compelling and contain the primary keyword early on.
-                It sets the stage for the deep work techniques discussed below.
-            </p>
-        </header>
-
-        <!-- TOC -->
-        <div class="toc-box">
-            <h3>Table of Contents</h3>
-            <ul>
-                <li><a href="#section-1">1. The Science of Flow</a></li>
-                <li><a href="#section-2">2. Setting Up Your Environment</a></li>
-                <li><a href="#section-3">3. Advanced Techniques</a></li>
-                <li><a href="#conclusion">Conclusion</a></li>
-            </ul>
-        </div>
-
-        <div class="blog-content">
-            <!-- Ad Slot -->
-            <div class="ad-slot">Sponsored Ad Placement</div>
-
-            <h2 id="section-1">The Science of Flow</h2>
-            <p>
-                Flow state is described by Mihaly Csikszentmihalyi as a state of complete immersion in an activity.
-                Achieving this state requires a balance between challenge and skill.
-            </p>
-            <p>
-                Using a <strong>pomodoro timer</strong> effectively breaks down barriers to entry, allowing you to
-                enter flow more consistently.
-            </p>
-
-            <!-- Affiliate / Product Block -->
-            <div class="affiliate-box">
-                <i class="fas fa-book fa-3x" style="color: var(--accent-purple);"></i>
-                <div>
-                    <h3>Deep Work by Cal Newport</h3>
-                    <p>The bible of focus in a distracted world. Essential reading.</p>
-                    <a href="#" class="btn-reset btn-glass">View on Amazon</a>
-                </div>
-            </div>
-
-            <h2 id="section-2">Setting Up Your Environment</h2>
-            <p>
-                Your physical environment dictates your mental state. Remove all visual distractions.
-                Turn off phone notifications using Do Not Disturb mode.
-            </p>
-
-            <div class="ad-slot">Sponsored Ad Placement</div>
-
-            <h2 id="section-3">Advanced Techniques</h2>
-            <p>
-                Combine 25-minute sprints with binaural beats for maximum effect.
-                Our app supports this workflow natively.
-            </p>
-
-            <!-- Inline CTA -->
-            <div class="cta-inline">
-                <h3>Ready to get in the zone?</h3>
-                <p>Use the same timer 10,000+ deep workers rely on.</p>
-                <br>
-                <a href="../index.html" class="btn-reset btn-primary btn-lg">Start Free Session</a>
-            </div>
-
-            <h2 id="conclusion">Conclusion</h2>
-            <p>
-                Mastering your attention is the superpower of the 21st century. Start small, be consistent,
-                and use the right tools.
-            </p>
-        </div>
-    </article>
-
-    <!-- Footer -->
-    <footer class="lp-footer">
-        <div class="container text-center">
-            <p>&copy; 2024 FlowPomodoro. <a href="../privacy.html">Privacy</a></p>
-        </div>
-    </footer>
-
-    <!-- Sticky Mobile CTA -->
-    <div class="cta-sticky-footer">
-        <span>Get in Flow</span>
-        <a href="../index.html" class="btn-reset btn-primary btn-sm">Start Timer</a>
+  <!-- ==============================================
+       GLOBAL NAVIGATION 
+       ============================================== -->
+  <nav class="lp-nav" aria-label="Main navigation" id="main-nav">
+    <div class="nav-inner">
+      <a href="/" class="logo">
+        <div class="logo-dot"><i class="fas fa-stopwatch"></i></div>
+        FlowPomodoro
+      </a>
+      <div class="nav-links">
+        <a href="/app/index.html" class="nav-link">Timer</a>
+        <a href="/#features" class="nav-link">Features</a>
+        <a href="/blog/" class="nav-link" style="color:var(--text-primary);">Blog</a>
+        <a href="/pages/pricing.html" class="nav-link">Pricing</a>
+      </div>
+      <div class="nav-actions">
+        <button class="btn-icon" id="theme-toggle"><i class="fas fa-moon"></i></button>
+        <a href="/pages/login.html" class="nav-link">Log in</a>
+        <a href="/app/index.html" class="btn-primary">Start Focusing</a>
+      </div>
     </div>
+  </nav>
 
+  <!-- ==============================================
+       BREADCRUMB 
+       ============================================== -->
+  <nav class="editorial-breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Home</a> 
+    <span class="breadcrumb-separator">→</span> 
+    <a href="/blog/">Blog</a>
+    <span class="breadcrumb-separator">→</span> 
+    <span aria-current="page">Article Title</span>
+  </nav>
+
+  <!-- ==============================================
+       ARTICLE HEADER 
+       ============================================== -->
+  <header class="editorial-header">
+    <div class="header-meta">
+      <span class="badge">Category</span>
+      <span class="dot">·</span>
+      <span class="read-time">5 min read</span>
+    </div>
+    <h1 class="article-h1">Article Title Goes Here</h1>
+    <p class="article-intro">This is the introduction paragraph. It should be compelling and contain the primary keyword early on. It sets the stage for the deep work techniques discussed below.</p>
+    <div class="author-meta">
+      <strong>Flow Team</strong> &nbsp;·&nbsp; May 12, 2026
+    </div>
+  </header>
+
+  <!-- ==============================================
+       EDITORIAL READING LAYOUT 
+       ============================================== -->
+  <main class="editorial-layout">
+    
+    <!-- LEFT SIDEBAR: STICKY TOC -->
+    <aside class="layout-sidebar">
+      <nav class="editorial-toc" aria-label="Table of contents">
+        <div class="toc-title">In This Article</div>
+        <ul class="toc-list">
+          <li><a href="#section-1"><span class="toc-number">01</span> <span class="toc-text">The Science of Flow</span></a></li>
+          <li><a href="#section-2"><span class="toc-number">02</span> <span class="toc-text">Setting Up Your Environment</span></a></li>
+          <li><a href="#section-3"><span class="toc-number">03</span> <span class="toc-text">Advanced Techniques</span></a></li>
+          <li><a href="#conclusion"><span class="toc-number">04</span> <span class="toc-text">Conclusion</span></a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- RIGHT CONTENT: MAIN ARTICLE BODY -->
+    <article class="layout-content">
+      <div class="article-body">
+        
+        <p class="drop-cap">
+          Flow state is described by Mihaly Csikszentmihalyi as a state of complete immersion in an activity. Achieving this state requires a balance between challenge and skill.
+        </p>
+
+        <h2 id="section-1">The Science of Flow</h2>
+        <p>Using a <strong>pomodoro timer</strong> effectively breaks down barriers to entry, allowing you to enter flow more consistently.</p>
+        
+        <!-- Key Takeaway Component -->
+        <div class="key-takeaway">
+          <div class="takeaway-icon">
+            <i class="fas fa-lightbulb"></i>
+          </div>
+          <div class="takeaway-content">
+            <h4>Key Takeaway</h4>
+            <p>You don't need to force yourself into 25-minute sessions. Start with an interval that feels easy to begin, then gradually increase it.</p>
+          </div>
+        </div>
+
+        <h2 id="section-2">Setting Up Your Environment</h2>
+        <p>Your physical environment dictates your mental state. Remove all visual distractions. Turn off phone notifications using Do Not Disturb mode.</p>
+
+        <!-- Editorial Blockquote -->
+        <blockquote class="editorial-quote">
+          <p>Small, consistent sessions are often easier to sustain than ambitious bursts of productivity.</p>
+        </blockquote>
+
+        <h2 id="section-3">Advanced Techniques</h2>
+        <p>Combine 25-minute sprints with binaural beats for maximum effect. Our app supports this workflow natively.</p>
+
+        <!-- FlowPomodoro Focus CTA -->
+        <div class="focus-cta">
+          <h3>Ready to Focus?</h3>
+          <p>Choose your interval and start a focused session right now.</p>
+          <div class="timer-preview">
+            <span class="control">−</span>
+            <span>25:00</span>
+            <span class="control">+</span>
+          </div>
+          <a href="/app/index.html" class="btn-primary">Start Focus Session &rarr;</a>
+        </div>
+
+        <h2 id="conclusion">Conclusion</h2>
+        <p>Mastering your attention is the superpower of the 21st century. Start small, be consistent, and use the right tools.</p>
+
+      </div><!-- .article-body -->
+
+      <!-- ==============================================
+           BOTTOM COMPONENTS 
+           ============================================== -->
+      <div class="bottom-components">
+        <!-- Prev / Next Navigation -->
+        <nav class="prev-next-nav" aria-label="Article navigation">
+          <a href="#" class="pn-link prev">
+            <span class="pn-label">&larr; Previous Article</span>
+            <h4 class="pn-title">How to Overcome Procrastination</h4>
+          </a>
+          <a href="#" class="pn-link next">
+            <span class="pn-label">Next Article &rarr;</span>
+            <h4 class="pn-title">Pomodoro vs Time Blocking</h4>
+          </a>
+        </nav>
+      </div><!-- .bottom-components -->
+
+    </article>
+  </main>
+
+  <!-- ==============================================
+       FOOTER 
+       ============================================== -->
+  <footer class="lp-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="/" class="logo">
+            <div class="logo-dot"><i class="fas fa-stopwatch"></i></div>
+            FlowPomodoro
+          </a>
+          <p>A beautiful Pomodoro timer to help you focus deeply and get more done.</p>
+        </div>
+        <div class="footer-col">
+          <div class="fc-title">Product</div>
+          <ul>
+            <li><a href="/app/index.html">Timer</a></li>
+            <li><a href="/#features">Features</a></li>
+            <li><a href="/pages/pricing.html">Pricing</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <div class="fc-title">Resources</div>
+          <ul>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="#">Guides</a></li>
+            <li><a href="#">Help Center</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <div class="fc-title">Company</div>
+          <ul>
+            <li><a href="/pages/about.html">About</a></li>
+            <li><a href="/pages/privacy.html">Privacy</a></li>
+            <li><a href="/pages/terms.html">Terms</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2026 FlowPomodoro. All rights reserved.</div>
+        <div class="fb-links">
+          <a href="/pages/privacy.html">Privacy</a>
+          <a href="/pages/terms.html">Terms</a>
+          <a href="/blog/">Blog</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    const themeBtn = document.getElementById('theme-toggle');
+    const html = document.documentElement;
+
+    const savedTheme = localStorage.getItem('flow_theme') || 'light';
+    html.setAttribute('data-theme', savedTheme);
+    if(themeBtn) themeBtn.innerHTML = savedTheme === 'dark' ? '<i class="fas fa-moon"></i>' : '<i class="fas fa-sun"></i>';
+
+    if(themeBtn) {
+      themeBtn.addEventListener('click', () => {
+        const isDark = html.getAttribute('data-theme') === 'dark';
+        const newTheme = isDark ? 'light' : 'dark';
+        html.setAttribute('data-theme', newTheme);
+        localStorage.setItem('flow_theme', newTheme);
+        themeBtn.innerHTML = newTheme === 'dark' ? '<i class="fas fa-moon"></i>' : '<i class="fas fa-sun"></i>';
+      });
+    }
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        const id = entry.target.getAttribute('id');
+        const tocLink = document.querySelector(`.toc-list a[href="#${id}"]`);
+        if (entry.isIntersecting && tocLink) {
+          document.querySelectorAll('.toc-list a').forEach(a => a.classList.remove('active'));
+          tocLink.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-20% 0px -80% 0px' });
+
+    document.querySelectorAll('.article-body h2').forEach(h2 => {
+      if (h2.id) observer.observe(h2);
+    });
+  </script>
 </body>
-
 </html>

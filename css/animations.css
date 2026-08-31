@@ -1,3 +1,8 @@
+/* ============================================
+   ANIMATIONS.CSS — Full animation system
+   ============================================ */
+
+/* ─── Core Keyframes ─────────────────────────────────────────────────────── */
 @keyframes fadeIn {
     from { opacity: 0; }
     to   { opacity: 1; }
@@ -9,50 +14,99 @@
 }
 
 @keyframes scaleUp {
-    from { transform: scale(0.94); opacity: 0; }
-    to   { transform: scale(1);    opacity: 1; }
+    from { transform: scale(0.92) translateY(12px); opacity: 0; }
+    to   { transform: scale(1)    translateY(0);    opacity: 1; }
+}
+
+@keyframes scaleDown {
+    from { transform: scale(1) translateY(0);    opacity: 1; }
+    to   { transform: scale(0.95) translateY(8px); opacity: 0; }
 }
 
 @keyframes slideUp {
-    from { opacity: 0; transform: translateY(24px); }
+    from { opacity: 0; transform: translateY(28px); }
     to   { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes slideDown {
-    from { opacity: 0; transform: translateY(-12px); }
+    from { opacity: 0; transform: translateY(-16px); }
     to   { opacity: 1; transform: translateY(0); }
 }
 
-/* Pulsing glow when timer is active */
+@keyframes slideRight {
+    from { opacity: 0; transform: translateX(-20px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+
+/* ─── Timer Pulse (running state) ────────────────────────────────────────── */
 @keyframes timerPulse {
-    0%   { box-shadow: 0 0 0 0 rgba(0, 212, 255, 0.35); }
-    70%  { box-shadow: 0 0 0 18px rgba(0, 212, 255, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(0, 212, 255, 0); }
+    0%   { box-shadow: 0 0 0 0   rgba(0, 212, 255, 0.4); }
+    50%  { box-shadow: 0 0 0 12px rgba(0, 212, 255, 0.05); }
+    100% { box-shadow: 0 0 0 0   rgba(0, 212, 255, 0); }
 }
 
 @keyframes timerPulseShort {
-    0%   { box-shadow: 0 0 0 0 rgba(168, 85, 247, 0.35); }
-    70%  { box-shadow: 0 0 0 18px rgba(168, 85, 247, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(168, 85, 247, 0); }
+    0%   { box-shadow: 0 0 0 0   rgba(168, 85, 247, 0.4); }
+    50%  { box-shadow: 0 0 0 12px rgba(168, 85, 247, 0.05); }
+    100% { box-shadow: 0 0 0 0   rgba(168, 85, 247, 0); }
 }
 
 @keyframes timerPulseLong {
-    0%   { box-shadow: 0 0 0 0 rgba(34, 211, 160, 0.35); }
-    70%  { box-shadow: 0 0 0 18px rgba(34, 211, 160, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(34, 211, 160, 0); }
+    0%   { box-shadow: 0 0 0 0   rgba(34, 211, 160, 0.4); }
+    50%  { box-shadow: 0 0 0 12px rgba(34, 211, 160, 0.05); }
+    100% { box-shadow: 0 0 0 0   rgba(34, 211, 160, 0); }
 }
 
+/* ─── Spinner ────────────────────────────────────────────────────────────── */
 @keyframes spinSlow {
     from { transform: rotate(0deg); }
     to   { transform: rotate(360deg); }
 }
 
+/* ─── Shimmer (loading state) ────────────────────────────────────────────── */
 @keyframes shimmer {
     0%   { background-position: -200% center; }
     100% { background-position:  200% center; }
 }
 
-/* Applied dynamically via JS */
+/* ─── Float (hero elements) ──────────────────────────────────────────────── */
+@keyframes floatUp {
+    0%,100% { transform: translateY(0); }
+    50%     { transform: translateY(-8px); }
+}
+
+/* ─── Gradient Shift ─────────────────────────────────────────────────────── */
+@keyframes gradientShift {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ─── Check bounce ───────────────────────────────────────────────────────── */
+@keyframes checkBounce {
+    0%   { transform: scale(0.5); opacity: 0; }
+    60%  { transform: scale(1.2); opacity: 1; }
+    100% { transform: scale(1); }
+}
+
+/* ─── Count up number ────────────────────────────────────────────────────── */
+@keyframes countUp {
+    from { transform: translateY(8px); opacity: 0; }
+    to   { transform: translateY(0);   opacity: 1; }
+}
+
+/* ─── Ring completion flash ──────────────────────────────────────────────── */
+@keyframes ringComplete {
+    0%   { opacity: 1; }
+    25%  { opacity: 0.3; }
+    50%  { opacity: 1; }
+    75%  { opacity: 0.3; }
+    100% { opacity: 1; }
+}
+
+/* ─── Applied Classes ────────────────────────────────────────────────────── */
+
+/* Running state pulse on play button */
 .is-running[data-mode="focus"] .btn-control-lg {
     animation: timerPulse 2.5s ease-in-out infinite;
 }
@@ -63,4 +117,23 @@
 
 .is-running[data-mode="long"] .btn-control-lg {
     animation: timerPulseLong 2.5s ease-in-out infinite;
+}
+
+/* Ring complete flash */
+.ring-complete .ring-progress {
+    animation: ringComplete 0.6s ease-in-out 3;
+}
+
+/* Utility animation classes */
+.animate-float    { animation: floatUp 4s ease-in-out infinite; }
+.animate-spin     { animation: spinSlow 2s linear infinite; }
+.animate-shimmer  {
+    background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.08) 50%, transparent 100%);
+    background-size: 200% 100%;
+    animation: shimmer 1.8s ease-in-out infinite;
+}
+
+/* Entrance animation for page load */
+.page-enter {
+    animation: slideUp 0.5s var(--ease-out) both;
 }

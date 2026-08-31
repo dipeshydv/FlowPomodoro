@@ -1,4 +1,24 @@
 # Netlify configurations
 /index.html / 200
 /landing /landing.html 200
-/blog/* /blog/template.html 200!
+
+# App Clean Routing
+/app /app/dashboard.html 200
+/app/ /app/dashboard.html 200
+/app/dashboard /app/dashboard.html 200
+/app/today /app/today.html 200
+/app/pomodoro /app/pomodoro.html 200
+/app/goals /app/goals.html 200
+/app/planner /app/planner.html 200
+/app/analytics /app/analytics.html 200
+/app/challenges /app/challenges.html 200
+/app/reviews /app/reviews.html 200
+/app/settings /app/settings.html 200
+
+# Blog Clean Category & Subdirectory Rewrites
+/blog/productivity /blog/en/productivity.html 200
+/blog/focus /blog/en/focus.html 200
+/blog/study /blog/en/study.html 200
+/blog/time-management /blog/en/time-management.html 200
+/blog/habits /blog/en/habits.html 200
+/blog/deep-work /blog/en/deep-work.html 200

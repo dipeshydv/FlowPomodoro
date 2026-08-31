@@ -1,0 +1,768 @@
+<!DOCTYPE html><html lang="hi" dir="ltr"><head>
+  <meta charset="UTF-8">
+  <meta name="robots" content="index, follow">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>पोमोडोरो और डीप वर्क ब्लॉग: विशेषज्ञ गाइड | FlowPomodoro</title>
+  <meta name="description" content="पोमोडोरो तकनीक, डीप वर्क, फोकस रणनीतियों और उत्पादकता विधियों पर विशेषज्ञ गाइड। छात्रों, डेवलपर्स और रिमोट वर्कर्स के लिए लिखा गया।">
+  <link rel="canonical" href="https://flowpomodoro.xyz/backups/blog-before-editorial-migration/hi/">
+  <meta name="theme-color" content="#07070a">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://flowpomodoro.xyz/backups/blog-before-editorial-migration/hi/">
+  <meta property="og:locale" content="hi_IN">
+  <meta property="og:title" content="उत्पादकता ब्लॉग | FlowPomodoro">
+  <meta property="og:description" content="डीप वर्क, पोमोडोरो तकनीक और उत्पादकता पर विशेषज्ञ गाइड।">
+  <meta property="og:image" content="https://flowpomodoro.xyz/og-image.jpg">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="पोमोडोरो और डीप वर्क ब्लॉग | FlowPomodoro">
+  <meta name="twitter:description" content="छात्रों, डेवलपर्स और पेशेवरों के लिए डीप वर्क, पोमोडोरो तकनीक और उत्पादकता रणनीतियों पर विशेषज्ञ गाइड।">
+  <meta name="twitter:image" content="https://flowpomodoro.xyz/og-image.jpg">
+  
+  <!-- Schema -->
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Blog","name":"FlowPomodoro Blog","url":"https://flowpomodoro.xyz/blog/hi/","description":"उत्पादकता गाइड और डीप वर्क रणनीतियां।","publisher":{"@type":"Organization","name":"FlowPomodoro","url":"https://flowpomodoro.xyz"}}
+  </script>
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;family=Outfit:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/css/pages/blog.css">
+
+    <link rel="alternate" hreflang="en" href="https://flowpomodoro.xyz/blog/en/index.html">
+  <link rel="alternate" hreflang="hi" href="https://flowpomodoro.xyz/blog/hi/index.html">
+  <link rel="alternate" hreflang="ne" href="https://flowpomodoro.xyz/blog/ne/index.html">
+  <link rel="alternate" hreflang="es" href="https://flowpomodoro.xyz/blog/es/index.html">
+  <link rel="alternate" hreflang="vi" href="https://flowpomodoro.xyz/blog/vi/index.html">
+  <link rel="alternate" hreflang="ru" href="https://flowpomodoro.xyz/blog/ru/index.html">
+  <link rel="alternate" hreflang="x-default" href="https://flowpomodoro.xyz/blog/en/index.html">
+</head>
+
+<body>
+
+<!-- ── Nav ──────────────────────────────────────────────────────────────── -->
+<nav class="lp-nav" aria-label="Main navigation" id="main-nav">
+  <div class="nav-inner">
+    <a href="/" class="logo" aria-label="FlowPomodoro home">
+      <span class="logo-dot" aria-hidden="true"></span>
+      FlowPomodoro
+    </a>
+    <div class="nav-links">
+      <a href="/#features">विशेषताएँ</a>
+      <a href="/blog/hi/" aria-current="page" style="color:var(--accent-cyan)">ब्लॉग</a>
+      <a href="/app/index.html" style="border-radius:999px;padding:0.55rem 1.25rem;font-size:0.85rem;background:linear-gradient(135deg,#00d4ff,#a855f7);color:#000;font-weight:700;">फोकस शुरू करें</a>
+    </div>
+    <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Drawer -->
+<div class="nav-drawer" id="nav-drawer" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+  <a href="/">होम</a>
+  <a href="/#features">विशेषताएँ</a>
+  <a href="/blog/hi/" style="color:var(--accent-cyan)">ब्लॉग</a>
+  <a href="/app/index.html" style="background:linear-gradient(135deg,#00d4ff,#a855f7);color:#000;font-size:1.25rem;font-weight:800;padding:0.875rem 2.5rem;border-radius:999px;margin-top:1rem;">फोकस शुरू करें</a>
+</div>
+
+<main id="main-content">
+
+  <!-- ── Blog Hero ──────────────────────────────────────────────────────── -->
+  <section class="blog-hero" aria-label="Blog header">
+    <div class="container">
+      <span class="badge"><i class="fas fa-pen-nib" aria-hidden="true"></i> उत्पादकता गाइड</span>
+      <h1>फोकस और डीप वर्क ब्लॉग</h1>
+      <p class="hero-subtitle">
+        पोमोडोरो, डीप वर्क और पीक परफॉर्मेंस पर साक्ष्य-आधारित रणनीतियां — छात्रों, डेवलपर्स और पेशेवरों के लिए।
+      </p>
+
+      <!-- Search -->
+      <div class="blog-search-wrap">
+        <div class="blog-search" role="search" aria-label="Search articles">
+          <i class="fas fa-search" aria-hidden="true"></i>
+          <input type="search" id="blog-search-input" placeholder="लेख खोजें…" aria-label="Search articles">
+          <button class="blog-search-btn" onclick="searchArticles()">खोजें</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+
+    <!-- ── Filter Tags ─────────────────────────────────────────────────── -->
+    <div class="blog-filters" role="group" aria-label="Filter articles by category">
+      <button class="filter-btn active" data-filter="all">
+        सभी <span class="filter-count">21</span>
+      </button>
+      <button class="filter-btn" data-filter="pomodoro">
+        पोमोडोरो <span class="filter-count">7</span>
+      </button>
+      <button class="filter-btn" data-filter="deep-work">
+        डीप वर्क <span class="filter-count">4</span>
+      </button>
+      <button class="filter-btn" data-filter="students">
+        छात्रों के लिए <span class="filter-count">3</span>
+      </button>
+      <button class="filter-btn" data-filter="developers">
+        डेवलपर्स के लिए <span class="filter-count">2</span>
+      </button>
+      <button class="filter-btn" data-filter="productivity">
+        उत्पादकता <span class="filter-count">5</span>
+      </button>
+    </div>
+
+    <!-- ── Blog Grid ───────────────────────────────────────────────────── -->
+    <div class="blog-grid" id="blog-grid">
+
+      <!-- Featured -->
+      <article class="blog-card blog-card--featured" data-category="productivity" data-title="एडीएचडी के लिए पोमोडोरो तकनीक: अंततः ध्यान कैसे केंद्रित करें">
+        <div class="blog-card__visual" aria-hidden="true">
+          <span class="visual-icon">🧠</span>
+        </div>
+        <div class="blog-card__body">
+          <span class="featured-label"><i class="fas fa-star"></i> फीचर्ड</span>
+          <span class="blog-tag blog-tag--productivity">उत्पादकता</span>
+          <h2 class="blog-card__title">
+            <a href="/blog/hi/adhd-focus.html">एडीएचडी के लिए पोमोडोरो तकनीक: अंततः ध्यान कैसे केंद्रित करें</a>
+          </h2>
+          <p class="blog-card__excerpt">एडीएचडी के साथ ध्यान केंद्रित करने में संघर्ष कर रहे हैं? जानें कि पोमोडोरो तकनीक एडीएचडी शिक्षार्थियों को कार्य शुरू करने, ध्यान बनाए रखने और व्याकुलता को हराने में मदद करने के लिए एक बाहरी कार्यकारी कार्य के रूप में कैसे कार्य करती है।</p>
+          <div class="blog-card__meta">
+            <span><i class="fas fa-clock" aria-hidden="true"></i> 5 मिनट पढ़ें</span>
+            <span>जून 2026</span>
+            <span class="read-more-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="productivity" data-title="एडीएचडी-अनुकूल उत्पादकता विधियां जो वास्तव में काम करती हैं">
+        <div class="blog-card__body">
+          <span class="blog-tag blog-tag--productivity">उत्पादकता</span>
+          <h2 class="blog-card__title">
+            <a href="/blog/hi/adhd-productivity-methods.html">एडीएचडी-अनुकूल उत्पादकता विधियां जो वास्तव में काम करती हैं</a>
+          </h2>
+          <p class="blog-card__excerpt">एडीएचडी-अनुकूल उत्पादकता विधियों की खोज करें जो आपके मस्तिष्क के साथ काम करती हैं, न कि इसके खिलाफ। पोमोडोरो और बॉडी डबलिंग से लेकर टाइम ब्लाइंडनेस फिक्स और हाइपरफोकस हैक्स तक।</p>
+          <div class="blog-card__meta">
+            <span><i class="fas fa-clock" aria-hidden="true"></i> 5 मिनट पढ़ें</span>
+            <span>जून 2026</span>
+            <span class="read-more-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="pomodoro" data-title="पोमोडोरो तकनीक के 12 सिद्ध लाभ">
+        <div class="blog-card__body">
+          <span class="blog-tag blog-tag--pomodoro">पोमोडोरो</span>
+          <h2 class="blog-card__title">
+            <a href="/blog/hi/benefits-of-pomodoro-technique.html">पोमोडोरो तकनीक के 12 सिद्ध लाभ (विज्ञान द्वारा समर्थित)</a>
+          </h2>
+          <p class="blog-card__excerpt">टालमटोल कम करने, बेहतर फोकस, कम चिंता और मापने योग्य उत्पादकता लाभ सहित पोमोडोरो तकनीक के 12 विज्ञान-समर्थित लाभों की खोज करें।</p>
+          <div class="blog-card__meta">
+            <span><i class="fas fa-clock" aria-hidden="true"></i> 5 मिनट पढ़ें</span>
+            <span>जून 2026</span>
+            <span class="read-more-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="productivity" data-title="2026 के लिए सर्वश्रेष्ठ उत्पादकता तकनीकें">
+        <div class="blog-card__body">
+          <span class="blog-tag blog-tag--productivity">उत्पादकता</span>
+          <h2 class="blog-card__title">
+            <a href="/blog/hi/best-productivity-techniques.html">2026 के लिए सर्वश्रेष्ठ उत्पादकता तकनीकें (प्रभावशीलता द्वारा रैंक की गई)</a>
+          </h2>
+          <p class="blog-card__excerpt">प्रभावशीलता, उपयोग में आसानी और वैज्ञानिक साक्ष्य द्वारा रैंक की गई 10 सर्वश्रेष्ठ उत्पादकता तकनीकें। पोमोडोरो, टाइम ब्लॉकिंग, जीटीडी, ईट द फ्रॉग, और बहुत कुछ।</p>
+          <div class="blog-card__meta">
+            <span><i class="fas fa-clock" aria-hidden="true"></i> 5 मिनट पढ़ें</span>
+            <span>जून 2026</span>
+            <span class="read-more-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="productivity" data-title="दैनिक योजना प्रणाली: अधिकतम उत्पादकता के लिए">
+        <div class="blog-card__body">
+          <span class="blog-tag blog-tag--productivity">उत्पादकता</span>
+          <h2 class="blog-card__title">
+            <a href="/blog/hi/daily-planning-system.html">दैनिक योजना प्रणाली: अधिकतम उत्पादकता के लिए अपने दिन की योजना कैसे बनाएं</a>
+          </h2>
+          <p class="blog-card__excerpt">एक दैनिक योजना प्रणाली बनाएं जो काम करती है। अधिकतम फोकस के लिए अपने दिन की योजना बनाने के लिए चरण-दर-चरण मार्गदर्शिका, जिसमें टाइम ब्लॉकिंग, कार्य प्राथमिकता और शाम की समीक्षा शामिल है।</p>
+          <div class="blog-card__meta">
+            <span><i class="fas fa-clock" aria-hidden="true"></i> 5 मिनट पढ़ें</span>
+            <span>जून 2026</span>
+            <span class="read-more-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="deep-work" data-title="डीप वर्क: कैल न्यूपोर्ट के फोकस फ्रेमवर्क">
+        <div class="blog-card__body">
+          <span class="blog-tag blog-tag--deep-work">डीप वर्क</span>
+          <h2 class="blog-card__title">
+            <a href="/blog/hi/deep-work-guide.html">डीप वर्क: कैल न्यूपोर्ट के फोकस फ्रेमवर्क के लिए एक संपूर्ण गाइड</a>
+          </h2>
+          <p class="blog-card__excerpt">डीप वर्क क्या है और यह क्यों मायने रखता है? कैल न्यूपोर्ट के डीप वर्क फ्रेमवर्क, चार गहराई दर्शन और डीप वर्क अभ्यास कैसे बनाएं, यह जानें।</p>
+          <div class="blog-card__meta">
+            <span><i class="fas fa-clock" aria-hidden="true"></i> 5 मिनट पढ़ें</span>
+            <span>जून 2026</span>
+            <span class="read-more-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="deep-work" data-title="डेवलपर्स के लिए पोमोडोरो तकनीक">
+        <div class="blog-card__body">
+          <span class="blog-tag blog-tag--deep-work">डीप वर्क</span>
+          <h2 class="blog-card__title">
+            <a href="/blog/hi/developer-focus-workflow.html">डेवलपर्स के लिए पोमोडोरो तकनीक: 2026 फोकस वर्कफ़्लो</a>
+          </h2>
+          <p class="blog-card__excerpt">डेवलपर्स कॉन्टेक्स्ट स्विचिंग, स्लैक और कोड रिव्यू रैबिट होल में घंटों खो देते हैं। जानें कि गहरे कोडिंग सत्रों के लिए डेवलपर-विशिष्ट पोमोडोरो वर्कफ़्लो कैसे बनाया जाए।</p>
+          <div class="blog-card__meta">
+            <span><i class="fas fa-clock" aria-hidden="true"></i> 5 मिनट पढ़ें</span>
+            <span>जून 2026</span>
+            <span class="read-more-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="deep-work" data-title="व्याकुलता नियंत्रण: रुकावटों को कैसे दूर करें">
+        <div class="blog-card__body">
+          <span class="blog-tag blog-tag--deep-work">डीप वर्क</span>
+          <h2 class="blog-card__title">
+            <a href="/blog/hi/distraction-control.html">व्याकुलता नियंत्रण: रुकावटों को कैसे दूर करें और डीप वर्क को कैसे सुरक्षित रखें</a>
+          </h2>
+          <p class="blog-card__excerpt">डिजिटल विकर्षण चुपचाप आपकी उत्पादकता को नष्ट कर देते हैं। अपने डीप वर्क को सुरक्षित रखने के लिए व्यावहारिक, शोध-समर्थित व्याकुलता नियंत्रण रणनीतियों को जानें।</p>
+          <div class="blog-card__meta">
+            <span><i class="fas fa-clock" aria-hidden="true"></i> 5 मिनट पढ़ें</span>
+            <span>जून 2026</span>
+            <span class="read-more-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="deep-work" data-title="फ्लो स्टेट क्या है?">
+        <div class="blog-card__body">
+          <span class="blog-tag blog-tag--deep-work">डीप वर्क</span>
+          <h2 class="blog-card__title">
+            <a href="/blog/hi/flow-state-explained.html">फ्लो स्टेट क्या है? पीक फोकस का विज्ञान समझाया गया</a>
+          </h2>
+          <p class="blog-card__excerpt">फ्लो स्टेट वह पीक परफॉर्मेंस अवस्था है जहां फोकस सहज हो जाता है। फ्लो के न्यूरोसाइंस, इसे कैसे ट्रिगर करें, और पोमोडोरो कैसे मदद करता है, यह जानें।</p>
+          <div class="blog-card__meta">
+            <span><i class="fas fa-clock" aria-hidden="true"></i> 5 मिनट पढ़ें</span>
+            <span>जून 2026</span>
+            <span class="read-more-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="developers" data-title="डेवलपर्स के लिए फोकस तकनीकें">
+        <div class="blog-card__body">
+          <span class="blog-tag blog-tag--developers">डेवलपर्स के लिए</span>
+          <h2 class="blog-card__title">
+            <a href="/blog/hi/focus-techniques-for-developers.html">डेवलपर्स के लिए फोकस तकनीकें: जटिल कोड के दौरान फ्लो में रहें</a>
+          </h2>
+          <p class="blog-card__excerpt">विशेष रूप से डेवलपर्स के लिए डिज़ाइन की गई फोकस तकनीकें। जटिल प्रोग्रामिंग, डिबगिंग और आर्किटेक्चर कार्य के दौरान फ्लो स्टेट में कैसे प्रवेश करें और इसे कैसे सुरक्षित रखें।</p>
+          <div class="blog-card__meta">
+            <span><i class="fas fa-clock" aria-hidden="true"></i> 5 मिनट पढ़ें</span>
+            <span>जून 2026</span>
+            <span class="read-more-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="productivity" data-title="अपनी उत्पादकता को दोगुना करने के लिए 10 सिद्ध फोकस तकनीकें">
+        <div class="blog-card__body">
+          <span class="blog-tag blog-tag--productivity">उत्पादकता</span>
+          <h2 class="blog-card__title">
+            <a href="/blog/hi/focus-techniques.html">अपनी उत्पादकता को दोगुना करने के लिए 10 सिद्ध फोकस तकनीकें</a>
+          </h2>
+          <p class="blog-card__excerpt">शीर्ष प्रदर्शन करने वालों द्वारा उपयोग की जाने वाली 10 शोध-समर्थित फोकस तकनीकों की खोज करें — पोमोडोरो स्प्रिंट और दो मिनट के नियम से लेकर बाइनॉरल बीट्स और कार्यान्वयन के इरादे तक।</p>
+          <div class="blog-card__meta">
+            <span><i class="fas fa-clock" aria-hidden="true"></i> 5 मिनट पढ़ें</span>
+            <span>जून 2026</span>
+            <span class="read-more-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="productivity" data-title="टालमटोल को कैसे हराएं">
+        <div class="blog-card__body">
+          <span class="blog-tag blog-tag--productivity">उत्पादकता</span>
+          <h2 class="blog-card__title">
+            <a href="/blog/hi/how-to-beat-procrastination.html">टालमटोल को कैसे हराएं: विज्ञान-समर्थित प्रणाली जो काम करती है</a>
+          </h2>
+          <p class="blog-card__excerpt">टालमटोल के विज्ञान को जानें और इसे हमेशा के लिए हराने के लिए एक सिद्ध 5-चरणीय प्रणाली। मनोविज्ञान अनुसंधान और व्यावहारिक उत्पादकता तकनीकों द्वारा समर्थित।</p>
+          <div class="blog-card__meta">
+            <span><i class="fas fa-clock" aria-hidden="true"></i> 5 मिनट पढ़ें</span>
+            <span>जून 2026</span>
+            <span class="read-more-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="productivity" data-title="बेहतर आदतें कैसे बनाएं">
+        <div class="blog-card__body">
+          <span class="blog-tag blog-tag--productivity">उत्पादकता</span>
+          <h2 class="blog-card__title">
+            <a href="/blog/hi/how-to-build-better-habits.html">बेहतर आदतें कैसे बनाएं: संपूर्ण विज्ञान-आधारित गाइड</a>
+          </h2>
+          <p class="blog-card__excerpt">व्यवहार परिवर्तन के विज्ञान का उपयोग करके स्थायी आदतें बनाना सीखें। आदत लूप, कार्यान्वयन इरादे, हैबिट स्टैकिंग और पर्यावरण डिजाइन की व्याख्या।</p>
+          <div class="blog-card__meta">
+            <span><i class="fas fa-clock" aria-hidden="true"></i> 5 मिनट पढ़ें</span>
+            <span>जून 2026</span>
+            <span class="read-more-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="students" data-title="बिना ध्यान खोए लंबे समय तक कैसे अध्ययन करें">
+        <div class="blog-card__body">
+          <span class="blog-tag blog-tag--students">छात्रों के लिए</span>
+          <h2 class="blog-card__title">
+            <a href="/blog/hi/how-to-study-for-long-hours.html">बिना ध्यान खोए लंबे समय तक कैसे अध्ययन करें</a>
+          </h2>
+          <p class="blog-card__excerpt">बर्नआउट के बिना लंबे समय तक अध्ययन करना सीखें। पोमोडोरो, एक्टिव रिकॉल, रणनीतिक ब्रेक और पोषण युक्तियों सहित विज्ञान-समर्थित तकनीकें।</p>
+          <div class="blog-card__meta">
+            <span><i class="fas fa-clock" aria-hidden="true"></i> 5 मिनट पढ़ें</span>
+            <span>जून 2026</span>
+            <span class="read-more-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="pomodoro" data-title="पोमोडोरो तकनीक का उपयोग करके टालमटोल पर कैसे काबू पाएं">
+        <div class="blog-card__body">
+          <span class="blog-tag blog-tag--pomodoro">पोमोडोरो</span>
+          <h2 class="blog-card__title">
+            <a href="/blog/hi/overcome-procrastination-pomodoro.html">पोमोडोरो तकनीक का उपयोग करके टालमटोल पर कैसे काबू पाएं</a>
+          </h2>
+          <p class="blog-card__excerpt">टालमटोल बंद करें और डीप वर्क में प्रवेश करें। जानें कि पोमोडोरो तकनीक का उपयोग करके टालमटोल को कैसे दूर किया जाए — छात्रों, डेवलपर्स और एडीएचडी शिक्षार्थियों के लिए सिद्ध।</p>
+          <div class="blog-card__meta">
+            <span><i class="fas fa-clock" aria-hidden="true"></i> 5 मिनट पढ़ें</span>
+            <span>जून 2026</span>
+            <span class="read-more-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="pomodoro" data-title="पोमोडोरो तकनीक के 7 विज्ञान-समर्थित लाभ">
+        <div class="blog-card__body">
+          <span class="blog-tag blog-tag--pomodoro">पोमोडोरो</span>
+          <h2 class="blog-card__title">
+            <a href="/blog/hi/pomodoro-benefits.html">पोमोडोरो तकनीक के 7 विज्ञान-समर्थित लाभ</a>
+          </h2>
+          <p class="blog-card__excerpt">पोमोडोरो तकनीक वास्तव में क्यों काम करती है? 7 विज्ञान-समर्थित लाभों की खोज करें जो बताते हैं कि 25-मिनट के फोकस स्प्रिंट एकाग्रता में सुधार क्यों करते हैं और दीर्घकालिक उत्पादकता बढ़ाते हैं।</p>
+          <div class="blog-card__meta">
+            <span><i class="fas fa-clock" aria-hidden="true"></i> 5 मिनट पढ़ें</span>
+            <span>जून 2026</span>
+            <span class="read-more-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="pomodoro" data-title="पोमोडोरो तकनीक का उपयोग करके प्रभावी ढंग से कैसे अध्ययन करें">
+        <div class="blog-card__body">
+          <span class="blog-tag blog-tag--pomodoro">पोमोडोरो</span>
+          <h2 class="blog-card__title">
+            <a href="/blog/hi/pomodoro-study-guide.html">पोमोडोरो तकनीक का उपयोग करके प्रभावी ढंग से कैसे अध्ययन करें</a>
+          </h2>
+          <p class="blog-card__excerpt">बर्नआउट के बिना लंबे समय तक अध्ययन करने में संघर्ष कर रहे हैं? जानें कि बेहतर प्रदर्शन करने के लिए एक्टिव रिकॉल, स्पेसड रिपीटीशन और फ्लोपोमोडोरो के साथ पोमोडोरो अध्ययन तकनीक का उपयोग कैसे करें।</p>
+          <div class="blog-card__meta">
+            <span><i class="fas fa-clock" aria-hidden="true"></i> 5 मिनट पढ़ें</span>
+            <span>जून 2026</span>
+            <span class="read-more-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="productivity" data-title="घर से काम करते समय ध्यान कैसे केंद्रित करें">
+        <div class="blog-card__body">
+          <span class="blog-tag blog-tag--productivity">उत्पादकता</span>
+          <h2 class="blog-card__title">
+            <a href="/blog/hi/remote-work-focus.html">घर से काम करते समय ध्यान कैसे केंद्रित करें: रिमोट वर्क उत्पादकता गाइड</a>
+          </h2>
+          <p class="blog-card__excerpt">घर से काम कर रहे हैं लेकिन ध्यान केंद्रित करने में संघर्ष कर रहे हैं? पोमोडोरो शेड्यूलिंग, पर्यावरण डिजाइन और व्याकुलता अवरोधन सहित सिद्ध रिमोट कार्य उत्पादकता रणनीतियों की खोज करें।</p>
+          <div class="blog-card__meta">
+            <span><i class="fas fa-clock" aria-hidden="true"></i> 5 मिनट पढ़ें</span>
+            <span>जून 2026</span>
+            <span class="read-more-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="students" data-title="छात्र उत्पादकता: संपूर्ण मार्गदर्शिका">
+        <div class="blog-card__body">
+          <span class="blog-tag blog-tag--students">छात्रों के लिए</span>
+          <h2 class="blog-card__title">
+            <a href="/blog/hi/student-productivity.html">छात्र उत्पादकता: कम समय में अधिक काम करने की संपूर्ण मार्गदर्शिका</a>
+          </h2>
+          <p class="blog-card__excerpt">समय प्रबंधन, सक्रिय रिकॉल, पोमोडोरो तकनीक, ऊर्जा प्रबंधन और शैक्षणिक बर्नआउट को खत्म करने को कवर करने वाली एक संपूर्ण छात्र उत्पादकता मार्गदर्शिका।</p>
+          <div class="blog-card__meta">
+            <span><i class="fas fa-clock" aria-hidden="true"></i> 5 मिनट पढ़ें</span>
+            <span>जून 2026</span>
+            <span class="read-more-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="pomodoro" data-title="पोमोडोरो तकनीक के साथ टाइम ब्लॉकिंग">
+        <div class="blog-card__body">
+          <span class="blog-tag blog-tag--pomodoro">पोमोडोरो</span>
+          <h2 class="blog-card__title">
+            <a href="/blog/hi/time-blocking-pomodoro-technique.html">पोमोडोरो तकनीक के साथ टाइम ब्लॉकिंग: अल्टीमेट फोकस सिस्टम</a>
+          </h2>
+          <p class="blog-card__excerpt">डीप वर्क के लिए अंतिम दैनिक कार्यक्रम बनाने के लिए टाइम ब्लॉकिंग और पोमोडोरो तकनीक को जोड़ना सीखें। छात्रों, डेवलपर्स और रिमोट वर्कर्स के लिए चरण-दर-चरण टेम्पलेट।</p>
+          <div class="blog-card__meta">
+            <span><i class="fas fa-clock" aria-hidden="true"></i> 5 मिनट पढ़ें</span>
+            <span>जून 2026</span>
+            <span class="read-more-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="pomodoro" data-title="पोमोडोरो तकनीक क्या है?">
+        <div class="blog-card__body">
+          <span class="blog-tag blog-tag--pomodoro">पोमोडोरो</span>
+          <h2 class="blog-card__title">
+            <a href="/blog/hi/what-is-the-pomodoro-technique.html">पोमोडोरो तकनीक क्या है? एक पूर्ण शुरुआती गाइड</a>
+          </h2>
+          <p class="blog-card__excerpt">पता लगाएं कि पोमोडोरो तकनीक क्या है, यह कैसे काम करती है, और लाखों लोग टालमटोल को खत्म करने और डीप फोकस में प्रवेश करने के लिए इसका उपयोग क्यों करते हैं। पूर्ण शुरुआती गाइड।</p>
+          <div class="blog-card__meta">
+            <span><i class="fas fa-clock" aria-hidden="true"></i> 5 मिनट पढ़ें</span>
+            <span>जून 2026</span>
+            <span class="read-more-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="developers" data-title="प्रोग्रामिंग के लिए पोमोडोरो">
+        <div class="blog-card__body">
+          <span class="blog-tag blog-tag--developers">डेवलपर्स के लिए</span>
+          <h2 class="blog-card__title">
+            <a href="/blog/hi/developer-focus-workflow.html">प्रोग्रामिंग के लिए पोमोडोरो: एक डीप कोडिंग फोकस वर्कफ़्लो</a>
+          </h2>
+          <p class="blog-card__excerpt">तेजी से शिपिंग के लिए डेवलपर-अनुकूलित पोमोडोरो वर्कफ़्लो। जानें कि जटिल कोड के दौरान फ्लो स्टेट को कैसे सुरक्षित रखें, स्लैक रुकावटों को कम करें और घंटों तक ज़ोन में रहें।</p>
+          <div class="blog-card__meta">
+            <span><i class="fas fa-clock" aria-hidden="true"></i> 5 मिनट पढ़ें</span>
+            <span>जून 2026</span>
+            <span class="read-more-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </article>
+
+
+      <article class="blog-card" data-category="pomodoro" data-title="पोमोडोरो तकनीक बनाम टाइम ब्लॉकिंग">
+        <div class="blog-card__body">
+          <span class="blog-tag blog-tag--pomodoro">पोमोडोरो</span>
+          <h2 class="blog-card__title">
+            <a href="/blog/hi/pomodoro-vs-time-blocking.html">पोमोडोरो तकनीक बनाम टाइम ब्लॉकिंग: कौन सी उत्पादकता विधि जीतती है?</a>
+          </h2>
+          <p class="blog-card__excerpt">पोमोडोरो बनाम टाइम ब्लॉकिंग — आपके लिए कौन सी प्रणाली सही है? दोनों विधियों की गहरी तुलना, प्रत्येक कब उत्कृष्ट होती है, और उन्हें अंतिम उत्पादकता ढांचे में कैसे जोड़ा जाए।</p>
+          <div class="blog-card__meta">
+            <span><i class="fas fa-clock" aria-hidden="true"></i> 12 मिनट पढ़ें</span>
+            <span>जुलाई 2026</span>
+            <span class="read-more-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="deep-work" data-title="पोमोडोरो तकनीक बनाम डीप वर्क">
+        <div class="blog-card__body">
+          <span class="blog-tag blog-tag--deep-work">डीप वर्क</span>
+          <h2 class="blog-card__title">
+            <a href="/blog/hi/pomodoro-vs-deep-work.html">पोमोडोरो तकनीक बनाम डीप वर्क: समझें कि वे एक साथ कैसे काम करते हैं</a>
+          </h2>
+          <p class="blog-card__excerpt">क्या पोमोडोरो और डीप वर्क प्रतिस्पर्धी दर्शन हैं? जानें कि कैल न्यूपोर्ट का डीप वर्क ढांचा और पोमोडोरो तकनीक वास्तव में शक्तिशाली भागीदार कैसे हैं — विपरीत नहीं।</p>
+          <div class="blog-card__meta">
+            <span><i class="fas fa-clock" aria-hidden="true"></i> 13 मिनट पढ़ें</span>
+            <span>जुलाई 2026</span>
+            <span class="read-more-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="students" data-title="परीक्षा के लिए पोमोडोरो तकनीक">
+        <div class="blog-card__body">
+          <span class="blog-tag blog-tag--students">छात्रों के लिए</span>
+          <h2 class="blog-card__title">
+            <a href="/blog/hi/pomodoro-for-exams.html">परीक्षा के लिए पोमोडोरो तकनीक: उच्च स्कोर के लिए अंतिम अध्ययन प्रणाली</a>
+          </h2>
+          <p class="blog-card__excerpt">पोमोडोरो के साथ अपनी परीक्षा की तैयारी को बदलें। शीर्ष प्रदर्शन के लिए विज्ञान-समर्थित अध्ययन कार्यक्रम, सक्रिय रिकॉल रणनीतियों और एक सिद्ध परीक्षा-सप्ताह पोमोडोरो योजना की खोज करें।</p>
+          <div class="blog-card__meta">
+            <span><i class="fas fa-clock" aria-hidden="true"></i> 11 मिनट पढ़ें</span>
+            <span>जुलाई 2026</span>
+            <span class="read-more-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="developers" data-title="प्रोग्रामिंग के लिए पोमोडोरो तकनीक">
+        <div class="blog-card__body">
+          <span class="blog-tag blog-tag--developers">डेवलपर्स के लिए</span>
+          <h2 class="blog-card__title">
+            <a href="/blog/hi/pomodoro-for-programming.html">प्रोग्रामिंग के लिए पोमोडोरो तकनीक: बर्नआउट के बिना कोडिंग के लिए डेवलपर की मार्गदर्शिका</a>
+          </h2>
+          <p class="blog-card__excerpt">पता लगाएं कि प्रोग्रामिंग के लिए पोमोडोरो तकनीक का उपयोग कैसे करें। कोडिंग, डिबगिंग और कोड समीक्षा के लिए इष्टतम स्प्रिंट लंबाई, साथ ही आपके अनमोल फ्लो स्टेट को सुरक्षित रखने की रणनीतियाँ।</p>
+          <div class="blog-card__meta">
+            <span><i class="fas fa-clock" aria-hidden="true"></i> 12 मिनट पढ़ें</span>
+            <span>जुलाई 2026</span>
+            <span class="read-more-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="productivity" data-title="रिमोट वर्कर्स के लिए पोमोडोरो तकनीक">
+        <div class="blog-card__body">
+          <span class="blog-tag blog-tag--productivity">उत्पादकता</span>
+          <h2 class="blog-card__title">
+            <a href="/blog/hi/pomodoro-for-remote-workers.html">रिमोट वर्कर्स के लिए पोमोडोरो तकनीक: अल्टीमेट WFH फोकस सिस्टम</a>
+          </h2>
+          <p class="blog-card__excerpt">घर से काम कर रहे हैं और ध्यान केंद्रित करने में संघर्ष कर रहे हैं? पोमोडोरो तकनीक रिमोट वर्कर्स के लिए एकदम सही प्रणाली है। अपने दिन की संरचना करें, WFH विकर्षणों को हराएं और लगातार उत्पादक बने रहें।</p>
+          <div class="blog-card__meta">
+            <span><i class="fas fa-clock" aria-hidden="true"></i> 11 मिनट पढ़ें</span>
+            <span>जुलाई 2026</span>
+            <span class="read-more-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="pomodoro" data-title="प्रति दिन कितने पोमोडोरो?">
+        <div class="blog-card__body">
+          <span class="blog-tag blog-tag--pomodoro">पोमोडोरो</span>
+          <h2 class="blog-card__title">
+            <a href="/blog/hi/how-many-pomodoros-per-day.html">प्रति दिन कितने पोमोडोरो? हर स्तर के लिए निश्चित उत्तर</a>
+          </h2>
+          <p class="blog-card__excerpt">आपको प्रति दिन कितने पोमोडोरो सत्र करने चाहिए? शुरुआती, मध्यवर्ती और उन्नत अभ्यासकर्ताओं के लिए शोध-समर्थित उत्तर — वास्तविक कार्यक्रम और दैनिक गणना तालिकाओं के साथ।</p>
+          <div class="blog-card__meta">
+            <span><i class="fas fa-clock" aria-hidden="true"></i> 10 मिनट पढ़ें</span>
+            <span>जुलाई 2026</span>
+            <span class="read-more-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="pomodoro" data-title="2026 में सर्वश्रेष्ठ पोमोडोरो ऐप्स">
+        <div class="blog-card__body">
+          <span class="blog-tag blog-tag--pomodoro">पोमोडोरो</span>
+          <h2 class="blog-card__title">
+            <a href="/blog/hi/best-pomodoro-apps.html">2026 में सर्वश्रेष्ठ पोमोडोरो ऐप्स: संपूर्ण तुलना गाइड</a>
+          </h2>
+          <p class="blog-card__excerpt">सबसे अच्छा पोमोडोरो टाइमर ऐप खोज रहे हैं? हम 2026 के लिए शीर्ष 10 विकल्पों की तुलना करते हैं — मुफ्त और सशुल्क — जिसमें FlowPomodoro, Forest, Pomofocus, और बहुत कुछ शामिल है ताकि आपको सही विकल्प खोजने में मदद मिल सके।</p>
+          <div class="blog-card__meta">
+            <span><i class="fas fa-clock" aria-hidden="true"></i> 12 मिनट पढ़ें</span>
+            <span>जुलाई 2026</span>
+            <span class="read-more-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="pomodoro" data-title="10 पोमोडोरो गलतियाँ">
+        <div class="blog-card__body">
+          <span class="blog-tag blog-tag--pomodoro">पोमोडोरो</span>
+          <h2 class="blog-card__title">
+            <a href="/blog/hi/pomodoro-mistakes.html">10 पोमोडोरो गलतियाँ जो चुपचाप आपकी उत्पादकता को नष्ट कर रही हैं (और उन्हें कैसे ठीक करें)</a>
+          </h2>
+          <p class="blog-card__excerpt">क्या आप पोमोडोरो तकनीक का गलत इस्तेमाल कर रहे हैं? शुरुआती लोगों द्वारा की जाने वाली 10 सबसे आम पोमोडोरो गलतियों की खोज करें, प्रत्येक आपके फोकस को क्यों नुकसान पहुँचाती है, और आज उन्हें कैसे ठीक किया जाए।</p>
+          <div class="blog-card__meta">
+            <span><i class="fas fa-clock" aria-hidden="true"></i> 11 मिनट पढ़ें</span>
+            <span>जुलाई 2026</span>
+            <span class="read-more-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="pomodoro" data-title="पोमोडोरो तकनीक के पीछे का विज्ञान">
+        <div class="blog-card__body">
+          <span class="blog-tag blog-tag--pomodoro">पोमोडोरो</span>
+          <h2 class="blog-card__title">
+            <a href="/blog/hi/science-behind-pomodoro.html">पोमोडोरो तकनीक के पीछे का विज्ञान: 25-मिनट के स्प्रिंट पीक परफॉर्मेंस को क्यों अनलॉक करते हैं</a>
+          </h2>
+          <p class="blog-card__excerpt">पोमोडोरो तकनीक के बारे में न्यूरोसाइंस क्या कहता है? संज्ञानात्मक विज्ञान, मनोविज्ञान और मस्तिष्क अनुसंधान का अन्वेषण करें जो बताता है कि संरचित फोकस अंतराल स्मृति और आउटपुट में सुधार क्यों करते हैं।</p>
+          <div class="blog-card__meta">
+            <span><i class="fas fa-clock" aria-hidden="true"></i> 14 मिनट पढ़ें</span>
+            <span>जुलाई 2026</span>
+            <span class="read-more-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="pomodoro" data-title="संपूर्ण पोमोडोरो तकनीक FAQ">
+        <div class="blog-card__body">
+          <span class="blog-tag blog-tag--pomodoro">पोमोडोरो</span>
+          <h2 class="blog-card__title">
+            <a href="/blog/hi/pomodoro-faq.html">संपूर्ण पोमोडोरो तकनीक FAQ: हर प्रश्न का उत्तर दिया गया</a>
+          </h2>
+          <p class="blog-card__excerpt">वह सब कुछ जो आप कभी पोमोडोरो तकनीक के बारे में जानना चाहते थे। हमारा व्यापक FAQ टाइमर, ब्रेक, अनुकूलन, विज्ञान और आरंभ करने के बारे में 30+ प्रश्नों का उत्तर देता है।</p>
+          <div class="blog-card__meta">
+            <span><i class="fas fa-clock" aria-hidden="true"></i> 15 मिनट पढ़ें</span>
+            <span>जुलाई 2026</span>
+            <span class="read-more-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </article>
+
+    </div><!-- /.blog-grid -->
+
+
+    <!-- ── Newsletter ────────────────────────────────────────────────── -->
+    <div class="blog-newsletter" aria-label="Newsletter signup">
+      <h3>साप्ताहिक फोकस इनसाइट्स प्राप्त करें</h3>
+      <p>प्रति सप्ताह एक ईमेल। आपके डीप वर्क, फोकस और उत्पादकता में सुधार के लिए साक्ष्य-आधारित रणनीतियाँ। कभी कोई स्पैम नहीं।</p>
+      <form class="newsletter-form" onsubmit="handleNewsletter(event)" novalidate="">
+        <input type="email" id="newsletter-email" placeholder="your@email.com" aria-label="Email address" required="">
+        <button type="submit" class="newsletter-submit">सदस्यता लें</button>
+      </form>
+      <p class="newsletter-note">कोई बैकएंड नहीं · कोई डेटा संग्रहीत नहीं · ईमेल केवल संदर्भ के लिए</p>
+    </div>
+
+    <!-- ── CTA Banner ─────────────────────────────────────────────── -->
+    <div class="blog-cta-banner" role="complementary" aria-label="App call to action">
+      <div>
+        <h3>पढ़ते समय FlowPomodoro आज़माएं</h3>
+        <p>एक नए टैब में टाइमर खोलें और इन लेखों के माध्यम से पोमोडोरो का उपयोग करें।</p>
+      </div>
+      <a href="/app/index.html" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+        <i class="fas fa-play" aria-hidden="true"></i> टाइमर खोलें
+      </a>
+    </div>
+
+  </div><!-- /.container -->
+</main>
+
+<!-- ── Footer ───────────────────────────────────────────────────────────────── -->
+<footer class="lp-footer" aria-label="Site footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="/" class="logo" aria-label="FlowPomodoro home">
+          <span class="logo-dot" aria-hidden="true"></span>
+          FlowPomodoro
+        </a>
+        <p>छात्रों, डेवलपर्स और पेशेवरों के लिए एक प्रीमियम, व्याकुलता-मुक्त पोमोडोरो टाइमर। हमेशा के लिए मुफ्त।</p>
+        <a href="/app/index.html" class="btn btn-primary" style="width:fit-content;font-size:0.825rem;padding:0.6rem 1.4rem;background:linear-gradient(135deg,#00d4ff,#a855f7);color:#000;">
+          <i class="fas fa-play" aria-hidden="true"></i> फोकस शुरू करें
+        </a>
+      </div>
+      <div class="footer-col">
+        <h4>उत्पाद</h4>
+        <ul>
+          <li><a href="/app/index.html">फोकस टाइमर</a></li>
+          <li><a href="/#features">विशेषताएँ</a></li>
+          <li><a href="/#about">हमारे बारे में</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>ब्लॉग</h4>
+        <ul>
+          <li><a href="/blog/hi/">सभी लेख</a></li>
+          <li><a href="/blog/hi/what-is-the-pomodoro-technique.html">पोमोडोरो गाइड</a></li>
+          <li><a href="/blog/hi/deep-work-guide.html">डीप वर्क</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>कानूनी</h4>
+        <ul>
+          <li><a href="/pages/privacy.html">गोपनीयता नीति</a></li>
+          <li><a href="/pages/terms.html">उपयोग की शर्तें</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 FlowPomodoro. सर्वाधिकार सुरक्षित।</p>
+      <div class="footer-bottom-links">
+        <a href="/pages/privacy.html">गोपनीयता</a>
+        <a href="/pages/terms.html">शर्तें</a>
+        <a href="/">होम</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function() {
+  // ── Navbar scroll ──────────────────────────────────────────
+  const nav = document.getElementById('main-nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 20);
+  }, { passive: true });
+  if (window.scrollY > 20) nav.classList.add('scrolled');
+
+  // ── Mobile menu ───────────────────────────────────────────
+  const hamburger = document.getElementById('nav-hamburger');
+  const drawer    = document.getElementById('nav-drawer');
+  hamburger.addEventListener('click', () => {
+    const isOpen = drawer.classList.toggle('open');
+    hamburger.classList.toggle('open', isOpen);
+    hamburger.setAttribute('aria-expanded', isOpen);
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  });
+  drawer.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      drawer.classList.remove('open');
+      hamburger.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    });
+  });
+
+  // ── Blog filters ───────────────────────────────────────────
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const cards = document.querySelectorAll('.blog-card');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.dataset.filter;
+      let visible = 0;
+      cards.forEach(card => {
+        const show = filter === 'all' || card.dataset.category === filter;
+        card.style.display = show ? '' : 'none';
+        if (show) visible++;
+      });
+    });
+  });
+
+  // ── Search ─────────────────────────────────────────────────
+  window.searchArticles = function() {
+    const q = document.getElementById('blog-search-input').value.toLowerCase().trim();
+    if (!q) { cards.forEach(c => c.style.display = ''); return; }
+    cards.forEach(card => {
+      const title = (card.dataset.title || '').toLowerCase();
+      const text  = card.textContent.toLowerCase();
+      card.style.display = (title.includes(q) || text.includes(q)) ? '' : 'none';
+    });
+  };
+
+  const searchInput = document.getElementById('blog-search-input');
+  searchInput.addEventListener('keydown', e => {
+    if (e.key === 'Enter') searchArticles();
+  });
+  searchInput.addEventListener('input', () => {
+    if (!searchInput.value) { cards.forEach(c => c.style.display = ''); }
+  });
+
+  // ── Newsletter ─────────────────────────────────────────────
+  window.handleNewsletter = function(e) {
+    e.preventDefault();
+    const email = document.getElementById('newsletter-email').value;
+    if (email) {
+      const btn = e.target.querySelector('button');
+      btn.textContent = '✓ Subscribed!';
+      btn.style.background = 'rgba(34,211,160,0.15)';
+      btn.style.color = 'var(--accent-success)';
+      btn.style.borderColor = 'rgba(34,211,160,0.3)';
+      btn.disabled = true;
+    }
+  };
+})();
+</script>
+
+
+</body></html>

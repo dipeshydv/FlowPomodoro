@@ -1,0 +1,364 @@
+<!DOCTYPE html><html lang="en" data-theme="dark"><head>
+  <script>(function(){ document.documentElement.setAttribute('data-theme', localStorage.getItem('flow_theme')||'dark'); })();</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Planner — FlowPomodoro</title>
+  <meta name="description" content="Visual time-blocking and daily schedule planner in FlowPomodoro.">
+  <meta name="theme-color" content="#080B12">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="/public/manifest.json">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;family=Outfit:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/variables.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/layout.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/platform.css">
+
+  <style>
+    /* Week View Grid */
+    .week-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 8px;
+      min-height: 500px;
+    }
+
+    @media (max-width: 900px) {
+      .week-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 500px) {
+      .week-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .week-col {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      cursor: pointer;
+      transition: border-color var(--duration-fast), box-shadow var(--duration-fast);
+    }
+
+    .week-col:hover {
+      border-color: var(--brand-primary);
+    }
+
+    .week-col.today-col {
+      border-color: var(--brand-primary);
+      box-shadow: 0 0 0 1px var(--brand-primary);
+    }
+
+    .week-col-header {
+      padding: 10px 12px;
+      background: var(--bg-main);
+      border-bottom: 1px solid var(--border-color);
+      text-align: center;
+    }
+
+    .week-col-day {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+    }
+
+    .week-col-num {
+      font-size: var(--text-base);
+      font-weight: 800;
+      color: var(--text-primary);
+    }
+
+    .week-col-body {
+      padding: 8px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      min-height: 120px;
+    }
+
+    .week-block-chip {
+      padding: 6px 8px;
+      border-radius: var(--radius-sm);
+      font-size: 11px;
+      font-weight: 600;
+      background: var(--bg-main);
+      border-left: 3px solid var(--brand-primary);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    /* Month View Grid */
+    .month-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 6px;
+    }
+
+    .month-day-name {
+      text-align: center;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-muted);
+      padding: 8px 0;
+    }
+
+    .month-cell {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      min-height: 80px;
+      padding: 6px 8px;
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+      transition: all var(--duration-fast);
+    }
+
+    .month-cell:hover {
+      border-color: var(--brand-primary);
+      background: var(--bg-surface-hover);
+    }
+
+    .month-cell.other-month {
+      opacity: 0.35;
+    }
+
+    .month-cell.is-today {
+      border-color: var(--brand-primary);
+      background: rgba(255, 184, 0, 0.05);
+    }
+
+    .month-cell-num {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+
+    .month-block-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: var(--radius-full);
+      background: var(--brand-primary);
+      display: inline-block;
+    }
+  </style>
+
+  <link rel="canonical" href="https://flowpomodoro.xyz/app/planner.html"></head>
+<body>
+
+<div class="pf-layout" id="pf-layout">
+  <!-- Sidebar injected by sidebar.js -->
+  <div class="pf-content" id="pf-content">
+    <!-- Topbar injected by sidebar.js -->
+
+    <main class="pf-page" id="main-content">
+      
+      <!-- Planner Toolbar -->
+      <div class="planner-toolbar">
+        <div class="planner-date-nav">
+          <button class="planner-date-btn" id="prev-date-btn" title="Previous">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button class="btn-secondary btn-sm" id="today-btn">Today</button>
+          <button class="planner-date-btn" id="next-date-btn" title="Next">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+          <span class="planner-date-label" id="active-date-label">Loading...</span>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+          <!-- Quick Range & Interval Filter -->
+          <div class="planner-range-select-wrap" style="display:flex;align-items:center;gap:6px;">
+            <select id="planner-range-select" class="pf-select" style="font-size:12px;padding:4px 8px;height:32px;" title="Visible Day Hours">
+              <option value="custom">Standard (06:00 – 23:00)</option>
+              <option value="early">Early Riser (05:00 – 21:00)</option>
+              <option value="late">Night Owl (09:00 – 02:00)</option>
+              <option value="work">Core Hours (08:00 – 18:00)</option>
+              <option value="24h">Full 24 Hours</option>
+            </select>
+            <select id="planner-interval-select" class="pf-select" style="font-size:12px;padding:4px 8px;height:32px;width:78px;" title="Time Snap Interval">
+              <option value="15">15 min</option>
+              <option value="30">30 min</option>
+              <option value="60">60 min</option>
+              <option value="5">5 min</option>
+              <option value="1">1 min</option>
+            </select>
+          </div>
+
+          <div class="planner-view-tabs">
+            <button class="planner-view-btn active" data-view="day">Day</button>
+            <button class="planner-view-btn" data-view="week">Week</button>
+            <button class="planner-view-btn" data-view="month">Month</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Views Container -->
+      <div id="planner-view-container"></div>
+
+    </main>
+  </div>
+</div>
+
+<!-- ── Add/Edit Time Block Modal ─────────────────────────────────────────── -->
+<div class="pf-modal-overlay" id="planner-block-modal">
+  <div class="pf-modal" style="max-width:520px;">
+    <div class="pf-modal-header">
+      <div class="pf-modal-title" id="p-modal-title">Schedule Time Block</div>
+      <button class="pf-modal-close" id="p-modal-close" aria-label="Close modal">
+        <i class="fas fa-xmark"></i>
+      </button>
+    </div>
+
+    <form id="p-block-form">
+      <input type="hidden" id="p-block-id" value="">
+      <div class="pf-modal-body">
+        
+        <div class="form-group">
+          <label class="form-label" for="p-block-title">Block Title *</label>
+          <input type="text" id="p-block-title" class="pf-input" placeholder="e.g. Deep Work, Project Review, Gym, Reading" required="">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="p-block-goal">Associate with Goal / Activity</label>
+          <select id="p-block-goal" class="pf-select">
+            <option value="">— No goal (Break / Flexible) —</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="p-block-date">Date *</label>
+            <input type="date" id="p-block-date" class="pf-input" required="">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="p-block-type">Block Type</label>
+            <select id="p-block-type" class="pf-select">
+              <option value="focus">🎯 Focus Block</option>
+              <option value="break">☕ Rest / Break</option>
+              <option value="custom">⚡ Custom Activity</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Times & Duration Shortcuts -->
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="p-block-start">Start Time *</label>
+            <input type="time" id="p-block-start" class="pf-input" value="08:15" step="60" required="">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="p-block-end">End Time *</label>
+            <input type="time" id="p-block-end" class="pf-input" value="09:45" step="60" required="">
+          </div>
+        </div>
+
+        <!-- Quick Duration Shortcuts -->
+        <div class="form-group">
+          <div style="font-size:11px;font-weight:600;color:var(--text-muted);margin-bottom:4px;">QUICK DURATION SHORTCUTS</div>
+          <div style="display:flex;gap:6px;flex-wrap:wrap;">
+            <button type="button" class="btn-duration-preset" data-mins="15">+15m</button>
+            <button type="button" class="btn-duration-preset" data-mins="30">+30m</button>
+            <button type="button" class="btn-duration-preset" data-mins="45">+45m</button>
+            <button type="button" class="btn-duration-preset" data-mins="60">+1h</button>
+            <button type="button" class="btn-duration-preset" data-mins="90">+90m</button>
+            <button type="button" class="btn-duration-preset" data-mins="120">+2h</button>
+          </div>
+          <span class="form-hint" id="p-duration-hint" style="margin-top:4px;">Duration: 90 mins (1h 30m)</span>
+        </div>
+
+        <!-- Block Recurrence Option -->
+        <div class="form-group">
+          <label class="form-label" for="p-block-recurrence">Repeat Block</label>
+          <select id="p-block-recurrence" class="pf-select">
+            <option value="none">Does not repeat (One-off block)</option>
+            <option value="daily">Every day</option>
+            <option value="weekdays">Weekdays (Mon – Fri)</option>
+            <option value="weekends">Weekends (Sat – Sun)</option>
+            <option value="selected_days">Selected Days</option>
+          </select>
+          <div id="p-block-day-pills-wrap" style="display:none;margin-top:6px;">
+            <div class="day-pills-row" id="p-block-day-pills" style="display:flex;gap:6px;flex-wrap:wrap;">
+              <button type="button" class="day-pill selected" data-day="0">SUN</button>
+              <button type="button" class="day-pill selected" data-day="1">MON</button>
+              <button type="button" class="day-pill selected" data-day="2">TUE</button>
+              <button type="button" class="day-pill selected" data-day="3">WED</button>
+              <button type="button" class="day-pill selected" data-day="4">THU</button>
+              <button type="button" class="day-pill selected" data-day="5">FRI</button>
+              <button type="button" class="day-pill selected" data-day="6">SAT</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="p-block-notes">Notes / Checklist (Optional)</label>
+          <textarea id="p-block-notes" class="pf-textarea" placeholder="Key objectives or details for this session..."></textarea>
+        </div>
+
+      </div>
+
+      <div class="pf-modal-footer">
+        <button type="button" class="btn-danger btn-sm" id="p-delete-btn" style="display:none;margin-right:auto;">
+          <i class="fas fa-trash"></i> Delete
+        </button>
+        <button type="button" class="btn-secondary" id="p-cancel-btn">Cancel</button>
+        <button type="submit" class="btn-primary" id="p-save-btn">Save Block</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- ── Overlap Conflict Warning Modal ────────────────────────────────────── -->
+<div class="pf-modal-overlay" id="planner-overlap-modal">
+  <div class="pf-modal" style="max-width:440px;">
+    <div class="pf-modal-header" style="border-bottom:1px solid rgba(255,107,107,0.2);">
+      <div class="pf-modal-title" style="color:#FF6B6B;display:flex;align-items:center;gap:8px;">
+        <i class="fas fa-triangle-exclamation"></i> Schedule Conflict
+      </div>
+      <button class="pf-modal-close" id="overlap-modal-close" aria-label="Close modal">
+        <i class="fas fa-xmark"></i>
+      </button>
+    </div>
+
+    <div class="pf-modal-body" style="padding:16px 20px;">
+      <p style="font-size:13px;color:var(--text-secondary);margin-bottom:12px;">
+        This block overlaps with existing scheduled time blocks:
+      </p>
+      <div id="overlap-conflicts-list" style="display:flex;flex-direction:column;gap:8px;margin-bottom:16px;">
+        <!-- Injected via JS -->
+      </div>
+      <p style="font-size:12px;color:var(--text-muted);line-height:1.4;">
+        You can adjust the start/end times, or save anyway if you intentionally want overlapping activities.
+      </p>
+    </div>
+
+    <div class="pf-modal-footer" style="gap:8px;">
+      <button type="button" class="btn-secondary" id="overlap-adjust-btn">
+        <i class="fas fa-pencil"></i> Adjust Times
+      </button>
+      <button type="button" class="btn-primary" id="overlap-save-anyway-btn" style="background:#E67E22;border-color:#E67E22;">
+        Save Anyway
+      </button>
+      <button type="button" class="btn-secondary" id="overlap-cancel-btn">
+        Cancel
+      </button>
+    </div>
+  </div>
+</div>
+
+<script type="module" src="/js/platform/planner.js"></script>
+
+</body></html>

@@ -1,0 +1,770 @@
+<!DOCTYPE html><html lang="vi" dir="ltr"><head>
+  <meta charset="UTF-8">
+  <meta name="robots" content="index, follow">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog Pomodoro &amp; Deep Work: Hướng dẫn từ chuyên gia | FlowPomodoro</title>
+  <meta name="description" content="Hướng dẫn từ chuyên gia về Kỹ thuật Pomodoro, deep work, chiến lược tập trung và phương pháp năng suất. Dành cho học sinh, lập trình viên và người làm việc từ xa.">
+  <link rel="canonical" href="https://flowpomodoro.xyz/backups/blog-before-editorial-migration/vi/">
+  <meta name="theme-color" content="#07070a">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://flowpomodoro.xyz/backups/blog-before-editorial-migration/vi/">
+  <meta property="og:locale" content="vi_VN">
+  <meta property="og:title" content="Blog Năng suất | FlowPomodoro">
+  <meta property="og:description" content="Hướng dẫn từ chuyên gia về deep work, Kỹ thuật Pomodoro và phương pháp năng suất.">
+  <meta property="og:image" content="https://flowpomodoro.xyz/og-image.jpg">
+  <meta property="og:url" content="https://flowpomodoro.xyz/backups/blog-before-editorial-migration/vi/">
+  <meta property="og:locale" content="vi_VN">
+
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Blog Pomodoro &amp; Deep Work | FlowPomodoro">
+  <meta name="twitter:description" content="Hướng dẫn từ chuyên gia về deep work, Kỹ thuật Pomodoro và chiến lược năng suất dành cho học sinh, lập trình viên và chuyên gia.">
+  <meta name="twitter:image" content="https://flowpomodoro.xyz/og-image.jpg">
+  <!-- Schema -->
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Blog","name":"FlowPomodoro Blog","url":"https://flowpomodoro.xyz/blog/vi/","description":"Hướng dẫn năng suất và chiến lược deep work.","publisher":{"@type":"Organization","name":"FlowPomodoro","url":"https://flowpomodoro.xyz"}}
+  </script>
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;family=Outfit:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/css/pages/blog.css">
+
+    <link rel="alternate" hreflang="en" href="https://flowpomodoro.xyz/blog/en/index.html">
+  <link rel="alternate" hreflang="hi" href="https://flowpomodoro.xyz/blog/hi/index.html">
+  <link rel="alternate" hreflang="ne" href="https://flowpomodoro.xyz/blog/ne/index.html">
+  <link rel="alternate" hreflang="es" href="https://flowpomodoro.xyz/blog/es/index.html">
+  <link rel="alternate" hreflang="vi" href="https://flowpomodoro.xyz/blog/vi/index.html">
+  <link rel="alternate" hreflang="ru" href="https://flowpomodoro.xyz/blog/ru/index.html">
+  <link rel="alternate" hreflang="x-default" href="https://flowpomodoro.xyz/blog/en/index.html">
+</head>
+
+<body>
+
+<!-- ── Nav ──────────────────────────────────────────────────────────────── -->
+<nav class="lp-nav" aria-label="Main navigation" id="main-nav">
+  <div class="nav-inner">
+    <a href="/" class="logo" aria-label="FlowPomodoro home">
+      <span class="logo-dot" aria-hidden="true"></span>
+      FlowPomodoro
+    </a>
+    <div class="nav-links">
+      <a href="/#features">Tính năng</a>
+      <a href="/blog/vi/" aria-current="page" style="color:var(--accent-cyan)">Blog</a>
+      <a href="/app/index.html" style="border-radius:999px;padding:0.55rem 1.25rem;font-size:0.85rem;background:linear-gradient(135deg,#00d4ff,#a855f7);color:#000;font-weight:700;">Bắt đầu tập trung</a>
+    </div>
+    <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Drawer -->
+<div class="nav-drawer" id="nav-drawer" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+  <a href="/">Trang chủ</a>
+  <a href="/#features">Tính năng</a>
+  <a href="/blog/vi/" style="color:var(--accent-cyan)">Blog</a>
+  <a href="/app/index.html" style="background:linear-gradient(135deg,#00d4ff,#a855f7);color:#000;font-size:1.25rem;font-weight:800;padding:0.875rem 2.5rem;border-radius:999px;margin-top:1rem;">Bắt đầu tập trung</a>
+</div>
+
+<main id="main-content">
+
+  <!-- ── Blog Hero ──────────────────────────────────────────────────────── -->
+  <section class="blog-hero" aria-label="Blog header">
+    <div class="container">
+      <span class="badge"><i class="fas fa-pen-nib" aria-hidden="true"></i> Hướng dẫn năng suất</span>
+      <h1>Blog Tập trung &amp; Deep Work</h1>
+      <p class="hero-subtitle">
+        Các chiến lược dựa trên bằng chứng về Pomodoro, deep work và hiệu suất tối đa — dành cho học sinh, lập trình viên và chuyên gia.
+      </p>
+
+      <!-- Search -->
+      <div class="blog-search-wrap">
+        <div class="blog-search" role="search" aria-label="Search articles">
+          <i class="fas fa-search" aria-hidden="true"></i>
+          <input type="search" id="blog-search-input" placeholder="Tìm kiếm bài viết…" aria-label="Search articles">
+          <button class="blog-search-btn" onclick="searchArticles()">Tìm kiếm</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+
+    <!-- ── Filter Tags ─────────────────────────────────────────────────── -->
+    <div class="blog-filters" role="group" aria-label="Filter articles by category">
+      <button class="filter-btn active" data-filter="all">
+        Tất cả <span class="filter-count">21</span>
+      </button>
+      <button class="filter-btn" data-filter="pomodoro">
+        Pomodoro <span class="filter-count">7</span>
+      </button>
+      <button class="filter-btn" data-filter="deep-work">
+        Deep Work <span class="filter-count">4</span>
+      </button>
+      <button class="filter-btn" data-filter="students">
+        Cho Học sinh <span class="filter-count">3</span>
+      </button>
+      <button class="filter-btn" data-filter="developers">
+        Cho Lập trình viên <span class="filter-count">2</span>
+      </button>
+      <button class="filter-btn" data-filter="productivity">
+        Năng suất <span class="filter-count">5</span>
+      </button>
+    </div>
+
+    <!-- ── Blog Grid ───────────────────────────────────────────────────── -->
+    <div class="blog-grid" id="blog-grid">
+
+      <!-- Featured -->
+      <article class="blog-card blog-card--featured" data-category="productivity" data-title="Kỹ thuật Pomodoro cho người ADHD: Cách để cuối cùng cũng có thể tập trung">
+        <div class="blog-card__visual" aria-hidden="true">
+          <span class="visual-icon">🧠</span>
+        </div>
+        <div class="blog-card__body">
+          <span class="featured-label"><i class="fas fa-star"></i> Nổi bật</span>
+          <span class="blog-tag blog-tag--productivity">Năng suất</span>
+          <h2 class="blog-card__title">
+            <a href="/blog/vi/adhd-focus.html">Kỹ thuật Pomodoro cho người ADHD: Cách để cuối cùng cũng có thể tập trung</a>
+          </h2>
+          <p class="blog-card__excerpt">Gặp khó khăn trong việc tập trung do ADHD? Khám phá cách kỹ thuật Pomodoro hoạt động như một chức năng điều hành bên ngoài, giúp người học ADHD bắt đầu công việc, duy trì sự tập trung và đánh bại sự xao nhãng.</p>
+          <div class="blog-card__meta">
+            <span><i class="fas fa-clock" aria-hidden="true"></i> 5 phút đọc</span>
+            <span>Tháng 6 2026</span>
+            <span class="read-more-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="productivity" data-title="Các phương pháp làm việc năng suất thân thiện với ADHD thực sự hiệu quả">
+        <div class="blog-card__body">
+          <span class="blog-tag blog-tag--productivity">Năng suất</span>
+          <h2 class="blog-card__title">
+            <a href="/blog/vi/adhd-productivity-methods.html">Các phương pháp làm việc năng suất thân thiện với ADHD thực sự hiệu quả</a>
+          </h2>
+          <p class="blog-card__excerpt">Khám phá các phương pháp năng suất thân thiện với ADHD, hoạt động hài hòa với bộ não của bạn. Từ Pomodoro, nhân đôi cơ thể (body doubling) cho đến các giải pháp khắc phục chứng mù thời gian và mẹo tập trung cao độ.</p>
+          <div class="blog-card__meta">
+            <span><i class="fas fa-clock" aria-hidden="true"></i> 5 phút đọc</span>
+            <span>Tháng 6 2026</span>
+            <span class="read-more-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="pomodoro" data-title="12 Lợi ích đã được chứng minh của Kỹ thuật Pomodoro (Dựa trên khoa học)">
+        <div class="blog-card__body">
+          <span class="blog-tag blog-tag--pomodoro">Pomodoro</span>
+          <h2 class="blog-card__title">
+            <a href="/blog/vi/benefits-of-pomodoro-technique.html">12 Lợi ích đã được chứng minh của Kỹ thuật Pomodoro (Dựa trên khoa học)</a>
+          </h2>
+          <p class="blog-card__excerpt">Khám phá 12 lợi ích của Kỹ thuật Pomodoro đã được khoa học chứng minh, bao gồm giảm sự trì hoãn, tập trung tốt hơn, giảm căng thẳng và tăng năng suất có thể đo lường được.</p>
+          <div class="blog-card__meta">
+            <span><i class="fas fa-clock" aria-hidden="true"></i> 5 phút đọc</span>
+            <span>Tháng 6 2026</span>
+            <span class="read-more-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="productivity" data-title="Các kỹ thuật năng suất tốt nhất năm 2026 (Xếp hạng theo độ hiệu quả)">
+        <div class="blog-card__body">
+          <span class="blog-tag blog-tag--productivity">Năng suất</span>
+          <h2 class="blog-card__title">
+            <a href="/blog/vi/best-productivity-techniques.html">Các kỹ thuật năng suất tốt nhất năm 2026 (Xếp hạng theo độ hiệu quả)</a>
+          </h2>
+          <p class="blog-card__excerpt">Top 10 kỹ thuật nâng cao năng suất được xếp hạng dựa trên tính hiệu quả, độ dễ sử dụng và bằng chứng khoa học. Bao gồm Pomodoro, phân rã thời gian (time blocking), GTD, Eat the Frog và nhiều phương pháp khác.</p>
+          <div class="blog-card__meta">
+            <span><i class="fas fa-clock" aria-hidden="true"></i> 5 phút đọc</span>
+            <span>Tháng 6 2026</span>
+            <span class="read-more-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="productivity" data-title="Hệ thống lập kế hoạch hàng ngày: Cách tối ưu hóa ngày làm việc của bạn">
+        <div class="blog-card__body">
+          <span class="blog-tag blog-tag--productivity">Năng suất</span>
+          <h2 class="blog-card__title">
+            <a href="/blog/vi/daily-planning-system.html">Hệ thống lập kế hoạch hàng ngày: Cách tối ưu hóa ngày làm việc của bạn</a>
+          </h2>
+          <p class="blog-card__excerpt">Xây dựng một hệ thống lập kế hoạch hàng ngày thực sự hiệu quả. Hướng dẫn từng bước để sắp xếp ngày của bạn nhằm tối đa hóa sự tập trung, bao gồm phân rã thời gian, ưu tiên công việc và đánh giá vào cuối ngày.</p>
+          <div class="blog-card__meta">
+            <span><i class="fas fa-clock" aria-hidden="true"></i> 5 phút đọc</span>
+            <span>Tháng 6 2026</span>
+            <span class="read-more-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="deep-work" data-title="Deep Work: Hướng dẫn toàn diện về Hệ thống tập trung của Cal Newport">
+        <div class="blog-card__body">
+          <span class="blog-tag blog-tag--deep-work">Deep Work</span>
+          <h2 class="blog-card__title">
+            <a href="/blog/vi/deep-work-guide.html">Deep Work: Hướng dẫn toàn diện về Hệ thống tập trung của Cal Newport</a>
+          </h2>
+          <p class="blog-card__excerpt">Deep work là gì và tại sao nó lại quan trọng? Tìm hiểu về hệ thống deep work của Cal Newport, bốn triết lý làm việc sâu và cách xây dựng thói quen làm việc này.</p>
+          <div class="blog-card__meta">
+            <span><i class="fas fa-clock" aria-hidden="true"></i> 5 phút đọc</span>
+            <span>Tháng 6 2026</span>
+            <span class="read-more-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="deep-work" data-title="Kỹ thuật Pomodoro cho Lập trình viên: Quy trình tập trung năm 2026">
+        <div class="blog-card__body">
+          <span class="blog-tag blog-tag--deep-work">Deep Work</span>
+          <h2 class="blog-card__title">
+            <a href="/blog/vi/developer-focus-workflow.html">Kỹ thuật Pomodoro cho Lập trình viên: Quy trình tập trung năm 2026</a>
+          </h2>
+          <p class="blog-card__excerpt">Lập trình viên thường lãng phí hàng giờ cho việc chuyển đổi ngữ cảnh, Slack và những vòng lặp review code không hồi kết. Học cách xây dựng quy trình Pomodoro chuyên biệt để có những phiên code sâu hiệu quả.</p>
+          <div class="blog-card__meta">
+            <span><i class="fas fa-clock" aria-hidden="true"></i> 5 phút đọc</span>
+            <span>Tháng 6 2026</span>
+            <span class="read-more-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="deep-work" data-title="Kiểm soát xao nhãng: Cách loại bỏ sự gián đoạn và bảo vệ trạng thái Deep Work">
+        <div class="blog-card__body">
+          <span class="blog-tag blog-tag--deep-work">Deep Work</span>
+          <h2 class="blog-card__title">
+            <a href="/blog/vi/distraction-control.html">Kiểm soát xao nhãng: Cách loại bỏ sự gián đoạn và bảo vệ trạng thái Deep Work</a>
+          </h2>
+          <p class="blog-card__excerpt">Sự xao nhãng kỹ thuật số đang âm thầm phá hủy năng suất của bạn. Tìm hiểu các chiến lược kiểm soát xao nhãng thực tế, được khoa học chứng minh để bảo vệ trạng thái làm việc sâu (deep work).</p>
+          <div class="blog-card__meta">
+            <span><i class="fas fa-clock" aria-hidden="true"></i> 5 phút đọc</span>
+            <span>Tháng 6 2026</span>
+            <span class="read-more-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="deep-work" data-title="Trạng thái Dòng chảy (Flow State) là gì? Giải mã khoa học về sự tập trung đỉnh cao">
+        <div class="blog-card__body">
+          <span class="blog-tag blog-tag--deep-work">Deep Work</span>
+          <h2 class="blog-card__title">
+            <a href="/blog/vi/flow-state-explained.html">Trạng thái Dòng chảy (Flow State) là gì? Giải mã khoa học về sự tập trung đỉnh cao</a>
+          </h2>
+          <p class="blog-card__excerpt">Trạng thái dòng chảy là trạng thái hiệu suất đỉnh cao, nơi sự tập trung trở nên dễ dàng. Tìm hiểu khoa học thần kinh về dòng chảy, cách kích hoạt nó và vai trò của Pomodoro.</p>
+          <div class="blog-card__meta">
+            <span><i class="fas fa-clock" aria-hidden="true"></i> 5 phút đọc</span>
+            <span>Tháng 6 2026</span>
+            <span class="read-more-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="developers" data-title="Kỹ thuật tập trung cho Lập trình viên: Giữ trạng thái Dòng chảy khi code phức tạp">
+        <div class="blog-card__body">
+          <span class="blog-tag blog-tag--developers">Cho Lập trình viên</span>
+          <h2 class="blog-card__title">
+            <a href="/blog/vi/focus-techniques-for-developers.html">Kỹ thuật tập trung cho Lập trình viên: Giữ trạng thái Dòng chảy khi code phức tạp</a>
+          </h2>
+          <p class="blog-card__excerpt">Các kỹ thuật tập trung được thiết kế riêng cho lập trình viên. Cách bước vào và duy trì trạng thái dòng chảy trong quá trình lập trình phức tạp, gỡ lỗi và thiết kế kiến trúc.</p>
+          <div class="blog-card__meta">
+            <span><i class="fas fa-clock" aria-hidden="true"></i> 5 phút đọc</span>
+            <span>Tháng 6 2026</span>
+            <span class="read-more-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="productivity" data-title="10 Kỹ thuật tập trung đã được chứng minh giúp nhân đôi năng suất">
+        <div class="blog-card__body">
+          <span class="blog-tag blog-tag--productivity">Năng suất</span>
+          <h2 class="blog-card__title">
+            <a href="/blog/vi/focus-techniques.html">10 Kỹ thuật tập trung đã được chứng minh giúp nhân đôi năng suất</a>
+          </h2>
+          <p class="blog-card__excerpt">Khám phá 10 kỹ thuật tập trung dựa trên nghiên cứu được các chuyên gia hàng đầu sử dụng — từ các phiên Pomodoro, quy tắc hai phút cho đến nhịp điệu song âm (binaural beats) và ý định thực hiện.</p>
+          <div class="blog-card__meta">
+            <span><i class="fas fa-clock" aria-hidden="true"></i> 5 phút đọc</span>
+            <span>Tháng 6 2026</span>
+            <span class="read-more-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="productivity" data-title="Cách đánh bại sự trì hoãn: Hệ thống dựa trên khoa học thực sự hiệu quả">
+        <div class="blog-card__body">
+          <span class="blog-tag blog-tag--productivity">Năng suất</span>
+          <h2 class="blog-card__title">
+            <a href="/blog/vi/how-to-beat-procrastination.html">Cách đánh bại sự trì hoãn: Hệ thống dựa trên khoa học thực sự hiệu quả</a>
+          </h2>
+          <p class="blog-card__excerpt">Tìm hiểu khoa học về sự trì hoãn và hệ thống 5 bước đã được chứng minh để đánh bại nó hoàn toàn. Dựa trên các nghiên cứu tâm lý học và kỹ thuật năng suất thực tế.</p>
+          <div class="blog-card__meta">
+            <span><i class="fas fa-clock" aria-hidden="true"></i> 5 phút đọc</span>
+            <span>Tháng 6 2026</span>
+            <span class="read-more-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="productivity" data-title="Cách xây dựng thói quen tốt hơn: Hướng dẫn toàn diện dựa trên khoa học">
+        <div class="blog-card__body">
+          <span class="blog-tag blog-tag--productivity">Năng suất</span>
+          <h2 class="blog-card__title">
+            <a href="/blog/vi/how-to-build-better-habits.html">Cách xây dựng thói quen tốt hơn: Hướng dẫn toàn diện dựa trên khoa học</a>
+          </h2>
+          <p class="blog-card__excerpt">Học cách xây dựng những thói quen bền vững bằng khoa học thay đổi hành vi. Giải thích chi tiết về vòng lặp thói quen, ý định thực hiện, xếp chồng thói quen và thiết kế môi trường.</p>
+          <div class="blog-card__meta">
+            <span><i class="fas fa-clock" aria-hidden="true"></i> 5 phút đọc</span>
+            <span>Tháng 6 2026</span>
+            <span class="read-more-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="students" data-title="Cách học trong nhiều giờ liền mà không mất đi sự tập trung hay năng lượng">
+        <div class="blog-card__body">
+          <span class="blog-tag blog-tag--students">Cho Học sinh</span>
+          <h2 class="blog-card__title">
+            <a href="/blog/vi/how-to-study-for-long-hours.html">Cách học trong nhiều giờ liền mà không mất đi sự tập trung hay năng lượng</a>
+          </h2>
+          <p class="blog-card__excerpt">Học cách duy trì việc học trong nhiều giờ mà không bị kiệt sức. Các kỹ thuật đã được chứng minh như Pomodoro, chủ động gợi nhớ (active recall), nghỉ ngơi có chiến lược và mẹo dinh dưỡng.</p>
+          <div class="blog-card__meta">
+            <span><i class="fas fa-clock" aria-hidden="true"></i> 5 phút đọc</span>
+            <span>Tháng 6 2026</span>
+            <span class="read-more-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="pomodoro" data-title="Cách vượt qua sự trì hoãn bằng Kỹ thuật Pomodoro">
+        <div class="blog-card__body">
+          <span class="blog-tag blog-tag--pomodoro">Pomodoro</span>
+          <h2 class="blog-card__title">
+            <a href="/blog/vi/overcome-procrastination-pomodoro.html">Cách vượt qua sự trì hoãn bằng Kỹ thuật Pomodoro</a>
+          </h2>
+          <p class="blog-card__excerpt">Ngừng trì hoãn và bước vào trạng thái làm việc sâu. Học chính xác cách vượt qua sự trì hoãn bằng kỹ thuật Pomodoro — đã được chứng minh là hiệu quả cho học sinh, lập trình viên và người mắc hội chứng ADHD.</p>
+          <div class="blog-card__meta">
+            <span><i class="fas fa-clock" aria-hidden="true"></i> 5 phút đọc</span>
+            <span>Tháng 6 2026</span>
+            <span class="read-more-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="pomodoro" data-title="7 Lợi ích khoa học của Kỹ thuật Pomodoro">
+        <div class="blog-card__body">
+          <span class="blog-tag blog-tag--pomodoro">Pomodoro</span>
+          <h2 class="blog-card__title">
+            <a href="/blog/vi/pomodoro-benefits.html">7 Lợi ích khoa học của Kỹ thuật Pomodoro</a>
+          </h2>
+          <p class="blog-card__excerpt">Tại sao kỹ thuật Pomodoro thực sự hiệu quả? Khám phá 7 lợi ích dựa trên khoa học giải thích lý do những phiên tập trung 25 phút giúp cải thiện sự chú ý và tăng cường năng suất dài hạn.</p>
+          <div class="blog-card__meta">
+            <span><i class="fas fa-clock" aria-hidden="true"></i> 5 phút đọc</span>
+            <span>Tháng 6 2026</span>
+            <span class="read-more-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="pomodoro" data-title="Cách học hiệu quả với Kỹ thuật Pomodoro">
+        <div class="blog-card__body">
+          <span class="blog-tag blog-tag--pomodoro">Pomodoro</span>
+          <h2 class="blog-card__title">
+            <a href="/blog/vi/pomodoro-study-guide.html">Cách học hiệu quả với Kỹ thuật Pomodoro</a>
+          </h2>
+          <p class="blog-card__excerpt">Gặp khó khăn khi học nhiều giờ mà không bị kiệt sức? Tìm hiểu cách sử dụng kỹ thuật học tập Pomodoro kết hợp chủ động gợi nhớ, lặp lại ngắt quãng và FlowPomodoro để đạt kết quả tốt hơn.</p>
+          <div class="blog-card__meta">
+            <span><i class="fas fa-clock" aria-hidden="true"></i> 5 phút đọc</span>
+            <span>Tháng 6 2026</span>
+            <span class="read-more-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="productivity" data-title="Cách tập trung khi làm việc tại nhà: Hướng dẫn năng suất cho Remote Work">
+        <div class="blog-card__body">
+          <span class="blog-tag blog-tag--productivity">Năng suất</span>
+          <h2 class="blog-card__title">
+            <a href="/blog/vi/remote-work-focus.html">Cách tập trung khi làm việc tại nhà: Hướng dẫn năng suất cho Remote Work</a>
+          </h2>
+          <p class="blog-card__excerpt">Làm việc tại nhà nhưng khó tập trung? Khám phá các chiến lược năng suất đã được chứng minh cho công việc từ xa, bao gồm lập lịch Pomodoro, thiết kế môi trường và chặn xao nhãng.</p>
+          <div class="blog-card__meta">
+            <span><i class="fas fa-clock" aria-hidden="true"></i> 5 phút đọc</span>
+            <span>Tháng 6 2026</span>
+            <span class="read-more-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="students" data-title="Năng suất cho học sinh, sinh viên: Hướng dẫn toàn diện để làm được nhiều việc hơn trong thời gian ngắn hơn">
+        <div class="blog-card__body">
+          <span class="blog-tag blog-tag--students">Cho Học sinh</span>
+          <h2 class="blog-card__title">
+            <a href="/blog/vi/student-productivity.html">Năng suất cho học sinh, sinh viên: Hướng dẫn toàn diện để làm được nhiều việc hơn trong thời gian ngắn hơn</a>
+          </h2>
+          <p class="blog-card__excerpt">Hướng dẫn năng suất toàn diện cho học sinh, sinh viên, bao gồm quản lý thời gian, chủ động gợi nhớ, kỹ thuật Pomodoro, quản lý năng lượng và loại bỏ hội chứng kiệt sức học đường.</p>
+          <div class="blog-card__meta">
+            <span><i class="fas fa-clock" aria-hidden="true"></i> 5 phút đọc</span>
+            <span>Tháng 6 2026</span>
+            <span class="read-more-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="pomodoro" data-title="Phân rã thời gian (Time Blocking) kết hợp Pomodoro: Hệ thống tập trung tối thượng">
+        <div class="blog-card__body">
+          <span class="blog-tag blog-tag--pomodoro">Pomodoro</span>
+          <h2 class="blog-card__title">
+            <a href="/blog/vi/time-blocking-pomodoro-technique.html">Phân rã thời gian (Time Blocking) kết hợp Pomodoro: Hệ thống tập trung tối thượng</a>
+          </h2>
+          <p class="blog-card__excerpt">Học cách kết hợp phân rã thời gian và kỹ thuật Pomodoro để xây dựng lịch trình hàng ngày hoàn hảo cho deep work. Các mẫu lịch trình từng bước dành cho học sinh, lập trình viên và người làm việc từ xa.</p>
+          <div class="blog-card__meta">
+            <span><i class="fas fa-clock" aria-hidden="true"></i> 5 phút đọc</span>
+            <span>Tháng 6 2026</span>
+            <span class="read-more-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="pomodoro" data-title="Kỹ thuật Pomodoro là gì? Hướng dẫn toàn diện cho người mới bắt đầu">
+        <div class="blog-card__body">
+          <span class="blog-tag blog-tag--pomodoro">Pomodoro</span>
+          <h2 class="blog-card__title">
+            <a href="/blog/vi/what-is-the-pomodoro-technique.html">Kỹ thuật Pomodoro là gì? Hướng dẫn toàn diện cho người mới bắt đầu</a>
+          </h2>
+          <p class="blog-card__excerpt">Khám phá Kỹ thuật Pomodoro là gì, nó hoạt động ra sao và tại sao hàng triệu người sử dụng nó để loại bỏ sự trì hoãn, bước vào trạng thái tập trung sâu. Cẩm nang hoàn chỉnh cho người mới bắt đầu.</p>
+          <div class="blog-card__meta">
+            <span><i class="fas fa-clock" aria-hidden="true"></i> 5 phút đọc</span>
+            <span>Tháng 6 2026</span>
+            <span class="read-more-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="developers" data-title="Pomodoro cho Lập trình viên: Quy trình tập trung code sâu">
+        <div class="blog-card__body">
+          <span class="blog-tag blog-tag--developers">Cho Lập trình viên</span>
+          <h2 class="blog-card__title">
+            <a href="/blog/vi/developer-focus-workflow.html">Pomodoro cho Lập trình viên: Quy trình tập trung code sâu</a>
+          </h2>
+          <p class="blog-card__excerpt">Quy trình Pomodoro được tối ưu hóa cho lập trình viên để hoàn thành công việc nhanh hơn. Học cách bảo vệ trạng thái dòng chảy khi viết code phức tạp, giảm thiểu gián đoạn từ Slack và duy trì sự tập trung trong nhiều giờ.</p>
+          <div class="blog-card__meta">
+            <span><i class="fas fa-clock" aria-hidden="true"></i> 5 phút đọc</span>
+            <span>Tháng 6 2026</span>
+            <span class="read-more-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </article>
+
+
+      <article class="blog-card" data-category="pomodoro" data-title="Kỹ thuật Pomodoro vs Phân rã thời gian: Phương pháp nào chiến thắng?">
+        <div class="blog-card__body">
+          <span class="blog-tag blog-tag--pomodoro">Pomodoro</span>
+          <h2 class="blog-card__title">
+            <a href="/blog/vi/pomodoro-vs-time-blocking.html">Kỹ thuật Pomodoro vs Phân rã thời gian: Phương pháp nào chiến thắng?</a>
+          </h2>
+          <p class="blog-card__excerpt">Pomodoro hay phân rã thời gian — hệ thống nào phù hợp với bạn? Phân tích chuyên sâu về cả hai phương pháp, ưu điểm của từng loại và cách kết hợp chúng thành một khuôn khổ năng suất tối thượng.</p>
+          <div class="blog-card__meta">
+            <span><i class="fas fa-clock" aria-hidden="true"></i> 12 phút đọc</span>
+            <span>Tháng 7 2026</span>
+            <span class="read-more-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="deep-work" data-title="Kỹ thuật Pomodoro vs Deep Work: Hiểu cách chúng hoạt động cùng nhau">
+        <div class="blog-card__body">
+          <span class="blog-tag blog-tag--deep-work">Deep Work</span>
+          <h2 class="blog-card__title">
+            <a href="/blog/vi/pomodoro-vs-deep-work.html">Kỹ thuật Pomodoro vs Deep Work: Hiểu cách chúng hoạt động cùng nhau</a>
+          </h2>
+          <p class="blog-card__excerpt">Pomodoro và deep work có phải là những triết lý đối lập? Tìm hiểu xem tại sao khuôn khổ deep work của Cal Newport và Kỹ thuật Pomodoro thực chất lại là những người bạn đồng hành đắc lực — chứ không hề mâu thuẫn.</p>
+          <div class="blog-card__meta">
+            <span><i class="fas fa-clock" aria-hidden="true"></i> 13 phút đọc</span>
+            <span>Tháng 7 2026</span>
+            <span class="read-more-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="students" data-title="Kỹ thuật Pomodoro cho kỳ thi: Hệ thống học tập tối thượng để đạt điểm cao">
+        <div class="blog-card__body">
+          <span class="blog-tag blog-tag--students">Cho Học sinh</span>
+          <h2 class="blog-card__title">
+            <a href="/blog/vi/pomodoro-for-exams.html">Kỹ thuật Pomodoro cho kỳ thi: Hệ thống học tập tối thượng để đạt điểm cao</a>
+          </h2>
+          <p class="blog-card__excerpt">Chuyển đổi quá trình ôn thi của bạn bằng Pomodoro. Khám phá các lịch trình học tập được khoa học chứng minh, chiến lược chủ động gợi nhớ và kế hoạch Pomodoro cho tuần thi để đạt phong độ cao nhất.</p>
+          <div class="blog-card__meta">
+            <span><i class="fas fa-clock" aria-hidden="true"></i> 11 phút đọc</span>
+            <span>Tháng 7 2026</span>
+            <span class="read-more-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="developers" data-title="Kỹ thuật Pomodoro trong Lập trình: Hướng dẫn code không kiệt sức">
+        <div class="blog-card__body">
+          <span class="blog-tag blog-tag--developers">Cho Lập trình viên</span>
+          <h2 class="blog-card__title">
+            <a href="/blog/vi/pomodoro-for-programming.html">Kỹ thuật Pomodoro trong Lập trình: Hướng dẫn code không kiệt sức</a>
+          </h2>
+          <p class="blog-card__excerpt">Khám phá cách áp dụng Kỹ thuật Pomodoro trong lập trình. Thời lượng sprint tối ưu cho việc viết code, gỡ lỗi và đánh giá mã, cùng các chiến lược để bảo vệ trạng thái dòng chảy quý giá của bạn.</p>
+          <div class="blog-card__meta">
+            <span><i class="fas fa-clock" aria-hidden="true"></i> 12 phút đọc</span>
+            <span>Tháng 7 2026</span>
+            <span class="read-more-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="productivity" data-title="Kỹ thuật Pomodoro cho Người làm việc từ xa: Hệ thống tập trung WFH tối thượng">
+        <div class="blog-card__body">
+          <span class="blog-tag blog-tag--productivity">Năng suất</span>
+          <h2 class="blog-card__title">
+            <a href="/blog/vi/pomodoro-for-remote-workers.html">Kỹ thuật Pomodoro cho Người làm việc từ xa: Hệ thống tập trung WFH tối thượng</a>
+          </h2>
+          <p class="blog-card__excerpt">Làm việc tại nhà và gặp khó khăn khi tập trung? Kỹ thuật Pomodoro là hệ thống hoàn hảo dành cho người làm việc từ xa. Tổ chức ngày của bạn, đánh bại xao nhãng khi WFH và duy trì năng suất bền bỉ.</p>
+          <div class="blog-card__meta">
+            <span><i class="fas fa-clock" aria-hidden="true"></i> 11 phút đọc</span>
+            <span>Tháng 7 2026</span>
+            <span class="read-more-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="pomodoro" data-title="Bao nhiêu Pomodoro mỗi ngày? Câu trả lời dứt khoát cho mọi cấp độ">
+        <div class="blog-card__body">
+          <span class="blog-tag blog-tag--pomodoro">Pomodoro</span>
+          <h2 class="blog-card__title">
+            <a href="/blog/vi/how-many-pomodoros-per-day.html">Bao nhiêu Pomodoro mỗi ngày? Câu trả lời dứt khoát cho mọi cấp độ</a>
+          </h2>
+          <p class="blog-card__excerpt">Bạn nên thực hiện bao nhiêu phiên Pomodoro mỗi ngày? Câu trả lời dựa trên nghiên cứu dành cho người mới bắt đầu, trình độ trung cấp và nâng cao — cùng các lịch trình thực tế và bảng đếm số lượng mỗi ngày.</p>
+          <div class="blog-card__meta">
+            <span><i class="fas fa-clock" aria-hidden="true"></i> 10 phút đọc</span>
+            <span>Tháng 7 2026</span>
+            <span class="read-more-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="pomodoro" data-title="Ứng dụng Pomodoro tốt nhất năm 2026: Hướng dẫn so sánh toàn diện">
+        <div class="blog-card__body">
+          <span class="blog-tag blog-tag--pomodoro">Pomodoro</span>
+          <h2 class="blog-card__title">
+            <a href="/blog/vi/best-pomodoro-apps.html">Ứng dụng Pomodoro tốt nhất năm 2026: Hướng dẫn so sánh toàn diện</a>
+          </h2>
+          <p class="blog-card__excerpt">Đang tìm kiếm ứng dụng hẹn giờ Pomodoro tốt nhất? Chúng tôi so sánh top 10 lựa chọn cho năm 2026 — cả miễn phí và trả phí — bao gồm FlowPomodoro, Forest, Pomofocus và nhiều ứng dụng khác để giúp bạn tìm ra giải pháp hoàn hảo.</p>
+          <div class="blog-card__meta">
+            <span><i class="fas fa-clock" aria-hidden="true"></i> 12 phút đọc</span>
+            <span>Tháng 7 2026</span>
+            <span class="read-more-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="pomodoro" data-title="10 Sai lầm Pomodoro đang âm thầm phá hủy năng suất của bạn (Và cách khắc phục)">
+        <div class="blog-card__body">
+          <span class="blog-tag blog-tag--pomodoro">Pomodoro</span>
+          <h2 class="blog-card__title">
+            <a href="/blog/vi/pomodoro-mistakes.html">10 Sai lầm Pomodoro đang âm thầm phá hủy năng suất của bạn (Và cách khắc phục)</a>
+          </h2>
+          <p class="blog-card__excerpt">Bạn có đang sử dụng Kỹ thuật Pomodoro sai cách? Khám phá 10 sai lầm Pomodoro phổ biến nhất mà người mới thường mắc phải, tại sao chúng lại làm tổn hại đến sự tập trung của bạn, và chính xác cách khắc phục chúng ngay hôm nay.</p>
+          <div class="blog-card__meta">
+            <span><i class="fas fa-clock" aria-hidden="true"></i> 11 phút đọc</span>
+            <span>Tháng 7 2026</span>
+            <span class="read-more-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="pomodoro" data-title="Khoa học đằng sau Kỹ thuật Pomodoro: Tại sao những phiên 25 phút lại khai mở hiệu suất đỉnh cao">
+        <div class="blog-card__body">
+          <span class="blog-tag blog-tag--pomodoro">Pomodoro</span>
+          <h2 class="blog-card__title">
+            <a href="/blog/vi/science-behind-pomodoro.html">Khoa học đằng sau Kỹ thuật Pomodoro: Tại sao những phiên 25 phút lại khai mở hiệu suất đỉnh cao</a>
+          </h2>
+          <p class="blog-card__excerpt">Khoa học thần kinh nói gì về Kỹ thuật Pomodoro? Khám phá khoa học nhận thức, tâm lý học và nghiên cứu não bộ giải thích chính xác tại sao những khoảng thời gian tập trung có cấu trúc lại giúp cải thiện trí nhớ và hiệu suất công việc.</p>
+          <div class="blog-card__meta">
+            <span><i class="fas fa-clock" aria-hidden="true"></i> 14 phút đọc</span>
+            <span>Tháng 7 2026</span>
+            <span class="read-more-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="pomodoro" data-title="FAQ Toàn diện về Kỹ thuật Pomodoro: Giải đáp mọi thắc mắc">
+        <div class="blog-card__body">
+          <span class="blog-tag blog-tag--pomodoro">Pomodoro</span>
+          <h2 class="blog-card__title">
+            <a href="/blog/vi/pomodoro-faq.html">FAQ Toàn diện về Kỹ thuật Pomodoro: Giải đáp mọi thắc mắc</a>
+          </h2>
+          <p class="blog-card__excerpt">Tất cả những gì bạn luôn muốn biết về Kỹ thuật Pomodoro. Bộ FAQ toàn diện của chúng tôi giải đáp hơn 30 câu hỏi về đồng hồ bấm giờ, thời gian nghỉ, cách tùy chỉnh, khoa học đằng sau và cách bắt đầu.</p>
+          <div class="blog-card__meta">
+            <span><i class="fas fa-clock" aria-hidden="true"></i> 15 phút đọc</span>
+            <span>Tháng 7 2026</span>
+            <span class="read-more-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </article>
+
+    </div><!-- /.blog-grid -->
+
+
+    <!-- ── Newsletter ────────────────────────────────────────────────── -->
+    <div class="blog-newsletter" aria-label="Newsletter signup">
+      <h3>Nhận thông tin chi tiết về sự tập trung hàng tuần</h3>
+      <p>Một email mỗi tuần. Các chiến lược dựa trên bằng chứng giúp bạn cải thiện deep work, sự tập trung và năng suất. Cam kết không spam.</p>
+      <form class="newsletter-form" onsubmit="handleNewsletter(event)" novalidate="">
+        <input type="email" id="newsletter-email" placeholder="your@email.com" aria-label="Email address" required="">
+        <button type="submit" class="newsletter-submit">Đăng ký</button>
+      </form>
+      <p class="newsletter-note">Không có backend · Không lưu trữ dữ liệu · Email chỉ mang tính tham khảo</p>
+    </div>
+
+    <!-- ── CTA Banner ─────────────────────────────────────────────── -->
+    <div class="blog-cta-banner" role="complementary" aria-label="App call to action">
+      <div>
+        <h3>Trải nghiệm FlowPomodoro trong khi đọc</h3>
+        <p>Mở đồng hồ đếm giờ ở tab mới và áp dụng Pomodoro trong lúc đọc các bài viết này.</p>
+      </div>
+      <a href="/app/index.html" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+        <i class="fas fa-play" aria-hidden="true"></i> Mở Đồng hồ
+      </a>
+    </div>
+
+  </div><!-- /.container -->
+</main>
+
+<!-- ── Footer ───────────────────────────────────────────────────────────────── -->
+<footer class="lp-footer" aria-label="Site footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="/" class="logo" aria-label="FlowPomodoro home">
+          <span class="logo-dot" aria-hidden="true"></span>
+          FlowPomodoro
+        </a>
+        <p>Đồng hồ đếm giờ Pomodoro cao cấp, không gây xao nhãng dành cho học sinh, lập trình viên và chuyên gia. Hoàn toàn miễn phí.</p>
+        <a href="/app/index.html" class="btn btn-primary" style="width:fit-content;font-size:0.825rem;padding:0.6rem 1.4rem;background:linear-gradient(135deg,#00d4ff,#a855f7);color:#000;">
+          <i class="fas fa-play" aria-hidden="true"></i> Bắt đầu tập trung
+        </a>
+      </div>
+      <div class="footer-col">
+        <h4>Sản phẩm</h4>
+        <ul>
+          <li><a href="/app/index.html">Đồng hồ Tập trung</a></li>
+          <li><a href="/#features">Tính năng</a></li>
+          <li><a href="/#about">Về chúng tôi</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Blog</h4>
+        <ul>
+          <li><a href="/blog/vi/">Tất cả bài viết</a></li>
+          <li><a href="/blog/vi/what-is-the-pomodoro-technique.html">Hướng dẫn Pomodoro</a></li>
+          <li><a href="/blog/vi/deep-work-guide.html">Deep Work</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Pháp lý</h4>
+        <ul>
+          <li><a href="/pages/privacy.html">Chính sách bảo mật</a></li>
+          <li><a href="/pages/terms.html">Điều khoản sử dụng</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 FlowPomodoro. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="/pages/privacy.html">Bảo mật</a>
+        <a href="/pages/terms.html">Điều khoản</a>
+        <a href="/">Trang chủ</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function() {
+  // ── Navbar scroll ──────────────────────────────────────────
+  const nav = document.getElementById('main-nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 20);
+  }, { passive: true });
+  if (window.scrollY > 20) nav.classList.add('scrolled');
+
+  // ── Mobile menu ───────────────────────────────────────────
+  const hamburger = document.getElementById('nav-hamburger');
+  const drawer    = document.getElementById('nav-drawer');
+  hamburger.addEventListener('click', () => {
+    const isOpen = drawer.classList.toggle('open');
+    hamburger.classList.toggle('open', isOpen);
+    hamburger.setAttribute('aria-expanded', isOpen);
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  });
+  drawer.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      drawer.classList.remove('open');
+      hamburger.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    });
+  });
+
+  // ── Blog filters ───────────────────────────────────────────
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const cards = document.querySelectorAll('.blog-card');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.dataset.filter;
+      let visible = 0;
+      cards.forEach(card => {
+        const show = filter === 'all' || card.dataset.category === filter;
+        card.style.display = show ? '' : 'none';
+        if (show) visible++;
+      });
+    });
+  });
+
+  // ── Search ─────────────────────────────────────────────────
+  window.searchArticles = function() {
+    const q = document.getElementById('blog-search-input').value.toLowerCase().trim();
+    if (!q) { cards.forEach(c => c.style.display = ''); return; }
+    cards.forEach(card => {
+      const title = (card.dataset.title || '').toLowerCase();
+      const text  = card.textContent.toLowerCase();
+      card.style.display = (title.includes(q) || text.includes(q)) ? '' : 'none';
+    });
+  };
+
+  const searchInput = document.getElementById('blog-search-input');
+  searchInput.addEventListener('keydown', e => {
+    if (e.key === 'Enter') searchArticles();
+  });
+  searchInput.addEventListener('input', () => {
+    if (!searchInput.value) { cards.forEach(c => c.style.display = ''); }
+  });
+
+  // ── Newsletter ─────────────────────────────────────────────
+  window.handleNewsletter = function(e) {
+    e.preventDefault();
+    const email = document.getElementById('newsletter-email').value;
+    if (email) {
+      const btn = e.target.querySelector('button');
+      btn.textContent = '✓ Đã đăng ký!';
+      btn.style.background = 'rgba(34,211,160,0.15)';
+      btn.style.color = 'var(--accent-success)';
+      btn.style.borderColor = 'rgba(34,211,160,0.3)';
+      btn.disabled = true;
+    }
+  };
+})();
+</script>
+
+
+</body></html>

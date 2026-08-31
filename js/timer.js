@@ -9,18 +9,20 @@ export class TimerEngine {
         };
 
         this.currentMode = 'focus';
-        this.timeLeft    = this.modes.focus.time;
-        this.totalTime   = this.modes.focus.time;
         this.isActive    = false;
-
-        // Timestamps used for drift-free counting
         this.endTime  = null;
         this.rafId    = null;
 
         this.onTick     = onTick;
         this.onComplete = onComplete;
 
+// Load saved durations first
         this.loadSettings();
+
+// Then initialize the timer using the saved Focus duration
+        this.timeLeft  = this.modes.focus.time;
+        this.totalTime = this.modes.focus.time;
+
         this.recover();
     }
 
@@ -28,9 +30,12 @@ export class TimerEngine {
     loadSettings() {
         const saved = Storage.get('flow_settings');
         if (saved) {
-            if (saved.focus) this.modes.focus.time = saved.focus * 60;
-            if (saved.short) this.modes.short.time = saved.short * 60;
-            if (saved.long)  this.modes.long.time  = saved.long  * 60;
+            const focus = parseInt(saved.focus, 10);
+            const short = parseInt(saved.short, 10);
+            const long  = parseInt(saved.long, 10);
+            if (!isNaN(focus) && focus > 0) this.modes.focus.time = focus * 60;
+            if (!isNaN(short) && short > 0) this.modes.short.time = short * 60;
+            if (!isNaN(long)  && long  > 0) this.modes.long.time  = long  * 60;
         }
     }
 
@@ -115,6 +120,8 @@ export class TimerEngine {
             this._tick();
         } else {
             Storage.remove('flow_timer');
+            this.timeLeft    = this.modes[this.currentMode].time;
+            this.totalTime   = this.modes[this.currentMode].time;
         }
     }
 }

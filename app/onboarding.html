@@ -1,0 +1,189 @@
+<!DOCTYPE html><html lang="en" data-theme="dark"><head>
+  <script>(function(){ document.documentElement.setAttribute('data-theme', localStorage.getItem('flow_theme')||'dark'); })();</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to FlowPomodoro — Set Up Your Workspace</title>
+  <meta name="description" content="Personalize your FlowPomodoro productivity system, goals, and focus routine.">
+  <meta name="theme-color" content="#080B12">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="/public/manifest.json">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;family=Outfit:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/variables.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/layout.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/platform.css">
+
+  <link rel="canonical" href="https://flowpomodoro.xyz/app/onboarding.html"></head>
+<body style="background:var(--bg-main);">
+
+<div class="onboarding-layout">
+  <div class="onboarding-card">
+    
+    <!-- Logo Header -->
+    <a href="/" class="onboarding-logo">
+      <div class="onboarding-logo-icon"><i class="fas fa-stopwatch"></i></div>
+      <span>FlowPomodoro</span>
+    </a>
+
+    <!-- Step Progress Dots -->
+    <div class="onboarding-steps">
+      <div class="onboarding-step-dot done" id="dot-1"></div>
+      <div class="onboarding-step-dot" id="dot-2"></div>
+      <div class="onboarding-step-dot" id="dot-3"></div>
+      <div class="onboarding-step-dot" id="dot-4"></div>
+    </div>
+
+    <!-- ── STEP 1: What are you working toward? ── -->
+    <div class="onboarding-step-pane" id="step-1">
+      <h1 class="onboarding-heading">What are you working toward?</h1>
+      <p class="onboarding-sub">Create your primary goal or area of focus. FlowPomodoro adapts to your exact workflow.</p>
+
+      <div style="display:flex;flex-direction:column;gap:16px;">
+        <div class="form-group">
+          <label class="form-label" for="ob-goal-name">Primary Goal / Project Name *</label>
+          <div class="icon-input-row">
+            <div class="icon-preview" id="ob-icon-preview">💻</div>
+            <input type="text" id="ob-goal-icon" class="pf-input" style="width:64px;text-align:center;font-size:18px;" value="💻" maxlength="4">
+            <input type="text" id="ob-goal-name" class="pf-input" placeholder="e.g. Full-Stack Project, IELTS Prep, Thesis, Gym" style="flex:1;">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="ob-goal-category">Category</label>
+            <input type="text" id="ob-goal-category" class="pf-input" value="Career / Coding" placeholder="e.g. Coding, Study, Fitness">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="ob-daily-target">Daily Target (minutes)</label>
+            <input type="number" id="ob-daily-target" class="pf-input" value="90" min="15" max="1440">
+          </div>
+        </div>
+      </div>
+
+      <div class="onboarding-actions">
+        <a href="/app/dashboard.html" style="font-size:13px;color:var(--text-muted);text-decoration:none;">Skip to Dashboard</a>
+        <button class="btn-primary" id="step1-next-btn">Next Step &nbsp;<i class="fas fa-arrow-right"></i></button>
+      </div>
+    </div>
+
+    <!-- ── STEP 2: Targets & Appearance ── -->
+    <div class="onboarding-step-pane" id="step-2" style="display:none;">
+      <h2 class="onboarding-heading">Set your targets &amp; theme</h2>
+      <p class="onboarding-sub">Customize the cadence and visual color for <strong id="step2-goal-title" style="color:var(--brand-primary);">your goal</strong>.</p>
+
+      <div style="display:flex;flex-direction:column;gap:16px;">
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="ob-weekly-target">Weekly Target (minutes)</label>
+            <input type="number" id="ob-weekly-target" class="pf-input" value="450" min="30" max="10080">
+            <span class="form-hint" id="ob-weekly-hint">= 7.5 hrs / week</span>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Priority</label>
+            <div class="priority-options">
+              <label class="priority-option selected" data-priority="high">
+                <input type="radio" name="ob-priority" value="high" checked=""> High
+              </label>
+              <label class="priority-option" data-priority="medium">
+                <input type="radio" name="ob-priority" value="medium"> Med
+              </label>
+              <label class="priority-option" data-priority="low">
+                <input type="radio" name="ob-priority" value="low"> Low
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Goal Color Theme</label>
+          <div class="color-swatches" id="ob-color-swatches"></div>
+          <input type="hidden" id="ob-color" value="#FFB800">
+        </div>
+      </div>
+
+      <div class="onboarding-actions">
+        <button class="btn-secondary" id="step2-back-btn"><i class="fas fa-arrow-left"></i> &nbsp;Back</button>
+        <button class="btn-primary" id="step2-next-btn">Next Step &nbsp;<i class="fas fa-arrow-right"></i></button>
+      </div>
+    </div>
+
+    <!-- ── STEP 3: Choose Productivity Mode ── -->
+    <div class="onboarding-step-pane" id="step-3" style="display:none;">
+      <h2 class="onboarding-heading">Choose your productivity style</h2>
+      <p class="onboarding-sub">Select how you prefer to organize your daily work sessions.</p>
+
+      <div class="mode-cards" id="mode-cards-grid">
+        
+        <div class="mode-card selected" data-mode="goals">
+          <div class="mode-card-icon">🎯</div>
+          <div class="mode-card-name">Goal-Based Focus</div>
+          <div class="mode-card-desc">Track focus sessions linked directly to your custom daily &amp; weekly targets.</div>
+        </div>
+
+        <div class="mode-card" data-mode="blocking">
+          <div class="mode-card-icon">📅</div>
+          <div class="mode-card-name">Time Blocking</div>
+          <div class="mode-card-desc">Schedule your full day into timeline slots and protected focus blocks.</div>
+        </div>
+
+        <div class="mode-card" data-mode="simple">
+          <div class="mode-card-icon">⏱️</div>
+          <div class="mode-card-name">Minimalist Timer</div>
+          <div class="mode-card-desc">Clean, distraction-free interval timer without required categories.</div>
+        </div>
+
+        <div class="mode-card" data-mode="challenge">
+          <div class="mode-card-icon">🔥</div>
+          <div class="mode-card-name">Habit Challenge</div>
+          <div class="mode-card-desc">Commit to a multi-day streak sprint to lock in permanent deep work habits.</div>
+        </div>
+
+      </div>
+
+      <div class="onboarding-actions">
+        <button class="btn-secondary" id="step3-back-btn"><i class="fas fa-arrow-left"></i> &nbsp;Back</button>
+        <button class="btn-primary" id="step3-next-btn">Review Setup &nbsp;<i class="fas fa-arrow-right"></i></button>
+      </div>
+    </div>
+
+    <!-- ── STEP 4: Ready to Launch ── -->
+    <div class="onboarding-step-pane" id="step-4" style="display:none;">
+      <div style="text-align:center;margin-bottom:20px;">
+        <div style="font-size:44px;margin-bottom:8px;">🚀</div>
+        <h2 class="onboarding-heading">You're ready for deep focus</h2>
+        <p class="onboarding-sub" style="margin-bottom:16px;">Here is your personalized workspace blueprint:</p>
+      </div>
+
+      <div style="background:var(--bg-main);border:1px solid var(--border-color);border-radius:var(--radius-lg);padding:16px 20px;display:flex;flex-direction:column;gap:12px;margin-bottom:24px;">
+        <div style="display:flex;align-items:center;justify-content:space-between;">
+          <span style="font-size:12px;color:var(--text-muted);font-weight:600;">PRIMARY GOAL</span>
+          <span id="summary-goal-name" style="font-weight:700;">—</span>
+        </div>
+        <div style="display:flex;align-items:center;justify-content:space-between;">
+          <span style="font-size:12px;color:var(--text-muted);font-weight:600;">DAILY TARGET</span>
+          <span id="summary-daily-target" style="font-weight:600;">—</span>
+        </div>
+        <div style="display:flex;align-items:center;justify-content:space-between;">
+          <span style="font-size:12px;color:var(--text-muted);font-weight:600;">WORKFLOW MODE</span>
+          <span id="summary-mode" style="font-weight:600;color:var(--brand-primary);">—</span>
+        </div>
+      </div>
+
+      <div class="onboarding-actions" style="justify-content:center;">
+        <button class="btn-primary" id="launch-app-btn" style="width:100%;padding:12px 24px;font-size:15px;">
+          Enter Workspace &nbsp;<i class="fas fa-arrow-right"></i>
+        </button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script type="module" src="/js/platform/onboarding.js"></script>
+
+
+</body></html>

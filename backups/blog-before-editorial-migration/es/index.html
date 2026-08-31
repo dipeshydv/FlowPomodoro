@@ -1,0 +1,770 @@
+<!DOCTYPE html><html lang="es" dir="ltr"><head>
+  <meta charset="UTF-8">
+  <meta name="robots" content="index, follow">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog sobre Pomodoro y Trabajo Profundo: Guías de Expertos | FlowPomodoro</title>
+  <meta name="description" content="Guías de expertos sobre la Técnica Pomodoro, trabajo profundo, estrategias de concentración y métodos de productividad. Escrito para estudiantes, desarrolladores y trabajadores remotos.">
+  <link rel="canonical" href="https://flowpomodoro.xyz/backups/blog-before-editorial-migration/es/">
+  <meta name="theme-color" content="#07070a">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://flowpomodoro.xyz/backups/blog-before-editorial-migration/es/">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:title" content="Blog de Productividad | FlowPomodoro">
+  <meta property="og:description" content="Guías de expertos sobre trabajo profundo, Técnica Pomodoro y productividad.">
+  <meta property="og:image" content="https://flowpomodoro.xyz/og-image.jpg">
+  <meta property="og:url" content="https://flowpomodoro.xyz/backups/blog-before-editorial-migration/es/">
+  <meta property="og:locale" content="es_ES">
+
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Blog sobre Pomodoro y Trabajo Profundo | FlowPomodoro">
+  <meta name="twitter:description" content="Guías de expertos sobre trabajo profundo, Técnica Pomodoro y estrategias de productividad para estudiantes, desarrolladores y profesionales.">
+  <meta name="twitter:image" content="https://flowpomodoro.xyz/og-image.jpg">
+  <!-- Schema -->
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Blog","name":"FlowPomodoro Blog","url":"https://flowpomodoro.xyz/blog/es/","description":"Productivity guides and deep work strategies.","publisher":{"@type":"Organization","name":"FlowPomodoro","url":"https://flowpomodoro.xyz"}}
+  </script>
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;family=Outfit:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/css/pages/blog.css">
+
+    <link rel="alternate" hreflang="en" href="https://flowpomodoro.xyz/blog/en/index.html">
+  <link rel="alternate" hreflang="hi" href="https://flowpomodoro.xyz/blog/hi/index.html">
+  <link rel="alternate" hreflang="ne" href="https://flowpomodoro.xyz/blog/ne/index.html">
+  <link rel="alternate" hreflang="es" href="https://flowpomodoro.xyz/blog/es/index.html">
+  <link rel="alternate" hreflang="vi" href="https://flowpomodoro.xyz/blog/vi/index.html">
+  <link rel="alternate" hreflang="ru" href="https://flowpomodoro.xyz/blog/ru/index.html">
+  <link rel="alternate" hreflang="x-default" href="https://flowpomodoro.xyz/blog/en/index.html">
+</head>
+
+<body>
+
+<!-- ── Nav ──────────────────────────────────────────────────────────────── -->
+<nav class="lp-nav" aria-label="Main navigation" id="main-nav">
+  <div class="nav-inner">
+    <a href="/" class="logo" aria-label="FlowPomodoro home">
+      <span class="logo-dot" aria-hidden="true"></span>
+      FlowPomodoro
+    </a>
+    <div class="nav-links">
+      <a href="/#features">Características</a>
+      <a href="/blog/es/" aria-current="page" style="color:var(--accent-cyan)">Blog</a>
+      <a href="/app/index.html" style="border-radius:999px;padding:0.55rem 1.25rem;font-size:0.85rem;background:linear-gradient(135deg,#00d4ff,#a855f7);color:#000;font-weight:700;">Empezar a concentrarse</a>
+    </div>
+    <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Drawer -->
+<div class="nav-drawer" id="nav-drawer" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+  <a href="/">Inicio</a>
+  <a href="/#features">Características</a>
+  <a href="/blog/es/" style="color:var(--accent-cyan)">Blog</a>
+  <a href="/app/index.html" style="background:linear-gradient(135deg,#00d4ff,#a855f7);color:#000;font-size:1.25rem;font-weight:800;padding:0.875rem 2.5rem;border-radius:999px;margin-top:1rem;">Empezar a concentrarse</a>
+</div>
+
+<main id="main-content">
+
+  <!-- ── Blog Hero ──────────────────────────────────────────────────────── -->
+  <section class="blog-hero" aria-label="Blog header">
+    <div class="container">
+      <span class="badge"><i class="fas fa-pen-nib" aria-hidden="true"></i> Guías de Productividad</span>
+      <h1>Blog de Concentración y Trabajo Profundo</h1>
+      <p class="hero-subtitle">
+        Estrategias basadas en evidencia sobre Pomodoro, trabajo profundo y máximo rendimiento — para estudiantes, desarrolladores y profesionales.
+      </p>
+
+      <!-- Search -->
+      <div class="blog-search-wrap">
+        <div class="blog-search" role="search" aria-label="Search articles">
+          <i class="fas fa-search" aria-hidden="true"></i>
+          <input type="search" id="blog-search-input" placeholder="Buscar artículos…" aria-label="Search articles">
+          <button class="blog-search-btn" onclick="searchArticles()">Buscar</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+
+    <!-- ── Filter Tags ─────────────────────────────────────────────────── -->
+    <div class="blog-filters" role="group" aria-label="Filter articles by category">
+      <button class="filter-btn active" data-filter="all">
+        Todos <span class="filter-count">21</span>
+      </button>
+      <button class="filter-btn" data-filter="pomodoro">
+        Pomodoro <span class="filter-count">7</span>
+      </button>
+      <button class="filter-btn" data-filter="deep-work">
+        Trabajo Profundo <span class="filter-count">4</span>
+      </button>
+      <button class="filter-btn" data-filter="students">
+        Para Estudiantes <span class="filter-count">3</span>
+      </button>
+      <button class="filter-btn" data-filter="developers">
+        Para Desarrolladores <span class="filter-count">2</span>
+      </button>
+      <button class="filter-btn" data-filter="productivity">
+        Productividad <span class="filter-count">5</span>
+      </button>
+    </div>
+
+    <!-- ── Blog Grid ───────────────────────────────────────────────────── -->
+    <div class="blog-grid" id="blog-grid">
+
+      <!-- Featured -->
+      <article class="blog-card blog-card--featured" data-category="productivity" data-title="Técnica Pomodoro para el TDAH: Cómo lograr concentrarse">
+        <div class="blog-card__visual" aria-hidden="true">
+          <span class="visual-icon">🧠</span>
+        </div>
+        <div class="blog-card__body">
+          <span class="featured-label"><i class="fas fa-star"></i> Destacado</span>
+          <span class="blog-tag blog-tag--productivity">Productividad</span>
+          <h2 class="blog-card__title">
+            <a href="/blog/es/adhd-focus.html">Técnica Pomodoro para el TDAH: Cómo lograr concentrarse</a>
+          </h2>
+          <p class="blog-card__excerpt">¿Luchas por concentrarte con TDAH? Descubre cómo la técnica Pomodoro actúa como una función ejecutiva externa para ayudar a los estudiantes con TDAH a iniciar tareas, mantener la concentración y vencer la distracción.</p>
+          <div class="blog-card__meta">
+            <span><i class="fas fa-clock" aria-hidden="true"></i> 5 min de lectura</span>
+            <span>Junio 2026</span>
+            <span class="read-more-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="productivity" data-title="Métodos de Productividad Amigables con el TDAH que Realmente Funcionan">
+        <div class="blog-card__body">
+          <span class="blog-tag blog-tag--productivity">Productividad</span>
+          <h2 class="blog-card__title">
+            <a href="/blog/es/adhd-productivity-methods.html">Métodos de Productividad Amigables con el TDAH que Realmente Funcionan</a>
+          </h2>
+          <p class="blog-card__excerpt">Descubre métodos de productividad amigables con el TDAH que trabajan con tu cerebro, no en su contra. Desde Pomodoro y 'body doubling' hasta soluciones para la ceguera del tiempo y trucos de hiperconcentración.</p>
+          <div class="blog-card__meta">
+            <span><i class="fas fa-clock" aria-hidden="true"></i> 5 min de lectura</span>
+            <span>Junio 2026</span>
+            <span class="read-more-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="pomodoro" data-title="12 Beneficios Comprobados de la Técnica Pomodoro (Respaldados por la Ciencia)">
+        <div class="blog-card__body">
+          <span class="blog-tag blog-tag--pomodoro">Pomodoro</span>
+          <h2 class="blog-card__title">
+            <a href="/blog/es/benefits-of-pomodoro-technique.html">12 Beneficios Comprobados de la Técnica Pomodoro (Respaldados por la Ciencia)</a>
+          </h2>
+          <p class="blog-card__excerpt">Descubre 12 beneficios respaldados por la ciencia de la Técnica Pomodoro, incluyendo la reducción de la procrastinación, mejor concentración, menor ansiedad y aumentos de productividad medibles.</p>
+          <div class="blog-card__meta">
+            <span><i class="fas fa-clock" aria-hidden="true"></i> 5 min de lectura</span>
+            <span>Junio 2026</span>
+            <span class="read-more-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="productivity" data-title="Las Mejores Técnicas de Productividad para 2026 (Clasificadas por Efectividad)">
+        <div class="blog-card__body">
+          <span class="blog-tag blog-tag--productivity">Productividad</span>
+          <h2 class="blog-card__title">
+            <a href="/blog/es/best-productivity-techniques.html">Las Mejores Técnicas de Productividad para 2026 (Clasificadas por Efectividad)</a>
+          </h2>
+          <p class="blog-card__excerpt">Las 10 mejores técnicas de productividad clasificadas por efectividad, facilidad de uso y evidencia científica. Pomodoro, bloques de tiempo, GTD, "Trágate ese sapo" y más.</p>
+          <div class="blog-card__meta">
+            <span><i class="fas fa-clock" aria-hidden="true"></i> 5 min de lectura</span>
+            <span>Junio 2026</span>
+            <span class="read-more-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="productivity" data-title="Sistema de Planificación Diaria: Cómo Planificar tu Día para Máxima Productividad">
+        <div class="blog-card__body">
+          <span class="blog-tag blog-tag--productivity">Productividad</span>
+          <h2 class="blog-card__title">
+            <a href="/blog/es/daily-planning-system.html">Sistema de Planificación Diaria: Cómo Planificar tu Día para Máxima Productividad</a>
+          </h2>
+          <p class="blog-card__excerpt">Construye un sistema de planificación diaria que funcione. Guía paso a paso para planificar tu día para una concentración máxima, incluyendo bloques de tiempo, priorización de tareas y revisiones nocturnas.</p>
+          <div class="blog-card__meta">
+            <span><i class="fas fa-clock" aria-hidden="true"></i> 5 min de lectura</span>
+            <span>Junio 2026</span>
+            <span class="read-more-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="deep-work" data-title="Trabajo Profundo: Una Guía Completa del Marco de Concentración de Cal Newport">
+        <div class="blog-card__body">
+          <span class="blog-tag blog-tag--deep-work">Trabajo Profundo</span>
+          <h2 class="blog-card__title">
+            <a href="/blog/es/deep-work-guide.html">Trabajo Profundo: Una Guía Completa del Marco de Concentración de Cal Newport</a>
+          </h2>
+          <p class="blog-card__excerpt">¿Qué es el trabajo profundo y por qué importa? Aprende el marco de trabajo profundo de Cal Newport, las cuatro filosofías de profundidad y cómo construir una práctica de trabajo profundo.</p>
+          <div class="blog-card__meta">
+            <span><i class="fas fa-clock" aria-hidden="true"></i> 5 min de lectura</span>
+            <span>Junio 2026</span>
+            <span class="read-more-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="deep-work" data-title="Técnica Pomodoro para Desarrolladores: El Flujo de Trabajo de Concentración de 2026">
+        <div class="blog-card__body">
+          <span class="blog-tag blog-tag--deep-work">Trabajo Profundo</span>
+          <h2 class="blog-card__title">
+            <a href="/blog/es/developer-focus-workflow.html">Técnica Pomodoro para Desarrolladores: El Flujo de Trabajo de Concentración de 2026</a>
+          </h2>
+          <p class="blog-card__excerpt">Los desarrolladores pierden horas en el cambio de contexto, Slack y revisiones de código interminables. Aprende a construir un flujo de trabajo Pomodoro específico para desarrolladores para sesiones profundas de programación.</p>
+          <div class="blog-card__meta">
+            <span><i class="fas fa-clock" aria-hidden="true"></i> 5 min de lectura</span>
+            <span>Junio 2026</span>
+            <span class="read-more-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="deep-work" data-title="Control de Distracciones: Cómo Eliminar Interrupciones y Proteger el Trabajo Profundo">
+        <div class="blog-card__body">
+          <span class="blog-tag blog-tag--deep-work">Trabajo Profundo</span>
+          <h2 class="blog-card__title">
+            <a href="/blog/es/distraction-control.html">Control de Distracciones: Cómo Eliminar Interrupciones y Proteger el Trabajo Profundo</a>
+          </h2>
+          <p class="blog-card__excerpt">Las distracciones digitales destruyen tu productividad en silencio. Aprende estrategias prácticas y respaldadas por investigaciones sobre el control de distracciones para proteger tu trabajo profundo.</p>
+          <div class="blog-card__meta">
+            <span><i class="fas fa-clock" aria-hidden="true"></i> 5 min de lectura</span>
+            <span>Junio 2026</span>
+            <span class="read-more-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="deep-work" data-title="¿Qué es el Estado de Flujo? La Ciencia de la Máxima Concentración Explicada">
+        <div class="blog-card__body">
+          <span class="blog-tag blog-tag--deep-work">Trabajo Profundo</span>
+          <h2 class="blog-card__title">
+            <a href="/blog/es/flow-state-explained.html">¿Qué es el Estado de Flujo? La Ciencia de la Máxima Concentración Explicada</a>
+          </h2>
+          <p class="blog-card__excerpt">El estado de flujo es el estado de máximo rendimiento donde la concentración se vuelve sin esfuerzo. Aprende la neurociencia del flujo, cómo activarlo y cómo ayuda Pomodoro.</p>
+          <div class="blog-card__meta">
+            <span><i class="fas fa-clock" aria-hidden="true"></i> 5 min de lectura</span>
+            <span>Junio 2026</span>
+            <span class="read-more-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="developers" data-title="Técnicas de Concentración para Desarrolladores: Mantente en Flujo Durante el Código Complejo">
+        <div class="blog-card__body">
+          <span class="blog-tag blog-tag--developers">Para Desarrolladores</span>
+          <h2 class="blog-card__title">
+            <a href="/blog/es/focus-techniques-for-developers.html">Técnicas de Concentración para Desarrolladores: Mantente en Flujo Durante el Código Complejo</a>
+          </h2>
+          <p class="blog-card__excerpt">Técnicas de concentración diseñadas específicamente para desarrolladores. Cómo entrar y proteger el estado de flujo durante la programación compleja, depuración y trabajo de arquitectura.</p>
+          <div class="blog-card__meta">
+            <span><i class="fas fa-clock" aria-hidden="true"></i> 5 min de lectura</span>
+            <span>Junio 2026</span>
+            <span class="read-more-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="productivity" data-title="10 Técnicas de Concentración Comprobadas para Duplicar tu Productividad">
+        <div class="blog-card__body">
+          <span class="blog-tag blog-tag--productivity">Productividad</span>
+          <h2 class="blog-card__title">
+            <a href="/blog/es/focus-techniques.html">10 Técnicas de Concentración Comprobadas para Duplicar tu Productividad</a>
+          </h2>
+          <p class="blog-card__excerpt">Descubre 10 técnicas de concentración respaldadas por investigaciones utilizadas por los mejores profesionales: desde sprints Pomodoro y la regla de los dos minutos hasta ritmos binaurales e intenciones de implementación.</p>
+          <div class="blog-card__meta">
+            <span><i class="fas fa-clock" aria-hidden="true"></i> 5 min de lectura</span>
+            <span>Junio 2026</span>
+            <span class="read-more-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="productivity" data-title="Cómo Vencer la Procrastinación: El Sistema Respaldado por la Ciencia que Funciona">
+        <div class="blog-card__body">
+          <span class="blog-tag blog-tag--productivity">Productividad</span>
+          <h2 class="blog-card__title">
+            <a href="/blog/es/how-to-beat-procrastination.html">Cómo Vencer la Procrastinación: El Sistema Respaldado por la Ciencia que Funciona</a>
+          </h2>
+          <p class="blog-card__excerpt">Aprende la ciencia de la procrastinación y un sistema comprobado de 5 pasos para vencerla definitivamente. Respaldado por investigaciones psicológicas y técnicas prácticas de productividad.</p>
+          <div class="blog-card__meta">
+            <span><i class="fas fa-clock" aria-hidden="true"></i> 5 min de lectura</span>
+            <span>Junio 2026</span>
+            <span class="read-more-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="productivity" data-title="Cómo Construir Mejores Hábitos: La Guía Completa Basada en la Ciencia">
+        <div class="blog-card__body">
+          <span class="blog-tag blog-tag--productivity">Productividad</span>
+          <h2 class="blog-card__title">
+            <a href="/blog/es/how-to-build-better-habits.html">Cómo Construir Mejores Hábitos: La Guía Completa Basada en la Ciencia</a>
+          </h2>
+          <p class="blog-card__excerpt">Aprende a construir hábitos duraderos usando la ciencia del cambio de comportamiento. Bucles de hábitos, intenciones de implementación, apilamiento de hábitos y diseño del entorno explicados.</p>
+          <div class="blog-card__meta">
+            <span><i class="fas fa-clock" aria-hidden="true"></i> 5 min de lectura</span>
+            <span>Junio 2026</span>
+            <span class="read-more-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="students" data-title="Cómo Estudiar por Largas Horas Sin Perder Concentración o Energía">
+        <div class="blog-card__body">
+          <span class="blog-tag blog-tag--students">Para Estudiantes</span>
+          <h2 class="blog-card__title">
+            <a href="/blog/es/how-to-study-for-long-hours.html">Cómo Estudiar por Largas Horas Sin Perder Concentración o Energía</a>
+          </h2>
+          <p class="blog-card__excerpt">Aprende a estudiar durante largas horas sin agotarte. Técnicas respaldadas por la ciencia que incluyen Pomodoro, recuerdo activo, pausas estratégicas y consejos de nutrición.</p>
+          <div class="blog-card__meta">
+            <span><i class="fas fa-clock" aria-hidden="true"></i> 5 min de lectura</span>
+            <span>Junio 2026</span>
+            <span class="read-more-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="pomodoro" data-title="Cómo Superar la Procrastinación Usando la Técnica Pomodoro">
+        <div class="blog-card__body">
+          <span class="blog-tag blog-tag--pomodoro">Pomodoro</span>
+          <h2 class="blog-card__title">
+            <a href="/blog/es/overcome-procrastination-pomodoro.html">Cómo Superar la Procrastinación Usando la Técnica Pomodoro</a>
+          </h2>
+          <p class="blog-card__excerpt">Deja de procrastinar y entra en el trabajo profundo. Aprende exactamente cómo superar la procrastinación usando la técnica Pomodoro: comprobado para estudiantes, desarrolladores y personas con TDAH.</p>
+          <div class="blog-card__meta">
+            <span><i class="fas fa-clock" aria-hidden="true"></i> 5 min de lectura</span>
+            <span>Junio 2026</span>
+            <span class="read-more-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="pomodoro" data-title="7 Beneficios Respaldados por la Ciencia de la Técnica Pomodoro">
+        <div class="blog-card__body">
+          <span class="blog-tag blog-tag--pomodoro">Pomodoro</span>
+          <h2 class="blog-card__title">
+            <a href="/blog/es/pomodoro-benefits.html">7 Beneficios Respaldados por la Ciencia de la Técnica Pomodoro</a>
+          </h2>
+          <p class="blog-card__excerpt">¿Por qué funciona realmente la técnica Pomodoro? Descubre 7 beneficios respaldados por la ciencia que explican por qué los sprints de concentración de 25 minutos mejoran la atención y aumentan la productividad a largo plazo.</p>
+          <div class="blog-card__meta">
+            <span><i class="fas fa-clock" aria-hidden="true"></i> 5 min de lectura</span>
+            <span>Junio 2026</span>
+            <span class="read-more-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="pomodoro" data-title="Cómo Estudiar Eficazmente Usando la Técnica Pomodoro">
+        <div class="blog-card__body">
+          <span class="blog-tag blog-tag--pomodoro">Pomodoro</span>
+          <h2 class="blog-card__title">
+            <a href="/blog/es/pomodoro-study-guide.html">Cómo Estudiar Eficazmente Usando la Técnica Pomodoro</a>
+          </h2>
+          <p class="blog-card__excerpt">¿Luchas por estudiar durante largas horas sin agotarte? Aprende a usar la técnica de estudio Pomodoro con recuerdo activo, repetición espaciada y FlowPomodoro para rendir mejor.</p>
+          <div class="blog-card__meta">
+            <span><i class="fas fa-clock" aria-hidden="true"></i> 5 min de lectura</span>
+            <span>Junio 2026</span>
+            <span class="read-more-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="productivity" data-title="Cómo Concentrarse al Trabajar Desde Casa: Guía de Productividad para el Trabajo Remoto">
+        <div class="blog-card__body">
+          <span class="blog-tag blog-tag--productivity">Productividad</span>
+          <h2 class="blog-card__title">
+            <a href="/blog/es/remote-work-focus.html">Cómo Concentrarse al Trabajar Desde Casa: Guía de Productividad para el Trabajo Remoto</a>
+          </h2>
+          <p class="blog-card__excerpt">¿Trabajas desde casa pero luchas por concentrarte? Descubre estrategias comprobadas de productividad para el trabajo remoto, incluyendo la programación Pomodoro, diseño del entorno y bloqueo de distracciones.</p>
+          <div class="blog-card__meta">
+            <span><i class="fas fa-clock" aria-hidden="true"></i> 5 min de lectura</span>
+            <span>Junio 2026</span>
+            <span class="read-more-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="students" data-title="Productividad Estudiantil: La Guía Completa para Hacer Más en Menos Tiempo">
+        <div class="blog-card__body">
+          <span class="blog-tag blog-tag--students">Para Estudiantes</span>
+          <h2 class="blog-card__title">
+            <a href="/blog/es/student-productivity.html">Productividad Estudiantil: La Guía Completa para Hacer Más en Menos Tiempo</a>
+          </h2>
+          <p class="blog-card__excerpt">Una guía completa de productividad estudiantil que cubre la gestión del tiempo, recuerdo activo, técnica Pomodoro, gestión de la energía y eliminación del agotamiento académico.</p>
+          <div class="blog-card__meta">
+            <span><i class="fas fa-clock" aria-hidden="true"></i> 5 min de lectura</span>
+            <span>Junio 2026</span>
+            <span class="read-more-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="pomodoro" data-title="Bloques de Tiempo con la Técnica Pomodoro: El Sistema Definitivo de Concentración">
+        <div class="blog-card__body">
+          <span class="blog-tag blog-tag--pomodoro">Pomodoro</span>
+          <h2 class="blog-card__title">
+            <a href="/blog/es/time-blocking-pomodoro-technique.html">Bloques de Tiempo con la Técnica Pomodoro: El Sistema Definitivo de Concentración</a>
+          </h2>
+          <p class="blog-card__excerpt">Aprende a combinar los bloques de tiempo y la técnica Pomodoro para construir el horario diario definitivo para el trabajo profundo. Plantillas paso a paso para estudiantes, desarrolladores y trabajadores remotos.</p>
+          <div class="blog-card__meta">
+            <span><i class="fas fa-clock" aria-hidden="true"></i> 5 min de lectura</span>
+            <span>Junio 2026</span>
+            <span class="read-more-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="pomodoro" data-title="¿Qué es la Técnica Pomodoro? Una Guía Completa para Principiantes">
+        <div class="blog-card__body">
+          <span class="blog-tag blog-tag--pomodoro">Pomodoro</span>
+          <h2 class="blog-card__title">
+            <a href="/blog/es/what-is-the-pomodoro-technique.html">¿Qué es la Técnica Pomodoro? Una Guía Completa para Principiantes</a>
+          </h2>
+          <p class="blog-card__excerpt">Descubre qué es la Técnica Pomodoro, cómo funciona y por qué millones la usan para eliminar la procrastinación y entrar en concentración profunda. Guía completa para principiantes.</p>
+          <div class="blog-card__meta">
+            <span><i class="fas fa-clock" aria-hidden="true"></i> 5 min de lectura</span>
+            <span>Junio 2026</span>
+            <span class="read-more-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="developers" data-title="Pomodoro para Desarrolladores: Un Flujo de Trabajo de Concentración para Programación Profunda">
+        <div class="blog-card__body">
+          <span class="blog-tag blog-tag--developers">Para Desarrolladores</span>
+          <h2 class="blog-card__title">
+            <a href="/blog/es/developer-focus-workflow.html">Pomodoro para Desarrolladores: Un Flujo de Trabajo de Concentración para Programación Profunda</a>
+          </h2>
+          <p class="blog-card__excerpt">Flujo de trabajo Pomodoro optimizado para desarrolladores para entregar más rápido. Aprende a proteger el estado de flujo durante código complejo, minimizar las interrupciones de Slack y mantenerte en la zona durante horas.</p>
+          <div class="blog-card__meta">
+            <span><i class="fas fa-clock" aria-hidden="true"></i> 5 min de lectura</span>
+            <span>Junio 2026</span>
+            <span class="read-more-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </article>
+
+
+      <article class="blog-card" data-category="pomodoro" data-title="Técnica Pomodoro vs Bloques de Tiempo: ¿Qué Método de Productividad Gana?">
+        <div class="blog-card__body">
+          <span class="blog-tag blog-tag--pomodoro">Pomodoro</span>
+          <h2 class="blog-card__title">
+            <a href="/blog/es/pomodoro-vs-time-blocking.html">Técnica Pomodoro vs Bloques de Tiempo: ¿Qué Método de Productividad Gana?</a>
+          </h2>
+          <p class="blog-card__excerpt">Pomodoro vs bloques de tiempo: ¿qué sistema es el adecuado para ti? Una comparación profunda de ambos métodos, cuándo destaca cada uno y cómo combinarlos en el marco de productividad definitivo.</p>
+          <div class="blog-card__meta">
+            <span><i class="fas fa-clock" aria-hidden="true"></i> 12 min de lectura</span>
+            <span>Julio 2026</span>
+            <span class="read-more-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="deep-work" data-title="Técnica Pomodoro vs Trabajo Profundo: Entendiendo Cómo Trabajan Juntos">
+        <div class="blog-card__body">
+          <span class="blog-tag blog-tag--deep-work">Trabajo Profundo</span>
+          <h2 class="blog-card__title">
+            <a href="/blog/es/pomodoro-vs-deep-work.html">Técnica Pomodoro vs Trabajo Profundo: Entendiendo Cómo Trabajan Juntos</a>
+          </h2>
+          <p class="blog-card__excerpt">¿Son Pomodoro y el trabajo profundo filosofías que compiten? Aprende cómo el marco de trabajo profundo de Cal Newport y la Técnica Pomodoro son en realidad poderosos aliados, no opuestos.</p>
+          <div class="blog-card__meta">
+            <span><i class="fas fa-clock" aria-hidden="true"></i> 13 min de lectura</span>
+            <span>Julio 2026</span>
+            <span class="read-more-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="students" data-title="La Técnica Pomodoro para Exámenes: El Sistema de Estudio Definitivo para Altas Calificaciones">
+        <div class="blog-card__body">
+          <span class="blog-tag blog-tag--students">Para Estudiantes</span>
+          <h2 class="blog-card__title">
+            <a href="/blog/es/pomodoro-for-exams.html">La Técnica Pomodoro para Exámenes: El Sistema de Estudio Definitivo para Altas Calificaciones</a>
+          </h2>
+          <p class="blog-card__excerpt">Transforma tu preparación de exámenes con Pomodoro. Descubre horarios de estudio respaldados por la ciencia, estrategias de recuerdo activo y un plan Pomodoro comprobado para la semana de exámenes para un máximo rendimiento.</p>
+          <div class="blog-card__meta">
+            <span><i class="fas fa-clock" aria-hidden="true"></i> 11 min de lectura</span>
+            <span>Julio 2026</span>
+            <span class="read-more-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="developers" data-title="Técnica Pomodoro para Programación: La Guía del Desarrollador para Codificar Sin Agotamiento">
+        <div class="blog-card__body">
+          <span class="blog-tag blog-tag--developers">Para Desarrolladores</span>
+          <h2 class="blog-card__title">
+            <a href="/blog/es/pomodoro-for-programming.html">Técnica Pomodoro para Programación: La Guía del Desarrollador para Codificar Sin Agotamiento</a>
+          </h2>
+          <p class="blog-card__excerpt">Descubre cómo usar la Técnica Pomodoro para programar. Duraciones óptimas de sprint para programar, depurar y revisar código, además de estrategias para proteger tu valioso estado de flujo.</p>
+          <div class="blog-card__meta">
+            <span><i class="fas fa-clock" aria-hidden="true"></i> 12 min de lectura</span>
+            <span>Julio 2026</span>
+            <span class="read-more-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="productivity" data-title="Técnica Pomodoro para Trabajadores Remotos: El Sistema de Concentración Definitivo para el Trabajo en Casa">
+        <div class="blog-card__body">
+          <span class="blog-tag blog-tag--productivity">Productividad</span>
+          <h2 class="blog-card__title">
+            <a href="/blog/es/pomodoro-for-remote-workers.html">Técnica Pomodoro para Trabajadores Remotos: El Sistema de Concentración Definitivo para el Trabajo en Casa</a>
+          </h2>
+          <p class="blog-card__excerpt">¿Trabajas desde casa y luchas por concentrarte? La Técnica Pomodoro es el sistema perfecto para los trabajadores remotos. Estructura tu día, vence las distracciones del trabajo en casa y mantente constantemente productivo.</p>
+          <div class="blog-card__meta">
+            <span><i class="fas fa-clock" aria-hidden="true"></i> 11 min de lectura</span>
+            <span>Julio 2026</span>
+            <span class="read-more-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="pomodoro" data-title="¿Cuántos Pomodoros al Día? La Respuesta Definitiva para Cada Nivel">
+        <div class="blog-card__body">
+          <span class="blog-tag blog-tag--pomodoro">Pomodoro</span>
+          <h2 class="blog-card__title">
+            <a href="/blog/es/how-many-pomodoros-per-day.html">¿Cuántos Pomodoros al Día? La Respuesta Definitiva para Cada Nivel</a>
+          </h2>
+          <p class="blog-card__excerpt">¿Cuántas sesiones de Pomodoro deberías hacer por día? La respuesta respaldada por investigaciones para principiantes, intermedios y avanzados — con horarios reales y tablas de conteo diario.</p>
+          <div class="blog-card__meta">
+            <span><i class="fas fa-clock" aria-hidden="true"></i> 10 min de lectura</span>
+            <span>Julio 2026</span>
+            <span class="read-more-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="pomodoro" data-title="Las Mejores Aplicaciones Pomodoro en 2026: La Guía de Comparación Completa">
+        <div class="blog-card__body">
+          <span class="blog-tag blog-tag--pomodoro">Pomodoro</span>
+          <h2 class="blog-card__title">
+            <a href="/blog/es/best-pomodoro-apps.html">Las Mejores Aplicaciones Pomodoro en 2026: La Guía de Comparación Completa</a>
+          </h2>
+          <p class="blog-card__excerpt">¿Buscas la mejor aplicación de temporizador Pomodoro? Comparamos las 10 mejores opciones para 2026 — gratuitas y de pago — incluyendo FlowPomodoro, Forest, Pomofocus y más para ayudarte a encontrar la opción perfecta.</p>
+          <div class="blog-card__meta">
+            <span><i class="fas fa-clock" aria-hidden="true"></i> 12 min de lectura</span>
+            <span>Julio 2026</span>
+            <span class="read-more-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="pomodoro" data-title="10 Errores de Pomodoro que Están Destruyendo Silenciosamente tu Productividad (y Cómo Solucionarlos)">
+        <div class="blog-card__body">
+          <span class="blog-tag blog-tag--pomodoro">Pomodoro</span>
+          <h2 class="blog-card__title">
+            <a href="/blog/es/pomodoro-mistakes.html">10 Errores de Pomodoro que Están Destruyendo Silenciosamente tu Productividad (y Cómo Solucionarlos)</a>
+          </h2>
+          <p class="blog-card__excerpt">¿Estás usando mal la Técnica Pomodoro? Descubre los 10 errores más comunes de Pomodoro que cometen los principiantes, por qué cada uno perjudica tu concentración y exactamente cómo solucionarlos hoy.</p>
+          <div class="blog-card__meta">
+            <span><i class="fas fa-clock" aria-hidden="true"></i> 11 min de lectura</span>
+            <span>Julio 2026</span>
+            <span class="read-more-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="pomodoro" data-title="La Ciencia Detrás de la Técnica Pomodoro: Por Qué los Sprints de 25 Minutos Desbloquean el Máximo Rendimiento">
+        <div class="blog-card__body">
+          <span class="blog-tag blog-tag--pomodoro">Pomodoro</span>
+          <h2 class="blog-card__title">
+            <a href="/blog/es/science-behind-pomodoro.html">La Ciencia Detrás de la Técnica Pomodoro: Por Qué los Sprints de 25 Minutos Desbloquean el Máximo Rendimiento</a>
+          </h2>
+          <p class="blog-card__excerpt">¿Qué dice la neurociencia sobre la Técnica Pomodoro? Explora la ciencia cognitiva, la psicología y la investigación cerebral que explica exactamente por qué los intervalos estructurados de concentración mejoran la memoria y el rendimiento.</p>
+          <div class="blog-card__meta">
+            <span><i class="fas fa-clock" aria-hidden="true"></i> 14 min de lectura</span>
+            <span>Julio 2026</span>
+            <span class="read-more-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="pomodoro" data-title="Las Preguntas Frecuentes Completas sobre la Técnica Pomodoro: Todas las Preguntas Respondidas">
+        <div class="blog-card__body">
+          <span class="blog-tag blog-tag--pomodoro">Pomodoro</span>
+          <h2 class="blog-card__title">
+            <a href="/blog/es/pomodoro-faq.html">Las Preguntas Frecuentes Completas sobre la Técnica Pomodoro: Todas las Preguntas Respondidas</a>
+          </h2>
+          <p class="blog-card__excerpt">Todo lo que siempre has querido saber sobre la Técnica Pomodoro. Nuestras preguntas frecuentes exhaustivas responden a más de 30 preguntas sobre temporizadores, pausas, personalización, la ciencia y cómo empezar.</p>
+          <div class="blog-card__meta">
+            <span><i class="fas fa-clock" aria-hidden="true"></i> 15 min de lectura</span>
+            <span>Julio 2026</span>
+            <span class="read-more-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </article>
+
+    </div><!-- /.blog-grid -->
+
+
+    <!-- ── Newsletter ────────────────────────────────────────────────── -->
+    <div class="blog-newsletter" aria-label="Newsletter signup">
+      <h3>Recibe Ideas de Concentración Semanales</h3>
+      <p>Un correo electrónico a la semana. Estrategias basadas en evidencia para mejorar tu trabajo profundo, concentración y productividad. Nada de spam, nunca.</p>
+      <form class="newsletter-form" onsubmit="handleNewsletter(event)" novalidate="">
+        <input type="email" id="newsletter-email" placeholder="tu@correo.com" aria-label="Email address" required="">
+        <button type="submit" class="newsletter-submit">Suscribirse</button>
+      </form>
+      <p class="newsletter-note">Sin backend · No se almacenan datos · Correo solo como referencia</p>
+    </div>
+
+    <!-- ── CTA Banner ─────────────────────────────────────────────── -->
+    <div class="blog-cta-banner" role="complementary" aria-label="App call to action">
+      <div>
+        <h3>Prueba FlowPomodoro Mientras Lees</h3>
+        <p>Abre el temporizador en una nueva pestaña y usa Pomodoro mientras lees estos artículos.</p>
+      </div>
+      <a href="/app/index.html" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+        <i class="fas fa-play" aria-hidden="true"></i> Abrir Temporizador
+      </a>
+    </div>
+
+  </div><!-- /.container -->
+</main>
+
+<!-- ── Footer ───────────────────────────────────────────────────────────────── -->
+<footer class="lp-footer" aria-label="Site footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="/" class="logo" aria-label="FlowPomodoro home">
+          <span class="logo-dot" aria-hidden="true"></span>
+          FlowPomodoro
+        </a>
+        <p>Un temporizador Pomodoro premium y sin distracciones para estudiantes, desarrolladores y profesionales. Gratis para siempre.</p>
+        <a href="/app/index.html" class="btn btn-primary" style="width:fit-content;font-size:0.825rem;padding:0.6rem 1.4rem;background:linear-gradient(135deg,#00d4ff,#a855f7);color:#000;">
+          <i class="fas fa-play" aria-hidden="true"></i> Empezar a concentrarse
+        </a>
+      </div>
+      <div class="footer-col">
+        <h4>Producto</h4>
+        <ul>
+          <li><a href="/app/index.html">Temporizador de Concentración</a></li>
+          <li><a href="/#features">Características</a></li>
+          <li><a href="/#about">Acerca de</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Blog</h4>
+        <ul>
+          <li><a href="/blog/es/">Todos los Artículos</a></li>
+          <li><a href="/blog/es/what-is-the-pomodoro-technique.html">Guía Pomodoro</a></li>
+          <li><a href="/blog/es/deep-work-guide.html">Trabajo Profundo</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="/pages/privacy.html">Política de Privacidad</a></li>
+          <li><a href="/pages/terms.html">Términos de Uso</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 FlowPomodoro. Todos los derechos reservados.</p>
+      <div class="footer-bottom-links">
+        <a href="/pages/privacy.html">Privacidad</a>
+        <a href="/pages/terms.html">Términos</a>
+        <a href="/">Inicio</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function() {
+  // ── Navbar scroll ──────────────────────────────────────────
+  const nav = document.getElementById('main-nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 20);
+  }, { passive: true });
+  if (window.scrollY > 20) nav.classList.add('scrolled');
+
+  // ── Mobile menu ───────────────────────────────────────────
+  const hamburger = document.getElementById('nav-hamburger');
+  const drawer    = document.getElementById('nav-drawer');
+  hamburger.addEventListener('click', () => {
+    const isOpen = drawer.classList.toggle('open');
+    hamburger.classList.toggle('open', isOpen);
+    hamburger.setAttribute('aria-expanded', isOpen);
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  });
+  drawer.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      drawer.classList.remove('open');
+      hamburger.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    });
+  });
+
+  // ── Blog filters ───────────────────────────────────────────
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const cards = document.querySelectorAll('.blog-card');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.dataset.filter;
+      let visible = 0;
+      cards.forEach(card => {
+        const show = filter === 'all' || card.dataset.category === filter;
+        card.style.display = show ? '' : 'none';
+        if (show) visible++;
+      });
+    });
+  });
+
+  // ── Search ─────────────────────────────────────────────────
+  window.searchArticles = function() {
+    const q = document.getElementById('blog-search-input').value.toLowerCase().trim();
+    if (!q) { cards.forEach(c => c.style.display = ''); return; }
+    cards.forEach(card => {
+      const title = (card.dataset.title || '').toLowerCase();
+      const text  = card.textContent.toLowerCase();
+      card.style.display = (title.includes(q) || text.includes(q)) ? '' : 'none';
+    });
+  };
+
+  const searchInput = document.getElementById('blog-search-input');
+  searchInput.addEventListener('keydown', e => {
+    if (e.key === 'Enter') searchArticles();
+  });
+  searchInput.addEventListener('input', () => {
+    if (!searchInput.value) { cards.forEach(c => c.style.display = ''); }
+  });
+
+  // ── Newsletter ─────────────────────────────────────────────
+  window.handleNewsletter = function(e) {
+    e.preventDefault();
+    const email = document.getElementById('newsletter-email').value;
+    if (email) {
+      const btn = e.target.querySelector('button');
+      btn.textContent = '✓ ¡Suscrito!';
+      btn.style.background = 'rgba(34,211,160,0.15)';
+      btn.style.color = 'var(--accent-success)';
+      btn.style.borderColor = 'rgba(34,211,160,0.3)';
+      btn.disabled = true;
+    }
+  };
+})();
+</script>
+
+
+</body></html>

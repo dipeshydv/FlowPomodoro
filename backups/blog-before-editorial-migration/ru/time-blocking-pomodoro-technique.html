@@ -1,0 +1,413 @@
+<!DOCTYPE html><html lang="ru" dir="ltr"><head>
+  <meta charset="UTF-8">
+  <meta name="robots" content="index, follow">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Тайм-блокинг и метод Помодоро: система фокуса | FlowPomodoro</title>
+  <meta name="description" content="Совместите тайм-блокинг с методом Помодоро для создания идеальной системы концентрации. Пошаговое руководство для студентов, разработчиков и удаленных специалистов.">
+  <link rel="canonical" href="https://flowpomodoro.xyz/backups/blog-before-editorial-migration/ru/time-blocking-pomodoro-technique.html">
+  <meta name="theme-color" content="#060608">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://flowpomodoro.xyz/backups/blog-before-editorial-migration/ru/time-blocking-pomodoro-technique.html">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:title" content="Тайм-блокинг и метод Помодоро: идеальная система фокуса">
+  <meta property="og:description" content="Узнайте, как объединить тайм-блокинг и технику Помодоро, чтобы выстроить идеальный ежедневный график для глубокой работы. Пошаговые шаблоны для студентов, разработчиков и удаленщиков.">
+  <meta property="og:image" content="https://flowpomodoro.xyz/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Тайм-блокинг и метод Помодоро: идеальная система фокуса | FlowPomodoro">
+  <meta name="twitter:description" content="Узнайте, как объединить тайм-блокинг и технику Помодоро, чтобы выстроить идеальный ежедневный график для глубокой работы. Пошаговые шаблоны для студентов, разработчиков и удаленщиков.">
+  <meta name="twitter:image" content="https://flowpomodoro.xyz/og-image.jpg">
+  <!-- Article Schema -->
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"Тайм-блокинг и метод Помодоро: идеальная система фокуса","description":"Узнайте, как объединить тайм-блокинг и технику Помодоро, чтобы выстроить идеальный ежедневный график для глубокой работы. Пошаговые шаблоны для студентов, разработчиков и удаленщиков.","author":{"@type":"Organization","name":"FlowPomodoro"},"publisher":{"@type":"Organization","name":"FlowPomodoro","url":"https://flowpomodoro.xyz"},"datePublished":"2026-07-25","url":"https://flowpomodoro.xyz/blog/ru/time-blocking-pomodoro-technique.html"}
+  </script>
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Что такое тайм-блокинг?","acceptedAnswer":{"@type":"Answer","text":"Тайм-блокинг — это метод продуктивности, при котором вы делите день на отдельные временные блоки, каждый из которых выделяется под конкретную задачу или категорию дел. Вместо работы по открытому списку задач вы заранее планируете каждый час своего дня."}},{"@type":"Question","name":"Как совместить тайм-блокинг с методом Помодоро?","acceptedAnswer":{"@type":"Answer","text":"Сначала вы используете тайм-блокинг, чтобы распределить категории задач по крупным блокам в календаре (например, с 9:00 до 12:00 — глубокая работа). Затем внутри каждого блока вы применяете метод Помодоро — 25-минутные спринты концентрации с 5-минутными перерывами — чтобы выполнять работу без выгорания."}},{"@type":"Question","name":"Сколько Помодоро стоит делать в день?","acceptedAnswer":{"@type":"Answer","text":"Исследования и экспертное сообщество сходятся во мнении, что 8–12 сессий Помодоро (3,5–5 часов реальной, сфокусированной работы) в день представляют собой пиковую устойчивую продуктивность для большинства умственных работников. Превышение этого лимита ведет к быстрому снижению качества."}}]}
+  </script>
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/css/pages/blog.css">
+  <style>
+    .article-container { max-width: 760px; margin: 0 auto; padding: 0 clamp(1rem,4vw,2rem); }
+    .article-header { padding: clamp(100px,15vw,140px) 0 3rem; }
+    .article-meta { display:flex; gap:1rem; font-size:.85rem; color:var(--text-muted); margin-bottom:1.5rem; flex-wrap:wrap; }
+    .article-meta span { display:flex; align-items:center; gap:.35rem; }
+    .article-tag { background:rgba(0,212,255,.08); border:1px solid rgba(0,212,255,.2); color:var(--accent-cyan); padding:.25rem .75rem; border-radius:999px; font-size:.75rem; font-weight:700; text-transform:uppercase; letter-spacing:.06em; }
+    .article-title { font-size:clamp(1.75rem,4vw,2.75rem); line-height:1.2; margin:1rem 0; }
+    .article-intro { font-size:1.1rem; line-height:1.8; color:var(--text-secondary); margin-bottom:2.5rem; }
+    .toc { background:rgba(255,255,255,.03); border:1px solid var(--glass-border); border-radius:16px; padding:1.5rem 2rem; margin-bottom:2.5rem; }
+    .toc h2 { font-size:1rem; text-transform:uppercase; letter-spacing:.08em; color:var(--text-secondary); margin-bottom:1rem; font-weight:600; }
+    .toc ol { padding-left:1.25rem; display:flex; flex-direction:column; gap:.5rem; }
+    .toc a { color:var(--text-secondary); font-size:.9rem; transition:color .2s; }
+    .toc a:hover { color:var(--accent-cyan); }
+    .article-body h2 { font-size:clamp(1.3rem,2.5vw,1.75rem); margin:2.5rem 0 1rem; padding-top:.5rem; border-top:1px solid var(--glass-border); }
+    .article-body h3 { font-size:1.15rem; margin:1.75rem 0 .75rem; color:var(--accent-cyan); font-weight:600; }
+    .article-body h4 { font-size:1rem; margin:1.25rem 0 .5rem; color:var(--text-primary); font-weight:600; }
+    .article-body p { margin-bottom:1.25rem; font-size:1.02rem; line-height:1.8; }
+    .article-body ul, .article-body ol { padding-left:1.5rem; margin-bottom:1.25rem; }
+    .article-body li { margin-bottom:.6rem; line-height:1.75; font-size:1.02rem; }
+    .article-body strong { color:var(--text-primary); }
+    .article-body table { width:100%; border-collapse:collapse; margin:1.5rem 0; font-size:.95rem; }
+    .article-body th { background:rgba(0,212,255,.08); color:var(--accent-cyan); padding:.75rem 1rem; text-align:left; font-weight:700; font-size:.8rem; text-transform:uppercase; letter-spacing:.06em; border-bottom:1px solid rgba(0,212,255,.2); }
+    .article-body td { padding:.75rem 1rem; border-bottom:1px solid var(--glass-border); color:var(--text-secondary); line-height:1.6; }
+    .article-body tr:last-child td { border-bottom:none; }
+    .article-body blockquote { border-left:3px solid var(--accent-cyan); padding:1rem 1.5rem; margin:2rem 0; background:rgba(0,212,255,.03); border-radius:0 8px 8px 0; font-style:italic; color:var(--text-secondary); }
+    .callout { background:rgba(0,212,255,.05); border:1px solid rgba(0,212,255,.15); border-radius:12px; padding:1.25rem 1.5rem; margin:2rem 0; }
+    .callout p { margin:0; }
+    .definition-box { background:rgba(168,85,247,.06); border:2px solid rgba(168,85,247,.25); border-radius:14px; padding:1.5rem 2rem; margin:2rem 0; }
+    .definition-box h3 { font-size:.8rem; text-transform:uppercase; letter-spacing:.1em; color:rgba(168,85,247,.9); margin-bottom:.75rem; font-weight:700; }
+    .definition-box p { margin:0; font-size:1.05rem; line-height:1.8; }
+    .step-block { display:flex; gap:1rem; align-items:flex-start; margin-bottom:1.25rem; }
+    .step-num { background:rgba(0,212,255,.12); border:1px solid rgba(0,212,255,.25); color:var(--accent-cyan); font-size:.85rem; font-weight:700; border-radius:50%; width:2rem; height:2rem; display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:.15rem; }
+    .step-content { flex:1; font-size:1.02rem; line-height:1.8; }
+    .faq-section { margin-top:3rem; }
+    .faq-item { background:rgba(255,255,255,.03); border:1px solid var(--glass-border); border-radius:14px; padding:1.5rem; margin-bottom:.75rem; }
+    .faq-item h3 { font-size:1rem; color:var(--text-primary); margin-bottom:.6rem; font-weight:600; }
+    .faq-item p { margin:0; font-size:.95rem; }
+    .cta-box { background:linear-gradient(135deg,rgba(0,212,255,.07),rgba(168,85,247,.07)); border:1px solid rgba(0,212,255,.15); border-radius:20px; padding:2.5rem; text-align:center; margin:3rem 0; }
+    .cta-box h2 { font-size:1.5rem; margin-bottom:.75rem; }
+    .cta-box p { margin-bottom:1.5rem; color:var(--text-secondary); }
+    .related-posts { margin-top:3rem; }
+    .related-posts h2 { font-size:1.25rem; margin-bottom:1.25rem; }
+    .related-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1rem; }
+    .related-card { background:rgba(255,255,255,.03); border:1px solid var(--glass-border); border-radius:14px; padding:1.25rem; transition:border-color .2s; text-decoration:none; display:block; }
+    .related-card:hover { border-color:rgba(255,255,255,.13); }
+    .related-card span { font-size:.72rem; color:var(--accent-cyan); font-weight:700; text-transform:uppercase; letter-spacing:.06em; }
+    .related-card h3 { font-size:.95rem; margin:.4rem 0 0; line-height:1.4; color:var(--text-primary); }
+    .share-row { display:flex; gap:.75rem; flex-wrap:wrap; margin:2rem 0 2.5rem; }
+    .share-btn { display:inline-flex; align-items:center; gap:.4rem; padding:.45rem 1rem; border-radius:999px; font-size:.8rem; font-weight:600; border:1px solid var(--glass-border); color:var(--text-secondary); background:rgba(255,255,255,.03); cursor:pointer; text-decoration:none; transition:all .2s; font-family:inherit; }
+    .share-btn:hover { border-color:rgba(255,255,255,.2); color:var(--text-primary); transform:translateY(-1px); }
+    .prev-next { display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:3rem 0; }
+    .prev-next a { display:block; padding:1.25rem; border:1px solid var(--glass-border); border-radius:12px; background:rgba(255,255,255,.02); text-decoration:none; transition:all .2s; }
+    .prev-next a:hover { border-color:rgba(255,255,255,.15); transform:translateY(-2px); }
+    .prev-next .nav-label { font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; color:var(--text-muted); margin-bottom:.4rem; }
+    .prev-next .nav-title { font-size:.9rem; font-weight:600; color:var(--text-primary); line-height:1.4; }
+    .newsletter-box { background:linear-gradient(135deg,rgba(0,212,255,.05),rgba(168,85,247,.05)); border:1px solid rgba(0,212,255,.12); border-radius:16px; padding:2rem; text-align:center; margin:2.5rem 0; }
+    .newsletter-box h3 { font-size:1.1rem; margin-bottom:.5rem; }
+    .newsletter-box p { font-size:.9rem; color:var(--text-secondary); margin-bottom:1rem; }
+    .newsletter-form { display:flex; gap:.5rem; max-width:400px; margin:0 auto; }
+    .newsletter-form input { flex:1; background:rgba(0,0,0,.3); border:1px solid var(--glass-border); padding:.6rem 1rem; border-radius:999px; color:var(--text-primary); font-size:.875rem; font-family:inherit; outline:none; }
+    .newsletter-form input:focus { border-color:rgba(0,212,255,.4); }
+    .newsletter-form button { background:linear-gradient(135deg,#00d4ff,#a855f7); color:#000; padding:.6rem 1.25rem; border-radius:999px; border:none; font-weight:700; font-size:.875rem; cursor:pointer; white-space:nowrap; font-family:inherit; }
+    #reading-progress { position:fixed; top:0; left:0; height:3px; background:linear-gradient(90deg,#00d4ff,#a855f7); z-index:9999; width:0%; transition:width .1s linear; pointer-events:none; }
+    @media(max-width:600px){.prev-next{grid-template-columns:1fr;}.newsletter-form{flex-direction:column;}.share-row{gap:.5rem;}}
+  </style>
+
+  <!-- Schema: BreadcrumbList -->
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://flowpomodoro.xyz/"},{"@type":"ListItem","position":2,"name":"Блог","item":"https://flowpomodoro.xyz/blog/"},{"@type":"ListItem","position":3,"name":"Тайм-блокинг и метод Помодоро: система фокуса","item":"https://flowpomodoro.xyz/blog/ru/time-blocking-pomodoro-technique.html"}]}
+  </script>
+    <link rel="alternate" hreflang="en" href="https://flowpomodoro.xyz/blog/en/time-blocking-pomodoro-technique.html">
+  <link rel="alternate" hreflang="hi" href="https://flowpomodoro.xyz/blog/hi/time-blocking-pomodoro-technique.html">
+  <link rel="alternate" hreflang="ne" href="https://flowpomodoro.xyz/blog/ne/time-blocking-pomodoro-technique.html">
+  <link rel="alternate" hreflang="es" href="https://flowpomodoro.xyz/blog/es/time-blocking-pomodoro-technique.html">
+  <link rel="alternate" hreflang="vi" href="https://flowpomodoro.xyz/blog/vi/time-blocking-pomodoro-technique.html">
+  <link rel="alternate" hreflang="ru" href="https://flowpomodoro.xyz/blog/ru/time-blocking-pomodoro-technique.html">
+  <link rel="alternate" hreflang="x-default" href="https://flowpomodoro.xyz/blog/en/time-blocking-pomodoro-technique.html">
+</head>
+<body>
+<div id="reading-progress"></div>
+
+<nav class="lp-nav" aria-label="Главная навигация">
+  <div class="container flex-between">
+    <a href="/" class="logo">FlowPomodoro</a>
+    <div class="nav-links">
+      <a href="/">Главная</a>
+      <a href="/blog/">Блог</a>
+      <a href="/app/index.html" class="btn btn-primary">Начать фокус</a>
+          <div class="lang-switcher" style="position:relative; display:inline-block; margin-left:1rem;">
+        <button class="btn-ghost lang-btn" aria-label="Выбрать язык" style="display:flex;align-items:center;gap:0.4rem;background:transparent;border:1px solid rgba(255,255,255,0.15);border-radius:20px;padding:0.4rem 0.8rem;color:var(--text-primary);cursor:pointer;font-family:inherit;font-size:0.85rem;">
+          <i class="fas fa-globe"></i> <span class="current-lang-text">RU</span>
+        </button>
+        <div class="lang-dropdown" style="display:none;position:absolute;top:120%;right:0;background:#111116;border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:0.5rem;min-width:150px;z-index:999;flex-direction:column;gap:0.2rem;box-shadow:0 8px 32px rgba(0,0,0,0.5);">
+          <button class="lang-option" data-lang="en" style="background:transparent;border:none;color:var(--text-primary);padding:0.5rem 1rem;text-align:left;border-radius:6px;cursor:pointer;width:100%;font-family:inherit;font-size:0.85rem;transition:background 0.2s;">🇺🇸 English</button>
+          <button class="lang-option" data-lang="hi" style="background:transparent;border:none;color:var(--text-primary);padding:0.5rem 1rem;text-align:left;border-radius:6px;cursor:pointer;width:100%;font-family:inherit;font-size:0.85rem;transition:background 0.2s;">🇮🇳 Hindi</button>
+          <button class="lang-option" data-lang="ne" style="background:transparent;border:none;color:var(--text-primary);padding:0.5rem 1rem;text-align:left;border-radius:6px;cursor:pointer;width:100%;font-family:inherit;font-size:0.85rem;transition:background 0.2s;">🇳🇵 Nepali</button>
+          <button class="lang-option" data-lang="es" style="background:transparent;border:none;color:var(--text-primary);padding:0.5rem 1rem;text-align:left;border-radius:6px;cursor:pointer;width:100%;font-family:inherit;font-size:0.85rem;transition:background 0.2s;">🇪🇸 Spanish</button>
+          <button class="lang-option" data-lang="vi" style="background:transparent;border:none;color:var(--text-primary);padding:0.5rem 1rem;text-align:left;border-radius:6px;cursor:pointer;width:100%;font-family:inherit;font-size:0.85rem;transition:background 0.2s;">🇻🇳 Vietnamese</button>
+          <button class="lang-option" data-lang="ru" style="background:transparent;border:none;color:var(--text-primary);padding:0.5rem 1rem;text-align:left;border-radius:6px;cursor:pointer;width:100%;font-family:inherit;font-size:0.85rem;transition:background 0.2s;">🇷🇺 Русский</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<nav class="breadcrumb container" aria-label="Хлебные крошки" style="margin-top:2rem;margin-bottom:1rem;font-size:.9rem;color:var(--text-muted);">
+  <a href="/" style="color:var(--accent-cyan);text-decoration:none;">Главная</a> &gt;
+  <a href="/blog/" style="color:var(--accent-cyan);text-decoration:none;">Блог</a> &gt;
+  <span aria-current="page">Тайм-блокинг и метод Помодоро: идеальная система фокуса</span>
+</nav>
+
+<main id="main-content">
+  <div class="article-container">
+    <header class="article-header">
+      <div class="article-meta">
+        <span class="article-tag">Продуктивность</span>
+        <span><i class="fas fa-clock"></i> 12 мин чтения</span>
+        <span><i class="fas fa-calendar"></i> Март 2026</span>
+        <span><i class="fas fa-user"></i> Команда FlowPomodoro</span>
+      </div>
+      <h1 class="article-title">Тайм-блокинг и метод Помодоро: идеальная система фокуса</h1>
+      <p class="article-intro">Большинство систем продуктивности терпят неудачу, потому что заставляют выбирать: планировать день <em>или</em> фокусироваться на работе. Тайм-блокинг дает вам стратегическую карту, а техника Помодоро — тактический двигатель. Вместе они образуют самую полную и защищенную от выгорания систему фокуса для любого умственного работника в 2026 году.</p>
+
+      <!-- Share buttons -->
+      <div class="share-row">
+        <a href="https://twitter.com/intent/tweet?url=https://flowpomodoro.xyz/blog/ru/time-blocking-pomodoro-technique.html&amp;text=Тайм-блокинг%20и%20метод%20Помодоро%3A%20идеальная%20система%20фокуса" target="_blank" rel="noopener" class="share-btn"><i class="fab fa-twitter"></i> Твитнуть</a>
+        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://flowpomodoro.xyz/blog/ru/time-blocking-pomodoro-technique.html" target="_blank" rel="noopener" class="share-btn"><i class="fab fa-linkedin"></i> Поделиться</a>
+        <a href="https://reddit.com/submit?url=https://flowpomodoro.xyz/blog/ru/time-blocking-pomodoro-technique.html&amp;title=Тайм-блокинг%20и%20метод%20Помодоро%3A%20идеальная%20система%20фокуса" target="_blank" rel="noopener" class="share-btn"><i class="fab fa-reddit"></i> Reddit</a>
+        <button onclick="navigator.clipboard.writeText(window.location.href);this.textContent='Скопировано!';setTimeout(()=>this.textContent='Скопировать ссылку',2000)" class="share-btn"><i class="fas fa-link"></i> Скопировать ссылку</button>
+      </div>
+    </header>
+
+    <!-- Table of Contents -->
+    <nav class="toc" aria-label="Содержание">
+      <h2>Содержание</h2>
+      <ol>
+        <li><a href="#what-is-time-blocking">Что такое тайм-блокинг?</a></li>
+        <li><a href="#what-is-pomodoro">Что такое метод Помодоро?</a></li>
+        <li><a href="#why-combine">Почему объединение тайм-блокинга и Помодоро так эффективно</a></li>
+        <li><a href="#how-to-combine">Как выстроить свой день с тайм-блокингом и Помодоро</a></li>
+        <li><a href="#templates">Шаблоны ежедневного расписания</a></li>
+        <li><a href="#mistakes">6 распространенных ошибок тайм-блокинга, которых следует избегать</a></li>
+        <li><a href="#conclusion">Заключение: создайте систему и позвольте ей работать</a></li>
+      </ol>
+    </nav>
+
+    <article class="article-body">
+      <h2 id="what-is-time-blocking">Что такое тайм-блокинг?</h2>
+      <p>
+          Тайм-блокинг — это метод продуктивности на основе календаря, популяризированный <strong>Кэлом Ньюпортом</strong> (Cal Newport), автором книги <em>«Глубокая работа» (Deep Work)</em>. Вместо того чтобы вести размытый список дел и работать хаотично по мере появления вдохновения, вы выделяете для каждой задачи четкий, незаменимый временной интервал в своем календаре. Весь ваш день планируется заранее утром или вечером накануне.
+      </p>
+      <p>
+          Ключевой принцип: <strong>без четкого плана срочные, но неважные задачи быстро заполнят график и вытеснят то, что действительно имеет значение.</strong> Тайм-блокинг создает жесткие архитектурные границы вокруг вашего самого ценного когнитивного ресурса.
+      </p>
+
+      <h3>Три типа временных блоков</h3>
+      <ul>
+          <li><strong>Блоки глубокой работы (Deep Work):</strong> интервалы в 2–4 часа для сложных задач, требующих высокой концентрации без отвлекающих факторов. Предназначены для ваших самых важных проектов.</li>
+          <li><strong>Блоки поверхностной работы (Shallow Work):</strong> 30–60 минутные слоты для почты, совещаний, административных дел — необходимых, но когнитивно нетребовательных задач.</li>
+          <li><strong>Буферные блоки (Buffer Blocks):</strong> 15–30 минутные интервалы, намеренно оставленные пустыми, чтобы сглаживать сдвиги в расписании и незапланированные перерывы.</li>
+      </ul>
+
+      <h2 id="what-is-pomodoro">Что такое метод Помодоро?</h2>
+      <p>
+          Разработанная Франческо Чирилло в 1980-х годах, <strong>техника Помодоро</strong> разделяет сфокусированную работу на фиксированные спринты — классически это 25 минут глубокой концентрации, за которыми следует строгий 5-минутный перерыв. После четырех последовательных спринтов (называемых «Помодоро») вы делаете длинный перерыв на 20–30 минут.
+      </p>
+      <p>
+          Метод изначально получил свое название в честь кухонного таймера в форме помидора (Pomodoro по-итальянски означает «помидор»). Его элегантность заключается в простоте: он использует временно́е ограничение для создания чувства срочности, а перерывы предотвращают выгорание, поддерживая высокую умственную продуктивность в течение всего рабочего дня.
+      </p>
+      <p>
+          Хотите глубже разобраться в нейробиологии того, почему работают спринты? Прочитайте наше руководство о <a href="/blog/ru/flow-state-explained.html">научных основах состояния потока</a>.
+      </p>
+
+      <h2 id="why-combine">Почему объединение тайм-блокинга и Помодоро так эффективно</h2>
+      <p>
+          При изолированном использовании у каждого метода есть существенный недостаток:
+      </p>
+      <ul>
+          <li><strong>Тайм-блокинг без Помодоро:</strong> вы планируете 3-часовой блок глубокой работы, но внутри него нет структуры. Через 45 минут наступает усталость, вы отвлекаетесь на соцсети и чувствуете вину.</li>
+          <li><strong>Помодоро без тайм-блокинга:</strong> вы делаете 25-минутные спринты, но без четкого приоритетного плана. Вы интенсивно фокусируетесь на второстепенных задачах и к концу дня понимаете, что не сделали ничего действительно важного.</li>
+      </ul>
+      <p>
+          Сочетание этих подходов объединяет их сильные стороны: <strong>тайм-блоки задают направление и время (что и когда делать), а спринты Помодоро обеспечивают процесс (как выполнять)</strong>. Вы приступаете к 3-часовому блоку в 9:00 с четким пониманием, что выполните ровно 4 Помодоро по этой задаче, после чего закроете блок. В результате вы получаете предсказуемый и легко воспроизводимый рабочий ритм.
+      </p>
+
+      <div class="callout">
+          <p><strong>Связано:</strong> Узнайте, как устранить отвлекающие факторы во время работы, в нашем <a href="/blog/ru/distraction-control.html">руководстве по контролю внимания</a>.</p>
+      </div>
+
+      <h2 id="how-to-combine">Как выстроить свой день с тайм-блокингом и Помодоро</h2>
+
+      <h3>Шаг 1: Оцените уровень своей энергии</h3>
+      <p>
+          Не все часы одинаково продуктивны. Большинство людей испытывают пик умственной активности в течение 2–4 часов утром (обычно с 8:00 до 12:00 для «жаворонков»). Определите свой пиковый период, отслеживая свое самочувствие и уровень бодрости каждый час на протяжении 3–5 дней.
+      </p>
+      <p>
+          <strong>Правило:</strong> Блоки глубокой работы должны припадать на интервал пиковой энергии. Поверхностные задачи следует планировать на часы спада активности.
+      </p>
+
+      <h3>Шаг 2: Планируйте день накануне вечером (или за 5 минут утром)</h3>
+      <p>
+          Открывайте календарь в конце каждого рабочего дня. Заполняйте каждый час блоком глубокой работы, поверхностной работы или буферным временем. Это занимает всего 5 минут, но избавляет от усталости от принятия решений еще до начала рабочего дня.
+      </p>
+      <p>
+          Главный вопрос, который стоит себе задать: <em>«Какая единственная задача сделает сегодняшний день успешным?»</em> Именно эта задача должна занять ваш первый блок глубокой работы.
+      </p>
+
+      <h3>Шаг 3: Назначьте цели по Помодоро для каждого блока</h3>
+      <p>
+          Для каждого блока глубокой работы установите четкое количество интервалов Помодоро. 2-часовой блок = 4 Помодоро (25 мин работы + 5 мин отдыха × 4). 1-часовой блок = 2 Помодоро. Запишите это значение в начале блока как свое обязательство по спринтам.
+      </p>
+
+      <h3>Шаг 4: Работайте с помощью специализированного таймера фокуса</h3>
+      <p>
+          Используйте веб-таймер Помодоро, чтобы отслеживать сессии, серии продуктивности и избегать ловушек уведомлений на смартфоне. Выделенный таймер создает ритуал: нажатие кнопки «Старт» дает сигнал мозгу о переходе в режим полной концентрации.
+      </p>
+
+      <div class="cta-box">
+        <h2>Таймер FlowPomodoro</h2>
+        <p>Отслеживайте спринты Помодоро, сохраняйте серии продуктивности и наглядно оценивайте свою концентрацию с помощью таймера без отвлекающих элементов.</p>
+        <a href="/app/index.html" class="btn btn-primary btn-lg">Начать бесплатную сессию →</a>
+      </div>
+
+      <h3>Шаг 5: Подводите итоги в конце дня</h3>
+      <p>
+          Уделите 5 минут анализу: сколько Помодоро вы выполнили по сравнению с целью? Какой блок затянулся? Какая задача осталась незавершенной? Эти данные станут основой для планирования на следующий день. Со временем ваши оценки станут точнее, а дни — гораздо предсказуемее.
+      </p>
+
+      <h2 id="templates">Шаблоны ежедневного расписания</h2>
+      <p>Ниже приведены три готовых шаблона для старта. Адаптируйте их под свою роль и биологические ритмы.</p>
+
+      <h3>Шаблон A: Студент (6 Помодоро в день)</h3>
+      <div class="callout" style="font-family: monospace;">
+          <p>
+              🟣 <strong>8:00–9:30</strong> → Блок глубокой работы №1 — 3 Помодоро (повторение лекций, решение задач)<br>
+              ⬜ <strong>9:30–10:00</strong> → Буфер + проверка почты<br>
+              🟣 <strong>10:00–11:30</strong> → Блок глубокой работы №2 — 3 Помодоро (активное запоминание, написание эссе)<br>
+              🍽️ <strong>11:30–13:00</strong> → Обед + отдых от экранов<br>
+              ⬜ <strong>13:00–14:00</strong> → Поверхностная работа (чтение литературы, карточки, администрирование)<br>
+              🔵 <strong>14:00–15:00</strong> → Анализ + планирование на завтра
+          </p>
+      </div>
+
+      <h3>Шаблон B: Разработчик (8 Помодоро в день)</h3>
+      <div class="callout" style="font-family: monospace;">
+          <p>
+              🟣 <strong>9:00–11:30</strong> → Блок глубокой работы №1 — 4 Помодоро (реализация функций, архитектура)<br>
+              ⬜ <strong>11:30–12:00</strong> → Стендап + сообщения в Slack<br>
+              🍽️ <strong>12:00–13:00</strong> → Обед<br>
+              🟣 <strong>13:00–15:00</strong> → Блок глубокой работы №2 — 4 Помодоро (код-ревью, отладка)<br>
+              ⬜ <strong>15:00–16:00</strong> → Поверхностная работа (PR, документация, почта)<br>
+              🔵 <strong>16:00–16:15</strong> → Анализ плана на день + ритуал завершения работы
+          </p>
+      </div>
+
+      <h3>Шаблон C: Удаленный сотрудник (10 Помодоро в день)</h3>
+      <div class="callout" style="font-family: monospace;">
+          <p>
+              🟣 <strong>8:00–10:30</strong> → Утренний блок глубокой работы — 5 Помодоро (самый приоритетный проект)<br>
+              ⬜ <strong>10:30–11:30</strong> → Почта + звонки + асинхронные коммуникации<br>
+              🍽️ <strong>11:30–12:30</strong> → Обед вне рабочего стола<br>
+              🟣 <strong>12:30–14:30</strong> → Дневной блок глубокой работы — 4 Помодоро (второй по важности проект)<br>
+              ⬜ <strong>14:30–15:30</strong> → Администрирование, отчеты, Slack<br>
+              🔵 <strong>15:30–16:00</strong> → Недельный обзор (по пятницам) + план на день<br>
+              🛑 <strong>16:00</strong> → Окончание рабочего дня. Ритуал завершения.
+          </p>
+      </div>
+
+      <h2 id="mistakes">6 распространенных ошибок тайм-блокинга, которых следует избегать</h2>
+      <ul>
+          <li><strong>Сплошное бронирование каждой минуты:</strong> оставляйте продуманные буферные слоты. Реальность внесет свои коррективы — с вашим согласием или без него.</li>
+          <li><strong>Планирование глубокой работы на часы упадка сил:</strong> ставить важную творческую задачу на 16:00, когда вы истощены физически и ментально — это самосаботаж.</li>
+          <li><strong>Отношение к временным блокам как к пожеланиям:</strong> к блокам нужно относиться с тем же уважением, что и к визиту к врачу. Защищайте их по умолчанию.</li>
+          <li><strong>Запуск Помодоро без конкретно сформулированной задачи:</strong> «Поработать над проектом» — это не задача. «Написать введение к отчету» — это конкретная задача.</li>
+          <li><strong>Пропуск перерывов:</strong> 5-минутный перерыв не опция, а неврологическая необходимость для снижения уровня аденозина и восстановления функций префронтальной коры.</li>
+          <li><strong>Отказ от системы после неудачного дня:</strong> любая сложная система требует калибровки. Неудачный день — это данные для анализа, а не поражение. Скоректируйте график и продолжайте.</li>
+      </ul>
+
+      <h2 id="conclusion">Заключение: создайте систему и позвольте ей работать</h2>
+      <p>
+          Самая распространенная ошибка людей, стремящихся к продуктивности — переключение между системами: попытка использовать Помодоро неделю, затем GTD, затем тайм-блокинг, а потом возврат к обычному списку дел. Правда в том, что каждая система решает свою задачу на определенном уровне абстракции. Тайм-блокинг решает вашу <em>стратегическую</em> задачу. Метод Помодоро решает проблему <em>исполнения</em>.
+      </p>
+      <p>
+          Составьте расписание с тайм-блокингом и Помодоро на одну неделю, следуйте ему в течение 21 дня без изменений и проанализируйте результаты. Вы не узнаете свою продуктивность через месяц. Меньше всего вам нужна более сложная система — вам нужно просто начать.
+      </p>
+    </article>
+
+    <!-- FAQ -->
+    <section class="faq-section" id="faq">
+      <h2>Часто задаваемые вопросы</h2>
+      <div class="faq-item">
+        <h3>Что такое тайм-блокинг?</h3>
+        <p>Тайм-блокинг — это метод продуктивности, при котором вы делите день на отдельные временные блоки, каждый из которых выделяется под конкретную задачу или категорию дел. Вместо работы по открытому списку задач вы заранее планируете каждый час своего дня.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Как совместить тайм-блокинг с методом Помодоро?</h3>
+        <p>Сначала вы используете тайм-блокинг, чтобы распределить категории задач по крупным блокам в календаре (например, с 9:00 до 12:00 — глубокая работа). Затем внутри каждого блока вы применяете метод Помодоро — 25-минутные спринты концентрации с 5-минутными перерывами — чтобы выполнять работу без выгорания.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Сколько Помодоро стоит делать в день?</h3>
+        <p>Исследования и экспертное сообщество сходятся во мнении, что 8–12 сессий Помодоро (3,5–5 часов реальной, сфокусированной работы) в день представляют собой пиковую устойчивую продуктивность для большинства умственных работников. Превышение этого лимита ведет к быстрому снижению качества.</p>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <div class="cta-box">
+      <h2>Ваши временные блоки начинаются здесь.</h2>
+      <p>FlowPomodoro отслеживает ваши спринты Помодоро, данные о сериях продуктивности и часы концентрации — все в лаконичном интерфейсе, созданном для глубокой работы. Регистрация не требуется.</p>
+      <a href="/app/index.html" class="btn btn-primary btn-lg">Начать первый Помодоро на flowpomodoro.xyz/app →</a>
+    </div>
+
+    <!-- Newsletter -->
+    <div class="newsletter-box">
+      <h3>Получайте еженедельные советы по концентрации</h3>
+      <p>Проверенные методы продуктивности каждую неделю.</p>
+      <form class="newsletter-form" onsubmit="this.querySelector('button').textContent='Вы подписаны!';return false;">
+        <input type="email" placeholder="your@email.com" aria-label="Email address">
+        <button type="submit">Подписаться</button>
+      </form>
+    </div>
+
+    <!-- Prev / Next -->
+    <nav class="prev-next" aria-label="Навигация по статьям">
+      <a href="/blog/ru/daily-planning-system.html">
+        <div class="nav-label">← Предыдущая</div>
+        <div class="nav-title">Система ежедневного планирования</div>
+      </a>
+      <a href="/blog/ru/pomodoro-vs-time-blocking.html" style="text-align:right;">
+        <div class="nav-label">Следующая →</div>
+        <div class="nav-title">Помодоро против тайм-блокинга</div>
+      </a>
+    </nav>
+
+    <!-- Related Posts -->
+    <section class="related-posts">
+      <h2>Продолжить чтение</h2>
+      <div class="related-grid">
+        <a href="/blog/ru/pomodoro-vs-time-blocking.html" class="related-card">
+          <span>Помодоро</span>
+          <h3>Помодоро против тайм-блокинга</h3>
+        </a>
+        <a href="/blog/ru/daily-planning-system.html" class="related-card">
+          <span>Продуктивность</span>
+          <h3>Система ежедневного планирования</h3>
+        </a>
+        <a href="/blog/ru/best-productivity-techniques.html" class="related-card">
+          <span>Продуктивность</span>
+          <h3>Лучшие техники продуктивности на 2026 год</h3>
+        </a>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer class="lp-footer">
+  <div class="container flex-between" style="flex-wrap:wrap;gap:1rem;">
+    <p>© 2026 FlowPomodoro. Все права защищены.</p>
+    <div style="display:flex;gap:1.5rem;">
+      <a href="/pages/privacy.html">Конфиденциальность</a>
+      <a href="/pages/terms.html">Условия</a>
+      <a href="/blog/">Блог</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+window.addEventListener('scroll',()=>{
+  const el=document.getElementById('reading-progress');
+  if(!el)return;
+  const h=document.documentElement;
+  const pct=(h.scrollTop||document.body.scrollTop)/(h.scrollHeight-h.clientHeight)*100;
+  el.style.width=Math.min(pct,100)+'%';
+},{passive:true});
+</script>
+<script src="/js/lang.js"></script>
+
+</body></html>

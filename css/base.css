@@ -1,6 +1,8 @@
 /* ============================================
    BASE RESET & DEFAULTS
    ============================================ */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
 *, *::before, *::after {
     margin: 0;
     padding: 0;
@@ -14,41 +16,56 @@ html {
 }
 
 body {
-    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: var(--font-sans);
     background-color: var(--bg-main);
     color: var(--text-primary);
     min-height: 100vh;
     overflow-x: hidden;
     line-height: 1.6;
-    background-image: var(--gradient-hero);
-    background-attachment: fixed;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    transition: background-color var(--duration-slow) var(--ease-smooth), color var(--duration-slow) var(--ease-smooth);
+}
+
+/* Subtle gradient decoration in light mode, deep background in dark mode */
+html[data-theme="light"] body {
+    background: radial-gradient(circle at 15% 15%, rgba(255, 184, 0, 0.05), transparent 35%),
+                radial-gradient(circle at 85% 85%, rgba(255, 184, 0, 0.03), transparent 35%),
+                var(--bg-main);
+}
+html[data-theme="dark"] body {
+    background: radial-gradient(circle at 50% 0%, rgba(255, 184, 0, 0.03), transparent 50%),
+                var(--bg-main);
 }
 
 /* ============================================
    TYPOGRAPHY
    ============================================ */
 h1, h2, h3, h4, h5, h6 {
-    font-weight: 600;
+    font-family: var(--font-display);
+    font-weight: 700;
     color: var(--text-primary);
-    line-height: 1.2;
+    line-height: 1.15;
     letter-spacing: -0.025em;
 }
 
-h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
-h2 { font-size: clamp(1.5rem, 3vw, 2.25rem); }
-h3 { font-size: clamp(1.1rem, 2vw, 1.5rem); }
-h4 { font-size: 1.1rem; }
+h1 { font-size: clamp(2.25rem, 5vw, 4rem); font-weight: 800; }
+h2 { font-size: clamp(1.75rem, 4vw, 2.75rem); }
+h3 { font-size: clamp(1.25rem, 2vw, 1.75rem); }
+h4 { font-size: 1.125rem; }
 
 p {
     color: var(--text-secondary);
-    line-height: 1.7;
+    line-height: 1.75;
 }
 
 a {
     color: inherit;
     text-decoration: none;
+    transition: color var(--duration-normal);
+}
+a:hover {
+    color: var(--brand-primary);
 }
 
 img, video, svg {
@@ -68,16 +85,19 @@ input, select, textarea {
 /* ============================================
    SCROLLBAR
    ============================================ */
-::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar { width: 6px; height: 6px; }
 ::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: var(--glass-border-hover); border-radius: var(--radius-full); }
+::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: var(--radius-full);
+}
 ::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
 
 /* ============================================
    SELECTION
    ============================================ */
 ::selection {
-    background: rgba(0, 212, 255, 0.2);
+    background: var(--brand-glow-strong);
     color: var(--text-primary);
 }
 
@@ -85,12 +105,18 @@ input, select, textarea {
    FOCUS ACCESSIBILITY
    ============================================ */
 :focus-visible {
-    outline: 2px solid var(--accent-cyan);
+    outline: 2px solid var(--brand-primary);
     outline-offset: 3px;
-    border-radius: var(--radius-xs);
+    border-radius: var(--radius-sm);
 }
 
-/* Remove default focus outline for mouse users */
 :focus:not(:focus-visible) {
     outline: none;
+}
+
+/* ============================================
+   TEXT UTILITIES
+   ============================================ */
+.text-brand {
+    color: var(--brand-primary);
 }

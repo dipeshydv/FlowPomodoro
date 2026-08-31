@@ -1,0 +1,50 @@
+# FlowPomodoro
+
+> FlowPomodoro is a free, no-signup Pomodoro timer and deep work focus tool for students, professionals, and developers. It helps users apply the Pomodoro Technique, build productive habits, track sessions and streaks, and enter flow state.
+
+## Features
+
+- Free Pomodoro Timer (25/5, 50/10, 90/20 presets, fully customizable)
+- Task Management with daily goals
+- Session & streak tracking
+- Productivity statistics dashboard
+- Ambient sounds (rain, lo-fi, white noise)
+- PWA — works offline, installable
+- No account, no signup, no paywall
+
+## Target Audience
+
+Students, remote workers, software developers, writers, academics, and anyone using the Pomodoro Technique or deep work strategies to improve focus and productivity.
+
+## Blog
+
+FlowPomodoro publishes 31+ long-form SEO articles on:
+- Pomodoro Technique (how it works, benefits, science, FAQ, mistakes)
+- Deep Work & Flow State
+- Focus Techniques for Developers
+- Student Productivity & Exam Study
+- Remote Work & WFH Focus
+- Time Blocking & Daily Planning
+- Procrastination & Habit Building
+- ADHD Focus Strategies
+
+## Key URLs
+
+- Homepage: https://flowpomodoro.xyz/
+- App: https://flowpomodoro.xyz/app/
+- Blog: https://flowpomodoro.xyz/blog/
+- Sitemap: https://flowpomodoro.xyz/sitemap.xml
+- Robots: https://flowpomodoro.xyz/robots.txt
+
+## Technology
+
+Static website (HTML, CSS, Vanilla JavaScript). No backend, no database, no user accounts.
+
+## Contact
+
+Website: https://flowpomodoro.xyz
+
+## Optional
+
+The full blog sitemap is available at https://flowpomodoro.xyz/sitemap.xml
+All blog posts are freely accessible and designed for AI-friendly, semantic HTML structure with JSON-LD schema markup including Article, FAQPage, and BreadcrumbList types.

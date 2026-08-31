@@ -1,12 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ESNYBTJ98S"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ESNYBTJ98S');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FlowPomodoro — Free Pomodoro Timer, Deep Work Focus Tool</title>
   <meta name="description" content="FlowPomodoro is a premium, distraction-free Pomodoro timer and deep work focus tool. Track sessions, set goals, and enter flow state. No signup required.">
   <link rel="canonical" href="https://flowpomodoro.xyz/">
-  <meta name="theme-color" content="#060608">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#FAFAF7">
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/public/manifest.json">
 
@@ -17,274 +26,403 @@
   <meta property="og:description" content="Premium focus timer for students, developers, and professionals. Track sessions, build streaks, enter flow state.">
   <meta property="og:image" content="https://flowpomodoro.xyz/og-image.jpg">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="FlowPomodoro — Free Pomodoro Timer">
-  <meta name="twitter:description" content="Premium focus timer. No signup required.">
 
-  <!-- Schema -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"WebApplication",
-    "name":"FlowPomodoro",
-    "url":"https://flowpomodoro.xyz/",
-    "applicationCategory":"ProductivityApplication",
-    "operatingSystem":"Web",
-    "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
-    "description":"Free Pomodoro timer and deep work focus tracker."
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"FAQPage",
-    "mainEntity":[
-      {"@type":"Question","name":"What is the Pomodoro Technique?","acceptedAnswer":{"@type":"Answer","text":"The Pomodoro Technique is a time management method using 25-minute focused work intervals separated by 5-minute breaks, designed to maximize productivity and prevent burnout."}},
-      {"@type":"Question","name":"Is FlowPomodoro free?","acceptedAnswer":{"@type":"Answer","text":"Yes, FlowPomodoro is completely free. No account needed. Start focusing instantly."}},
-      {"@type":"Question","name":"Can I customize the timer?","acceptedAnswer":{"@type":"Answer","text":"Yes, you can set custom focus, short break, and long break durations. Popular presets like 25/5, 50/10, and 90/20 are also available."}}
-    ]
-  }
-  </script>
-
-  <!-- Fonts -->
+  <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous">
 
   <!-- Styles -->
+  <link rel="stylesheet" href="/css/variables.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/layout.css">
+  <link rel="stylesheet" href="/css/components.css">
   <link rel="stylesheet" href="/style.css">
-
-  <!-- GA4 -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script>
-    window.dataLayer=window.dataLayer||[];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js',new Date()); gtag('config','G-XXXXXXXXXX');
-    document.addEventListener('DOMContentLoaded',()=>{
-      document.querySelectorAll('.btn-primary').forEach(b=>b.addEventListener('click',()=>
-        gtag('event','cta_click',{event_category:'conversion'})
-      ));
-    });
-  </script>
 </head>
-
 <body>
 
-<!-- ── Navigation ─────────────────────────────────────────────────────────── -->
-<nav class="lp-nav" aria-label="Main navigation">
-  <div class="container flex-between">
-    <a href="/" class="logo" aria-label="FlowPomodoro home">FlowPomodoro</a>
-    <div class="nav-links">
-      <a href="#features">Features</a>
-      <a href="#about">About</a>
-      <a href="/blog/index.html">Blog</a>
-      <a href="/app/index.html" class="btn btn-primary">Start Focus</a>
+<!-- ── Navigation ──────────────────────────────────────────────────────────── -->
+<nav class="lp-nav" aria-label="Main navigation" id="main-nav">
+  <div class="nav-inner">
+    <a href="/" class="logo" aria-label="FlowPomodoro home">
+      <div class="logo-dot"><i class="fas fa-stopwatch"></i></div>
+      FlowPomodoro
+    </a>
+
+    <div class="nav-links" id="nav-links">
+      <a href="/app/pomodoro.html" class="nav-link">Timer</a>
+      <a href="#features" class="nav-link">Features</a>
+      <a href="/blog/" class="nav-link">Blog</a>
+      <a href="/pages/pricing.html" class="nav-link">Pricing</a>
+      <a href="/pages/about.html" class="nav-link">About</a>
     </div>
+
+    <div class="nav-actions">
+      <button class="btn-icon" id="theme-toggle" aria-label="Toggle theme">
+        <i class="fas fa-sun"></i>
+      </button>
+      <a href="/app/dashboard.html" class="nav-link">Log in</a>
+      <a href="/app/dashboard.html" class="btn-primary">Start Focusing</a>
+    </div>
+
+    <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
 
+<!-- Mobile Drawer -->
+<div class="nav-drawer" id="nav-drawer" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+  <a href="/app/pomodoro.html" class="nav-drawer-link">Timer</a>
+  <a href="#features" class="nav-drawer-link">Features</a>
+  <a href="/blog/" class="nav-drawer-link">Blog</a>
+  <a href="/pages/pricing.html" class="nav-drawer-link">Pricing</a>
+  <a href="/pages/about.html" class="nav-drawer-link">About</a>
+  <div style="display:flex;gap:1rem;margin-top:2rem;">
+    <a href="/app/dashboard.html" class="btn-secondary">Log in</a>
+    <a href="/app/dashboard.html" class="btn-primary">Start Focusing</a>
+  </div>
+</div>
+
 <main id="main-content">
 
-  <!-- ── Hero ────────────────────────────────────────────────────────────── -->
+  <!-- ── Hero ──────────────────────────────────────────────────────────────── -->
   <section class="hero-section" aria-label="Hero">
     <div class="container hero-container">
-
       <div class="hero-content">
-        <span class="badge"><i class="fas fa-circle-dot" aria-hidden="true"></i> Free Forever</span>
-        <h1>Enter flow.<br><span class="gradient-text">Work deeper.</span><br>Achieve more.</h1>
+        <div class="hero-eyebrow" role="note">Your time. Your flow.</div>
+        
+        <h1>
+          Focus deeply.<br>
+          Get <span class="text-brand">more</span> done.
+        </h1>
+        
         <p class="hero-subtitle">
-          The premium Pomodoro timer built for serious focus. Track sessions, build streaks, and enter a distraction-free flow state in seconds.
+          A beautiful Pomodoro timer to help you stay focused, beat procrastination, and build better habits.
         </p>
+        
         <div class="cta-group">
-          <a href="/app/index.html" class="btn btn-primary btn-lg">Start Focusing — It's Free</a>
-          <p class="mini-proof">No signup · Works instantly · 100% private</p>
+          <a href="/app/dashboard.html" class="btn-primary btn-lg">
+            <i class="fas fa-play" aria-hidden="true"></i> Start Focusing
+          </a>
+          <a href="#how-it-works" class="btn-secondary btn-lg">
+            <i class="fas fa-info-circle"></i> How it works
+          </a>
+        </div>
+        
+        <div class="trust-row">
+          <div class="trust-item"><i class="fas fa-check"></i> No signup required</div>
+          <div class="trust-item"><i class="fas fa-check"></i> Free to start</div>
+          <div class="trust-item"><i class="fas fa-check"></i> Works in your browser</div>
         </div>
       </div>
 
-      <div class="hero-visual" aria-hidden="true">
-        <div class="glass-mockup">
-          <div class="timer-preview">25:00</div>
-          <div class="status-preview">Ready to Focus</div>
+      <!-- Hero Visual: Realistic Timer Card -->
+      <div class="hero-visual">
+        <div class="hero-timer-card">
+          <div class="ht-tabs">
+            <div class="ht-tab active">Pomodoro</div>
+            <div class="ht-tab">Short Break</div>
+            <div class="ht-tab">Long Break</div>
+          </div>
+          
+          <div class="ht-ring-container">
+            <svg class="ring-svg" viewBox="0 0 360 360">
+              <circle cx="180" cy="180" r="160" fill="none" stroke="#252B36" stroke-width="8"></circle>
+              <circle cx="180" cy="180" r="160" fill="none" stroke="#FFB800" stroke-width="8" stroke-dasharray="1006" stroke-dashoffset="150" stroke-linecap="round"></circle>
+            </svg>
+            <div class="ht-time">
+              <div class="ht-label"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#FFB800;margin-right:6px;"></span>FOCUS TIME</div>
+              <div class="ht-time-text">25:00</div>
+            </div>
+          </div>
+          
+          <button class="ht-btn"><i class="fas fa-play"></i> Start</button>
+          
+          <div class="ht-footer">
+            <div class="ht-footer-item"><i class="fas fa-volume-up"></i> Sounds</div>
+            <div class="ht-footer-item"><i class="fas fa-list-check"></i> Tasks</div>
+            <div class="ht-footer-item"><i class="fas fa-expand"></i> Fullscreen</div>
+          </div>
         </div>
       </div>
-
     </div>
   </section>
 
-  <!-- ── What is Pomodoro ──────────────────────────────────────────────── -->
-  <section id="about" class="content-section">
+  <!-- ── Features ────────────────────────────────────────────────────────── -->
+  <section id="features" class="features-section">
     <div class="container">
-      <h2>What Is The Pomodoro Technique?</h2>
-      <p>The Pomodoro Technique is a globally recognized time management method developed by Francesco Cirillo. It breaks work into focused 25-minute intervals — called "Pomodoros" — separated by short 5-minute breaks. After four Pomodoros, you take a longer 15–30 minute rest.</p>
-      <p>The genius of this method is how it transforms an overwhelming workload into manageable, achievable sprints. The built-in urgency of a countdown timer activates your brain's focusing mechanisms, making you dramatically more productive than working in long, unstructured blocks.</p>
-      <p>FlowPomodoro takes this time-tested technique and pairs it with a premium, distraction-free digital environment designed to match the seriousness of your goals.</p>
-    </div>
-  </section>
+      <div class="section-header reveal">
+        <span class="section-eyebrow">Features</span>
+        <h2>Everything you need to stay in flow</h2>
+      </div>
 
-  <!-- ── Benefits ─────────────────────────────────────────────────────── -->
-  <section class="content-section bg-alt">
-    <div class="container">
-      <h2>The Science of Deep Work</h2>
-      <p>Coined by Cal Newport, "deep work" is the ability to focus without distraction on cognitively demanding tasks. It's the skill that separates top performers from the rest.</p>
-
-      <h3>Why Focused Intervals Work</h3>
-      <p>Your prefrontal cortex — the seat of focus and decision-making — fatigues with sustained effort. Short breaks allow it to recover, letting you sustain peak performance over hours rather than burning out after 90 minutes.</p>
-
-      <h3>The Attention Economy Threat</h3>
-      <p>In an age engineered to steal your attention, the ability to enter deep focus is a superpower. Every notification, every tab switch, every social media check costs you an average of 23 minutes to fully recover from. FlowPomodoro creates a sanctuary from this chaos.</p>
-
-      <h3>Building Focus Like a Muscle</h3>
-      <p>Consistency beats intensity. Tracking your sessions daily with FlowPomodoro's streak system rewires your brain over weeks, making deep focus your default state rather than a constant struggle.</p>
-    </div>
-  </section>
-
-  <!-- ── Features ─────────────────────────────────────────────────────── -->
-  <section id="features" class="section">
-    <div class="container text-center">
-      <h2>Everything You Need to Do Deep Work</h2>
-      <p class="section-desc">More than a timer — a complete focus operating system built for ambitious people.</p>
-      <div class="grid-3">
-        <div class="card">
-          <div class="card-icon"><i class="fas fa-circle-play" aria-hidden="true"></i></div>
-          <h3>Smart Pomodoro Timer</h3>
-          <p>Scientifically timed intervals with auto-switching. Focus, short break, and long break — fully automatic.</p>
+      <div class="features-grid">
+        <div class="feat-card reveal">
+          <div class="feat-icon"><i class="fas fa-stopwatch"></i></div>
+          <h3>Pomodoro Timer</h3>
+          <p>Customizable focus and break sessions to match your workflow perfectly.</p>
         </div>
-        <div class="card">
-          <div class="card-icon" style="background:rgba(168,85,247,0.08);border-color:rgba(168,85,247,0.15);color:var(--accent-purple)"><i class="fas fa-chart-simple" aria-hidden="true"></i></div>
-          <h3>Focus Streaks & Goals</h3>
-          <p>Set daily session goals, track your consecutive-day streak, and view a 60-day activity heatmap.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon" style="background:rgba(34,211,160,0.08);border-color:rgba(34,211,160,0.15);color:var(--accent-success)"><i class="fas fa-list-check" aria-hidden="true"></i></div>
+        <div class="feat-card reveal reveal-delay-1">
+          <div class="feat-icon"><i class="fas fa-list-check"></i></div>
           <h3>Task Management</h3>
-          <p>Add your focus tasks inline. Check them off as you complete each Pomodoro for a rewarding flow.</p>
+          <p>Know exactly what you're working on. Tie tasks directly to focus sessions.</p>
         </div>
-        <div class="card">
-          <div class="card-icon"><i class="fas fa-headphones" aria-hidden="true"></i></div>
-          <h3>Ambient Sounds</h3>
-          <p>Rain, forest, and coffee shop background audio scientifically proven to boost concentration.</p>
+        <div class="feat-card reveal reveal-delay-2">
+          <div class="feat-icon"><i class="fas fa-chart-bar"></i></div>
+          <h3>Progress Analytics</h3>
+          <p>Track focus time, sessions, and productivity habits over days and weeks.</p>
         </div>
-        <div class="card">
-          <div class="card-icon" style="background:rgba(168,85,247,0.08);border-color:rgba(168,85,247,0.15);color:var(--accent-purple)"><i class="fas fa-expand" aria-hidden="true"></i></div>
-          <h3>Fullscreen Focus Mode</h3>
-          <p>One click to hide everything and immerse yourself in a completely distraction-free workspace.</p>
+        <div class="feat-card reveal">
+          <div class="feat-icon"><i class="fas fa-music"></i></div>
+          <h3>Focus Sounds</h3>
+          <p>Use ambient background sounds (rain, cafe, white noise) while working.</p>
         </div>
-        <div class="card">
-          <div class="card-icon" style="background:rgba(34,211,160,0.08);border-color:rgba(34,211,160,0.15);color:var(--accent-success)"><i class="fas fa-keyboard" aria-hidden="true"></i></div>
+        <div class="feat-card reveal reveal-delay-1">
+          <div class="feat-icon"><i class="fas fa-moon"></i></div>
+          <h3>Dark Mode</h3>
+          <p>Comfortable, immersive late-night focus sessions that are easy on the eyes.</p>
+        </div>
+        <div class="feat-card reveal reveal-delay-2">
+          <div class="feat-icon"><i class="fas fa-keyboard"></i></div>
           <h3>Keyboard Shortcuts</h3>
-          <p>Space, R, S, F — control everything without touching the mouse. Stay in the zone.</p>
+          <p>Control your entire timer and workflow without leaving the keyboard.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ── Productivity Stats ────────────────────────────────────────────── -->
-  <section class="content-section bg-alt">
+  <!-- ── How It Works ────────────────────────────────────────────────────── -->
+  <section id="how-it-works" class="how-section">
     <div class="container">
-      <h2 class="text-center">The Numbers Behind Focus</h2>
-      <p class="section-desc">Decades of cognitive research back the methods built into FlowPomodoro.</p>
-      <div class="stats-grid">
-        <div class="stat-card">
-          <span class="stat-value">23 min</span>
-          <span class="stat-label">Average Recovery Time</span>
-          <p style="font-size:.875rem;margin-top:.5rem;">The time it takes to fully refocus after a single interruption. (University of California, Irvine)</p>
+      <div class="section-header reveal">
+        <span class="section-eyebrow">How It Works</span>
+        <h2>Simple. Effective. Powerful.</h2>
+      </div>
+      
+      <div class="how-grid">
+        <div class="how-step reveal">
+          <div class="how-num">1</div>
+          <h3>Choose Your Task</h3>
+          <p class="text-secondary">Pick exactly what you want to accomplish right now.</p>
         </div>
-        <div class="stat-card">
-          <span class="stat-value">40%</span>
-          <span class="stat-label">Productivity Lost to Multitasking</span>
-          <p style="font-size:.875rem;margin-top:.5rem;">Attempting to juggle tasks reduces cognitive output by nearly half. (American Psychological Association)</p>
+        <div class="how-step reveal reveal-delay-1">
+          <div class="how-num">2</div>
+          <h3>Focus & Work</h3>
+          <p class="text-secondary">Start the timer and work deeply without distractions.</p>
         </div>
-        <div class="stat-card">
-          <span class="stat-value">90 min</span>
-          <span class="stat-label">Ultradian Peak Focus Window</span>
-          <p style="font-size:.875rem;margin-top:.5rem;">The human brain cycles through peak and rest states in ~90-minute intervals. FlowPomodoro works with this rhythm.</p>
+        <div class="how-step reveal reveal-delay-2">
+          <div class="how-num">3</div>
+          <h3>Take a Break</h3>
+          <p class="text-secondary">Recharge, breathe, and prepare for the next session.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ── How It Works ──────────────────────────────────────────────────── -->
-  <section class="content-section">
+  <!-- ── Enter Your Flow ─────────────────────────────────────────────────── -->
+  <section class="focus-exp-section">
     <div class="container">
-      <h2>How To Use FlowPomodoro</h2>
-      <p>Getting started takes less than 10 seconds. No account, no setup, no friction.</p>
-      <ol>
-        <li><strong>Pick a task</strong> — Type it into the task field so your brain has a clear target.</li>
-        <li><strong>Start the timer</strong> — Hit Space or click Play to begin your 25-minute session.</li>
-        <li><strong>Work with intensity</strong> — Phone away, tabs closed. Full attention on one task.</li>
-        <li><strong>Rest when it rings</strong> — Stand up, breathe, step away from the screen for 5 minutes.</li>
-        <li><strong>Repeat and build a streak</strong> — Every completed session compounds into measurable progress.</li>
-      </ol>
-    </div>
-  </section>
-
-  <!-- ── Study Tips ────────────────────────────────────────────────────── -->
-  <section class="content-section bg-alt">
-    <div class="container">
-      <h2>Advanced Study Tips with FlowPomodoro</h2>
-      <p>Pair your Pomodoro sessions with these evidence-based techniques for maximum retention:</p>
-      <ul>
-        <li><strong>Active Recall:</strong> During break time, close your notes and write down everything you just learned. This dramatically improves long-term retention.</li>
-        <li><strong>Spaced Repetition:</strong> Dedicate one Pomodoro per day to reviewing previous material rather than always covering new content.</li>
-        <li><strong>The Feynman Technique:</strong> Use a session to explain your topic in plain language as if teaching a beginner. Instantly reveals gaps in understanding.</li>
-        <li><strong>Time Blocking:</strong> Schedule your Pomodoros on a calendar just like meetings. Treat that time as sacred and unmovable.</li>
-      </ul>
-      <p>For more productivity strategies, read our <a href="/blog/" style="color:var(--accent-cyan);">productivity blog</a>.</p>
-    </div>
-  </section>
-
-  <!-- ── FAQ ───────────────────────────────────────────────────────────── -->
-  <section class="content-section">
-    <div class="container">
-      <h2 class="text-center">Frequently Asked Questions</h2>
-      <div class="faq-list">
-        <div class="faq-item">
-          <h3>What is the Pomodoro Technique?</h3>
-          <p>A time management method using 25-minute focused work intervals (Pomodoros) with 5-minute breaks, developed by Francesco Cirillo. After 4 Pomodoros, take a longer 15–30 minute break.</p>
-        </div>
-        <div class="faq-item">
-          <h3>Is FlowPomodoro free?</h3>
-          <p>Yes, completely free. No account needed, no ads, no credit card. Core features including the timer, tasks, streaks, and session history are available to everyone.</p>
-        </div>
-        <div class="faq-item">
-          <h3>Can I customize the timer lengths?</h3>
-          <p>Yes. Open Settings and enter any custom duration for focus, short break, and long break. Quick presets for 25/5, 50/10, and 90/20 are also available.</p>
-        </div>
-        <div class="faq-item">
-          <h3>Does it work offline?</h3>
-          <p>Yes. FlowPomodoro is a Progressive Web App (PWA) that caches its core files locally, allowing it to function even without an internet connection.</p>
-        </div>
-        <div class="faq-item">
-          <h3>Is my data private?</h3>
-          <p>Completely. All session data, tasks, and settings are stored exclusively in your browser's localStorage. Nothing is sent to any server.</p>
+      <span class="section-eyebrow" style="background:rgba(255,184,0,0.1);color:#FFB800;">Enter Your Flow</span>
+      <h2 style="font-size:clamp(2rem, 5vw, 3rem);margin-bottom:1rem;">Block out distractions.<br>Focus on what matters.</h2>
+      
+      <div class="focus-ui-mockup reveal">
+        <div class="fm-label">Deep Work</div>
+        <div class="fm-task">Build CashFlow Dashboard</div>
+        <div class="fm-timer">32:41</div>
+        <button class="btn-primary btn-lg" style="margin-bottom:2rem;"><i class="fas fa-pause"></i> Pause</button>
+        <div style="display:flex;justify-content:center;gap:2rem;color:#94A3B8;font-size:0.9rem;">
+          <span><i class="fas fa-volume-up"></i> Sounds</span>
+          <span><i class="fas fa-list-check"></i> Tasks</span>
+          <span><i class="fas fa-expand"></i> Fullscreen</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ── CTA ───────────────────────────────────────────────────────────── -->
-  <section class="cta-section">
+  <!-- ── Analytics ───────────────────────────────────────────────────────── -->
+  <section class="analytics-section">
     <div class="container">
-      <h2>Ready to do your best work?</h2>
-      <p class="section-desc" style="margin-bottom:2rem;">Join thousands of students, developers, and professionals who use FlowPomodoro every day.</p>
-      <a href="/app/index.html" class="btn btn-primary btn-xl">Launch the Focus Timer</a>
-      <p class="mini-proof" style="margin-top:1rem;text-align:center;">Free forever · No signup · Works on all devices</p>
+      <div class="section-header reveal">
+        <h2>See your progress. Stay motivated.</h2>
+        <p class="section-desc">Track focus time, completed sessions, streaks, and productivity habits over time.</p>
+      </div>
+
+      <div class="analytics-mockup reveal">
+        <div class="stat-grid-preview">
+          <div class="sg-card">
+            <div class="sg-lbl">Focus Time</div>
+            <div class="sg-val">14h 32m</div>
+          </div>
+          <div class="sg-card">
+            <div class="sg-lbl">Sessions</div>
+            <div class="sg-val">28</div>
+          </div>
+          <div class="sg-card">
+            <div class="sg-lbl">Tasks Completed</div>
+            <div class="sg-val">36</div>
+          </div>
+          <div class="sg-card">
+            <div class="sg-lbl">Current Streak</div>
+            <div class="sg-val text-brand">7 Days</div>
+          </div>
+        </div>
+        <div class="sg-card">
+          <div class="sg-lbl" style="margin-bottom:1rem;">Weekly Focus</div>
+          <div class="sg-chart">
+            <div class="sg-bar" style="height:30%"></div>
+            <div class="sg-bar" style="height:50%"></div>
+            <div class="sg-bar" style="height:40%"></div>
+            <div class="sg-bar" style="height:70%"></div>
+            <div class="sg-bar" style="height:100%"></div>
+            <div class="sg-bar" style="height:20%"></div>
+            <div class="sg-bar" style="height:10%"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Blog Preview ────────────────────────────────────────────────────── -->
+  <section class="blog-preview-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Practical tips to improve your focus</h2>
+      </div>
+
+      <div class="blog-preview-grid">
+        <a href="/blog/en/what-is-the-pomodoro-technique.html" class="preview-card reveal">
+          <div class="pc-img" style="background-image:url('https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=600&q=80');background-size:cover;background-position:center;height:160px;border-radius:12px;margin-bottom:1rem;"></div>
+          <span class="badge" style="background:var(--brand-soft);color:#926000;font-weight:700;">Productivity</span>
+          <h3 class="pc-title">What Is the Pomodoro Technique? Guide</h3>
+          <div class="pc-meta">May 12, 2024 • 5 min read</div>
+        </a>
+        <a href="/blog/en/how-to-beat-procrastination.html" class="preview-card reveal reveal-delay-1">
+          <div class="pc-img" style="background-image:url('https://images.unsplash.com/photo-1507842229451-79b1be897a20?auto=format&fit=crop&w=600&q=80');background-size:cover;background-position:center;height:160px;border-radius:12px;margin-bottom:1rem;"></div>
+          <span class="badge" style="background:var(--brand-soft);color:#926000;font-weight:700;">Focus</span>
+          <h3 class="pc-title">How to Stop Procrastinating and Get Things Done</h3>
+          <div class="pc-meta">Mar 18, 2024 • 5 min read</div>
+        </a>
+        <a href="/blog/en/deep-work-guide.html" class="preview-card reveal reveal-delay-2">
+          <div class="pc-img" style="background-image:url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=600&q=80');background-size:cover;background-position:center;height:160px;border-radius:12px;margin-bottom:1rem;"></div>
+          <span class="badge" style="background:var(--brand-soft);color:#926000;font-weight:700;">Deep Work</span>
+          <h3 class="pc-title">The Ultimate Guide to Deep Work in a Distracted World</h3>
+          <div class="pc-meta">Apr 16, 2024 • 8 min read</div>
+        </a>
+      </div>
+
+      <div style="text-align:center;">
+        <a href="/blog/" class="btn-secondary btn-lg">View all posts →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Final CTA ───────────────────────────────────────────────────────── -->
+  <section style="padding:6rem 0;background:var(--brand-primary);color:#111827;text-align:center;">
+    <div class="container">
+      <h2 style="font-size:clamp(2rem,4vw,3rem);margin-bottom:1rem;color:#111827;">Ready to get into your flow?</h2>
+      <p style="font-size:1.1rem;margin-bottom:2.5rem;color:rgba(0,0,0,0.7);">Start your next focused session in seconds.</p>
+      <a href="/app/dashboard.html" class="btn-primary btn-lg" style="background:#111827;color:#fff;">Start Focusing Now →</a>
     </div>
   </section>
 
 </main>
 
-<!-- ── Footer ─────────────────────────────────────────────────────────────── -->
+<!-- ── Footer ───────────────────────────────────────────────────────────────── -->
 <footer class="lp-footer">
-  <div class="container flex-between" style="flex-wrap:wrap;gap:1rem;">
-    <p>© 2026 FlowPomodoro. All rights reserved.</p>
-    <div style="display:flex;gap:1.5rem;">
-      <a href="/pages/privacy.html">Privacy Policy</a>
-      <a href="/pages/terms.html">Terms</a>
-      <a href="/blog/">Blog</a>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="/" class="logo">
+          <div class="logo-dot"><i class="fas fa-stopwatch"></i></div>
+          FlowPomodoro
+        </a>
+        <p>A beautiful Pomodoro timer to help you focus deeply and get more done.</p>
+      </div>
+      <div class="footer-col">
+        <div class="fc-title">Product</div>
+        <ul>
+          <li><a href="/app/pomodoro.html">Timer</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="/pages/pricing.html">Pricing</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="fc-title">Resources</div>
+        <ul>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="#">Guides</a></li>
+          <li><a href="#">Help Center</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="fc-title">Company</div>
+        <ul>
+          <li><a href="/pages/about.html">About</a></li>
+          <li><a href="/pages/privacy.html">Privacy</a></li>
+          <li><a href="/pages/terms.html">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 FlowPomodoro. All rights reserved.</div>
+      <div class="fb-links">
+        <a href="/pages/privacy.html">Privacy</a>
+        <a href="/pages/terms.html">Terms</a>
+        <a href="/blog/">Blog</a>
+      </div>
     </div>
   </div>
 </footer>
 
+<script>
+  // Navbar scroll
+  const nav = document.getElementById('main-nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 20));
+  
+  // Mobile menu
+  const btn = document.getElementById('nav-hamburger');
+  const drawer = document.getElementById('nav-drawer');
+  btn.addEventListener('click', () => {
+    drawer.classList.toggle('open');
+    btn.classList.toggle('open');
+  });
+
+  // Close drawer on link click
+  drawer.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      drawer.classList.remove('open');
+      btn.classList.remove('open');
+    });
+  });
+
+  // Theme toggle
+  const themeBtn = document.getElementById('theme-toggle');
+  const html = document.documentElement;
+  
+  // Init theme
+  const savedTheme = localStorage.getItem('flow_theme') || 'light';
+  html.setAttribute('data-theme', savedTheme);
+  if(themeBtn) themeBtn.innerHTML = savedTheme === 'dark' ? '<i class="fas fa-moon"></i>' : '<i class="fas fa-sun"></i>';
+
+  if(themeBtn) {
+    themeBtn.addEventListener('click', () => {
+      const isDark = html.getAttribute('data-theme') === 'dark';
+      const newTheme = isDark ? 'light' : 'dark';
+      html.setAttribute('data-theme', newTheme);
+      localStorage.setItem('flow_theme', newTheme);
+      themeBtn.innerHTML = newTheme === 'dark' ? '<i class="fas fa-moon"></i>' : '<i class="fas fa-sun"></i>';
+    });
+  }
+
+  // Reveal animations
+  if ('IntersectionObserver' in window) {
+    const obs = new IntersectionObserver(e => e.forEach(en => {
+      if(en.isIntersecting) { en.target.classList.add('visible'); obs.unobserve(en.target); }
+    }), { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+  }
+</script>
 </body>
 </html>

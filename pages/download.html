@@ -1,29 +1,288 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" data-theme="light">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Install FlowPomodoro</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="../css/pages/landing.css">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ESNYBTJ98S"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ESNYBTJ98S');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Install FlowPomodoro App — Free PWA Download</title>
+  <meta name="description" content="Install FlowPomodoro as a free Progressive Web App on any device. Works offline on Chrome, iOS, and Android. No app store needed.">
+  <link rel="canonical" href="https://flowpomodoro.xyz/pages/download.html">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#FAFAF7">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://flowpomodoro.xyz/pages/download.html">
+  <meta property="og:title" content="Install FlowPomodoro App — Free PWA Download">
+  <meta property="og:description" content="Install FlowPomodoro as a free Progressive Web App on any device. Works offline on Chrome, iOS, and Android.">
+  <meta property="og:image" content="https://flowpomodoro.xyz/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/css/variables.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/layout.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/style.css">
+
+  <style>
+    .download-hero { padding: clamp(80px, 10vw, 130px) 0 clamp(2rem, 4vw, 3.5rem); text-align: center; }
+    .download-hero h1 { font-size: clamp(2.2rem, 5vw, 3.5rem); font-weight: 800; letter-spacing: -0.03em; margin-bottom: 1rem; }
+    .download-hero p { font-size: 1.15rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto; line-height: 1.6; }
+
+    .download-container { max-width: 960px; margin: 0 auto 6rem; padding: 0 1.5rem; }
+    .platforms-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.75rem; margin-bottom: 3.5rem; }
+    
+    .platform-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl);
+      padding: 2.25rem 2rem;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      transition: all var(--duration-normal);
+    }
+    .platform-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: rgba(255, 184, 0, 0.35); }
+    
+    .platform-icon-box {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius-md);
+      background: var(--brand-soft);
+      color: #926000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.35rem;
+      margin-bottom: 1.25rem;
+    }
+    html[data-theme="dark"] .platform-icon-box {
+      background: rgba(255, 184, 0, 0.12);
+      color: var(--brand-primary);
+    }
+
+    .platform-card h3 { font-size: 1.25rem; font-weight: 800; color: var(--text-primary); margin: 0 0 0.5rem 0; }
+    .platform-card p { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; margin: 0 0 1.25rem 0; }
+    
+    .platform-steps { list-style: none; padding: 0; margin: 0; font-size: 0.875rem; color: var(--text-primary); }
+    .platform-steps li { display: flex; align-items: flex-start; gap: 0.65rem; margin-bottom: 0.65rem; }
+    .platform-steps li i { color: var(--brand-primary); margin-top: 0.2rem; font-size: 0.8rem; }
+  </style>
 </head>
+<body>
 
-<body data-mode="focus">
-    <div class="container text-center"
-        style="padding: 4rem 2rem; max-height: 100vh; display: flex; flex-direction: column; justify-content: center;">
-        <h1>Install App</h1>
-        <p>FlowPomodoro uses Progressive Web App technology. You don't need an app store.</p>
-        <div class="glass-box" style="margin: 2rem auto; max-width: 500px; text-align: left;">
-            <h3>How to Install:</h3>
-            <ul>
-                <li><strong>Chrome/Edge:</strong> Click the install icon in the URL bar.</li>
-                <li><strong>iOS:</strong> Tap Share -> Add to Home Screen.</li>
-                <li><strong>Android:</strong> Tap Menu -> Install App.</li>
-            </ul>
-        </div>
-        <a href="index.html" class="btn-reset btn-primary">Open Web Version</a>
+<!-- ── Navigation ──────────────────────────────────────────────────────────── -->
+<nav class="lp-nav" aria-label="Main navigation" id="main-nav">
+  <div class="nav-inner">
+    <a href="/" class="logo" aria-label="FlowPomodoro home">
+      <div class="logo-dot"><i class="fas fa-stopwatch"></i></div>
+      FlowPomodoro
+    </a>
+
+    <div class="nav-links" id="nav-links">
+      <a href="/app/pomodoro.html" class="nav-link">Timer</a>
+      <a href="/#features" class="nav-link">Features</a>
+      <a href="/blog/" class="nav-link">Blog</a>
+      <a href="/pages/pricing.html" class="nav-link">Pricing</a>
+      <a href="/pages/about.html" class="nav-link">About</a>
     </div>
-</body>
 
+    <div class="nav-actions">
+      <div class="lang-switcher" style="position:relative; display:inline-block;">
+        <button class="btn-icon lang-btn" id="lang-menu-btn" aria-label="Select Language" title="Select Language">
+          <i class="fas fa-globe"></i>
+        </button>
+        <div class="lang-dropdown" id="lang-dropdown" style="display:none; position:absolute; top:120%; right:0; background:var(--bg-surface); border:1px solid var(--border-color); border-radius:12px; padding:0.5rem; min-width:150px; z-index:999; flex-direction:column; gap:0.2rem; box-shadow:var(--shadow-lg);">
+          <a href="/pages/download.html" class="lang-option" style="display:block; padding:0.5rem 1rem; color:var(--text-primary); text-decoration:none; border-radius:6px; font-size:0.85rem;">🇺🇸 English</a>
+          <a href="/blog/hi/" class="lang-option" style="display:block; padding:0.5rem 1rem; color:var(--text-primary); text-decoration:none; border-radius:6px; font-size:0.85rem;">🇮🇳 Hindi</a>
+          <a href="/blog/ne/" class="lang-option" style="display:block; padding:0.5rem 1rem; color:var(--text-primary); text-decoration:none; border-radius:6px; font-size:0.85rem;">🇳🇵 Nepali</a>
+          <a href="/blog/es/" class="lang-option" style="display:block; padding:0.5rem 1rem; color:var(--text-primary); text-decoration:none; border-radius:6px; font-size:0.85rem;">🇪🇸 Spanish</a>
+          <a href="/blog/vi/" class="lang-option" style="display:block; padding:0.5rem 1rem; color:var(--text-primary); text-decoration:none; border-radius:6px; font-size:0.85rem;">🇻🇳 Vietnamese</a>
+          <a href="/blog/ru/" class="lang-option" style="display:block; padding:0.5rem 1rem; color:var(--text-primary); text-decoration:none; border-radius:6px; font-size:0.85rem;">🇷🇺 Русский</a>
+        </div>
+      </div>
+
+      <button class="btn-icon" id="theme-toggle" aria-label="Toggle theme">
+        <i class="fas fa-sun"></i>
+      </button>
+      <a href="/app/dashboard.html" class="nav-link">Log in</a>
+      <a href="/app/dashboard.html" class="btn-primary">Start Focusing</a>
+    </div>
+
+    <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Drawer -->
+<div class="nav-drawer" id="nav-drawer" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+  <a href="/app/pomodoro.html" class="nav-drawer-link">Timer</a>
+  <a href="/#features" class="nav-drawer-link">Features</a>
+  <a href="/blog/" class="nav-drawer-link">Blog</a>
+  <a href="/pages/pricing.html" class="nav-drawer-link">Pricing</a>
+  <a href="/pages/about.html" class="nav-drawer-link">About</a>
+  <div style="display:flex; gap:1rem; margin-top:2rem;">
+    <a href="/app/dashboard.html" class="btn-secondary">Log in</a>
+    <a href="/app/dashboard.html" class="btn-primary">Start Focusing</a>
+  </div>
+</div>
+
+<main id="main-content">
+  <section class="download-hero">
+    <div class="container" style="max-width:860px; margin:0 auto; padding:0 1.5rem;">
+      <div class="badge" style="background:var(--brand-soft); color:#926000; font-weight:700; margin-bottom:1rem; display:inline-block; padding:0.35rem 0.9rem; border-radius:999px;">
+        <i class="fas fa-mobile-screen"></i> Progressive Web App
+      </div>
+      <h1>Install FlowPomodoro on any device.</h1>
+      <p>Enjoy offline focus sessions, lightning-fast load times, and a native desktop &amp; mobile app experience without downloading from an app store.</p>
+    </div>
+  </section>
+
+  <div class="download-container">
+    <div class="platforms-grid">
+      <div class="platform-card">
+        <div class="platform-icon-box"><i class="fab fa-chrome"></i></div>
+        <h3>Chrome &amp; Edge (Desktop)</h3>
+        <p>Run FlowPomodoro in a dedicated desktop window with native OS shortcut support.</p>
+        <ul class="platform-steps">
+          <li><i class="fas fa-check"></i> Open FlowPomodoro in Chrome/Edge</li>
+          <li><i class="fas fa-check"></i> Click the install icon (⊕) in the URL address bar</li>
+          <li><i class="fas fa-check"></i> Click <strong>Install</strong> to add to desktop</li>
+        </ul>
+      </div>
+
+      <div class="platform-card">
+        <div class="platform-icon-box"><i class="fab fa-apple"></i></div>
+        <h3>iOS &amp; iPadOS (Safari)</h3>
+        <p>Add FlowPomodoro to your home screen for full-screen distraction-free timer sessions.</p>
+        <ul class="platform-steps">
+          <li><i class="fas fa-check"></i> Open flowpomodoro.xyz in Safari</li>
+          <li><i class="fas fa-check"></i> Tap the <strong>Share</strong> button (box with arrow)</li>
+          <li><i class="fas fa-check"></i> Select <strong>Add to Home Screen</strong></li>
+        </ul>
+      </div>
+
+      <div class="platform-card">
+        <div class="platform-icon-box"><i class="fab fa-android"></i></div>
+        <h3>Android (Chrome)</h3>
+        <p>Get instant access from your Android home screen with offline timer capability.</p>
+        <ul class="platform-steps">
+          <li><i class="fas fa-check"></i> Open flowpomodoro.xyz in Chrome</li>
+          <li><i class="fas fa-check"></i> Tap the three dots menu (⋮)</li>
+          <li><i class="fas fa-check"></i> Tap <strong>Install App</strong> or <strong>Add to Home screen</strong></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bottom Launch Card -->
+    <div style="background:var(--bg-surface); border:1px solid var(--border-color); border-radius:var(--radius-2xl); padding:clamp(2.5rem, 5vw, 3.5rem); text-align:center; box-shadow:var(--shadow-sm);">
+      <h2 style="font-size:clamp(1.6rem, 3.5vw, 2.2rem); font-weight:800; margin:0 0 0.75rem 0;">Prefer the web browser?</h2>
+      <p style="color:var(--text-secondary); max-width:500px; margin:0 auto 2rem auto; font-size:1.05rem;">You can always use FlowPomodoro instantly on any modern web browser.</p>
+      <a href="/app/pomodoro.html" class="btn-primary btn-lg"><i class="fas fa-play"></i> Open Web Timer</a>
+    </div>
+  </div>
+</main>
+
+<!-- ── Footer ───────────────────────────────────────────────────────────────── -->
+<footer class="lp-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="/" class="logo">
+          <div class="logo-dot"><i class="fas fa-stopwatch"></i></div>
+          FlowPomodoro
+        </a>
+        <p>A beautiful Pomodoro timer to help you focus deeply, beat procrastination, and build better habits.</p>
+      </div>
+      <div class="footer-col">
+        <div class="fc-title">Product</div>
+        <ul>
+          <li><a href="/app/pomodoro.html">Timer</a></li>
+          <li><a href="/#features">Features</a></li>
+          <li><a href="/pages/pricing.html">Pricing</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="fc-title">Resources</div>
+        <ul>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/pages/about.html">About</a></li>
+          <li><a href="/pages/download.html">Download</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="fc-title">Legal</div>
+        <ul>
+          <li><a href="/pages/privacy.html">Privacy</a></li>
+          <li><a href="/pages/terms.html">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 FlowPomodoro. All rights reserved.</div>
+      <div class="fb-links">
+        <a href="/pages/privacy.html">Privacy</a>
+        <a href="/pages/terms.html">Terms</a>
+        <a href="/blog/">Blog</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const themeBtn = document.getElementById('theme-toggle');
+  const html = document.documentElement;
+  const savedTheme = localStorage.getItem('flow_theme') || 'light';
+  html.setAttribute('data-theme', savedTheme);
+  if(themeBtn) themeBtn.innerHTML = savedTheme === 'dark' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+
+  if(themeBtn) {
+    themeBtn.addEventListener('click', () => {
+      const isDark = html.getAttribute('data-theme') === 'dark';
+      const newTheme = isDark ? 'light' : 'dark';
+      html.setAttribute('data-theme', newTheme);
+      localStorage.setItem('flow_theme', newTheme);
+      themeBtn.innerHTML = newTheme === 'dark' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+    });
+  }
+
+  const hamburger = document.getElementById('nav-hamburger');
+  const drawer = document.getElementById('nav-drawer');
+  if(hamburger && drawer) {
+    hamburger.addEventListener('click', () => {
+      const isOpen = drawer.classList.toggle('open');
+      hamburger.setAttribute('aria-expanded', isOpen);
+    });
+  }
+
+  const langBtn = document.getElementById('lang-menu-btn');
+  const langDropdown = document.getElementById('lang-dropdown');
+  if(langBtn && langDropdown) {
+    langBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      langDropdown.style.display = langDropdown.style.display === 'flex' ? 'none' : 'flex';
+    });
+    document.addEventListener('click', () => {
+      langDropdown.style.display = 'none';
+    });
+  }
+</script>
+
+</body>
 </html>

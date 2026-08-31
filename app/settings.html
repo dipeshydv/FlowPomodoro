@@ -1,0 +1,234 @@
+<!DOCTYPE html><html lang="en" data-theme="dark"><head>
+  <script>(function(){ document.documentElement.setAttribute('data-theme', localStorage.getItem('flow_theme')||'dark'); })();</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Settings — FlowPomodoro</title>
+  <meta name="description" content="Configure timer intervals, defaults, appearance, and export/import workspace data.">
+  <meta name="theme-color" content="#080B12">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="/public/manifest.json">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;family=Outfit:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/variables.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/layout.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/platform.css">
+
+  <link rel="canonical" href="https://flowpomodoro.xyz/app/settings.html"></head>
+<body>
+
+<div class="pf-layout" id="pf-layout">
+  <!-- Sidebar injected by sidebar.js -->
+  <div class="pf-content" id="pf-content">
+    <!-- Topbar injected by sidebar.js -->
+
+    <main class="pf-page" id="main-content">
+      
+      <div class="settings-sections">
+        
+        <!-- Timer Settings -->
+        <div class="settings-section">
+          <div class="settings-section-header">Timer Durations &amp; Presets</div>
+          
+          <div style="padding:16px 20px 0;">
+            <div style="font-size:12px;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:8px;">Quick Presets</div>
+            <div style="display:flex;gap:8px;margin-bottom:12px;">
+              <button class="btn-secondary btn-sm preset-btn" data-preset="25" style="flex:1;">25 / 5 min</button>
+              <button class="btn-secondary btn-sm preset-btn" data-preset="50" style="flex:1;">50 / 10 min</button>
+              <button class="btn-secondary btn-sm preset-btn" data-preset="90" style="flex:1;">90 / 20 min</button>
+            </div>
+          </div>
+
+          <div class="settings-row">
+            <div>
+              <div class="settings-row-label">Focus Duration</div>
+              <div class="settings-row-hint">Standard focus session length in minutes</div>
+            </div>
+            <div class="settings-row-control">
+              <input type="number" id="s-focus" class="settings-number-input" min="1" max="180" value="25">
+              <span style="font-size:12px;color:var(--text-muted);">min</span>
+            </div>
+          </div>
+
+          <div class="settings-row">
+            <div>
+              <div class="settings-row-label">Short Break</div>
+              <div class="settings-row-hint">Rest period between regular sessions</div>
+            </div>
+            <div class="settings-row-control">
+              <input type="number" id="s-short" class="settings-number-input" min="1" max="60" value="5">
+              <span style="font-size:12px;color:var(--text-muted);">min</span>
+            </div>
+          </div>
+
+          <div class="settings-row">
+            <div>
+              <div class="settings-row-label">Long Break</div>
+              <div class="settings-row-hint">Extended rest after every 4 completed sessions</div>
+            </div>
+            <div class="settings-row-control">
+              <input type="number" id="s-long" class="settings-number-input" min="1" max="90" value="15">
+              <span style="font-size:12px;color:var(--text-muted);">min</span>
+            </div>
+          </div>
+
+          <div class="settings-row">
+            <div>
+              <div class="settings-row-label">Daily Focus Goal</div>
+              <div class="settings-row-hint">Target number of focus sessions per day</div>
+            </div>
+            <div class="settings-row-control">
+              <input type="number" id="s-goal" class="settings-number-input" min="1" max="30" value="4">
+              <span style="font-size:12px;color:var(--text-muted);">sessions</span>
+            </div>
+          </div>
+
+          <div style="padding:14px 20px;">
+            <button class="btn-primary" id="save-timer-settings-btn">
+              <i class="fas fa-floppy-disk"></i> Save Timer Settings
+            </button>
+          </div>
+        </div>
+
+        <!-- Appearance & Preferences -->
+        <div class="settings-section">
+          <div class="settings-section-header">Appearance &amp; Defaults</div>
+          
+          <div class="settings-row">
+            <div>
+              <div class="settings-row-label">Theme Mode</div>
+              <div class="settings-row-hint">Switch between Dark and Light visual themes</div>
+            </div>
+            <div class="settings-row-control">
+              <div style="display:flex;gap:4px;">
+                <button class="btn-secondary btn-sm" id="theme-btn-dark">
+                  <i class="fas fa-moon"></i> Dark
+                </button>
+                <button class="btn-secondary btn-sm" id="theme-btn-light">
+                  <i class="fas fa-sun"></i> Light
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="settings-row">
+            <div>
+              <div class="settings-row-label">Productivity Mode</div>
+              <div class="settings-row-hint">Primary workflow style across the application</div>
+            </div>
+            <div class="settings-row-control">
+              <select id="s-mode" class="pf-select" style="width:160px;">
+                <option value="simple">Simple Timer</option>
+                <option value="goals">Goal-Based</option>
+                <option value="blocking">Time Blocking</option>
+                <option value="challenge">Challenge Sprint</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Planner & Schedule Preferences -->
+        <div class="settings-section">
+          <div class="settings-section-header">Planner &amp; Schedule Preferences</div>
+          
+          <div class="settings-row">
+            <div>
+              <div class="settings-row-label">Day Schedule Range</div>
+              <div class="settings-row-hint">Start and end hours visible on the continuous timeline ruler</div>
+            </div>
+            <div class="settings-row-control" style="display:flex;align-items:center;gap:8px;">
+              <input type="time" id="s-planner-start" class="pf-input" style="width:110px;" value="06:00">
+              <span style="font-size:12px;color:var(--text-muted);">to</span>
+              <input type="time" id="s-planner-end" class="pf-input" style="width:110px;" value="23:00">
+            </div>
+          </div>
+
+          <div class="settings-row">
+            <div>
+              <div class="settings-row-label">Timeline Snap Interval</div>
+              <div class="settings-row-hint">Default time rounding increment when clicking the timeline</div>
+            </div>
+            <div class="settings-row-control">
+              <select id="s-planner-interval" class="pf-select" style="width:160px;">
+                <option value="15">15 minutes (Standard)</option>
+                <option value="30">30 minutes</option>
+                <option value="60">60 minutes (Hourly)</option>
+                <option value="5">5 minutes</option>
+                <option value="1">1 minute (Exact)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="settings-row">
+            <div>
+              <div class="settings-row-label">First Day of the Week</div>
+              <div class="settings-row-hint">Starting column for the 7-day planner week view</div>
+            </div>
+            <div class="settings-row-control">
+              <select id="s-first-day" class="pf-select" style="width:160px;">
+                <option value="1">Monday</option>
+                <option value="0">Sunday</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="settings-row">
+            <div>
+              <div class="settings-row-label">Conflict Warning</div>
+              <div class="settings-row-hint">Show confirmation modal when scheduling overlapping time blocks</div>
+            </div>
+            <div class="settings-row-control">
+              <label style="display:flex;align-items:center;gap:8px;font-size:13px;cursor:pointer;">
+                <input type="checkbox" id="s-warn-overlap" checked="" style="accent-color:var(--brand-primary);width:16px;height:16px;">
+                <span>Warn on Overlaps</span>
+              </label>
+            </div>
+          </div>
+
+          <div style="padding:14px 20px;">
+            <button class="btn-primary" id="save-planner-settings-btn">
+              <i class="fas fa-floppy-disk"></i> Save Planner Settings
+            </button>
+          </div>
+        </div>
+
+        <!-- Data Management & Portability -->
+        <div class="settings-section">
+          <div class="settings-section-header">Data &amp; Backup</div>
+          <div style="padding:16px 20px 0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
+            All your goals, time blocks, challenges, sessions, and reflection notes are stored privately in your browser's LocalStorage. You can create a complete backup or restore anytime.
+          </div>
+          
+          <div class="data-mgmt-btns">
+            <button class="btn-secondary" id="export-data-btn">
+              <i class="fas fa-download"></i> Export Workspace (JSON)
+            </button>
+            <label class="btn-secondary" style="cursor:pointer;margin-bottom:0;">
+              <i class="fas fa-upload"></i> Import Workspace
+              <input type="file" id="import-file-input" accept=".json" style="display:none;">
+            </label>
+          </div>
+
+          <div style="border-top:1px solid var(--border-color);padding:14px 20px;display:flex;gap:8px;flex-wrap:wrap;">
+            <button class="btn-danger btn-sm" id="clear-history-btn">
+              <i class="fas fa-clock-rotate-left"></i> Clear Session History
+            </button>
+            <button class="btn-danger btn-sm" id="clear-all-btn">
+              <i class="fas fa-triangle-exclamation"></i> Reset Entire Workspace
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<script type="module" src="/js/platform/settings.js"></script>
+
+
+</body></html>

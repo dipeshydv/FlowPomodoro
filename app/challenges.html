@@ -1,0 +1,105 @@
+<!DOCTYPE html><html lang="en" data-theme="dark"><head>
+  <script>(function(){ document.documentElement.setAttribute('data-theme', localStorage.getItem('flow_theme')||'dark'); })();</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Challenges — FlowPomodoro</title>
+  <meta name="description" content="Build habits and consistency with user-defined productivity challenges.">
+  <meta name="theme-color" content="#080B12">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="/public/manifest.json">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;family=Outfit:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/variables.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/layout.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/platform.css">
+
+  <link rel="canonical" href="https://flowpomodoro.xyz/app/challenges.html"></head>
+<body>
+
+<div class="pf-layout" id="pf-layout">
+  <!-- Sidebar injected by sidebar.js -->
+  <div class="pf-content" id="pf-content">
+    <!-- Topbar injected by sidebar.js -->
+
+    <main class="pf-page" id="main-content">
+      
+      <div class="pf-section-header">
+        <h2 class="pf-section-title">Active Challenges</h2>
+      </div>
+
+      <!-- Active Challenges Grid -->
+      <div class="challenge-cards" id="active-challenges-grid"></div>
+
+      <!-- Completed Challenges -->
+      <div id="completed-section" style="display:none;margin-top:40px;">
+        <div class="pf-section-header">
+          <h2 class="pf-section-title">Completed Challenges</h2>
+        </div>
+        <div class="challenge-cards" id="completed-challenges-grid"></div>
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<!-- ── Add Challenge Modal ────────────────────────────────────────────────── -->
+<div class="pf-modal-overlay" id="challenge-modal">
+  <div class="pf-modal">
+    <div class="pf-modal-header">
+      <div class="pf-modal-title" id="c-modal-title">Create Challenge</div>
+      <button class="pf-modal-close" id="c-modal-close" aria-label="Close modal">
+        <i class="fas fa-xmark"></i>
+      </button>
+    </div>
+
+    <form id="challenge-form">
+      <input type="hidden" id="c-id" value="">
+      <div class="pf-modal-body">
+        
+        <div class="form-group">
+          <label class="form-label" for="c-name">Challenge Name *</label>
+          <input type="text" id="c-name" class="pf-input" placeholder="e.g. 90 Days of Deep Coding, 30-Day IELTS Sprint" required="">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="c-goal">Linked Goal (Optional)</label>
+          <select id="c-goal" class="pf-select">
+            <option value="">— Any Activity —</option>
+          </select>
+          <span class="form-hint">Track total daily focus or restrict to a specific goal</span>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="c-target">Daily Target (minutes) *</label>
+            <input type="number" id="c-target" class="pf-input" min="1" max="1440" value="60" required="">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="c-duration">Duration (days) *</label>
+            <input type="number" id="c-duration" class="pf-input" min="1" max="365" value="30" required="">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="c-start">Start Date *</label>
+          <input type="date" id="c-start" class="pf-input" required="">
+        </div>
+
+      </div>
+
+      <div class="pf-modal-footer">
+        <button type="button" class="btn-secondary" id="c-cancel-btn">Cancel</button>
+        <button type="submit" class="btn-primary" id="c-save-btn">Start Challenge</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script type="module" src="/js/platform/challenges.js"></script>
+
+
+</body></html>

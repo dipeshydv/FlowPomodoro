@@ -1,0 +1,28 @@
+{
+    "hi":  [
+               "best-productivity-techniques.html",
+               "daily-planning-system.html",
+               "deep-work-guide.html",
+               "developer-focus-workflow.html"
+           ],
+    "vi":  [
+               "deep-work-guide.html",
+               "developer-focus-workflow.html",
+               "pomodoro-for-programming.html",
+               "pomodoro-for-remote-workers.html",
+               "pomodoro-mistakes.html",
+               "pomodoro-study-guide.html",
+               "time-blocking-pomodoro-technique.html",
+               "what-is-the-pomodoro-technique.html"
+           ],
+    "ne":  [
+               "how-to-build-better-habits.html",
+               "how-to-study-for-long-hours.html",
+               "pomodoro-mistakes.html",
+               "pomodoro-study-guide.html"
+           ],
+    "es":  [
+               "pomodoro-faq.html",
+               "pomodoro-for-exams.html"
+           ]
+}

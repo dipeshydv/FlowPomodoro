@@ -1,71 +1,242 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ESNYBTJ98S"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ESNYBTJ98S');
+  </script>
   <meta charset="UTF-8">
+  <meta name="robots" content="index, follow">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Privacy Policy | FlowPomodoro</title>
-  <meta name="description" content="FlowPomodoro Privacy Policy. Your data is stored locally in your browser. We never collect or sell personal data.">
+  <title>Privacy Policy — FlowPomodoro</title>
+  <meta name="description" content="FlowPomodoro collects no personal data and requires no account. All session history is stored locally on your device.">
   <link rel="canonical" href="https://flowpomodoro.xyz/pages/privacy.html">
+  <meta name="theme-color" content="#FAFAF7">
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://flowpomodoro.xyz/pages/privacy.html">
+  <meta property="og:title" content="Privacy Policy — FlowPomodoro">
+  <meta property="og:description" content="Read FlowPomodoro's privacy policy. We collect no personal data, require no account, and store everything locally on your device.">
+  <meta property="og:image" content="https://flowpomodoro.xyz/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/css/variables.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/layout.css">
+  <link rel="stylesheet" href="/css/components.css">
   <link rel="stylesheet" href="/style.css">
+
+  <style>
+    .legal-header { padding: clamp(80px, 10vw, 130px) 0 clamp(2rem, 4vw, 3rem); text-align: center; }
+    .legal-header h1 { font-size: clamp(2.2rem, 5vw, 3.5rem); font-weight: 800; letter-spacing: -0.03em; margin-bottom: 0.5rem; }
+    .legal-header p { font-size: 1rem; color: var(--text-muted); }
+
+    .legal-body-wrap { max-width: 760px; margin: 0 auto 6rem; padding: 0 1.5rem; }
+    .legal-content {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-2xl);
+      padding: clamp(2rem, 5vw, 3.5rem);
+      box-shadow: var(--shadow-sm);
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--text-primary);
+    }
+    .legal-content h2 { font-size: 1.45rem; font-weight: 800; color: var(--text-primary); margin: 2.25rem 0 0.75rem 0; letter-spacing: -0.02em; }
+    .legal-content h2:first-of-type { margin-top: 0; }
+    .legal-content p { margin: 0 0 1.25rem 0; color: var(--text-secondary); }
+    .legal-content a { color: var(--brand-primary); text-decoration: underline; font-weight: 600; }
+    .legal-content strong { color: var(--text-primary); }
+    .legal-content code { background: var(--bg-main); padding: 0.2rem 0.4rem; border-radius: 4px; font-size: 0.9em; font-family: monospace; }
+  </style>
 </head>
 <body>
 
-<nav class="lp-nav" aria-label="Main navigation">
-  <div class="container flex-between">
-    <a href="/" class="logo">FlowPomodoro</a>
-    <div class="nav-links">
-      <a href="/">Home</a>
-      <a href="/blog/">Blog</a>
-      <a href="/app/index.html" class="btn btn-primary">Start Focus</a>
+<!-- ── Navigation ──────────────────────────────────────────────────────────── -->
+<nav class="lp-nav" aria-label="Main navigation" id="main-nav">
+  <div class="nav-inner">
+    <a href="/" class="logo" aria-label="FlowPomodoro home">
+      <div class="logo-dot"><i class="fas fa-stopwatch"></i></div>
+      FlowPomodoro
+    </a>
+
+    <div class="nav-links" id="nav-links">
+      <a href="/app/pomodoro.html" class="nav-link">Timer</a>
+      <a href="/#features" class="nav-link">Features</a>
+      <a href="/blog/" class="nav-link">Blog</a>
+      <a href="/pages/pricing.html" class="nav-link">Pricing</a>
+      <a href="/pages/about.html" class="nav-link">About</a>
     </div>
+
+    <div class="nav-actions">
+      <div class="lang-switcher" style="position:relative; display:inline-block;">
+        <button class="btn-icon lang-btn" id="lang-menu-btn" aria-label="Select Language" title="Select Language">
+          <i class="fas fa-globe"></i>
+        </button>
+        <div class="lang-dropdown" id="lang-dropdown" style="display:none; position:absolute; top:120%; right:0; background:var(--bg-surface); border:1px solid var(--border-color); border-radius:12px; padding:0.5rem; min-width:150px; z-index:999; flex-direction:column; gap:0.2rem; box-shadow:var(--shadow-lg);">
+          <a href="/pages/privacy.html" class="lang-option" style="display:block; padding:0.5rem 1rem; color:var(--text-primary); text-decoration:none; border-radius:6px; font-size:0.85rem;">🇺🇸 English</a>
+          <a href="/blog/hi/" class="lang-option" style="display:block; padding:0.5rem 1rem; color:var(--text-primary); text-decoration:none; border-radius:6px; font-size:0.85rem;">🇮🇳 Hindi</a>
+          <a href="/blog/ne/" class="lang-option" style="display:block; padding:0.5rem 1rem; color:var(--text-primary); text-decoration:none; border-radius:6px; font-size:0.85rem;">🇳🇵 Nepali</a>
+          <a href="/blog/es/" class="lang-option" style="display:block; padding:0.5rem 1rem; color:var(--text-primary); text-decoration:none; border-radius:6px; font-size:0.85rem;">🇪🇸 Spanish</a>
+          <a href="/blog/vi/" class="lang-option" style="display:block; padding:0.5rem 1rem; color:var(--text-primary); text-decoration:none; border-radius:6px; font-size:0.85rem;">🇻🇳 Vietnamese</a>
+          <a href="/blog/ru/" class="lang-option" style="display:block; padding:0.5rem 1rem; color:var(--text-primary); text-decoration:none; border-radius:6px; font-size:0.85rem;">🇷🇺 Русский</a>
+        </div>
+      </div>
+
+      <button class="btn-icon" id="theme-toggle" aria-label="Toggle theme">
+        <i class="fas fa-sun"></i>
+      </button>
+      <a href="/app/dashboard.html" class="nav-link">Log in</a>
+      <a href="/app/dashboard.html" class="btn-primary">Start Focusing</a>
+    </div>
+
+    <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
 
-<main id="main-content" style="padding-top: 100px; padding-bottom: 5rem;">
-  <div class="container" style="max-width: 760px;">
-    <h1>Privacy Policy</h1>
-    <p style="color: var(--text-muted); margin-bottom: 2.5rem;">Last updated: May 2026</p>
+<!-- Mobile Drawer -->
+<div class="nav-drawer" id="nav-drawer" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+  <a href="/app/pomodoro.html" class="nav-drawer-link">Timer</a>
+  <a href="/#features" class="nav-drawer-link">Features</a>
+  <a href="/blog/" class="nav-drawer-link">Blog</a>
+  <a href="/pages/pricing.html" class="nav-drawer-link">Pricing</a>
+  <a href="/pages/about.html" class="nav-drawer-link">About</a>
+  <div style="display:flex; gap:1rem; margin-top:2rem;">
+    <a href="/app/dashboard.html" class="btn-secondary">Log in</a>
+    <a href="/app/dashboard.html" class="btn-primary">Start Focusing</a>
+  </div>
+</div>
 
-    <h2>Your Privacy, Guaranteed</h2>
-    <p>FlowPomodoro is built with privacy as a core principle. We don't run ads, we don't sell your data, and we don't require you to create an account.</p>
+<main id="main-content">
+  <section class="legal-header">
+    <div class="container" style="max-width:860px; margin:0 auto; padding:0 1.5rem;">
+      <h1>Privacy Policy</h1>
+      <p>Last updated: June 2026</p>
+    </div>
+  </section>
 
-    <h2>What Data We Collect</h2>
-    <p><strong>We collect no personal data.</strong> FlowPomodoro stores all your session history, tasks, settings, and streaks exclusively in your browser's <code>localStorage</code>. This data never leaves your device and is never transmitted to any server.</p>
+  <div class="legal-body-wrap">
+    <div class="legal-content">
+      <h2>Your Privacy is Our Priority</h2>
+      <p>FlowPomodoro is built with privacy as a foundational principle. We do not run third-party advertising trackers, sell user data, or require account creation to use our Pomodoro focus tools.</p>
 
-    <h2>Analytics</h2>
-    <p>We use Google Analytics 4 to understand aggregate site usage (page views, session counts). This data is anonymized and contains no personally identifiable information. You can opt out using the <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener" style="color:var(--accent-cyan)">Google Analytics Opt-out Browser Add-on</a>.</p>
+      <h2>What Data We Collect</h2>
+      <p><strong>We collect no personally identifiable data.</strong> FlowPomodoro stores your focus timer history, task items, personal settings, and streaks exclusively in your browser's local storage (<code>localStorage</code>). This data stays entirely on your device and is never transmitted to our servers.</p>
 
-    <h2>Cookies</h2>
-    <p>FlowPomodoro does not use cookies for tracking. Google Analytics may set standard analytics cookies. No advertising cookies are used.</p>
+      <h2>Analytics</h2>
+      <p>We use Google Analytics 4 to understand aggregate, anonymized metrics (such as page views and general traffic trends) to help improve performance. This data contains no personally identifiable information. You can opt out using the <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">Google Analytics Opt-out Add-on</a>.</p>
 
-    <h2>Third-Party Services</h2>
-    <p>We use Google Fonts and Font Awesome for typography and icons. These services may log standard browser request metadata (IP address, user agent) per their own privacy policies.</p>
+      <h2>Cookies &amp; Local Storage</h2>
+      <p>FlowPomodoro does not use marketing or advertising tracking cookies. We utilize standard browser <code>localStorage</code> purely to remember your timer preferences, task items, and dark/light theme choice.</p>
 
-    <h2>Data Deletion</h2>
-    <p>To delete all your FlowPomodoro data, clear your browser's localStorage for this site. In Chrome: DevTools → Application → Local Storage → Clear All.</p>
+      <h2>Data Deletion</h2>
+      <p>You have complete control over your data. To permanently delete all stored data, simply clear your browser's local storage for <code>flowpomodoro.xyz</code> in your browser settings or developer tools.</p>
 
-    <h2>Contact</h2>
-    <p>Questions about this policy? Email: privacy@flowpomodoro.xyz</p>
-
-    <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--glass-border);">
-      <a href="/" class="btn btn-primary">← Back to Home</a>
+      <h2>Contact Us</h2>
+      <p>If you have any questions regarding this Privacy Policy, please contact our team at: <a href="mailto:privacy@flowpomodoro.xyz">privacy@flowpomodoro.xyz</a></p>
     </div>
   </div>
 </main>
 
+<!-- ── Footer ───────────────────────────────────────────────────────────────── -->
 <footer class="lp-footer">
-  <div class="container flex-between" style="flex-wrap:wrap;gap:1rem;">
-    <p>© 2026 FlowPomodoro. All rights reserved.</p>
-    <div style="display:flex;gap:1.5rem;">
-      <a href="/pages/privacy.html">Privacy</a>
-      <a href="/pages/terms.html">Terms</a>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="/" class="logo">
+          <div class="logo-dot"><i class="fas fa-stopwatch"></i></div>
+          FlowPomodoro
+        </a>
+        <p>A beautiful Pomodoro timer to help you focus deeply, beat procrastination, and build better habits.</p>
+      </div>
+      <div class="footer-col">
+        <div class="fc-title">Product</div>
+        <ul>
+          <li><a href="/app/pomodoro.html">Timer</a></li>
+          <li><a href="/#features">Features</a></li>
+          <li><a href="/pages/pricing.html">Pricing</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="fc-title">Resources</div>
+        <ul>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/pages/about.html">About</a></li>
+          <li><a href="/pages/download.html">Download</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="fc-title">Legal</div>
+        <ul>
+          <li><a href="/pages/privacy.html">Privacy</a></li>
+          <li><a href="/pages/terms.html">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 FlowPomodoro. All rights reserved.</div>
+      <div class="fb-links">
+        <a href="/pages/privacy.html">Privacy</a>
+        <a href="/pages/terms.html">Terms</a>
+        <a href="/blog/">Blog</a>
+      </div>
     </div>
   </div>
 </footer>
+
+<script>
+  const themeBtn = document.getElementById('theme-toggle');
+  const html = document.documentElement;
+  const savedTheme = localStorage.getItem('flow_theme') || 'light';
+  html.setAttribute('data-theme', savedTheme);
+  if(themeBtn) themeBtn.innerHTML = savedTheme === 'dark' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+
+  if(themeBtn) {
+    themeBtn.addEventListener('click', () => {
+      const isDark = html.getAttribute('data-theme') === 'dark';
+      const newTheme = isDark ? 'light' : 'dark';
+      html.setAttribute('data-theme', newTheme);
+      localStorage.setItem('flow_theme', newTheme);
+      themeBtn.innerHTML = newTheme === 'dark' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+    });
+  }
+
+  const hamburger = document.getElementById('nav-hamburger');
+  const drawer = document.getElementById('nav-drawer');
+  if(hamburger && drawer) {
+    hamburger.addEventListener('click', () => {
+      const isOpen = drawer.classList.toggle('open');
+      hamburger.setAttribute('aria-expanded', isOpen);
+    });
+  }
+
+  const langBtn = document.getElementById('lang-menu-btn');
+  const langDropdown = document.getElementById('lang-dropdown');
+  if(langBtn && langDropdown) {
+    langBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      langDropdown.style.display = langDropdown.style.display === 'flex' ? 'none' : 'flex';
+    });
+    document.addEventListener('click', () => {
+      langDropdown.style.display = 'none';
+    });
+  }
+</script>
 
 </body>
 </html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head>
+  <!-- Google tag (gtag.js) -->
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-ESNYBTJ98S"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ESNYBTJ98S');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign up — FlowPomodoro</title>
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="theme-color" content="#FAFAF7">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Outfit:wght@500;700;800&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link rel="stylesheet" href="/css/variables.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/components.css">
+
+  <style>
+    body { display: flex; flex-direction: column; min-height: 100vh; background: var(--bg-main); align-items: center; justify-content: center; padding: 2rem; }
+    
+    .auth-container { width: 100%; max-width: 400px; }
+    
+    .logo-container { text-align: center; margin-bottom: 2.5rem; }
+    .logo { font-family: var(--font-display); font-size: 1.5rem; font-weight: 800; color: var(--text-primary); display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none; }
+    .logo-dot { width: 24px; height: 24px; border-radius: 50%; background: var(--brand-primary); display: flex; align-items: center; justify-content: center; }
+    .logo-dot i { font-size: 0.75rem; color: #111827; }
+    
+    .auth-card { background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius-2xl); padding: 2.5rem 2rem; box-shadow: var(--shadow-md); }
+    
+    h1 { font-size: 1.5rem; margin-bottom: 0.5rem; text-align: center; }
+    p.subtitle { color: var(--text-secondary); text-align: center; margin-bottom: 2rem; font-size: 0.95rem; }
+    
+    .form-group { margin-bottom: 1.25rem; }
+    .form-group label { display: block; margin-bottom: 0.5rem; font-size: 0.85rem; font-weight: 600; color: var(--text-secondary); }
+    
+    .btn-submit { width: 100%; margin-top: 1rem; }
+    
+    .auth-footer { margin-top: 2rem; text-align: center; font-size: 0.9rem; color: var(--text-secondary); }
+    .auth-footer a { color: var(--brand-primary); font-weight: 600; text-decoration: none; }
+    
+    .theme-toggle-floating { position: absolute; top: 2rem; right: 2rem; }
+  </style>
+
+  <link rel="canonical" href="https://flowpomodoro.xyz/pages/signup.html"></head>
+<body>
+
+<button class="btn-icon theme-toggle-floating" id="theme-toggle"><i class="fas fa-moon"></i></button>
+
+<div class="auth-container">
+  <div class="logo-container">
+    <a href="/" class="logo">
+      <div class="logo-dot"><i class="fas fa-stopwatch"></i></div>
+      FlowPomodoro
+    </a>
+  </div>
+  
+  <div class="auth-card">
+    <h1>Create an account</h1>
+    <p class="subtitle">Start tracking your focus and productivity</p>
+    
+    <form action="#" onsubmit="event.preventDefault(); window.location.href='/app/dashboard.html';">
+      <div class="form-group">
+        <label for="name">First Name</label>
+        <input type="text" id="name" class="input" placeholder="Jane" required="">
+      </div>
+      
+      <div class="form-group">
+        <label for="email">Email address</label>
+        <input type="email" id="email" class="input" placeholder="name@example.com" required="">
+      </div>
+      
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" class="input" placeholder="••••••••" required="">
+      </div>
+      
+      <button type="submit" class="btn-primary btn-submit">Sign up</button>
+    </form>
+  </div>
+  
+  <div class="auth-footer">
+    Already have an account? <a href="/pages/login.html">Log in</a>
+  </div>
+</div>
+
+<script>
+  const themeBtn = document.getElementById('theme-toggle');
+  const html = document.documentElement;
+
+  const savedTheme = localStorage.getItem('flow_theme') || 'light';
+  html.setAttribute('data-theme', savedTheme);
+  if(themeBtn) themeBtn.innerHTML = savedTheme === 'dark' ? '<i class="fas fa-moon"></i>' : '<i class="fas fa-sun"></i>';
+
+  if(themeBtn) {
+    themeBtn.addEventListener('click', () => {
+      const isDark = html.getAttribute('data-theme') === 'dark';
+      const newTheme = isDark ? 'light' : 'dark';
+      html.setAttribute('data-theme', newTheme);
+      localStorage.setItem('flow_theme', newTheme);
+      themeBtn.innerHTML = newTheme === 'dark' ? '<i class="fas fa-moon"></i>' : '<i class="fas fa-sun"></i>';
+    });
+  }
+</script>
+
+
+</body></html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html><html lang="en" data-theme="dark"><head>
+  <script>(function(){ document.documentElement.setAttribute('data-theme', localStorage.getItem('flow_theme')||'dark'); })();</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Goals — FlowPomodoro</title>
+  <meta name="description" content="Manage your custom goals, daily targets, and productivity systems in FlowPomodoro.">
+  <meta name="theme-color" content="#080B12">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="/public/manifest.json">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;family=Outfit:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/variables.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/layout.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/platform.css">
+
+  <link rel="canonical" href="https://flowpomodoro.xyz/app/goals.html"></head>
+<body>
+
+<div class="pf-layout" id="pf-layout">
+  <!-- Sidebar injected by sidebar.js -->
+  <div class="pf-content" id="pf-content">
+    <!-- Topbar injected by sidebar.js -->
+
+    <main class="pf-page" id="main-content">
+      
+      <!-- Tabs -->
+      <div class="pf-tabs" id="goals-tabs">
+        <button class="pf-tab active" data-tab="all">All Goals (<span id="count-all">0</span>)</button>
+        <button class="pf-tab" data-tab="active">Active (<span id="count-active">0</span>)</button>
+        <button class="pf-tab" data-tab="archived">Archived (<span id="count-archived">0</span>)</button>
+      </div>
+
+      <!-- Goals Table View -->
+      <div id="goals-table-container"></div>
+
+    </main>
+  </div>
+</div>
+
+<!-- ── Add/Edit Goal Modal ────────────────────────────────────────────────── -->
+<div class="pf-modal-overlay" id="goal-modal">
+  <div class="pf-modal">
+    <div class="pf-modal-header">
+      <div class="pf-modal-title" id="goal-modal-title">Create Goal</div>
+      <button class="pf-modal-close" id="goal-modal-close" aria-label="Close modal">
+        <i class="fas fa-xmark"></i>
+      </button>
+    </div>
+
+    <form id="goal-form">
+      <input type="hidden" id="goal-id" value="">
+      <div class="pf-modal-body">
+        
+        <!-- Icon and Name -->
+        <div class="form-group">
+          <label class="form-label" for="goal-name">Goal / Activity Name *</label>
+          <div class="icon-input-row">
+            <div class="icon-preview" id="icon-preview">🎯</div>
+            <input type="text" id="goal-icon" class="pf-input" style="width:70px;text-align:center;font-size:18px;" value="🎯" maxlength="4" title="Emoji icon">
+            <input type="text" id="goal-name" class="pf-input" placeholder="e.g. Deep Work, Learning, Fitness, Reading" required="" style="flex:1;">
+          </div>
+          <span class="form-hint">Type or paste any emoji icon</span>
+        </div>
+
+        <!-- Goal Type (Outcome Goal vs Habit/Routine) -->
+        <div class="form-group">
+          <label class="form-label">Type</label>
+          <div class="type-selector-group" style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+            <label class="type-option selected" id="type-opt-habit" style="display:flex;align-items:center;gap:8px;padding:8px 12px;border:1px solid var(--border-color);border-radius:var(--radius-md);cursor:pointer;background:var(--bg-surface-hover);">
+              <input type="radio" name="goal-type" value="habit" checked="" style="accent-color:var(--brand-primary);">
+              <div>
+                <div style="font-weight:700;font-size:12px;">🔄 Habit / Activity</div>
+                <div style="font-size:10px;color:var(--text-muted);">Repeated action with rest days</div>
+              </div>
+            </label>
+            <label class="type-option" id="type-opt-goal" style="display:flex;align-items:center;gap:8px;padding:8px 12px;border:1px solid var(--border-color);border-radius:var(--radius-md);cursor:pointer;">
+              <input type="radio" name="goal-type" value="goal" style="accent-color:var(--brand-primary);">
+              <div>
+                <div style="font-weight:700;font-size:12px;">🎯 Outcome Goal</div>
+                <div style="font-size:10px;color:var(--text-muted);">Milestone or flexible project</div>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <!-- Recurrence Section -->
+        <div class="form-group" id="recurrence-section">
+          <label class="form-label" for="goal-recurrence">Schedule &amp; Recurrence</label>
+          <select id="goal-recurrence" class="pf-select" style="margin-bottom:8px;">
+            <option value="daily">Every day (7 days / week)</option>
+            <option value="weekdays">Weekdays (Mon – Fri)</option>
+            <option value="weekends">Weekends (Sat – Sun)</option>
+            <option value="selected_days">Selected Days (Custom)</option>
+            <option value="weekly">Every week</option>
+            <option value="biweekly">Every 2 weeks</option>
+            <option value="monthly">Every month</option>
+            <option value="none">Does not repeat (Flexible / Outcome)</option>
+          </select>
+
+          <!-- 7-Day Selector -->
+          <div id="day-selector-wrap" style="margin-top:6px;">
+            <div style="font-size:11px;font-weight:600;color:var(--text-muted);margin-bottom:4px;">ACTIVE DAYS</div>
+            <div class="day-pills-row" id="goal-day-pills" style="display:flex;gap:6px;flex-wrap:wrap;">
+              <button type="button" class="day-pill selected" data-day="0">SUN</button>
+              <button type="button" class="day-pill selected" data-day="1">MON</button>
+              <button type="button" class="day-pill selected" data-day="2">TUE</button>
+              <button type="button" class="day-pill selected" data-day="3">WED</button>
+              <button type="button" class="day-pill selected" data-day="4">THU</button>
+              <button type="button" class="day-pill selected" data-day="5">FRI</button>
+              <button type="button" class="day-pill selected" data-day="6">SAT</button>
+            </div>
+            <!-- Quick day presets -->
+            <div style="display:flex;gap:6px;margin-top:6px;flex-wrap:wrap;">
+              <button type="button" class="btn-preset-day" data-preset="all">All 7 Days</button>
+              <button type="button" class="btn-preset-day" data-preset="weekdays">Weekdays</button>
+              <button type="button" class="btn-preset-day" data-preset="weekends">Weekends</button>
+              <button type="button" class="btn-preset-day" data-preset="mwf">Mon/Wed/Fri</button>
+              <button type="button" class="btn-preset-day" data-preset="tt">Tue/Thu</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Color -->
+        <div class="form-group">
+          <label class="form-label">Theme Color</label>
+          <div class="color-swatches" id="color-swatches">
+            <!-- Rendered by JS -->
+          </div>
+          <input type="hidden" id="goal-color" value="#FFB800">
+        </div>
+
+        <!-- Category & Priority Row -->
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="goal-category">Category</label>
+            <input type="text" id="goal-category" class="pf-input" placeholder="e.g. Work, Study, Health, Skill" value="General">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Priority</label>
+            <div class="priority-options">
+              <label class="priority-option selected" data-priority="high">
+                <input type="radio" name="goal-priority" value="high" checked=""> High
+              </label>
+              <label class="priority-option" data-priority="medium">
+                <input type="radio" name="goal-priority" value="medium"> Med
+              </label>
+              <label class="priority-option" data-priority="low">
+                <input type="radio" name="goal-priority" value="low"> Low
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Targets Row -->
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="goal-daily">Daily Target (minutes) *</label>
+            <input type="number" id="goal-daily" class="pf-input" min="1" max="1440" value="60" required="">
+            <span class="form-hint" id="daily-hint">= 1h 0m / day</span>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="goal-weekly">Weekly Target (minutes) *</label>
+            <input type="number" id="goal-weekly" class="pf-input" min="1" max="10080" value="420" required="">
+            <span class="form-hint" id="weekly-hint">= 7h 0m / week (7 days)</span>
+          </div>
+        </div>
+
+        <!-- Optional Date Range -->
+        <div class="form-row" id="dates-row" style="display:none;">
+          <div class="form-group">
+            <label class="form-label" for="goal-start-date">Start Date</label>
+            <input type="date" id="goal-start-date" class="pf-input">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="goal-end-date">End Date</label>
+            <input type="date" id="goal-end-date" class="pf-input">
+          </div>
+        </div>
+
+        <!-- Description -->
+        <div class="form-group">
+          <label class="form-label" for="goal-desc">Description (Optional)</label>
+          <textarea id="goal-desc" class="pf-textarea" placeholder="Key objectives, notes, or resources for this goal..."></textarea>
+        </div>
+
+      </div>
+
+      <div class="pf-modal-footer">
+        <button type="button" class="btn-secondary" id="goal-cancel-btn">Cancel</button>
+        <button type="submit" class="btn-primary" id="goal-save-btn">Save Goal</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script type="module" src="/js/platform/goals.js"></script>
+
+
+</body></html>

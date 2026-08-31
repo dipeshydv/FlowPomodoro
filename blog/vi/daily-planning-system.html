@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="vi" dir="ltr" data-theme="light">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ESNYBTJ98S"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ESNYBTJ98S');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Metadata -->
+  <title>Hệ Thống Lập Kế Hoạch Hàng Ngày Đạt Năng Suất Đỉnh Cao | FlowPomodoro</title>
+  <meta name="description" content="Xây dựng một hệ thống lập kế hoạch hàng ngày giúp tối đa hóa năng suất. Tìm hiểu cách phân bổ thời gian (time blocking), gom nhóm tác vụ và quản lý năng lượng để lập kế hoạch cho một ngày làm việc hiệu quả nhất.">
+  <link rel="canonical" href="https://flowpomodoro.xyz/blog/vi/daily-planning-system.html">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#FAFAF7">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="FlowPomodoro">
+  <meta property="og:title" content="Hệ Thống Lập Kế Hoạch Hàng Ngày Đạt Năng Suất Đỉnh Cao">
+  <meta property="og:description" content="Xây dựng một hệ thống lập kế hoạch hàng ngày giúp tối đa hóa năng suất. Tìm hiểu cách phân bổ thời gian (time blocking), gom nhóm tác vụ và quản lý năng lượng để lập kế hoạch cho một ngày làm việc hiệu quả nhất.">
+  <meta property="og:url" content="https://flowpomodoro.xyz/blog/vi/daily-planning-system.html">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=1200&q=80">
+  <meta property="og:locale" content="vi_VN">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@FlowPomodoro">
+  <meta name="twitter:title" content="Hệ Thống Lập Kế Hoạch Hàng Ngày Đạt Năng Suất Đỉnh Cao">
+  <meta name="twitter:description" content="Xây dựng một hệ thống lập kế hoạch hàng ngày giúp tối đa hóa năng suất. Tìm hiểu cách phân bổ thời gian (time blocking), gom nhóm tác vụ và quản lý năng lượng để lập kế hoạch cho một ngày làm việc hiệu quả nhất.">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=1200&q=80">
+
+  <!-- Hreflang Multilingual Links -->
+  <link rel="alternate" hreflang="en" href="https://flowpomodoro.xyz/blog/en/daily-planning-system.html" />
+  <link rel="alternate" hreflang="hi" href="https://flowpomodoro.xyz/blog/hi/daily-planning-system.html" />
+  <link rel="alternate" hreflang="ne" href="https://flowpomodoro.xyz/blog/ne/daily-planning-system.html" />
+  <link rel="alternate" hreflang="es" href="https://flowpomodoro.xyz/blog/es/daily-planning-system.html" />
+  <link rel="alternate" hreflang="vi" href="https://flowpomodoro.xyz/blog/vi/daily-planning-system.html" />
+  <link rel="alternate" hreflang="ru" href="https://flowpomodoro.xyz/blog/ru/daily-planning-system.html" />
+  <link rel="alternate" hreflang="x-default" href="https://flowpomodoro.xyz/blog/en/daily-planning-system.html" />
+
+  <!-- Structured Data: Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Hệ Thống Lập Kế Hoạch Hàng Ngày Đạt Năng Suất Đỉnh Cao",
+    "description": "Xây dựng một hệ thống lập kế hoạch hàng ngày giúp tối đa hóa năng suất. Tìm hiểu cách phân bổ thời gian (time blocking), gom nhóm tác vụ và quản lý năng lượng để lập kế hoạch cho một ngày làm việc hiệu quả nhất.",
+    "author": {
+      "@type": "Person",
+      "name": "FlowPomodoro Team"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "FlowPomodoro",
+      "url": "https://flowpomodoro.xyz",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://flowpomodoro.xyz/assets/favicon.svg"
+      }
+    },
+    "datePublished": "Apr 20, 2024",
+    "dateModified": "Apr 20, 2024",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://flowpomodoro.xyz/blog/vi/daily-planning-system.html"
+    },
+    "image": "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=1200&q=80"
+  }
+  </script>
+
+  <!-- Structured Data: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://flowpomodoro.xyz/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://flowpomodoro.xyz/blog/vi/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Hệ Thống Lập Kế Hoạch Hàng Ngày Đạt Năng Suất Đỉnh Cao",
+        "item": "https://flowpomodoro.xyz/blog/vi/daily-planning-system.html"
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Việc lập kế hoạch hàng ngày nên mất bao lâu?","acceptedAnswer":{"@type":"Answer","text":"Một phiên lập kế hoạch hàng ngày hiệu quả mất khoảng 10–15 phút vào buổi sáng và 10 phút nữa vào buổi tối để đánh giá và chuẩn bị cho ngày hôm sau. Đợt kiểm tra giữa ngày mất 5 phút. Tổng cộng: khoảng 25–30 phút lên kế hoạch có chủ ý mỗi ngày, điều này sẽ tiết kiệm được nhiều thời gian hơn rất nhiều so với thời gian bỏ ra."}},{"@type":"Question","name":"MITs trong năng suất là gì?","acceptedAnswer":{"@type":"Answer","text":"MITs là viết tắt của Nhiệm Vụ Quan Trọng Nhất (Most Important Tasks) — hai hoặc ba nhiệm vụ sẽ làm cho ngày của bạn thực sự thành công nếu được hoàn thành. Phương pháp MIT, được Leo Babauta của trang Zen Habits phổ biến, tập trung sự chú ý của bạn vào công việc có tác động cao thay vì để cho những nhiệm vụ bận rộn nhất hoặc khẩn cấp nhất chi phối cả ngày của bạn."}},{"@type":"Question","name":"Tôi nên sử dụng công cụ bằng giấy hay kỹ thuật số để lập kế hoạch hàng ngày?","acceptedAnswer":{"@type":"Answer","text":"Cả hai đều tốt, và hệ thống tốt nhất là hệ thống bạn thực sự sẽ sử dụng. Nghiên cứu của Pam Mueller và Daniel Oppenheimer chỉ ra rằng viết tay cải thiện khả năng ghi nhớ và xử lý, làm cho giấy tờ trở nên hữu ích cho việc lập kế hoạch buổi sáng. Các công cụ kỹ thuật số lại vượt trội trong việc chuyển tiếp thông tin, đặt lời nhắc và tích hợp với lịch."}},{"@type":"Question","name":"Tôi nên lên kế hoạch bao nhiêu nhiệm vụ mỗi ngày?","acceptedAnswer":{"@type":"Answer","text":"Hầu hết các chuyên gia năng suất khuyên bạn nên có 2–3 MIT cộng với 3–5 nhiệm vụ phụ mỗi ngày. Việc lên kế hoạch cho hơn 8–10 nhiệm vụ hầu như luôn mang tính lý tưởng hơn là thực tế, dẫn đến sự thất vọng vào cuối ngày và không tính đến những gián đoạn vốn thường tiêu tốn 20–30% ngày làm việc."}},{"@type":"Question","name":"Time blocking (phân bổ thời gian) là gì và nó có hiệu quả không?","acceptedAnswer":{"@type":"Answer","text":"Time blocking là việc chỉ định các nhiệm vụ cụ thể vào các khung giờ cụ thể trên lịch — thay vì duy trì một danh sách việc cần làm (to-do list) không giới hạn thời gian. Các nghiên cứu và thực tiễn từ những người có hiệu suất cao như Cal Newport, Elon Musk, và Bill Gates liên tục ủng hộ time blocking như là một trong những chiến lược lập kế hoạch hàng ngày hiệu quả nhất."}}]}
+  </script>
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous">
+
+  <!-- Global Styles -->
+  <link rel="stylesheet" href="/css/variables.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/layout.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/style.css">
+  
+  <!-- Blog Article Styles -->
+  <link rel="stylesheet" href="/blog/css/article.css">
+</head>
+<body class="editorial-theme">
+
+  <!-- Reading Progress Bar -->
+  <div id="reading-progress-bar" role="progressbar" aria-label="Reading progress"></div>
+
+  <!-- ── Navigation ────────────────────────────────────────────────────────── -->
+  <nav class="lp-nav" aria-label="Main navigation" id="main-nav">
+    <div class="nav-inner">
+      <a href="/" class="logo" aria-label="FlowPomodoro home">
+        <div class="logo-dot"><i class="fas fa-stopwatch"></i></div>
+        FlowPomodoro
+      </a>
+
+      <div class="nav-links" id="nav-links">
+        <a href="/app/index.html" class="nav-link">Timer</a>
+        <a href="/#features" class="nav-link">Features</a>
+        <a href="/blog/vi/" class="nav-link" aria-current="page" style="color:var(--brand-primary); font-weight:700;">Blog</a>
+        <a href="/pages/pricing.html" class="nav-link">Pricing</a>
+        <a href="/pages/about.html" class="nav-link">About</a>
+      </div>
+
+      <div class="nav-actions">
+        <div class="lang-switcher" style="position:relative; display:inline-block;">
+          <button class="btn-icon lang-btn" id="lang-menu-btn" aria-label="Select Language" title="Select Language">
+            <i class="fas fa-globe"></i>
+          </button>
+          <div class="lang-dropdown" id="lang-dropdown" style="display:none; position:absolute; top:120%; right:0; background:var(--bg-surface); border:1px solid var(--border-color); border-radius:12px; padding:0.5rem; min-width:150px; z-index:999; flex-direction:column; gap:0.2rem; box-shadow:var(--shadow-lg);">
+            <a href="/blog/en/daily-planning-system.html" class="lang-option" style="display:block; padding:0.5rem 1rem; color:var(--text-primary); text-decoration:none; border-radius:6px; font-size:0.85rem;">🇺🇸 English</a>
+            <a href="/blog/hi/daily-planning-system.html" class="lang-option" style="display:block; padding:0.5rem 1rem; color:var(--text-primary); text-decoration:none; border-radius:6px; font-size:0.85rem;">🇮🇳 Hindi</a>
+            <a href="/blog/ne/daily-planning-system.html" class="lang-option" style="display:block; padding:0.5rem 1rem; color:var(--text-primary); text-decoration:none; border-radius:6px; font-size:0.85rem;">🇳🇵 Nepali</a>
+            <a href="/blog/es/daily-planning-system.html" class="lang-option" style="display:block; padding:0.5rem 1rem; color:var(--text-primary); text-decoration:none; border-radius:6px; font-size:0.85rem;">🇪🇸 Spanish</a>
+            <a href="/blog/vi/daily-planning-system.html" class="lang-option" style="display:block; padding:0.5rem 1rem; color:var(--text-primary); text-decoration:none; border-radius:6px; font-size:0.85rem;">🇻🇳 Vietnamese</a>
+            <a href="/blog/ru/daily-planning-system.html" class="lang-option" style="display:block; padding:0.5rem 1rem; color:var(--text-primary); text-decoration:none; border-radius:6px; font-size:0.85rem;">🇷🇺 Русский</a>
+          </div>
+        </div>
+
+        <button class="btn-icon" id="theme-toggle" aria-label="Toggle theme">
+          <i class="fas fa-sun"></i>
+        </button>
+        <a href="/pages/login.html" class="nav-link">Log in</a>
+        <a href="/app/index.html" class="btn-primary">Start Focusing</a>
+      </div>
+
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Drawer -->
+  <div class="nav-drawer" id="nav-drawer" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+    <a href="/app/index.html" class="nav-drawer-link">Timer</a>
+    <a href="/#features" class="nav-drawer-link">Features</a>
+    <a href="/blog/vi/" class="nav-drawer-link" style="color:var(--brand-primary); font-weight:700;">Blog</a>
+    <a href="/pages/pricing.html" class="nav-drawer-link">Pricing</a>
+    <a href="/pages/about.html" class="nav-drawer-link">About</a>
+    <div style="display:flex; gap:1rem; margin-top:2rem;">
+      <a href="/pages/login.html" class="btn-secondary">Log in</a>
+      <a href="/app/index.html" class="btn-primary">Start Focusing</a>
+    </div>
+  </div>
+
+  <main id="main-content">
+
+    <!-- ── Breadcrumb ──────────────────────────────────────────────────────── -->
+    <nav class="editorial-breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a> 
+      <span class="breadcrumb-separator"><i class="fas fa-chevron-right"></i></span> 
+      <a href="/blog/vi/">Blog</a>
+      <span class="breadcrumb-separator"><i class="fas fa-chevron-right"></i></span> 
+      <span class="breadcrumb-current" aria-current="page">Hệ Thống Lập Kế Hoạch Hàng Ngày Đạt Năng Suất Đỉnh Cao</span>
+    </nav>
+
+    <!-- ── Article Header ──────────────────────────────────────────────────── -->
+    <header class="editorial-header">
+      <div class="article-badge-row">
+        <span class="article-category">Time Management</span>
+        <div class="article-header-actions">
+          <button class="action-btn" id="btn-bookmark-toggle" aria-label="Bookmark article" data-slug="daily-planning-system" title="Save article">
+            <i class="far fa-bookmark"></i>
+          </button>
+          <button class="action-btn" id="btn-share-toggle" aria-label="Share article" title="Share article">
+            <i class="fas fa-share-nodes"></i>
+          </button>
+        </div>
+      </div>
+
+      <h1 class="article-h1">Hệ Thống Lập Kế Hoạch Hàng Ngày Đạt Năng Suất Đỉnh Cao</h1>
+      <p class="article-intro">Xây dựng một hệ thống lập kế hoạch hàng ngày giúp tối đa hóa năng suất. Tìm hiểu cách phân bổ thời gian (time blocking), gom nhóm tác vụ và quản lý năng lượng để lập kế hoạch cho một ngày làm việc hiệu quả nhất.</p>
+
+      <div class="author-meta-row">
+        <div class="author-avatar" aria-hidden="true">
+          F
+        </div>
+        <div class="author-info">
+          <span class="author-name">FlowPomodoro Team</span>
+          <span class="author-details">Apr 20, 2024 · 5 min read</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- ── Hero Image ──────────────────────────────────────────────────────── -->
+    <figure class="article-hero-figure">
+      <img 
+        src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=1200&q=80" 
+        alt="Hệ Thống Lập Kế Hoạch Hàng Ngày Đạt Năng Suất Đỉnh Cao" 
+        width="1000" 
+        height="560" 
+        loading="eager"
+      >
+    </figure>
+
+    <!-- ── Editorial Reading Layout ────────────────────────────────────────── -->
+    <div class="editorial-layout">
+      
+      <!-- Sticky Sidebar Table of Contents -->
+      <aside class="layout-sidebar" aria-label="Table of contents">
+        <nav class="editorial-toc">
+          <div class="toc-header">
+            <span class="toc-title">In This Article</span>
+            <i class="fas fa-list-ol" style="color:var(--brand-primary); font-size:0.85rem;" aria-hidden="true"></i>
+          </div>
+          <ul class="toc-list">
+            
+      <li>
+        <a href="#why-daily-planning-fails">
+          <span class="toc-number">01</span>
+          <span class="toc-text">Tại Sao Hầu Hết Mọi Người Thất Bại Trong Lập Kế Hoạch Hàng Ngày</span>
+        </a>
+      </li>
+    
+
+      <li>
+        <a href="#three-parts">
+          <span class="toc-number">02</span>
+          <span class="toc-text">Hệ Thống Lập Kế Hoạch Hàng Ngày 3 Phần</span>
+        </a>
+      </li>
+    
+
+      <li>
+        <a href="#mit-method">
+          <span class="toc-number">03</span>
+          <span class="toc-text">Phương Pháp MIT: Chọn Đúng Nhiệm Vụ</span>
+        </a>
+      </li>
+    
+
+      <li>
+        <a href="#estimating-pomodoros">
+          <span class="toc-number">04</span>
+          <span class="toc-text">Ước Tính Thời Gian Với Pomodoro</span>
+        </a>
+      </li>
+    
+
+      <li>
+        <a href="#dealing-with-unexpected">
+          <span class="toc-number">05</span>
+          <span class="toc-text">Xử Lý Những Điều Bất Ngờ</span>
+        </a>
+      </li>
+    
+
+      <li>
+        <a href="#digital-vs-paper">
+          <span class="toc-number">06</span>
+          <span class="toc-text">Lập Kế Hoạch Bằng Kỹ Thuật Số vs. Bằng Giấy</span>
+        </a>
+      </li>
+    
+
+      <li>
+        <a href="#weekly-tie-in">
+          <span class="toc-number">07</span>
+          <span class="toc-text">Sự Gắn Kết Hàng Tuần</span>
+        </a>
+      </li>
+    
+
+      <li>
+        <a href="#daily-plan-template">
+          <span class="toc-number">08</span>
+          <span class="toc-text">Mẫu Kế Hoạch Hàng Ngày Của Bạn</span>
+        </a>
+      </li>
+    
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- Main Article Body -->
+      <article class="layout-content">
+        
+        <!-- Mobile Collapsible TOC -->
+        <details class="mobile-toc-details">
+          <summary class="mobile-toc-summary">
+            <span><i class="fas fa-list-ol" style="color:var(--brand-primary); margin-right:0.5rem;" aria-hidden="true"></i> Table of Contents</span>
+            <i class="fas fa-chevron-down" aria-hidden="true"></i>
+          </summary>
+          <ul class="toc-list" style="margin-top:0.75rem;">
+            
+      <li>
+        <a href="#why-daily-planning-fails">
+          <span class="toc-number">01</span>
+          <span class="toc-text">Tại Sao Hầu Hết Mọi Người Thất Bại Trong Lập Kế Hoạch Hàng Ngày</span>
+        </a>
+      </li>
+    
+
+      <li>
+        <a href="#three-parts">
+          <span class="toc-number">02</span>
+          <span class="toc-text">Hệ Thống Lập Kế Hoạch Hàng Ngày 3 Phần</span>
+        </a>
+      </li>
+    
+
+      <li>
+        <a href="#mit-method">
+          <span class="toc-number">03</span>
+          <span class="toc-text">Phương Pháp MIT: Chọn Đúng Nhiệm Vụ</span>
+        </a>
+      </li>
+    
+
+      <li>
+        <a href="#estimating-pomodoros">
+          <span class="toc-number">04</span>
+          <span class="toc-text">Ước Tính Thời Gian Với Pomodoro</span>
+        </a>
+      </li>
+    
+
+      <li>
+        <a href="#dealing-with-unexpected">
+          <span class="toc-number">05</span>
+          <span class="toc-text">Xử Lý Những Điều Bất Ngờ</span>
+        </a>
+      </li>
+    
+
+      <li>
+        <a href="#digital-vs-paper">
+          <span class="toc-number">06</span>
+          <span class="toc-text">Lập Kế Hoạch Bằng Kỹ Thuật Số vs. Bằng Giấy</span>
+        </a>
+      </li>
+    
+
+      <li>
+        <a href="#weekly-tie-in">
+          <span class="toc-number">07</span>
+          <span class="toc-text">Sự Gắn Kết Hàng Tuần</span>
+        </a>
+      </li>
+    
+
+      <li>
+        <a href="#daily-plan-template">
+          <span class="toc-number">08</span>
+          <span class="toc-text">Mẫu Kế Hoạch Hàng Ngày Của Bạn</span>
+        </a>
+      </li>
+    
+          </ul>
+        </details>
+
+        <div class="article-body">
+          
+      <h2 id="why-daily-planning-fails">Tại Sao Hầu Hết Mọi Người Thất Bại Trong Lập Kế Hoạch Hàng Ngày</h2>
+
+      <p class="drop-cap">Hầu hết mọi người đã từng thử lập kế hoạch hàng ngày. Và hầu hết đều từ bỏ nó trong vòng hai tuần. Các dạng thất bại đều có thể đoán trước và rất nhất quán:</p>
+
+      <p><strong>Chế độ đối phó:</strong> Ngày làm việc bắt đầu với email và thông báo, và ai "hét" to nhất sẽ chiếm được thời gian và sự chú ý của bạn. Đến 11 giờ sáng, kế hoạch của bạn trở nên vô nghĩa — bạn giống như một quả bóng pinball nảy qua nảy lại giữa những ưu tiên của người khác.</p>
+
+      <p><strong>Không có hệ thống, chỉ có danh sách:</strong> Một danh sách việc cần làm (to-do list) không phải là một kế hoạch. Nó chỉ là một bản kiểm kê. Nếu không có hệ thống để ưu tiên, sắp xếp trình tự và lên lịch cho các mục trong danh sách đó, cuối cùng bạn sẽ làm những việc dễ nhất trước (vì chúng tạo ra đà) trong khi những công việc quan trọng nhất thì chuyển sang ngày mai, và rồi sang ngày hôm sau nữa.</p>
+
+      <p><strong>Quá cứng nhắc:</strong> Một số người tạo ra những lịch trình chi tiết từng giờ dễ dàng sụp đổ khi va chạm với thực tế — một cuộc họp đột xuất, một email cần nhiều thời gian để trả lời, một đứa trẻ ốm ở nhà, và toàn bộ hệ thống sẽ phá sản. Sự cứng nhắc sinh ra sự từ bỏ.</p>
+
+      <p><strong>Không có vòng lặp đánh giá:</strong> Lập kế hoạch mà không xem xét đánh giá giống như điều hướng bằng bản đồ nhưng không có la bàn. Không có sự đánh giá thường xuyên về những gì đang hoạt động tốt và những gì không, bạn sẽ lặp lại những khuôn mẫu kém hiệu quả vào mỗi tuần.</p>
+
+      <div class="callout">
+        <p><strong>Cách Khắc Phục:</strong> Một hệ thống lập kế hoạch hàng ngày hiệu quả cần đủ cấu trúc để định hướng sự chú ý của bạn, đủ linh hoạt để tồn tại qua những ngày thực tế, và có một vòng lặp phản hồi tích hợp. Nó tốn ít hơn 30 phút trong ngày của bạn để chạy, và trả lại cho bạn nhiều thời gian hơn thế ở dạng sự tập trung được lấy lại.</p>
+      </div>
+
+      <h2 id="three-parts">Hệ Thống Lập Kế Hoạch Hàng Ngày 3 Phần</h2>
+
+      <h3>Phần 1: Lập Kế Hoạch Buổi Sáng (10 Phút)</h3>
+
+      <p>Phiên lập kế hoạch buổi sáng là thói quen quan trọng nhất của bạn. Nó nên diễn ra <em>trước khi</em> bạn mở email, trước khi bạn kiểm tra điện thoại, trước khi bạn trò chuyện với đồng nghiệp. Tốt nhất là thực hiện nó vào một thời điểm cố định — ngay sau nghi thức buổi sáng của bạn (cà phê, tắm, tập thể dục) — để nó trở thành tự động chứ không phải là một quyết định.</p>
+
+      <p>Phiên lập kế hoạch buổi sáng gồm bốn bước:</p>
+
+      <ol>
+        <li><strong>Xem lại lịch của bạn (2 phút):</strong> Bạn có những cuộc họp, cuộc gọi hoặc cam kết cố định nào hôm nay? Những điều này xác định các khối thời gian làm việc có sẵn của bạn. Một ngày có ba cuộc họp sẽ có thời gian tập trung rảnh rỗi rất khác so với một ngày trống trải.</li>
+        <li><strong>Xem lại danh sách dự án và mục tiêu tuần (2 phút):</strong> Các dự án hiện tại đang hoạt động là gì? Bạn đã cam kết hoàn thành điều gì trong tuần này? Những điều nào trong số đó cần được tiến hành hôm nay?</li>
+        <li><strong>Chọn các MIT (3 phút):</strong> Xác định hai hoặc ba nhiệm vụ sẽ làm cho hôm nay thực sự thành công nếu được hoàn thành. Đây là Các Nhiệm Vụ Quan Trọng Nhất của bạn (Most Important Tasks) — không phải khẩn cấp nhất, không phải thoải mái nhất. Quan trọng nhất so với các mục tiêu thực sự của bạn.</li>
+        <li><strong>Lên lịch các Pomodoro (3 phút):</strong> Gán mỗi MIT vào một khối thời gian cụ thể trong lịch của bạn. Ước tính xem mỗi công việc sẽ mất bao nhiêu Pomodoro (xem phần ước tính bên dưới). Đặt rõ ràng các khung giờ đó — "10:00–11:15: Báo cáo Dự án X, 3 Pomodoro."</li>
+      </ol>
+
+      <p>Phiên làm việc buổi sáng mất mười phút. Nếu tốn nhiều thời gian hơn, bạn đang lập kế hoạch quá mức — bản thân nó cũng là một hình thức trì hoãn.</p>
+
+      <h3>Phần 2: Kiểm Tra Giữa Ngày (5 Phút)</h3>
+
+      <p>Vào khoảng giữa trưa — hoặc sau khối lượng công việc tập trung lớn đầu tiên của bạn — hãy dành ra 5 phút để xem lại tiến độ của mình:</p>
+
+      <ul>
+        <li>Bạn đã hoàn thành được những gì từ danh sách MIT của mình?</li>
+        <li>Có những việc khẩn cấp nào xuất hiện cần được giải quyết trong hôm nay không?</li>
+        <li>Các khối thời gian đã được lên lịch còn lại của bạn có còn hợp lý không, hay cần điều chỉnh?</li>
+      </ul>
+
+      <p>Việc kiểm tra giữa ngày chính là bộ phận giảm xóc cho hệ thống của bạn. Thực tế hiếm khi khớp hoàn hảo với kế hoạch buổi sáng của bạn. Việc kiểm tra cho phép bạn điều chỉnh một cách có chủ đích thay vì từ bỏ hoàn toàn kế hoạch khi mọi thứ thay đổi. Nó cũng phục vụ như một khoảnh khắc tiếp thêm năng lượng: việc nhìn lại những gì bạn đã hoàn thành vào giữa ngày sẽ tạo động lực lớn cho buổi chiều.</p>
+
+      <h3>Phần 3: Đánh Giá Buổi Tối (10 Phút)</h3>
+
+      <p>Phần đánh giá buổi tối là thành phần hay bị bỏ qua nhất — và bị đánh giá thấp nhất. Đa số mọi người kết thúc ngày làm việc của họ bằng cách đơn giản là dừng lại khi đã kiệt sức. Sự đánh giá sẽ biến mỗi ngày từ một sự kiện riêng lẻ thành một trải nghiệm học tập, giúp cải thiện việc lập kế hoạch của bạn theo thời gian.</p>
+
+      <p>Cấu trúc đánh giá buổi tối:</p>
+
+      <ol>
+        <li><strong>Ghi lại thành công (2 phút):</strong> Viết xuống những gì bạn đã hoàn thành hôm nay. Không chỉ các MIT — mọi thứ có ý nghĩa. Điều này chống lại thiên kiến tiêu cực khiến các nhiệm vụ chưa hoàn thành trông to tát hơn các nhiệm vụ đã hoàn thành.</li>
+        <li><strong>Ghi nhận điều gì chưa xảy ra và tại sao (3 phút):</strong> Những nhiệm vụ nào chưa được hoàn thành? Có phải vì bạn đánh giá thấp thời gian không? Do bị gián đoạn nhiều hơn dự kiến? Do bạn đánh giá sai ưu tiên? Đây là dữ liệu cho kế hoạch ngày mai.</li>
+        <li><strong>Chuẩn bị danh sách MIT cho ngày mai (5 phút):</strong> Trong khi ngày hôm nay vẫn còn tươi mới trong tâm trí bạn, hãy phác thảo các MIT cho ngày mai. Những mục chưa hoàn thành nào sẽ được chuyển sang? Có những ưu tiên mới nào xuất hiện từ công việc ngày hôm nay? Việc làm này vào buổi tối đồng nghĩa với việc phiên buổi sáng của bạn có thể bỏ qua hoàn toàn giai đoạn khám phá "mình nên làm gì?".</li>
+      </ol>
+
+      <p>Sự đánh giá buổi tối cũng có chức năng tâm lý: nó tạo cho ngày làm việc của bạn một điểm kết thúc rõ ràng. Đặc biệt đối với những người làm việc từ xa, việc không phải đi làm khiến công việc có thể lấn át cả thời gian cá nhân vô thời hạn. Gấp sổ tay lại hoặc nhấp vào "đã hoàn thành đánh giá" là một nghi thức kết thúc, báo cho bộ não của bạn biết rằng công việc đã xong.</p>
+
+      <h2 id="mit-method">Phương Pháp MIT: Chọn Đúng Nhiệm Vụ</h2>
+
+      <p>Khung phương pháp MIT (Most Important Tasks - Nhiệm Vụ Quan Trọng Nhất) đã được Leo Babauta của trang Zen Habits phổ biến rộng rãi và nó được xây dựng dựa trên cái nhìn sâu sắc cơ bản rằng hầu hết các danh sách việc cần làm đều bị chi phối bởi các nhiệm vụ có tầm quan trọng thấp nhưng độ khẩn cấp cao — như trả lời email, dập tắt các sự cố, làm việc hành chính — thay vì những công việc có tầm quan trọng cao, độ khẩn cấp thấp mới thực sự thúc đẩy mục tiêu của bạn.</p>
+
+      <p>Việc chọn các MIT đích thực yêu cầu phải tự hỏi một câu hỏi cụ thể: "Nếu hôm nay mình chỉ được phép hoàn thành hai việc, thì hai việc nào sẽ có tác động cao nhất đến các mục tiêu quan trọng nhất của mình?" Lưu ý rằng "tác động đến các mục tiêu quan trọng nhất của tôi" khác với "điều sếp đang lo lắng nhất" hoặc "công việc đã nằm trên danh sách của tôi lâu nhất".</p>
+
+      <p>Các MIT của bạn nên:</p>
+      <ul>
+        <li><strong>Cụ thể và có thể hoàn thành:</strong> "Soạn thảo phần mở đầu của báo cáo Q3" là một MIT. "Làm báo cáo" thì không.</li>
+        <li><strong>Tối đa 2 đến 3:</strong> Nhiều hơn 3 MIT sẽ làm loãng sự tập trung và dẫn đến chính sự lạm phát danh sách đã giết chết những danh sách việc cần làm thông thường.</li>
+        <li><strong>Được ưu tiên làm trước:</strong> Các MIT của bạn nên được xếp vào khoảng thời gian có năng lượng cao nhất trong ngày của bạn — thường là vào buổi sáng đối với hầu hết mọi người. Đừng xếp MIT vào lúc 4 giờ chiều khi mà việc quản trị email đã khiến bạn kiệt sức.</li>
+      </ul>
+
+      <h2 id="estimating-pomodoros">Ước Tính Thời Gian Với Pomodoro</h2>
+
+      <p>Một trong những lý do khiến kế hoạch hàng ngày thất bại là ước tính thời gian với sự lạc quan quá đà. Nghiên cứu của Roger Buehler ("ảo tưởng lập kế hoạch") cho thấy con người luôn đánh giá thấp thời gian hoàn thành công việc khoảng 25–50%, ngay cả khi họ biết rằng những ước tính của mình trong quá khứ là sai.</p>
+
+      <p>Sử dụng Pomodoro làm đơn vị đo lường ước lượng của bạn sẽ cải thiện độ chính xác vì hai lý do: thứ nhất, bạn đang ước lượng bằng một đơn vị cụ thể mà bạn đã trải nghiệm lặp đi lặp lại nhiều lần, chứ không phải bằng số phút trừu tượng. Thứ hai, mỗi Pomodoro đã bao gồm một khoảng nghỉ, vì vậy bạn đang tự nhiên tính cả sự mệt mỏi về tinh thần và thời gian chuyển đổi vào.</p>
+
+      <p>Một khuôn khổ ước lượng thực tế:</p>
+      <ul>
+        <li><strong>Nhiệm vụ đơn giản</strong> (trả lời email, đánh giá ngắn): 1 Pomodoro</li>
+        <li><strong>Nhiệm vụ trung bình</strong> (một phần báo cáo, một tính năng mã code, một bộ slide thuyết trình): 2–3 Pomodoro</li>
+        <li><strong>Nhiệm vụ phức tạp</strong> (viết bài nghiên cứu nặng nề, thiết kế kiến trúc, giải quyết vấn đề mới): 4–6 Pomodoro</li>
+        <li><strong>Nhiệm vụ chưa xác định:</strong> Bắt đầu bằng 2 Pomodoro như một phiên khám phá, sau đó ước tính lại</li>
+      </ul>
+
+      <p>Sau vài tuần sử dụng <a href="/app/index.html">FlowPomodoro</a>, bạn sẽ xây dựng được một cơ sở dữ liệu cá nhân chuẩn xác về việc các loại công việc cụ thể của bạn thực sự tốn bao nhiêu thời gian. Dữ liệu này là vô giá đối với sự chính xác trong việc lập kế hoạch — và luôn luôn cho thấy rằng hầu hết mọi người đánh giá thấp ít nhất một Pomodoro cho mỗi nhiệm vụ phức tạp.</p>
+
+      <h2 id="dealing-with-unexpected">Xử Lý Những Điều Bất Ngờ</h2>
+
+      <p>Không có kế hoạch hàng ngày nào sống sót nguyên vẹn khi đối mặt với thực tế. Vấn đề không phải là liệu những điều bất ngờ có xảy ra hay không — chúng chắc chắn sẽ xảy ra — mà là bạn có một hệ thống để xử lý chúng mà không làm hỏng toàn bộ cả ngày hay không.</p>
+
+      <p><strong>Khối thời gian đệm:</strong> Dành một Pomodoro 25 phút làm "bộ đệm" vào buổi chiều, không giao phó nhiệm vụ nào cho nó. Khi công việc khẩn cấp, không lường trước xuất hiện, nó sẽ đi vào vùng đệm này. Nếu không có việc khẩn cấp nào xảy ra, hãy sử dụng khối này để kéo dài phiên làm việc MIT hoặc để chuẩn bị cho ngày mai. Một thói quen nhỏ này làm giảm đáng kể sức phá hoại kế hoạch của các công việc bất ngờ.</p>
+
+      <p><strong>Quy tắc phân loại:</strong> Khi có một công việc đột xuất xuất hiện, hãy hỏi ngay: Việc này có cần làm trong ngày hôm nay không? Nếu có, nó có cần được làm trong 2 giờ tới không? Nếu không khẩn cấp-trong-hôm-nay, nó sẽ nằm trong danh sách lập kế hoạch ngày mai. Nếu thực sự khẩn cấp, hãy xác định nhiệm vụ nào đã được lên lịch trong hôm nay có thể dời sang ngày mai và trao đổi công khai — đừng chỉ chèn thêm nhiệm vụ mới vào một đống lộn xộn.</p>
+
+      <p><strong>Tiêu chuẩn một ngày "đủ tốt":</strong> Một ngày được coi là thành công nếu bạn hoàn thành các MIT của mình, ngay cả khi mọi thứ khác thay đổi. Nếu bạn đã hoàn thành hai MIT và xử lý ba trường hợp khẩn cấp bất ngờ, đó là một ngày hiệu quả — không phải là một thất bại. Tiêu chuẩn này bảo vệ tinh thần và ngăn chặn tình trạng xoắn ốc khi một ngày bị xáo trộn dẫn đến việc bạn từ bỏ toàn bộ hệ thống.</p>
+
+      <h2 id="digital-vs-paper">Lập Kế Hoạch Bằng Kỹ Thuật Số vs. Bằng Giấy</h2>
+
+      <p>Cả hai đều có hiệu quả. Hệ thống tốt nhất là hệ thống bạn thực sự sử dụng mỗi ngày. Tuy nhiên, có những sự đánh đổi thực sự ở đây:</p>
+
+      <p><strong>Ưu điểm lập kế hoạch bằng giấy:</strong> Nghiên cứu của Pam Mueller và Daniel Oppenheimer (Princeton/UCLA, 2014) cho thấy chữ viết tay kích hoạt quá trình xử lý nhận thức sâu hơn so với việc gõ máy. Viết tay kế hoạch của bạn có xu hướng giúp bạn xác định ưu tiên một cách cẩn thận hơn. Giấy cũng hoàn toàn không có thông báo hay khả năng gây xao nhãng. Sự hài lòng về mặt xúc giác khi bạn gạch đi một công việc đã hoàn thành mang lại động lực lớn đến bất ngờ.</p>
+
+      <p><strong>Ưu điểm lập kế hoạch kỹ thuật số:</strong> Các nhiệm vụ được tự động chuyển sang ngày mai, thông tin đồng bộ giữa các thiết bị và việc tích hợp với lịch hoặc các công cụ quản lý dự án sẽ giúp giảm thiểu sự trùng lặp. Tìm kiếm các kế hoạch cũ để theo dõi các mô hình trên định dạng kỹ thuật số dễ dàng hơn nhiều. Nếu công việc của bạn chủ yếu là kỹ thuật số, thì giữ kế hoạch ở định dạng kỹ thuật số sẽ giúp giảm việc phải chuyển đổi giữa các môi trường.</p>
+
+      <p>Phương pháp kết hợp mang lại hiệu quả rất tốt đối với nhiều người: dùng giấy cho danh sách MIT buổi sáng (nhanh chóng, cảm giác thực, không bị xao nhãng), dùng kỹ thuật số cho việc sắp xếp lịch trình chi tiết và quản lý nhiệm vụ dự án.</p>
+
+      <h2 id="weekly-tie-in">Sự Gắn Kết Hàng Tuần</h2>
+
+      <p>Việc lập kế hoạch hàng ngày mạnh mẽ nhất khi nó liên kết với nhịp độ của cả một tuần. Nếu không có mục tiêu tuần để giữ nhịp, các kế hoạch hàng ngày sẽ trôi dạt — bạn sẽ lấp đầy chuỗi ngày của mình bằng những việc có vẻ cấp bách thay vì những điều quan trọng mang tính chiến lược.</p>
+
+      <p>Một phiên lập kế hoạch hàng tuần (15–20 phút, tối Chủ nhật hoặc sáng Thứ Hai) nên:</p>
+      <ul>
+        <li>Xem lại những gì bạn đã đạt được trong tuần trước so với những gì bạn đã lên kế hoạch</li>
+        <li>Xác định hai hoặc ba kết quả quan trọng nhất cho tuần sắp tới</li>
+        <li>Điền trước các nhiệm vụ vào từ Thứ Hai đến Thứ Sáu, mỗi ngày ít nhất một MIT</li>
+        <li>Chặn thời gian trên lịch cho các cuộc họp, cuộc hẹn, hoặc những trở ngại đã biết trước</li>
+      </ul>
+
+      <p>Cái neo hàng tuần này có nghĩa là mỗi phiên lập kế hoạch buổi sáng đều bắt đầu với một bối cảnh có sẵn — bạn đã biết các ưu tiên của tuần, nên việc chọn MIT cho ngày hôm nay là một công việc chọn lọc, chứ không phải là đi tìm kiếm.</p>
+
+      <h2 id="daily-plan-template">Mẫu Kế Hoạch Hàng Ngày Của Bạn</h2>
+
+      <p>Đây là một mẫu kế hoạch hàng ngày đơn giản mà bạn có thể sao chép vào giấy hoặc bất kỳ ứng dụng ghi chú nào:</p>
+
+      <div style="background:rgba(168,85,247,.05); border:1px solid rgba(168,85,247,.2); border-radius:12px; padding:1.5rem 2rem; margin:2rem 0; font-family: monospace; font-size:.9rem; line-height:1.9;">
+        <h4 style="font-family: 'Outfit', sans-serif; font-size:.85rem; text-transform:uppercase; letter-spacing:.08em; color:rgba(168,85,247,.9); margin-bottom:1rem; font-weight:700; margin-top:0;">Mẫu Kế Hoạch Hàng Ngày</h4>
+        NGÀY: _______________<br><br>
+        <strong>CÁC MIT HÔM NAY (tối đa 2–3)</strong><br>
+        □ MIT 1: ___________________________ [___ Pomodoro] → Đã lên lịch: ____<br>
+        □ MIT 2: ___________________________ [___ Pomodoro] → Đã lên lịch: ____<br>
+        □ MIT 3: ___________________________ [___ Pomodoro] → Đã lên lịch: ____<br><br>
+        <strong>CÁC NHIỆM VỤ PHỤ</strong><br>
+        □ _______________________________<br>
+        □ _______________________________<br>
+        □ _______________________________<br><br>
+        <strong>CÁC CAM KẾT CỐ ĐỊNH HÔM NAY</strong><br>
+        ________________________________<br><br>
+        <strong>KHỐI ĐỆM: ____:____ – ____:____</strong><br><br>
+        <strong>ĐÁNH GIÁ BUỔI TỐI</strong><br>
+        Hoàn thành: _____________________<br>
+        Chuyển tiếp: ________________<br>
+        MIT ngày mai: _______________<br>
+        Một thành công hôm nay: _________________
+      </div>
+
+      <p>Để có một cái nhìn toàn diện hơn về hệ thống năng suất của mình, hãy khám phá các hướng dẫn của chúng tôi về <a href="/blog/vi/best-productivity-techniques.html">kỹ thuật năng suất tốt nhất</a>, <a href="/blog/vi/daily-planning-system.html">thiết lập mục tiêu năng suất</a>, và <a href="/blog/vi/time-blocking-pomodoro-technique.html">hướng dẫn time blocking</a>. Hãy bắt đầu các phiên làm việc Pomodoro đã lên lịch của bạn với <a href="/app/index.html">FlowPomodoro</a> — và ghé thăm <a href="/blog/">blog FlowPomodoro</a> để xem thêm các khung phương pháp về năng suất.</p>
+    
+<!-- FlowPomodoro Focus CTA -->
+
+
+<!-- FlowPomodoro Focus CTA Widget -->
+<div class="focus-cta">
+  <h3>Ready to Focus?</h3>
+  <p>Choose your interval and start a focused session right now.</p>
+  <div class="timer-preview">
+    <span class="control">−</span>
+    <span>25:00</span>
+    <span class="control">+</span>
+  </div>
+  <a href="/app/index.html" class="btn-focus"><i class="fas fa-play" style="font-size:0.85rem;" aria-hidden="true"></i> Start Focus Session →</a>
+</div>
+
+        </div>
+
+        <!-- ── Bottom Components ───────────────────────────────────────────── -->
+        <div class="bottom-components">
+          
+          <!-- Related Articles -->
+          <section class="related-articles" aria-label="Related articles">
+            <div class="section-label">Keep Reading</div>
+            <h3>Related Articles</h3>
+            <div class="related-grid">
+              
+        <a href="/blog/vi/how-many-pomodoros-per-day.html" class="related-card">
+          <img src="https://images.unsplash.com/photo-1501139083538-0139583c060f?auto=format&fit=crop&w=1200&q=80" alt="Nên Làm Bao nhiêu Pomodoro Mỗi Ngày?" class="related-thumb" loading="lazy">
+          <div class="related-info">
+            <h4>Nên Làm Bao nhiêu Pomodoro Mỗi Ngày?</h4>
+            <div class="related-meta">Time Management · 4 min read</div>
+          </div>
+        </a>
+      
+
+        <a href="/blog/vi/pomodoro-vs-time-blocking.html" class="related-card">
+          <img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=1200&q=80" alt="Pomodoro và Time Blocking: Phương Pháp Nào Chiến Thắng?" class="related-thumb" loading="lazy">
+          <div class="related-info">
+            <h4>Pomodoro và Time Blocking: Phương Pháp Nào Chiến Thắng?</h4>
+            <div class="related-meta">Time Management · 6 min read</div>
+          </div>
+        </a>
+      
+
+        <a href="/blog/vi/time-blocking-pomodoro-technique.html" class="related-card">
+          <img src="https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=1200&q=80" alt="Phân chia thời gian kết hợp Pomodoro: Hệ thống tập trung tối ưu" class="related-thumb" loading="lazy">
+          <div class="related-info">
+            <h4>Phân chia thời gian kết hợp Pomodoro: Hệ thống tập trung tối ưu</h4>
+            <div class="related-meta">Time Management · 6 min read</div>
+          </div>
+        </a>
+      
+            </div>
+          </section>
+
+          <!-- Prev / Next Navigation -->
+          <nav class="prev-next-nav" aria-label="Previous and next article navigation">
+            
+      <a href="/blog/vi/best-productivity-techniques.html" class="pn-link prev">
+        <span class="pn-label">&larr; Previous</span>
+        <h4 class="pn-title">Các Kỹ Thuật Năng Suất Tốt Nhất Cho Năm 2026</h4>
+      </a>
+      <a href="/blog/vi/deep-work-guide.html" class="pn-link next">
+        <span class="pn-label">Next &rarr;</span>
+        <h4 class="pn-title">Deep Work: Hướng Dẫn Tập Trung Toàn Diện</h4>
+      </a>
+    
+          </nav>
+
+          <!-- Newsletter Signup -->
+          <aside class="editorial-newsletter" aria-label="Newsletter">
+            <h3>Get better at focusing.</h3>
+            <p>Practical productivity ideas delivered occasionally. No spam.</p>
+            <form class="newsletter-form" onsubmit="handleNewsletterSubmit(event)">
+              <input type="email" placeholder="Enter your email" required aria-label="Email address">
+              <button type="submit" class="btn-primary">Subscribe</button>
+            </form>
+          </aside>
+
+          <!-- End of Article FlowPomodoro CTA -->
+          <div class="blog-product-cta" style="margin: 2.5rem 0 1rem 0;">
+            <h3>Ready to put it into practice?</h3>
+            <p>Start a focused session and turn what you learned into action.</p>
+            <a href="/app/index.html" class="btn-primary"><i class="fas fa-play" aria-hidden="true"></i> Start Focusing</a>
+          </div>
+
+        </div><!-- .bottom-components -->
+
+      </article>
+    </div><!-- .editorial-layout -->
+
+  </main>
+
+  <!-- ── Mobile Floating Action Bar ────────────────────────────────────────── -->
+  <div class="mobile-article-bar" aria-label="Article actions">
+    <button class="mobile-like-btn" id="mobile-like-btn" aria-label="Like article">
+      <i class="fas fa-heart"></i> <span id="like-count">128</span>
+    </button>
+    <a href="/app/index.html" class="mobile-start-focus-btn">
+      <i class="fas fa-play"></i> Start Focusing
+    </a>
+  </div>
+
+  <!-- ── Footer ────────────────────────────────────────────────────────────── -->
+  <footer class="lp-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="/" class="logo">
+            <div class="logo-dot"><i class="fas fa-stopwatch"></i></div>
+            FlowPomodoro
+          </a>
+          <p>A beautiful Pomodoro timer to help you focus deeply, beat procrastination, and build better habits.</p>
+        </div>
+        <div class="footer-col">
+          <div class="fc-title">Product</div>
+          <ul>
+            <li><a href="/app/index.html">Timer</a></li>
+            <li><a href="/#features">Features</a></li>
+            <li><a href="/pages/pricing.html">Pricing</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <div class="fc-title">Resources</div>
+          <ul>
+            <li><a href="/blog/vi/">Blog</a></li>
+            <li><a href="/pages/about.html">About</a></li>
+            <li><a href="/pages/download.html">Download</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <div class="fc-title">Legal</div>
+          <ul>
+            <li><a href="/pages/privacy.html">Privacy</a></li>
+            <li><a href="/pages/terms.html">Terms</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2026 FlowPomodoro. All rights reserved.</div>
+        <div class="fb-links">
+          <a href="/pages/privacy.html">Privacy</a>
+          <a href="/pages/terms.html">Terms</a>
+          <a href="/blog/vi/">Blog</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ── Interactive Client Scripts ────────────────────────────────────────── -->
+  <script>
+    // Theme Management
+    const themeBtn = document.getElementById('theme-toggle');
+    const html = document.documentElement;
+    const savedTheme = localStorage.getItem('flow_theme') || 'light';
+    html.setAttribute('data-theme', savedTheme);
+    if (themeBtn) {
+      themeBtn.innerHTML = savedTheme === 'dark' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+      themeBtn.addEventListener('click', () => {
+        const isDark = html.getAttribute('data-theme') === 'dark';
+        const newTheme = isDark ? 'light' : 'dark';
+        html.setAttribute('data-theme', newTheme);
+        localStorage.setItem('flow_theme', newTheme);
+        themeBtn.innerHTML = newTheme === 'dark' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+      });
+    }
+
+    // Mobile Navigation Drawer
+    const hamburger = document.getElementById('nav-hamburger');
+    const drawer = document.getElementById('nav-drawer');
+    if (hamburger && drawer) {
+      hamburger.addEventListener('click', () => {
+        const isOpen = drawer.classList.toggle('open');
+        hamburger.setAttribute('aria-expanded', isOpen);
+      });
+    }
+
+    // Language Dropdown
+    const langBtn = document.getElementById('lang-menu-btn');
+    const langDropdown = document.getElementById('lang-dropdown');
+    if (langBtn && langDropdown) {
+      langBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        langDropdown.style.display = langDropdown.style.display === 'flex' ? 'none' : 'flex';
+      });
+      document.addEventListener('click', () => {
+        langDropdown.style.display = 'none';
+      });
+    }
+
+    // Reading Progress Indicator
+    const progressBar = document.getElementById('reading-progress-bar');
+    window.addEventListener('scroll', () => {
+      const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      if (docHeight > 0 && progressBar) {
+        const progress = (window.scrollY / docHeight) * 100;
+        progressBar.style.width = Math.min(100, Math.max(0, progress)) + '%';
+      }
+    }, { passive: true });
+
+    // Table of Contents Scrollspy
+    const headings = document.querySelectorAll('.article-body h2');
+    const tocLinks = document.querySelectorAll('.toc-list a');
+    if (headings.length > 0 && tocLinks.length > 0) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const id = entry.target.getAttribute('id');
+            tocLinks.forEach(link => {
+              if (link.getAttribute('href') === '#' + id) {
+                link.classList.add('active');
+              } else {
+                link.classList.remove('active');
+              }
+            });
+          }
+        });
+      }, { rootMargin: '-80px 0px -60% 0px' });
+      headings.forEach(h => observer.observe(h));
+    }
+
+    // Bookmark Functionality
+    const bookmarkBtn = document.getElementById('btn-bookmark-toggle');
+    const currentSlug = 'daily-planning-system';
+    function updateBookmarkUI() {
+      const bookmarks = JSON.parse(localStorage.getItem('flow_bookmarks') || '[]');
+      const isSaved = bookmarks.includes(currentSlug);
+      if (bookmarkBtn) {
+        bookmarkBtn.classList.toggle('bookmarked', isSaved);
+        bookmarkBtn.innerHTML = isSaved ? '<i class="fas fa-bookmark"></i>' : '<i class="far fa-bookmark"></i>';
+      }
+    }
+    if (bookmarkBtn) {
+      updateBookmarkUI();
+      bookmarkBtn.addEventListener('click', () => {
+        let bookmarks = JSON.parse(localStorage.getItem('flow_bookmarks') || '[]');
+        if (bookmarks.includes(currentSlug)) {
+          bookmarks = bookmarks.filter(s => s !== currentSlug);
+        } else {
+          bookmarks.push(currentSlug);
+        }
+        localStorage.setItem('flow_bookmarks', JSON.stringify(bookmarks));
+        updateBookmarkUI();
+      });
+    }
+
+    // Share Functionality
+    const shareBtn = document.getElementById('btn-share-toggle');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', async () => {
+        if (navigator.share) {
+          try {
+            await navigator.share({
+              title: document.title,
+              text: 'Xây dựng một hệ thống lập kế hoạch hàng ngày giúp tối đa hóa năng suất. Tìm hiểu cách phân bổ thời gian (time blocking), gom nhóm tác vụ và quản lý năng lượng để lập kế hoạch cho một ngày làm việc hiệu quả nhất.',
+              url: window.location.href
+            });
+          } catch (err) {}
+        } else {
+          navigator.clipboard.writeText(window.location.href);
+          const origIcon = shareBtn.innerHTML;
+          shareBtn.innerHTML = '<i class="fas fa-check"></i>';
+          setTimeout(() => { shareBtn.innerHTML = origIcon; }, 2000);
+        }
+      });
+    }
+
+    // Interactive Interval Controls in Focus CTA Widget
+    document.querySelectorAll('.focus-cta').forEach(widget => {
+      let minutes = 25;
+      const display = widget.querySelector('.timer-preview span:nth-child(2)');
+      const minus = widget.querySelector('.timer-preview .control:first-child');
+      const plus = widget.querySelector('.timer-preview .control:last-child');
+      if (display && minus && plus) {
+        minus.addEventListener('click', () => {
+          if (minutes > 5) {
+            minutes -= 5;
+            display.textContent = minutes + ':00';
+          }
+        });
+        plus.addEventListener('click', () => {
+          if (minutes < 90) {
+            minutes += 5;
+            display.textContent = minutes + ':00';
+          }
+        });
+      }
+    });
+
+    // Mobile Like Button
+    const mobileLikeBtn = document.getElementById('mobile-like-btn');
+    const likeCountSpan = document.getElementById('like-count');
+    if (mobileLikeBtn && likeCountSpan) {
+      let liked = localStorage.getItem('liked_' + currentSlug) === 'true';
+      let count = 128 + (liked ? 1 : 0);
+      likeCountSpan.textContent = count;
+      if (liked) mobileLikeBtn.style.color = '#ef4444';
+      mobileLikeBtn.addEventListener('click', () => {
+        liked = !liked;
+        localStorage.setItem('liked_' + currentSlug, liked);
+        count = 128 + (liked ? 1 : 0);
+        likeCountSpan.textContent = count;
+        mobileLikeBtn.style.color = liked ? '#ef4444' : '';
+      });
+    }
+
+    function handleNewsletterSubmit(e) {
+      e.preventDefault();
+      const input = e.target.querySelector('input');
+      if (input) {
+        input.value = '';
+        alert('Thank you for subscribing to FlowPomodoro Journal!');
+      }
+    }
+  </script>
+</body>
+</html>

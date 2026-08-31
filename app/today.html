@@ -1,0 +1,230 @@
+<!DOCTYPE html><html lang="en" data-theme="dark"><head>
+  <script>(function(){ document.documentElement.setAttribute('data-theme', localStorage.getItem('flow_theme')||'dark'); })();</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Today — FlowPomodoro</title>
+  <meta name="description" content="Focus on today's goals and scheduled time blocks.">
+  <meta name="theme-color" content="#080B12">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="/public/manifest.json">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;family=Outfit:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/variables.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/layout.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/platform.css">
+
+  <style>
+    .today-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    @media (max-width: 900px) {
+      .today-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .today-goal-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 16px;
+      margin-bottom: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .today-goal-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .today-goal-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .today-goal-status {
+      font-size: 11px;
+      font-weight: 600;
+      padding: 3px 8px;
+      border-radius: var(--radius-full);
+    }
+
+    .today-goal-status.done {
+      background: rgba(34, 197, 94, 0.12);
+      color: #22c55e;
+    }
+
+    .today-goal-status.on-track {
+      background: rgba(255, 184, 0, 0.12);
+      color: var(--brand-primary);
+    }
+
+    .today-goal-status.behind {
+      background: var(--bg-main);
+      color: var(--text-muted);
+    }
+
+    .today-block-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 14px 16px;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-left: 4px solid var(--brand-primary);
+      transition: background var(--duration-fast);
+    }
+
+    .today-block-card:hover {
+      background: var(--bg-surface-hover);
+    }
+
+    .today-block-card.type-break {
+      border-left-color: #22d3a0;
+    }
+
+    .today-block-info {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .today-block-time {
+      font-size: 11px;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .today-block-title {
+      font-size: var(--text-sm);
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .today-block-goal {
+      font-size: 11px;
+      color: var(--text-secondary);
+    }
+  </style>
+
+  <link rel="canonical" href="https://flowpomodoro.xyz/app/today.html"></head>
+<body>
+
+<div class="pf-layout" id="pf-layout">
+  <!-- Sidebar injected by sidebar.js -->
+  <div class="pf-content" id="pf-content">
+    <!-- Topbar injected by sidebar.js -->
+
+    <main class="pf-page" id="main-content">
+      
+      <div class="today-grid">
+        
+        <!-- Left: Today's Goals -->
+        <div>
+          <div class="pf-section-header">
+            <h2 class="pf-section-title">Today's Goals</h2>
+            <a href="/app/goals.html" class="pf-section-link">Manage Goals</a>
+          </div>
+          <div id="today-goals-list"></div>
+        </div>
+
+        <!-- Right: Today's Plan -->
+        <div>
+          <div class="pf-section-header">
+            <h2 class="pf-section-title" id="today-date-label">Today's Schedule</h2>
+            <button class="btn-secondary btn-sm" id="btn-add-block-inline">
+              <i class="fas fa-plus"></i> Add Block
+            </button>
+          </div>
+          <div id="today-blocks-list"></div>
+        </div>
+
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<!-- ── Add/Edit Time Block Modal ─────────────────────────────────────────── -->
+<div class="pf-modal-overlay" id="block-modal">
+  <div class="pf-modal">
+    <div class="pf-modal-header">
+      <div class="pf-modal-title" id="block-modal-title">Add Time Block</div>
+      <button class="pf-modal-close" id="block-modal-close" aria-label="Close modal">
+        <i class="fas fa-xmark"></i>
+      </button>
+    </div>
+
+    <form id="block-form">
+      <input type="hidden" id="block-id" value="">
+      <div class="pf-modal-body">
+        
+        <div class="form-group">
+          <label class="form-label" for="block-title">Block Title *</label>
+          <input type="text" id="block-title" class="pf-input" placeholder="e.g. Deep Coding, IELTS Essay, Workout, Lunch" required="">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="block-goal">Associate with Goal (Optional)</label>
+          <select id="block-goal" class="pf-select">
+            <option value="">— No goal (Break / General) —</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="block-date">Date</label>
+            <input type="date" id="block-date" class="pf-input" required="">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="block-start">Start Time</label>
+            <input type="time" id="block-start" class="pf-input" value="09:00" required="">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="block-end">End Time</label>
+            <input type="time" id="block-end" class="pf-input" value="10:00" required="">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="block-type">Block Type</label>
+            <select id="block-type" class="pf-select">
+              <option value="focus">Focus Block</option>
+              <option value="break">Break / Rest</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="block-notes">Notes / Checklist</label>
+          <textarea id="block-notes" class="pf-textarea" placeholder="Key deliverables or priorities for this block..."></textarea>
+        </div>
+
+      </div>
+
+      <div class="pf-modal-footer">
+        <button type="button" class="btn-secondary" id="block-cancel-btn">Cancel</button>
+        <button type="submit" class="btn-primary" id="block-save-btn">Save Block</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script type="module" src="/js/platform/today.js"></script>
+
+
+</body></html>

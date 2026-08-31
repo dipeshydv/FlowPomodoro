@@ -1,0 +1,128 @@
+<!DOCTYPE html><html lang="en" data-theme="dark"><head>
+  <script>(function(){ document.documentElement.setAttribute('data-theme', localStorage.getItem('flow_theme')||'dark'); })();</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Analytics — FlowPomodoro</title>
+  <meta name="description" content="View in-depth productivity analytics, sparklines, heatmap, and goal-by-goal breakdowns.">
+  <meta name="theme-color" content="#080B12">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="/public/manifest.json">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;family=Outfit:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/variables.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/layout.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/platform.css">
+
+  <link rel="canonical" href="https://flowpomodoro.xyz/app/analytics.html"></head>
+<body>
+
+<div class="pf-layout" id="pf-layout">
+  <!-- Sidebar injected by sidebar.js -->
+  <div class="pf-content" id="pf-content">
+    <!-- Topbar injected by sidebar.js -->
+
+    <main class="pf-page" id="main-content">
+      
+      <!-- Date Range Tabs -->
+      <div class="pf-tabs" id="range-tabs" role="tablist">
+        <button class="pf-tab active" data-range="week" role="tab" aria-selected="true">This Week</button>
+        <button class="pf-tab" data-range="month" role="tab" aria-selected="false">This Month</button>
+        <button class="pf-tab" data-range="all" role="tab" aria-selected="false">All Time</button>
+      </div>
+
+      <!-- 4 Stats Cards with Sparklines -->
+      <div class="stat-cards-grid">
+        
+        <div class="stat-card">
+          <div class="stat-card-top">
+            <span class="stat-card-label">Focus Time</span>
+          </div>
+          <div class="stat-card-value" id="stat-focus-time">0m</div>
+          <div class="stat-card-sub" id="week-range-label">This period</div>
+          <div id="spark-focus" style="margin-top:8px;height:40px;"></div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-card-top">
+            <span class="stat-card-label">Pomodoros</span>
+          </div>
+          <div class="stat-card-value" id="stat-pomodoros">0</div>
+          <div class="stat-card-sub">Completed sessions</div>
+          <div id="spark-pomodoros" style="margin-top:8px;height:40px;"></div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-card-top">
+            <span class="stat-card-label">Daily Average</span>
+          </div>
+          <div class="stat-card-value" id="stat-daily-avg">0m</div>
+          <div class="stat-card-sub">Per active day</div>
+          <div id="spark-avg" style="margin-top:8px;height:40px;"></div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-card-top">
+            <span class="stat-card-label">Best Day</span>
+          </div>
+          <div class="stat-card-value" id="stat-best-day">0m</div>
+          <div class="stat-card-sub" id="stat-best-label">No record</div>
+          <div id="spark-best" style="margin-top:8px;height:40px;"></div>
+        </div>
+
+      </div>
+
+      <!-- Weekly Bar Chart -->
+      <div class="pf-panel" style="margin-bottom:24px;">
+        <div class="pf-panel-header">
+          <span class="pf-panel-title">Weekly Focus Distribution</span>
+          <span style="font-size:12px;color:var(--text-muted);">Mon – Sun (current week)</span>
+        </div>
+        <div class="pf-panel-body">
+          <div id="week-bars-container"></div>
+        </div>
+      </div>
+
+      <!-- Per Goal Breakdown -->
+      <div class="pf-panel" style="margin-bottom:24px;">
+        <div class="pf-panel-header">
+          <span class="pf-panel-title">Per-Goal Breakdown</span>
+          <a href="/app/goals.html" class="pf-section-link">Manage Goals</a>
+        </div>
+        <div class="pf-table-wrap">
+          <table class="pf-table">
+            <thead>
+              <tr>
+                <th>Goal</th>
+                <th>Sessions</th>
+                <th>Focus Time</th>
+                <th>Daily Avg</th>
+                <th>Target Progress</th>
+              </tr>
+            </thead>
+            <tbody id="goal-breakdown-body"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- 60-Day Heatmap -->
+      <div class="pf-panel">
+        <div class="pf-panel-header">
+          <span class="pf-panel-title">Consistency Heatmap (Last 60 Days)</span>
+        </div>
+        <div class="pf-panel-body">
+          <div id="heatmap-container" style="overflow-x:auto;"></div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<script type="module" src="/js/platform/analytics.js"></script>
+
+
+</body></html>

@@ -5,6 +5,37 @@ class UIController {
     constructor() {
         this.dom = this._queryDom();
         this._activeAudioKey = null;
+        this.initTheme();
+    }
+
+    initTheme() {
+        const savedTheme = localStorage.getItem('flow_theme');
+        if (savedTheme) {
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        } else {
+            // Default to dark mode for the app
+            document.documentElement.setAttribute('data-theme', 'dark');
+        }
+        this._updateThemeIcon();
+        
+        if (this.dom.themeToggleBtn) {
+            this.dom.themeToggleBtn.addEventListener('click', () => this.toggleTheme());
+        }
+    }
+
+    toggleTheme() {
+        const html = document.documentElement;
+        const isDark = html.getAttribute('data-theme') === 'dark';
+        const newTheme = isDark ? 'light' : 'dark';
+        html.setAttribute('data-theme', newTheme);
+        localStorage.setItem('flow_theme', newTheme);
+        this._updateThemeIcon();
+    }
+
+    _updateThemeIcon() {
+        if (!this.dom.themeToggleBtn) return;
+        const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+        this.dom.themeToggleBtn.innerHTML = isDark ? '<i class="fas fa-moon" aria-hidden="true"></i>' : '<i class="fas fa-sun" aria-hidden="true"></i>';
     }
 
     _queryDom() {
@@ -21,6 +52,9 @@ class UIController {
             modeTabs:      document.querySelectorAll('.tab-btn'),
             timerControls: document.querySelector('.timer-controls'),
             appSection:    document.getElementById('app-section'),
+
+            // Theme toggle
+            themeToggleBtn: document.getElementById('theme-toggle-btn'),
 
             // Tasks
             tasksList:     document.getElementById('tasks-list'),
@@ -68,12 +102,21 @@ class UIController {
         };
     }
 
+    refreshDom() {
+        this.dom = this._queryDom();
+    }
+
     // ─── Timer Display ────────────────────────────────────────────────────
     updateTimerDisplay(timeLeft, totalTime, isActive) {
+        if (!this.dom.timeDisplay) {
+            this.dom.timeDisplay = document.getElementById('time-display');
+        }
         if (!this.dom.timeDisplay) return;
 
         this.dom.timeDisplay.textContent = formatTime(timeLeft);
-        this.dom.toggleIcon.className    = `fas fa-${isActive ? 'pause' : 'play'}`;
+        if (this.dom.toggleIcon) {
+            this.dom.toggleIcon.className = `fas fa-${isActive ? 'pause' : 'play'}`;
+        }
 
         // Pulse on app section, not individual element (fixes parentElement bug)
         if (this.dom.appSection) {
@@ -81,6 +124,9 @@ class UIController {
         }
 
         // Progress ring — circumference ≈ 2π × 160 ≈ 1005.3
+        if (!this.dom.ringProgress) {
+            this.dom.ringProgress = document.querySelector('.ring-progress');
+        }
         if (this.dom.ringProgress && totalTime > 0) {
             const pct    = timeLeft / totalTime;
             const offset = 1006 * (1 - pct);
@@ -114,13 +160,29 @@ class UIController {
     }
 
     // ─── Tasks ────────────────────────────────────────────────────────────
-    renderTasks(tasks, onToggle) {
+    /**
+     * Render the task list.
+     * @param {Array}    tasks    - Array of task objects
+     * @param {Function} onToggle - Called with (id) to toggle completion
+     * @param {Function} onDelete - Called with (id) to permanently delete
+     */
+    renderTasks(tasks, onToggle, onDelete) {
         const list = this.dom.tasksList;
         if (!list) return;
+
+        // Replace list with new DOM — no orphaned listeners (old elements are GC'd)
         list.innerHTML = '';
 
         if (!tasks.length) {
-            list.innerHTML = '<p class="task-empty">Add a task to stay focused.</p>';
+            const empty = document.createElement('div');
+            empty.className = 'task-empty';
+            empty.setAttribute('aria-label', 'No tasks yet');
+            empty.innerHTML = `
+                <i class="fas fa-layer-group" aria-hidden="true"></i>
+                <span>No tasks yet</span>
+                <small>Add one below to stay focused</small>
+            `;
+            list.appendChild(empty);
             return;
         }
 
@@ -128,20 +190,168 @@ class UIController {
             const item = document.createElement('div');
             item.className = `task-item${t.completed ? ' done' : ''}`;
             item.setAttribute('role', 'listitem');
+            item.dataset.taskId = t.id;
+            // Tabindex so keyboard users can focus the row
+            item.setAttribute('tabindex', '0');
+            item.setAttribute('aria-label',
+                `${t.text} — ${t.completed ? 'completed' : 'pending'}. Press Enter to toggle, Delete to remove.`
+            );
 
-            const check = document.createElement('div');
-            check.className = `task-check${t.completed ? ' completed' : ''}`;
-            check.innerHTML = t.completed ? '<i class="fas fa-check" aria-hidden="true"></i>' : '';
+            // ── Checkbox ──────────────────────────────────────────────
+            const check = document.createElement('button');
+            check.className   = `task-check${t.completed ? ' completed' : ''}`;
+            check.type        = 'button';
+            check.tabIndex    = -1; // row handles focus; checkbox is click target only
+            check.setAttribute('aria-label', t.completed ? 'Mark as pending' : 'Mark as complete');
+            if (t.completed) {
+                check.innerHTML = '<i class="fas fa-check" aria-hidden="true"></i>';
+            }
 
+            // ── Text ─────────────────────────────────────────────────
             const text = document.createElement('span');
-            text.className = 'task-text';
-            text.textContent = t.text; // Sanitized via textContent
+            text.className   = 'task-text';
+            text.textContent = t.text; // textContent prevents XSS
+
+            // ── Delete button ─────────────────────────────────────────
+            const deleteBtn = document.createElement('button');
+            deleteBtn.className  = 'task-delete-btn';
+            deleteBtn.type       = 'button';
+            deleteBtn.tabIndex   = -1; // row handles keyboard focus
+            deleteBtn.setAttribute('aria-label', `Delete task: ${t.text}`);
+            deleteBtn.setAttribute('title', 'Delete task');
+            deleteBtn.innerHTML  = '<i class="fas fa-trash-can" aria-hidden="true"></i>';
 
             item.appendChild(check);
             item.appendChild(text);
-            item.addEventListener('click', () => onToggle(t.id));
+            item.appendChild(deleteBtn);
+
+            // ── Interactions ──────────────────────────────────────────
+
+            // Toggle on checkbox click (don't bubble to row)
+            check.addEventListener('click', e => {
+                e.stopPropagation();
+                onToggle(t.id);
+            });
+
+            // Toggle on row click (not if clicking delete)
+            item.addEventListener('click', e => {
+                if (e.target.closest('.task-delete-btn')) return;
+                onToggle(t.id);
+            });
+
+            // Keyboard: Enter = toggle, Delete/Backspace = delete
+            item.addEventListener('keydown', e => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    onToggle(t.id);
+                } else if (e.key === 'Delete' || e.key === 'Backspace') {
+                    e.preventDefault();
+                    this._confirmAndDelete(item, t, onDelete);
+                }
+            });
+
+            // Delete button click → confirm flow
+            deleteBtn.addEventListener('click', e => {
+                e.stopPropagation();
+                this._confirmAndDelete(item, t, onDelete);
+            });
+
             list.appendChild(item);
         });
+    }
+
+    /**
+     * Inline delete confirmation — replaces the delete button with Yes/No.
+     * No modal, no browser confirm() — stays within the task row.
+     */
+    _confirmAndDelete(item, task, onDelete) {
+        // Prevent duplicate confirm state
+        if (item.classList.contains('confirming')) return;
+        item.classList.add('confirming');
+
+        const deleteBtn = item.querySelector('.task-delete-btn');
+        const check     = item.querySelector('.task-check');
+
+        // Swap delete btn for confirm controls
+        const original = deleteBtn.innerHTML;
+
+        const confirmWrap = document.createElement('div');
+        confirmWrap.className = 'task-confirm-wrap';
+        confirmWrap.setAttribute('role', 'group');
+        confirmWrap.setAttribute('aria-label', 'Confirm delete');
+
+        const yesBtn = document.createElement('button');
+        yesBtn.type        = 'button';
+        yesBtn.className   = 'task-confirm-yes';
+        yesBtn.textContent = 'Delete';
+        yesBtn.setAttribute('aria-label', `Confirm delete: ${task.text}`);
+
+        const noBtn = document.createElement('button');
+        noBtn.type        = 'button';
+        noBtn.className   = 'task-confirm-no';
+        noBtn.textContent = 'Keep';
+        noBtn.setAttribute('aria-label', 'Cancel delete');
+
+        confirmWrap.appendChild(yesBtn);
+        confirmWrap.appendChild(noBtn);
+
+        deleteBtn.replaceWith(confirmWrap);
+
+        // Focus yes button for keyboard users
+        requestAnimationFrame(() => yesBtn.focus());
+
+        const cancel = () => {
+            item.classList.remove('confirming');
+            confirmWrap.replaceWith(deleteBtn);
+        };
+
+        // Confirmed — animate out then delete
+        yesBtn.addEventListener('click', e => {
+            e.stopPropagation();
+            this._animateRemove(item, () => onDelete(task.id));
+        });
+
+        noBtn.addEventListener('click', e => {
+            e.stopPropagation();
+            cancel();
+        });
+
+        // Cancel on Escape
+        const escHandler = e => {
+            if (e.key === 'Escape') {
+                cancel();
+                document.removeEventListener('keydown', escHandler);
+            }
+        };
+        document.addEventListener('keydown', escHandler);
+
+        // Cancel if user clicks outside the item
+        const outsideHandler = e => {
+            if (!item.contains(e.target)) {
+                cancel();
+                document.removeEventListener('click', outsideHandler, true);
+                document.removeEventListener('keydown', escHandler);
+            }
+        };
+        // Use capture so we get the event before it might be stopped
+        setTimeout(() => {
+            document.addEventListener('click', outsideHandler, true);
+        }, 0);
+    }
+
+    /**
+     * Smooth fade + slide-left exit animation, then calls done().
+     */
+    _animateRemove(item, done) {
+        item.classList.add('task-removing');
+        // Wait for CSS transition to finish
+        const finish = () => {
+            item.removeEventListener('transitionend', finish);
+            done();
+        };
+        item.addEventListener('transitionend', finish);
+        // Safety fallback in case transitionend doesn't fire
+        setTimeout(finish, 420);
     }
 
     // ─── Modals ────────────────────────────────────────────────────────────

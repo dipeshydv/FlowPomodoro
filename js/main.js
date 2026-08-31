@@ -3,6 +3,7 @@ import { TaskManager }  from './tasks.js';
 import { UI }           from './ui.js';
 import { registerSW }   from './utils.js';
 import { Storage }      from './storage.js';
+import { GoalStore, SessionStore, getLocalDateKey } from './platform/store.js';
 
 // ─── Streak Calculator ───────────────────────────────────────────────────────
 function calcStreaks(history) {
@@ -12,15 +13,17 @@ function calcStreaks(history) {
 
     if (!dates.length) return { current: 0, best: 0 };
 
-    const today     = new Date().toISOString().split('T')[0];
-    const yesterday = new Date(Date.now() - 86400000).toISOString().split('T')[0];
+    const todayDate = getLocalDateKey();
+    const yesterdayDateObj = new Date();
+    yesterdayDateObj.setDate(yesterdayDateObj.getDate() - 1);
+    const yesterday = getLocalDateKey(yesterdayDateObj);
 
     let current = 0;
-    if (dates[0] === today || dates[0] === yesterday) {
+    if (dates[0] === todayDate || dates[0] === yesterday) {
         current = 1;
-        let prev = new Date(dates[0]);
+        let prev = new Date(dates[0] + 'T00:00:00');
         for (let i = 1; i < dates.length; i++) {
-            const cur  = new Date(dates[i]);
+            const cur  = new Date(dates[i] + 'T00:00:00');
             const diff = Math.round((prev - cur) / 86400000);
             if (diff === 1) { current++; prev = cur; }
             else break;
@@ -29,9 +32,9 @@ function calcStreaks(history) {
 
     let best = 1, run = 1;
     for (let i = 1; i < dates.length; i++) {
-        const diff = Math.round(
-            (new Date(dates[i-1]) - new Date(dates[i])) / 86400000
-        );
+        const cur = new Date(dates[i] + 'T00:00:00');
+        const prev = new Date(dates[i-1] + 'T00:00:00');
+        const diff = Math.round((prev - cur) / 86400000);
         run = diff === 1 ? run + 1 : 1;
         if (run > best) best = run;
     }
@@ -42,6 +45,8 @@ function calcStreaks(history) {
 // ─── App Class ───────────────────────────────────────────────────────────────
 class App {
     constructor() {
+        UI.refreshDom();
+
         const settings   = Storage.get('flow_settings', {});
         this.dailyGoal   = settings.goal || 4;
         this.isPremium   = Storage.get('flow_premium', false);
@@ -62,49 +67,111 @@ class App {
 
     // ─── Init ────────────────────────────────────────────────────────────
     init() {
-        registerSW();
-        const settings = Storage.get('flow_settings', {});
-        this.timer.loadSettings();
-        UI.loadSettingsValues(this.timer.modes, this.dailyGoal);
-        UI.switchModeStyle(this.timer.currentMode);
-        UI.renderTasks(this.tasks.getTasks(), id => this._toggleTask(id));
-        UI.renderStats(this.history, this.streakData, this.dailyGoal);
+    registerSW();
 
-        // Restore ambient audio preference
-        if (this.currentAudio) UI.setAmbientAudio(this.currentAudio);
+    UI.updateTimerDisplay(
+        this.timer.timeLeft,
+        this.timer.totalTime,
+        this.timer.isActive
+    );
+
+    UI.loadSettingsValues(this.timer.modes, this.dailyGoal);
+    UI.switchModeStyle(this.timer.currentMode);
+
+    UI.renderTasks(
+        this.tasks.getTasks(),
+        id => this._toggleTask(id),
+        id => this._deleteTask(id)
+    );
+
+    UI.renderStats(
+        this.history,
+        this.streakData,
+        this.dailyGoal
+    );
+
+    if (this.currentAudio) {
+        UI.setAmbientAudio(this.currentAudio);
     }
+}
 
     // ─── Session Complete ─────────────────────────────────────────────────
     onSessionComplete(mode, duration) {
         UI.playAlarm();
 
         if (mode === 'focus') {
-            const session = {
-                id:       Date.now(),
-                date:     new Date().toISOString().split('T')[0],
-                type:     mode,
-                duration: duration
+            const selEl = (typeof document !== 'undefined') ? document.getElementById('goal-selector') : null;
+            let activeGoalId = (selEl && selEl.value) ? selEl.value : (localStorage.getItem('flow_active_goal') || sessionStorage.getItem('flow_active_goal') || null);
+            let activeGoal = activeGoalId ? GoalStore.get(activeGoalId) : null;
+
+            // If activeGoalId is not set, check if there is an active goal
+            if (!activeGoal && !activeGoalId) {
+                const todayScheduled = GoalStore.getScheduledForDate ? GoalStore.getScheduledForDate(getLocalDateKey()) : [];
+                if (todayScheduled.length === 1) {
+                    activeGoal = todayScheduled[0];
+                    activeGoalId = activeGoal.id;
+                } else {
+                    const allActive = GoalStore.getActive ? GoalStore.getActive() : [];
+                    if (allActive.length === 1) {
+                        activeGoal = allActive[0];
+                        activeGoalId = activeGoal.id;
+                    }
+                }
+            }
+
+            const durationSecs = Number(duration) || 1500;
+            const durationMins = Math.round(durationSecs / 60);
+
+            const rawSession = {
+                id:              Date.now(),
+                date:            getLocalDateKey(),
+                type:            mode,
+                duration:        durationSecs,
+                durationMinutes: durationMins,
+                goalId:          activeGoal ? String(activeGoal.id) : (activeGoalId ? String(activeGoalId) : null),
+                goalName:        activeGoal ? activeGoal.name : null,
+                completedAt:     new Date().toISOString()
             };
+
+            const session = SessionStore.normalizeSession(rawSession) || rawSession;
+
+            console.log("[FlowPomodoro] COMPLETED SESSION", {
+                session,
+                goalId: session.goalId,
+                goalName: session.goalName,
+                duration: session.duration,
+                durationMinutes: session.durationMinutes,
+                completedAt: session.completedAt,
+                date: session.date
+            });
+
             this.history.push(session);
             Storage.set('flow_history', this.history);
             this.streakData = calcStreaks(this.history);
             UI.renderStats(this.history, this.streakData, this.dailyGoal);
 
+            // Dispatch global event for reactive components across tabs/pages
+            if (typeof window !== 'undefined') {
+                window.dispatchEvent(new CustomEvent('flow:session-completed', { detail: session }));
+                window.dispatchEvent(new CustomEvent('flow:storage-updated', { detail: { key: 'flow_history' } }));
+            }
+
             // Check daily goal
-            const today      = session.date;
-            const todayCount = this.history.filter(s => s.type === 'focus' && s.date === today).length;
+            const todayDate  = session.date;
+            const todayCount = this.history.filter(s => s.type === 'focus' && s.date === todayDate).length;
             if (todayCount === this.dailyGoal) {
                 UI.showToast(`🎉 Daily goal of ${this.dailyGoal} sessions reached!`);
             }
 
             // GA4
-            this._track('timer_complete', { mode, duration });
+            this._track('timer_complete', { mode, duration: durationSecs, durationMinutes: durationMins });
             if (todayCount === this.dailyGoal) this._track('goal_reached', {});
         }
 
         // Determine next mode
+        const todayDate = getLocalDateKey();
         const focusToday = this.history.filter(s =>
-            s.type === 'focus' && s.date === new Date().toISOString().split('T')[0]
+            s.type === 'focus' && s.date === todayDate
         ).length;
 
         const nextMode = mode !== 'focus' ? 'focus'
@@ -128,13 +195,34 @@ class App {
     // ─── Task Helpers ──────────────────────────────────────────────────────
     _toggleTask(id) {
         this.tasks.toggleTask(id);
-        UI.renderTasks(this.tasks.getTasks(), id2 => this._toggleTask(id2));
+        UI.renderTasks(
+            this.tasks.getTasks(),
+            id2 => this._toggleTask(id2),
+            id2 => this._deleteTask(id2)
+        );
     }
 
     _addTask(text) {
         if (!text.trim()) return;
         this.tasks.addTask(text.trim());
-        UI.renderTasks(this.tasks.getTasks(), id => this._toggleTask(id));
+        UI.renderTasks(
+            this.tasks.getTasks(),
+            id => this._toggleTask(id),
+            id => this._deleteTask(id)
+        );
+    }
+
+    _deleteTask(id) {
+        const deleted = this.tasks.deleteTask(id);
+        if (!deleted) return;
+        // Re-render list (stats panel, if open, reflects new counts too)
+        UI.renderTasks(
+            this.tasks.getTasks(),
+            id2 => this._toggleTask(id2),
+            id2 => this._deleteTask(id2)
+        );
+        // Re-render session stats so completed/pending counts stay accurate
+        UI.renderStats(this.history, this.streakData, this.dailyGoal);
     }
 
     // ─── Event Binding ────────────────────────────────────────────────────
@@ -307,11 +395,19 @@ class App {
 }
 
 // ─── Bootstrap ───────────────────────────────────────────────────────────────
-document.addEventListener('DOMContentLoaded', () => {
-    window.FlowApp = new App();
+function initApp() {
+    if (!window.FlowApp) {
+        window.FlowApp = new App();
+    }
 
     // Request notification permission once
-    if (Notification.permission === 'default') {
+    if (typeof Notification !== 'undefined' && Notification.permission === 'default') {
         Notification.requestPermission();
     }
-});
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initApp);
+} else {
+    initApp();
+}

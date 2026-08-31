@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ESNYBTJ98S"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ESNYBTJ98S');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FlowPomodoro — Focus Timer</title>
+  <meta name="description" content="FlowPomodoro is a premium, distraction-free Pomodoro timer for deep work, study, and focus sessions. No signup required.">
+  <meta name="theme-color" content="#080B12">
+  <link rel="canonical" href="https://flowpomodoro.xyz/app/pomodoro.html">
+  <link rel="manifest" href="/public/manifest.json">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://flowpomodoro.xyz/app/pomodoro.html">
+  <meta property="og:title" content="FlowPomodoro — Free Focus Timer">
+  <meta property="og:description" content="Distraction-free Pomodoro timer for deep work.">
+  <meta property="og:image" content="https://flowpomodoro.xyz/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous">
+
+  <!-- App CSS -->
+  <link rel="stylesheet" href="/css/variables.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/layout.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/features.css">
+  <link rel="stylesheet" href="/css/animations.css">
+  <link rel="stylesheet" href="/css/platform.css">
+
+  <style>
+    /* Override layout for Pomodoro page — content centered within sidebar layout */
+    .pf-layout { background: var(--bg-main); }
+
+    /* Timer stays centered within the content area */
+    #app-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 24px 16px 48px;
+      min-height: calc(100vh - 64px); /* subtract topbar */
+    }
+
+    /* App header tools — keep the original glass tool buttons */
+    .app-header-tools {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 0;
+    }
+
+    /* Goal selector sits above the timer ring */
+    .goal-selector-wrap {
+      width: 100%;
+      max-width: 340px;
+      margin: 0 auto 20px;
+      text-align: center;
+    }
+
+    /* On mobile, add bottom padding for mobile nav */
+    @media (max-width: 768px) {
+      #app-section {
+        padding-bottom: 80px;
+      }
+    }
+  </style>
+</head>
+
+<body data-mode="focus">
+
+<!-- ── Platform Layout ──────────────────────────────────────────────────────── -->
+<div class="pf-layout" id="pf-layout">
+
+  <!-- Sidebar injected by sidebar.js -->
+
+  <!-- ── Content ──────────────────────────────────────────────────────────── -->
+  <div class="pf-content" id="pf-content">
+
+    <!-- Topbar injected by sidebar.js, with extra tools in actions slot -->
+
+    <main id="app-section" class="active">
+
+      <!-- Tool buttons row (audio, fullscreen, stats, settings) -->
+      <div class="app-header-tools" style="width:100%;max-width:520px;justify-content:flex-end;margin-bottom:8px;">
+        <button class="btn-reset btn-glass" id="open-audio-btn" title="Ambient Sounds" aria-label="Open Ambient Sounds">
+          <i class="fas fa-headphones" aria-hidden="true"></i>
+        </button>
+        <button class="btn-reset btn-glass" id="fullscreen-btn" title="Fullscreen (F)" aria-label="Toggle fullscreen">
+          <i class="fas fa-expand" aria-hidden="true"></i>
+        </button>
+        <button class="btn-reset btn-glass" id="open-stats-btn" title="Stats &amp; Goals" aria-label="View statistics">
+          <i class="fas fa-chart-simple" aria-hidden="true"></i>
+        </button>
+        <button class="btn-reset btn-glass" id="open-settings-btn" title="Settings" aria-label="Open settings">
+          <i class="fas fa-sliders" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <!-- ── Goal Selector ─────────────────────────────────────────────────── -->
+      <div class="goal-selector-wrap">
+        <div class="goal-selector-label">What are you working on?</div>
+        <select class="goal-selector-select" id="goal-selector" aria-label="Select goal">
+          <option value="">— No goal selected —</option>
+        </select>
+      </div>
+
+      <!-- ── Timer ──────────────────────────────────────────────────────────── -->
+      <div class="timer-container">
+
+        <!-- Mode Tabs -->
+        <div class="mode-tabs" role="tablist" aria-label="Timer modes">
+          <button class="btn-reset tab-btn active" data-mode="focus" role="tab" aria-selected="true">Focus</button>
+          <button class="btn-reset tab-btn" data-mode="short" role="tab" aria-selected="false">Short Break</button>
+          <button class="btn-reset tab-btn" data-mode="long" role="tab" aria-selected="false">Long Break</button>
+        </div>
+
+        <!-- Timer Ring -->
+        <div class="timer-visual" aria-hidden="true">
+          <svg class="ring-svg" viewBox="0 0 360 360" xmlns="http://www.w3.org/2000/svg">
+            <circle class="ring-bg" cx="180" cy="180" r="160"></circle>
+            <circle class="ring-progress" cx="180" cy="180" r="160"></circle>
+          </svg>
+          <div class="timer-text-overlay">
+            <div class="time-big" id="time-display">25:00</div>
+            <script>
+              (function() {
+                try {
+                  var s = JSON.parse(localStorage.getItem('flow_settings') || '{}');
+                  var f = parseInt(s.focus, 10);
+                  if (f && f > 0) {
+                    var el = document.getElementById('time-display');
+                    if (el) el.textContent = (f < 10 ? '0' : '') + f + ':00';
+                  }
+                } catch(e) {}
+              })();
+            </script>
+            <div class="time-label" id="status-display" aria-live="polite">Ready to Focus</div>
+            <div class="streak-text" id="streak-display" aria-live="polite"></div>
+          </div>
+        </div>
+
+        <!-- Controls -->
+        <div class="timer-controls">
+          <button id="reset-btn" class="btn-reset btn-control-sm" title="Reset (R)" aria-label="Reset timer">
+            <i class="fas fa-rotate-left" aria-hidden="true"></i>
+          </button>
+
+          <button id="toggle-btn" class="btn-reset btn-control-lg" title="Play / Pause (Space)" aria-label="Play or pause timer">
+            <i class="fas fa-play" id="toggle-icon" aria-hidden="true"></i>
+          </button>
+
+          <button id="skip-btn" class="btn-reset btn-control-sm" title="Skip session (S)" aria-label="Skip current session">
+            <i class="fas fa-forward-step" aria-hidden="true"></i>
+          </button>
+        </div>
+
+        <p class="kbd-hint" aria-hidden="true">
+          <kbd>Space</kbd> play/pause &nbsp;·&nbsp;
+          <kbd>R</kbd> reset &nbsp;·&nbsp;
+          <kbd>S</kbd> skip &nbsp;·&nbsp;
+          <kbd>F</kbd> fullscreen
+        </p>
+      </div>
+
+      <!-- ── Tasks Panel ─────────────────────────────────────────────────── -->
+      <aside class="card-glass tasks-panel" aria-label="Task list">
+        <div class="tasks-header">
+          <h3>Today's Focus</h3>
+        </div>
+
+        <div class="tasks-body" id="tasks-list" role="list"></div>
+
+        <div class="task-input-row">
+          <input type="text" id="task-input" class="input" placeholder="Add a task..." maxlength="120" aria-label="New task">
+          <button id="task-submit" class="task-submit-btn btn-reset" aria-label="Add task">
+            <i class="fas fa-plus" aria-hidden="true"></i>
+          </button>
+        </div>
+      </aside>
+
+    </main>
+  </div><!-- /.pf-content -->
+</div><!-- /.pf-layout -->
+
+<!-- ── Settings Modal ────────────────────────────────────────────────────── -->
+<div id="settings-modal" class="modal-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="settings-title">
+  <div class="modal-content card-glass">
+    <div class="modal-header">
+      <h2 id="settings-title">Settings</h2>
+      <button class="btn-reset close-modal-btn" aria-label="Close settings">
+        <i class="fas fa-xmark" aria-hidden="true"></i>
+      </button>
+    </div>
+
+    <div class="modal-body">
+      <p style="font-size:0.8rem;color:var(--text-secondary);text-transform:uppercase;letter-spacing:0.05em;font-weight:600;margin-bottom:0.75rem;">Quick Presets</p>
+      <div class="preset-grid" style="display:flex;gap:0.5rem;margin-bottom:2rem;">
+        <button class="btn-secondary preset-btn" data-preset="25" style="flex:1;padding:0.75rem;">25 / 5</button>
+        <button class="btn-secondary preset-btn" data-preset="50" style="flex:1;padding:0.75rem;">50 / 10</button>
+        <button class="btn-secondary preset-btn" data-preset="90" style="flex:1;padding:0.75rem;">90 / 20</button>
+      </div>
+
+      <div class="setting-group">
+        <label for="setting-focus">Focus Duration (min)</label>
+        <input type="number" id="setting-focus" class="input" min="1" max="180" value="25">
+      </div>
+      <div class="setting-group">
+        <label for="setting-short">Short Break (min)</label>
+        <input type="number" id="setting-short" class="input" min="1" max="60" value="5">
+      </div>
+      <div class="setting-group">
+        <label for="setting-long">Long Break (min)</label>
+        <input type="number" id="setting-long" class="input" min="1" max="90" value="15">
+      </div>
+
+      <hr style="border:none;border-top:1px solid var(--border-color);margin:1.5rem 0;">
+
+      <div class="setting-group">
+        <label for="setting-goal">Daily Goal (sessions)</label>
+        <input type="number" id="setting-goal" class="input" min="1" max="20" value="4">
+      </div>
+    </div>
+
+    <div class="modal-footer">
+      <button id="save-settings-btn" class="btn-reset btn-primary" style="width:100%;">
+        Save Settings
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ── Stats Modal ───────────────────────────────────────────────────────── -->
+<div id="stats-modal" class="modal-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="stats-title">
+  <div class="modal-content card-glass modal-lg">
+    <div class="modal-header">
+      <h2 id="stats-title">Productivity Stats</h2>
+      <button class="btn-reset close-modal-btn" aria-label="Close stats">
+        <i class="fas fa-xmark" aria-hidden="true"></i>
+      </button>
+    </div>
+
+    <div class="modal-body">
+      <div style="display:flex;justify-content:space-between;font-size:0.85rem;color:var(--text-secondary);font-weight:600;margin-bottom:0.5rem;">
+        <span id="daily-goal-text">0 / 4 sessions today</span>
+        <span id="streak-text" style="color:var(--brand-primary);">0 day streak 🔥</span>
+      </div>
+      <div class="progress-bar" aria-hidden="true">
+        <div class="progress-fill" id="daily-goal-fill"></div>
+      </div>
+
+      <div class="stats-overview">
+        <div class="stat-box">
+          <span class="stat-num" id="stat-sessions">0</span>
+          <span class="stat-lbl">Sessions</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-num" id="stat-hours">0.0</span>
+          <span class="stat-lbl">Hours</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-num" id="stat-best">0</span>
+          <span class="stat-lbl">Best Streak</span>
+        </div>
+      </div>
+
+      <h3 style="font-size:0.85rem;color:var(--text-secondary);text-transform:uppercase;letter-spacing:0.05em;font-weight:600;margin-top:2rem;">
+        Focus Consistency – Last 60 Days
+      </h3>
+      <div class="heatmap-grid" id="heatmap-grid" aria-label="Activity heatmap"></div>
+      <div style="display:flex;justify-content:flex-end;align-items:center;gap:0.5rem;font-size:0.75rem;color:var(--text-muted);margin-top:0.75rem;">
+        Less
+        <div style="display:flex;gap:4px;">
+          <span style="width:12px;height:12px;border-radius:3px;background:var(--bg-surface-hover);"></span>
+          <span style="width:12px;height:12px;border-radius:3px;background:rgba(255,184,0,0.3);"></span>
+          <span style="width:12px;height:12px;border-radius:3px;background:rgba(255,184,0,0.6);"></span>
+          <span style="width:12px;height:12px;border-radius:3px;background:var(--brand-primary);"></span>
+        </div>
+        More
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── Audio Modal ───────────────────────────────────────────────────────── -->
+<div id="audio-modal" class="modal-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="audio-title">
+  <div class="modal-content card-glass">
+    <div class="modal-header">
+      <h2 id="audio-title">Ambient Sounds</h2>
+      <button class="btn-reset close-modal-btn" aria-label="Close audio">
+        <i class="fas fa-xmark" aria-hidden="true"></i>
+      </button>
+    </div>
+
+    <div class="modal-body">
+      <p style="color:var(--text-secondary);font-size:0.95rem;margin-bottom:1rem;">
+        Background audio to help you enter flow state. Click to toggle.
+      </p>
+
+      <div class="audio-grid" role="group" aria-label="Ambient sound options">
+        <button class="btn-reset audio-btn" data-audio="rain" aria-label="Toggle rain sounds">
+          <i class="fas fa-cloud-rain" aria-hidden="true" style="font-size:1.5rem;margin-bottom:0.5rem;"></i>
+          Rain
+        </button>
+        <button class="btn-reset audio-btn" data-audio="forest" aria-label="Toggle forest sounds">
+          <i class="fas fa-tree" aria-hidden="true" style="font-size:1.5rem;margin-bottom:0.5rem;"></i>
+          Forest
+        </button>
+        <button class="btn-reset audio-btn" data-audio="coffee" aria-label="Toggle coffee shop sounds">
+          <i class="fas fa-mug-hot" aria-hidden="true" style="font-size:1.5rem;margin-bottom:0.5rem;"></i>
+          Coffee Shop
+        </button>
+        <button class="btn-reset audio-btn" data-audio="noise" aria-label="Toggle white noise">
+          <i class="fas fa-wave-square" aria-hidden="true" style="font-size:1.5rem;margin-bottom:0.5rem;"></i>
+          White Noise
+        </button>
+      </div>
+
+      <!-- Hidden audio elements -->
+      <audio id="audio-rain" loop preload="none" src="https://cdn.pixabay.com/download/audio/2021/08/04/audio_0625c1539c.mp3"></audio>
+      <audio id="audio-forest" loop preload="none" src="https://cdn.pixabay.com/download/audio/2022/05/23/audio_0c9bc2ba0c.mp3"></audio>
+      <audio id="audio-coffee" loop preload="none" src="https://cdn.pixabay.com/download/audio/2021/09/06/audio_279bf35a0d.mp3"></audio>
+      <audio id="audio-noise" loop preload="none" src="https://cdn.pixabay.com/download/audio/2022/01/18/audio_282f1430dd.mp3"></audio>
+    </div>
+  </div>
+</div>
+
+<!-- ── Alarm Audio ───────────────────────────────────────────────────────── -->
+<audio id="alarm-sound" preload="none" src="https://actions.google.com/sounds/v1/alarms/beep_short.ogg"></audio>
+
+<!-- ── App Script ───────────────────────────────────────────────────────── -->
+<script type="module" src="/js/main.js"></script>
+
+<!-- ── Platform: Sidebar + Goal Selector ──────────────────────────────── -->
+<script type="module">
+  import { initSidebar } from '/js/platform/sidebar.js';
+  import { GoalStore, OnboardingStore } from '/js/platform/store.js';
+
+  // Check onboarding
+  if (!OnboardingStore.isCompleted() && !localStorage.getItem('flow_onboarding_skip')) {
+    // Redirect to onboarding only if no goals exist yet (allow skip via localStorage)
+    if (GoalStore.getAll().length === 0) {
+      // window.location.href = '/app/onboarding.html';
+    }
+  }
+
+  // Init sidebar
+  initSidebar({
+    pageId: 'pomodoro',
+    pageTitle: 'Pomodoro',
+    pageSubtitle: 'Focus • Flow • Achieve',
+    actionsHTML: `
+      <a href="/app/dashboard.html" class="btn-secondary btn-sm" style="text-decoration:none;">
+        <i class="fas fa-gauge-high"></i> Dashboard
+      </a>
+    `
+  });
+
+  // Check URL parameters for pre-selected goal (e.g. ?goalId=... or ?goal=...)
+  const urlParams = new URLSearchParams(window.location.search);
+  const paramGoalId = urlParams.get('goalId') || urlParams.get('goal');
+  if (paramGoalId) {
+    localStorage.setItem('flow_active_goal', paramGoalId);
+    sessionStorage.setItem('flow_active_goal', paramGoalId);
+  }
+
+  // Populate goal selector
+  const sel = document.getElementById('goal-selector');
+  if (sel) {
+    const goals = GoalStore.getActive();
+    // Restore last selection from localStorage or sessionStorage
+    let saved = localStorage.getItem('flow_active_goal') || sessionStorage.getItem('flow_active_goal') || '';
+
+    // Clear dynamic options (leave default placeholder)
+    sel.querySelectorAll('option:not([value=""])').forEach(opt => opt.remove());
+
+    // If no goal is saved or passed, and active goals exist, default to today's scheduled goal or first goal
+    if (!saved && !paramGoalId && goals.length > 0) {
+      const todayStr = new Date().toISOString().split('T')[0];
+      const scheduled = GoalStore.getScheduledForDate ? GoalStore.getScheduledForDate(todayStr) : [];
+      const defaultGoal = (scheduled.length > 0) ? scheduled[0] : goals[0];
+      if (defaultGoal) {
+        saved = String(defaultGoal.id);
+        localStorage.setItem('flow_active_goal', saved);
+        sessionStorage.setItem('flow_active_goal', saved);
+      }
+    }
+
+    goals.forEach(g => {
+      const opt = document.createElement('option');
+      opt.value = String(g.id);
+      opt.textContent = `${g.icon || '🎯'} ${g.name}`;
+      if (String(g.id) === String(saved) || (paramGoalId && String(g.id) === String(paramGoalId))) {
+        opt.selected = true;
+      }
+      sel.appendChild(opt);
+    });
+
+    sel.addEventListener('change', () => {
+      const val = sel.value;
+      if (val) {
+        localStorage.setItem('flow_active_goal', val);
+        sessionStorage.setItem('flow_active_goal', val);
+      } else {
+        localStorage.removeItem('flow_active_goal');
+        sessionStorage.removeItem('flow_active_goal');
+      }
+    });
+
+    const activeGoal = sel.value ? GoalStore.get(sel.value) : null;
+    console.log("[FlowPomodoro] Pomodoro goal initialized:", {
+      urlGoalId: paramGoalId || null,
+      resolvedGoalId: activeGoal ? activeGoal.id : (sel.value || null),
+      resolvedGoalName: activeGoal ? activeGoal.name : null
+    });
+  }
+</script>
+
+<!-- Theme script — must run synchronously to avoid flash -->
+<script>
+  (function() {
+    const saved = localStorage.getItem('flow_theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', saved);
+  })();
+</script>
+
+</body>
+</html>

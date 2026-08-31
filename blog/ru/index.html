@@ -1,0 +1,1227 @@
+<!DOCTYPE html><html lang="ru" dir="ltr" data-theme="light"><head>
+  <!-- Google tag (gtag.js) -->
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-ESNYBTJ98S"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ESNYBTJ98S');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+  <title>FlowPomodoro Journal — Productivity, Focus &amp; Deep Work Guides</title>
+  <meta name="description" content="Practical ideas for productivity, focus, studying, time management, and building better habits. Evidence-based deep work strategies.">
+  <link rel="canonical" href="https://flowpomodoro.xyz/blog/ru/">
+  <meta name="theme-color" content="#FAFAF7">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="FlowPomodoro">
+  <meta property="og:url" content="https://flowpomodoro.xyz/blog/ru/">
+  <meta property="og:title" content="FlowPomodoro Journal — Productivity, Focus &amp; Deep Work Guides">
+  <meta property="og:description" content="Practical ideas for productivity, focus, studying, time management, and building better habits. Evidence-based deep work strategies.">
+  <meta property="og:image" content="https://flowpomodoro.xyz/og-image.jpg">
+  <meta property="og:locale" content="ru_RU">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="FlowPomodoro Journal — Productivity, Focus &amp; Deep Work Guides">
+  <meta name="twitter:description" content="Practical ideas for productivity, focus, studying, time management, and building better habits. Evidence-based deep work strategies.">
+  <meta name="twitter:image" content="https://flowpomodoro.xyz/og-image.jpg">
+
+  <!-- Hreflang Links -->
+  <link rel="alternate" hreflang="en" href="https://flowpomodoro.xyz/blog/en/index.html">
+  <link rel="alternate" hreflang="hi" href="https://flowpomodoro.xyz/blog/hi/index.html">
+  <link rel="alternate" hreflang="ne" href="https://flowpomodoro.xyz/blog/ne/index.html">
+  <link rel="alternate" hreflang="es" href="https://flowpomodoro.xyz/blog/es/index.html">
+  <link rel="alternate" hreflang="vi" href="https://flowpomodoro.xyz/blog/vi/index.html">
+  <link rel="alternate" hreflang="ru" href="https://flowpomodoro.xyz/blog/ru/index.html">
+  <link rel="alternate" hreflang="x-default" href="https://flowpomodoro.xyz/blog/en/index.html">
+
+  <!-- Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "FlowPomodoro Journal",
+    "url": "https://flowpomodoro.xyz/blog/ru/",
+    "description": "Practical ideas for productivity, focus, studying, time management, and building better habits. Evidence-based deep work strategies.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "FlowPomodoro",
+      "url": "https://flowpomodoro.xyz",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://flowpomodoro.xyz/assets/favicon.svg"
+      }
+    }
+  }
+  </script>
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;family=Outfit:wght@400;600;700;800&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous">
+
+  <!-- Global Styles -->
+  <link rel="stylesheet" href="/css/variables.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/layout.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/css/pages/blog.css">
+</head>
+
+<body>
+
+  <!-- ── Navigation ────────────────────────────────────────────────────────── -->
+  <nav class="lp-nav" aria-label="Main navigation" id="main-nav">
+    <div class="nav-inner">
+      <a href="/" class="logo" aria-label="FlowPomodoro home">
+        <div class="logo-dot"><i class="fas fa-stopwatch"></i></div>
+        FlowPomodoro
+      </a>
+
+      <div class="nav-links" id="nav-links">
+        <a href="/app/index.html" class="nav-link">Timer</a>
+        <a href="/#features" class="nav-link">Features</a>
+        <a href="/blog/ru/" class="nav-link" aria-current="page" style="color:var(--brand-primary); font-weight:700;">Blog</a>
+        <a href="/pages/pricing.html" class="nav-link">Pricing</a>
+        <a href="/pages/about.html" class="nav-link">About</a>
+      </div>
+
+      <div class="nav-actions">
+        <div class="lang-switcher" style="position:relative; display:inline-block;">
+          <button class="btn-icon lang-btn" id="lang-menu-btn" aria-label="Select Language" title="Select Language">
+            <i class="fas fa-globe"></i>
+          </button>
+          <div class="lang-dropdown" id="lang-dropdown" style="display:none; position:absolute; top:120%; right:0; background:var(--bg-surface); border:1px solid var(--border-color); border-radius:12px; padding:0.5rem; min-width:150px; z-index:999; flex-direction:column; gap:0.2rem; box-shadow:var(--shadow-lg);">
+            <a href="/blog/en/index.html" class="lang-option" style="display:block; padding:0.5rem 1rem; color:var(--text-primary); text-decoration:none; border-radius:6px; font-size:0.85rem;">🇺🇸 English</a>
+            <a href="/blog/hi/index.html" class="lang-option" style="display:block; padding:0.5rem 1rem; color:var(--text-primary); text-decoration:none; border-radius:6px; font-size:0.85rem;">🇮🇳 Hindi</a>
+            <a href="/blog/ne/index.html" class="lang-option" style="display:block; padding:0.5rem 1rem; color:var(--text-primary); text-decoration:none; border-radius:6px; font-size:0.85rem;">🇳🇵 Nepali</a>
+            <a href="/blog/es/index.html" class="lang-option" style="display:block; padding:0.5rem 1rem; color:var(--text-primary); text-decoration:none; border-radius:6px; font-size:0.85rem;">🇪🇸 Spanish</a>
+            <a href="/blog/vi/index.html" class="lang-option" style="display:block; padding:0.5rem 1rem; color:var(--text-primary); text-decoration:none; border-radius:6px; font-size:0.85rem;">🇻🇳 Vietnamese</a>
+            <a href="/blog/ru/index.html" class="lang-option" style="display:block; padding:0.5rem 1rem; color:var(--text-primary); text-decoration:none; border-radius:6px; font-size:0.85rem;">🇷🇺 Русский</a>
+          </div>
+        </div>
+
+        <button class="btn-icon" id="theme-toggle" aria-label="Toggle theme">
+          <i class="fas fa-sun"></i>
+        </button>
+        <a href="/pages/login.html" class="nav-link">Log in</a>
+        <a href="/app/index.html" class="btn-primary">Start Focusing</a>
+      </div>
+
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Drawer -->
+  <div class="nav-drawer" id="nav-drawer" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+    <a href="/app/index.html" class="nav-drawer-link">Timer</a>
+    <a href="/#features" class="nav-drawer-link">Features</a>
+    <a href="/blog/ru/" class="nav-drawer-link" style="color:var(--brand-primary); font-weight:700;">Blog</a>
+    <a href="/pages/pricing.html" class="nav-drawer-link">Pricing</a>
+    <a href="/pages/about.html" class="nav-drawer-link">About</a>
+    <div style="display:flex; gap:1rem; margin-top:2rem;">
+      <a href="/pages/login.html" class="btn-secondary">Log in</a>
+      <a href="/app/index.html" class="btn-primary">Start Focusing</a>
+    </div>
+  </div>
+
+  <main id="main-content">
+
+    <!-- ── Hero ──────────────────────────────────────────────────────────────── -->
+    <section class="blog-hero" aria-label="Blog header">
+      <div class="container">
+        <div class="blog-eyebrow">
+          <i class="fas fa-pen-nib" aria-hidden="true"></i> FLOWPOMODORO JOURNAL
+        </div>
+        <h1>Get better at focusing.</h1>
+        <p class="hero-subtitle">
+          Practical ideas for productivity, focus, studying, time management, and building better habits.
+        </p>
+
+        <!-- Search Bar -->
+        <div class="blog-search-wrap">
+          <div class="blog-search" role="search" aria-label="Search articles">
+            <i class="fas fa-search" aria-hidden="true"></i>
+            <input type="search" id="blog-search-input" placeholder="Search articles..." aria-label="Search articles">
+            <button class="blog-search-btn" id="blog-search-btn">Search</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container" style="max-width:1140px; margin:0 auto; padding:0 1.5rem;">
+
+      <!-- ── Category Filter Pills ─────────────────────────────────────────── -->
+      <nav class="blog-nav-categories" aria-label="Article categories">
+        
+      <a href="/blog/ru/index.html" class="category-pill active" data-filter="all">
+        All <span class="pill-count">31</span>
+      </a>
+    
+
+      <a href="/blog/ru/productivity.html" class="category-pill " data-filter="productivity">
+        Productivity <span class="pill-count">10</span>
+      </a>
+    
+
+      <a href="/blog/ru/focus.html" class="category-pill " data-filter="focus">
+        Focus <span class="pill-count">8</span>
+      </a>
+    
+
+      <a href="/blog/ru/study.html" class="category-pill " data-filter="study">
+        Study <span class="pill-count">4</span>
+      </a>
+    
+
+      <a href="/blog/ru/time-management.html" class="category-pill " data-filter="time-management">
+        Time Management <span class="pill-count">4</span>
+      </a>
+    
+
+      <a href="/blog/ru/habits.html" class="category-pill " data-filter="habits">
+        Habits <span class="pill-count">1</span>
+      </a>
+    
+
+      <a href="/blog/ru/deep-work.html" class="category-pill " data-filter="deep-work">
+        Deep Work <span class="pill-count">4</span>
+      </a>
+    
+      </nav>
+
+      
+      <!-- ── Featured Article ──────────────────────────────────────────────── -->
+      <article class="featured-article-card" aria-label="Featured article">
+        <a href="/blog/ru/what-is-the-pomodoro-technique.html" class="featured-image-wrapper" aria-label="Что такое метод Помодоро? Руководство">
+          <span class="featured-badge">FEATURED</span>
+          <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Что такое метод Помодоро? Руководство" loading="eager">
+        </a>
+        <div class="featured-content">
+          <div class="featured-meta-row">
+            <span class="article-category-tag">Productivity</span>
+            <span class="featured-meta-date">May 12, 2024 · 5 min read</span>
+          </div>
+          <h2 class="featured-title">
+            <a href="/blog/ru/what-is-the-pomodoro-technique.html" style="color:inherit; text-decoration:none;">Что такое метод Помодоро? Руководство</a>
+          </h2>
+          <p class="featured-excerpt">Узнайте, что такое метод Помодоро, как он работает и почему миллионы людей используют его, чтобы победить прокрастинацию и войти в состояние глубокой концентрации. Полное руководство для новичков.</p>
+          <div class="featured-footer">
+            <a href="/blog/ru/what-is-the-pomodoro-technique.html" class="read-more-link">
+              Read Article <i class="fas fa-arrow-right" aria-hidden="true"></i>
+            </a>
+            <button class="btn-bookmark" aria-label="Bookmark article" data-slug="what-is-the-pomodoro-technique">
+              <i class="far fa-bookmark"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+      
+
+      <!-- ── Latest Articles Grid ──────────────────────────────────────────── -->
+      <section aria-label="Articles list">
+        <div class="blog-section-header">
+          <h2>Latest Articles</h2>
+          <span id="article-count-label" style="font-size:0.85rem; color:var(--text-muted); font-weight:600;">30 articles</span>
+        </div>
+
+        <div class="articles-grid" id="articles-grid">
+          
+      <article class="article-card" data-category="focus" data-title="помодоро при сдвг: как наконец сосредоточиться">
+        <a href="/blog/ru/adhd-focus.html" class="article-card-thumb" aria-label="Помодоро при СДВГ: как наконец сосредоточиться">
+          <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Помодоро при СДВГ: как наконец сосредоточиться" loading="lazy">
+        </a>
+        <div class="article-card-body">
+          <div class="article-card-meta">
+            <span class="article-card-category">Focus</span>
+            <span class="article-card-time">May 10, 2024 · 5 min read</span>
+          </div>
+          <h3 class="article-card-title">
+            <a href="/blog/ru/adhd-focus.html">Помодоро при СДВГ: как наконец сосредоточиться</a>
+          </h3>
+          <p class="article-card-excerpt">Используйте технику Помодоро при СДВГ, чтобы справиться со «слепотой к времени», победить отвлечения и доводить дела до конца. Научно обоснованные стратегии фокусировки при СДВГ.</p>
+          <div class="article-card-footer">
+            <span>Read Article</span>
+            <span class="read-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+        <button class="btn-bookmark mobile-card-bookmark" aria-label="Bookmark article" data-slug="adhd-focus">
+          <i class="far fa-bookmark"></i>
+        </button>
+      </article>
+    
+
+      <article class="article-card" data-category="productivity" data-title="методы продуктивности при сдвг, которые действительно работают">
+        <a href="/blog/ru/adhd-productivity-methods.html" class="article-card-thumb" aria-label="Методы продуктивности при СДВГ, которые действительно работают">
+          <img src="https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Методы продуктивности при СДВГ, которые действительно работают" loading="lazy">
+        </a>
+        <div class="article-card-body">
+          <div class="article-card-meta">
+            <span class="article-card-category">Productivity</span>
+            <span class="article-card-time">May 8, 2024 · 6 min read</span>
+          </div>
+          <h3 class="article-card-title">
+            <a href="/blog/ru/adhd-productivity-methods.html">Методы продуктивности при СДВГ, которые действительно работают</a>
+          </h3>
+          <p class="article-card-excerpt">Методы продуктивности при СДВГ, которые действительно работают: боди-даблинг, тайм-боксинг, техника Помодоро и другое. Научно обоснованные стратегии для концентрации.</p>
+          <div class="article-card-footer">
+            <span>Read Article</span>
+            <span class="read-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+        <button class="btn-bookmark mobile-card-bookmark" aria-label="Bookmark article" data-slug="adhd-productivity-methods">
+          <i class="far fa-bookmark"></i>
+        </button>
+      </article>
+    
+
+      <article class="article-card" data-category="productivity" data-title="12 преимуществ техники помодоро">
+        <a href="/blog/ru/benefits-of-pomodoro-technique.html" class="article-card-thumb" aria-label="12 преимуществ техники Помодоро">
+          <img src="https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="12 преимуществ техники Помодоро" loading="lazy">
+        </a>
+        <div class="article-card-body">
+          <div class="article-card-meta">
+            <span class="article-card-category">Productivity</span>
+            <span class="article-card-time">May 5, 2024 · 5 min read</span>
+          </div>
+          <h3 class="article-card-title">
+            <a href="/blog/ru/benefits-of-pomodoro-technique.html">12 преимуществ техники Помодоро</a>
+          </h3>
+          <p class="article-card-excerpt">Узнайте о 12 научно доказанных преимуществах техники Помодоро, включая снижение прокрастинации, улучшение концентрации, уменьшение тревожности и измеримый рост продуктивности.</p>
+          <div class="article-card-footer">
+            <span>Read Article</span>
+            <span class="read-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+        <button class="btn-bookmark mobile-card-bookmark" aria-label="Bookmark article" data-slug="benefits-of-pomodoro-technique">
+          <i class="far fa-bookmark"></i>
+        </button>
+      </article>
+    
+
+      <article class="article-card" data-category="productivity" data-title="лучшие приложения pomodoro 2026 года: полный обзор">
+        <a href="/blog/ru/best-pomodoro-apps.html" class="article-card-thumb" aria-label="Лучшие приложения Pomodoro 2026 года: Полный обзор">
+          <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Лучшие приложения Pomodoro 2026 года: Полный обзор" loading="lazy">
+        </a>
+        <div class="article-card-body">
+          <div class="article-card-meta">
+            <span class="article-card-category">Productivity</span>
+            <span class="article-card-time">Apr 28, 2024 · 7 min read</span>
+          </div>
+          <h3 class="article-card-title">
+            <a href="/blog/ru/best-pomodoro-apps.html">Лучшие приложения Pomodoro 2026 года: Полный обзор</a>
+          </h3>
+          <p class="article-card-excerpt">Сравнение лучших таймеров Pomodoro 2026 года: FlowPomodoro, Toggl, Forest и других. Найдите идеальный таймер концентрации для студентов, разработчиков и удалённых работников.</p>
+          <div class="article-card-footer">
+            <span>Read Article</span>
+            <span class="read-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+        <button class="btn-bookmark mobile-card-bookmark" aria-label="Bookmark article" data-slug="best-pomodoro-apps">
+          <i class="far fa-bookmark"></i>
+        </button>
+      </article>
+    
+
+      <article class="article-card" data-category="productivity" data-title="лучшие техники продуктивности на 2026 год">
+        <a href="/blog/ru/best-productivity-techniques.html" class="article-card-thumb" aria-label="Лучшие техники продуктивности на 2026 год">
+          <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Лучшие техники продуктивности на 2026 год" loading="lazy">
+        </a>
+        <div class="article-card-body">
+          <div class="article-card-meta">
+            <span class="article-card-category">Productivity</span>
+            <span class="article-card-time">Apr 24, 2024 · 6 min read</span>
+          </div>
+          <h3 class="article-card-title">
+            <a href="/blog/ru/best-productivity-techniques.html">Лучшие техники продуктивности на 2026 год</a>
+          </h3>
+          <p class="article-card-excerpt">10 лучших техник продуктивности, ранжированных по эффективности, простоте использования и научным данным. Метод Помодоро, тайм-блокинг, GTD, «Съешь лягушку» и другие.</p>
+          <div class="article-card-footer">
+            <span>Read Article</span>
+            <span class="read-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+        <button class="btn-bookmark mobile-card-bookmark" aria-label="Bookmark article" data-slug="best-productivity-techniques">
+          <i class="far fa-bookmark"></i>
+        </button>
+      </article>
+    
+
+      <article class="article-card" data-category="time-management" data-title="система ежедневного планирования для максимальной продуктивности">
+        <a href="/blog/ru/daily-planning-system.html" class="article-card-thumb" aria-label="Система ежедневного планирования для максимальной продуктивности">
+          <img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Система ежедневного планирования для максимальной продуктивности" loading="lazy">
+        </a>
+        <div class="article-card-body">
+          <div class="article-card-meta">
+            <span class="article-card-category">Time Management</span>
+            <span class="article-card-time">Apr 20, 2024 · 5 min read</span>
+          </div>
+          <h3 class="article-card-title">
+            <a href="/blog/ru/daily-planning-system.html">Система ежедневного планирования для максимальной продуктивности</a>
+          </h3>
+          <p class="article-card-excerpt">Создайте систему ежедневного планирования, которая максимизирует продуктивность. Изучите тайм-блокинг, группировку задач и управление энергией для планирования наипродуктивнейшего рабочего дня.</p>
+          <div class="article-card-footer">
+            <span>Read Article</span>
+            <span class="read-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+        <button class="btn-bookmark mobile-card-bookmark" aria-label="Bookmark article" data-slug="daily-planning-system">
+          <i class="far fa-bookmark"></i>
+        </button>
+      </article>
+    
+
+      <article class="article-card" data-category="deep-work" data-title="глубокая работа: полное руководство по фокусу">
+        <a href="/blog/ru/deep-work-guide.html" class="article-card-thumb" aria-label="Глубокая работа: Полное руководство по фокусу">
+          <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Глубокая работа: Полное руководство по фокусу" loading="lazy">
+        </a>
+        <div class="article-card-body">
+          <div class="article-card-meta">
+            <span class="article-card-category">Deep Work</span>
+            <span class="article-card-time">Apr 16, 2024 · 8 min read</span>
+          </div>
+          <h3 class="article-card-title">
+            <a href="/blog/ru/deep-work-guide.html">Глубокая работа: Полное руководство по фокусу</a>
+          </h3>
+          <p class="article-card-excerpt">Освойте глубокую работу по методике Кэла Ньюпорта. Устраните отвлекающие факторы, защитите сессии фокуса и регулярно создавайте важные результаты.</p>
+          <div class="article-card-footer">
+            <span>Read Article</span>
+            <span class="read-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+        <button class="btn-bookmark mobile-card-bookmark" aria-label="Bookmark article" data-slug="deep-work-guide">
+          <i class="far fa-bookmark"></i>
+        </button>
+      </article>
+    
+
+      <article class="article-card" data-category="deep-work" data-title="рабочий процесс фокуса для разработчиков по методу помодоро">
+        <a href="/blog/ru/developer-focus-workflow.html" class="article-card-thumb" aria-label="Рабочий процесс фокуса для разработчиков по методу Помодоро">
+          <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Рабочий процесс фокуса для разработчиков по методу Помодоро" loading="lazy">
+        </a>
+        <div class="article-card-body">
+          <div class="article-card-meta">
+            <span class="article-card-category">Deep Work</span>
+            <span class="article-card-time">Apr 12, 2024 · 6 min read</span>
+          </div>
+          <h3 class="article-card-title">
+            <a href="/blog/ru/developer-focus-workflow.html">Рабочий процесс фокуса для разработчиков по методу Помодоро</a>
+          </h3>
+          <p class="article-card-excerpt">Создайте рабочий процесс фокуса для разработчиков на основе техники Помодоро, чтобы устранить переключение контекста, защитить сессии глубокой разработки и создавать качественный код без выгорания.</p>
+          <div class="article-card-footer">
+            <span>Read Article</span>
+            <span class="read-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+        <button class="btn-bookmark mobile-card-bookmark" aria-label="Bookmark article" data-slug="developer-focus-workflow">
+          <i class="far fa-bookmark"></i>
+        </button>
+      </article>
+    
+
+      <article class="article-card" data-category="focus" data-title="контроль отвлекающих факторов: защитите свою глубокую работу">
+        <a href="/blog/ru/distraction-control.html" class="article-card-thumb" aria-label="Контроль отвлекающих факторов: Защитите свою глубокую работу">
+          <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Контроль отвлекающих факторов: Защитите свою глубокую работу" loading="lazy">
+        </a>
+        <div class="article-card-body">
+          <div class="article-card-meta">
+            <span class="article-card-category">Focus</span>
+            <span class="article-card-time">Apr 8, 2024 · 5 min read</span>
+          </div>
+          <h3 class="article-card-title">
+            <a href="/blog/ru/distraction-control.html">Контроль отвлекающих факторов: Защитите свою глубокую работу</a>
+          </h3>
+          <p class="article-card-excerpt">Освойте контроль отвлекающих факторов с помощью научно обоснованных стратегий. Проведите аудит уведомлений, переорганизуйте рабочее пространство и защитите каждый сеанс глубокой работы.</p>
+          <div class="article-card-footer">
+            <span>Read Article</span>
+            <span class="read-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+        <button class="btn-bookmark mobile-card-bookmark" aria-label="Bookmark article" data-slug="distraction-control">
+          <i class="far fa-bookmark"></i>
+        </button>
+      </article>
+    
+
+      <article class="article-card" data-category="focus" data-title="состояние потока: наука пиковой концентрации">
+        <a href="/blog/ru/flow-state-explained.html" class="article-card-thumb" aria-label="Состояние потока: наука пиковой концентрации">
+          <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Состояние потока: наука пиковой концентрации" loading="lazy">
+        </a>
+        <div class="article-card-body">
+          <div class="article-card-meta">
+            <span class="article-card-category">Focus</span>
+            <span class="article-card-time">Apr 4, 2024 · 6 min read</span>
+          </div>
+          <h3 class="article-card-title">
+            <a href="/blog/ru/flow-state-explained.html">Состояние потока: наука пиковой концентрации</a>
+          </h3>
+          <p class="article-card-excerpt">Узнайте, что такое состояние потока, нейробиологию этого процесса и как использовать метод Помодоро для достижения пиковой концентрации по требованию.</p>
+          <div class="article-card-footer">
+            <span>Read Article</span>
+            <span class="read-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+        <button class="btn-bookmark mobile-card-bookmark" aria-label="Bookmark article" data-slug="flow-state-explained">
+          <i class="far fa-bookmark"></i>
+        </button>
+      </article>
+    
+
+      <article class="article-card" data-category="focus" data-title="техники концентрации для разработчиков: как оставаться в состоянии потока">
+        <a href="/blog/ru/focus-techniques-for-developers.html" class="article-card-thumb" aria-label="Техники концентрации для разработчиков: как оставаться в состоянии потока">
+          <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Техники концентрации для разработчиков: как оставаться в состоянии потока" loading="lazy">
+        </a>
+        <div class="article-card-body">
+          <div class="article-card-meta">
+            <span class="article-card-category">Focus</span>
+            <span class="article-card-time">Mar 30, 2024 · 6 min read</span>
+          </div>
+          <h3 class="article-card-title">
+            <a href="/blog/ru/focus-techniques-for-developers.html">Техники концентрации для разработчиков: как оставаться в состоянии потока</a>
+          </h3>
+          <p class="article-card-excerpt">Техники концентрации, разработанные специально для программистов. Как войти в состояние потока и защитить его во время написания кода, отладки и проектирования архитектуры.</p>
+          <div class="article-card-footer">
+            <span>Read Article</span>
+            <span class="read-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+        <button class="btn-bookmark mobile-card-bookmark" aria-label="Bookmark article" data-slug="focus-techniques-for-developers">
+          <i class="far fa-bookmark"></i>
+        </button>
+      </article>
+    
+
+      <article class="article-card" data-category="focus" data-title="10 техник концентрации, удваивающих продуктивность">
+        <a href="/blog/ru/focus-techniques.html" class="article-card-thumb" aria-label="10 техник концентрации, удваивающих продуктивность">
+          <img src="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="10 техник концентрации, удваивающих продуктивность" loading="lazy">
+        </a>
+        <div class="article-card-body">
+          <div class="article-card-meta">
+            <span class="article-card-category">Focus</span>
+            <span class="article-card-time">Mar 26, 2024 · 5 min read</span>
+          </div>
+          <h3 class="article-card-title">
+            <a href="/blog/ru/focus-techniques.html">10 техник концентрации, удваивающих продуктивность</a>
+          </h3>
+          <p class="article-card-excerpt">Узнайте 10 научно обоснованных техник концентрации, которые используют успешные люди. От спринтов Помодоро до бинауральных ритмов — проверенные методы повышения продуктивности.</p>
+          <div class="article-card-footer">
+            <span>Read Article</span>
+            <span class="read-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+        <button class="btn-bookmark mobile-card-bookmark" aria-label="Bookmark article" data-slug="focus-techniques">
+          <i class="far fa-bookmark"></i>
+        </button>
+      </article>
+    
+
+      <article class="article-card" data-category="time-management" data-title="сколько сессий помодоро делать в день? ответ">
+        <a href="/blog/ru/how-many-pomodoros-per-day.html" class="article-card-thumb" aria-label="Сколько сессий Помодоро делать в день? Ответ">
+          <img src="https://images.unsplash.com/photo-1501139083538-0139583c060f?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Сколько сессий Помодоро делать в день? Ответ" loading="lazy">
+        </a>
+        <div class="article-card-body">
+          <div class="article-card-meta">
+            <span class="article-card-category">Time Management</span>
+            <span class="article-card-time">Mar 22, 2024 · 4 min read</span>
+          </div>
+          <h3 class="article-card-title">
+            <a href="/blog/ru/how-many-pomodoros-per-day.html">Сколько сессий Помодоро делать в день? Ответ</a>
+          </h3>
+          <p class="article-card-excerpt">Сколько сессий Помодоро следует выполнять в день? Узнайте научно обоснованный ответ, ориентиры продуктивности и как найти свою идеальную дневную норму.</p>
+          <div class="article-card-footer">
+            <span>Read Article</span>
+            <span class="read-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+        <button class="btn-bookmark mobile-card-bookmark" aria-label="Bookmark article" data-slug="how-many-pomodoros-per-day">
+          <i class="far fa-bookmark"></i>
+        </button>
+      </article>
+    
+
+      <article class="article-card" data-category="focus" data-title="как победить прокрастинацию: научный подход">
+        <a href="/blog/ru/how-to-beat-procrastination.html" class="article-card-thumb" aria-label="Как победить прокрастинацию: научный подход">
+          <img src="https://images.unsplash.com/photo-1507842229451-79b1be897a20?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Как победить прокрастинацию: научный подход" loading="lazy">
+        </a>
+        <div class="article-card-body">
+          <div class="article-card-meta">
+            <span class="article-card-category">Focus</span>
+            <span class="article-card-time">Mar 18, 2024 · 5 min read</span>
+          </div>
+          <h3 class="article-card-title">
+            <a href="/blog/ru/how-to-beat-procrastination.html">Как победить прокрастинацию: научный подход</a>
+          </h3>
+          <p class="article-card-excerpt">Узнайте о научных причинах прокрастинации и проверенной 5-шаговой системе, которая поможет избавиться от нее навсегда. На основе психологических исследований и практических методик продуктивности.</p>
+          <div class="article-card-footer">
+            <span>Read Article</span>
+            <span class="read-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+        <button class="btn-bookmark mobile-card-bookmark" aria-label="Bookmark article" data-slug="how-to-beat-procrastination">
+          <i class="far fa-bookmark"></i>
+        </button>
+      </article>
+    
+
+      <article class="article-card" data-category="habits" data-title="как сформировать полезные привычки: научный подход">
+        <a href="/blog/ru/how-to-build-better-habits.html" class="article-card-thumb" aria-label="Как сформировать полезные привычки: Научный подход">
+          <img src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Как сформировать полезные привычки: Научный подход" loading="lazy">
+        </a>
+        <div class="article-card-body">
+          <div class="article-card-meta">
+            <span class="article-card-category">Habits</span>
+            <span class="article-card-time">Mar 14, 2024 · 6 min read</span>
+          </div>
+          <h3 class="article-card-title">
+            <a href="/blog/ru/how-to-build-better-habits.html">Как сформировать полезные привычки: Научный подход</a>
+          </h3>
+          <p class="article-card-excerpt">Узнайте, как сформировать полезные привычки с помощью научно обоснованных стратегий. От петли привычки до изменений на уровне идентичности — создавайте устойчивые привычки на всю жизнь.</p>
+          <div class="article-card-footer">
+            <span>Read Article</span>
+            <span class="read-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+        <button class="btn-bookmark mobile-card-bookmark" aria-label="Bookmark article" data-slug="how-to-build-better-habits">
+          <i class="far fa-bookmark"></i>
+        </button>
+      </article>
+    
+
+      <article class="article-card" data-category="study" data-title="как учиться долгими часами без потери концентрации и энергии">
+        <a href="/blog/ru/how-to-study-for-long-hours.html" class="article-card-thumb" aria-label="Как учиться долгими часами без потери концентрации и энергии">
+          <img src="https://images.unsplash.com/photo-1457369804613-52c61a468e7d?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Как учиться долгими часами без потери концентрации и энергии" loading="lazy">
+        </a>
+        <div class="article-card-body">
+          <div class="article-card-meta">
+            <span class="article-card-category">Study</span>
+            <span class="article-card-time">Mar 10, 2024 · 7 min read</span>
+          </div>
+          <h3 class="article-card-title">
+            <a href="/blog/ru/how-to-study-for-long-hours.html">Как учиться долгими часами без потери концентрации и энергии</a>
+          </h3>
+          <p class="article-card-excerpt">Узнайте, как учиться часами без выгорания. Научно обоснованные методики: Помодоро, активное припоминание, стратегические перерывы и советы по питанию.</p>
+          <div class="article-card-footer">
+            <span>Read Article</span>
+            <span class="read-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+        <button class="btn-bookmark mobile-card-bookmark" aria-label="Bookmark article" data-slug="how-to-study-for-long-hours">
+          <i class="far fa-bookmark"></i>
+        </button>
+      </article>
+    
+
+      <article class="article-card" data-category="focus" data-title="как преодолеть прокрастинацию с помощью метода помодоро">
+        <a href="/blog/ru/overcome-procrastination-pomodoro.html" class="article-card-thumb" aria-label="Как преодолеть прокрастинацию с помощью метода Помодоро">
+          <img src="https://images.unsplash.com/photo-1499209974431-9dddcece7f88?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Как преодолеть прокрастинацию с помощью метода Помодоро" loading="lazy">
+        </a>
+        <div class="article-card-body">
+          <div class="article-card-meta">
+            <span class="article-card-category">Focus</span>
+            <span class="article-card-time">Mar 6, 2024 · 5 min read</span>
+          </div>
+          <h3 class="article-card-title">
+            <a href="/blog/ru/overcome-procrastination-pomodoro.html">Как преодолеть прокрастинацию с помощью метода Помодоро</a>
+          </h3>
+          <p class="article-card-excerpt">Победите прокрастинацию с помощью метода Помодоро. Узнайте причины прокрастинации и то, как 25-минутные сессии фокусировки навсегда разрушают цикл откладывания дел.</p>
+          <div class="article-card-footer">
+            <span>Read Article</span>
+            <span class="read-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+        <button class="btn-bookmark mobile-card-bookmark" aria-label="Bookmark article" data-slug="overcome-procrastination-pomodoro">
+          <i class="far fa-bookmark"></i>
+        </button>
+      </article>
+    
+
+      <article class="article-card" data-category="productivity" data-title="7 научно доказанных преимуществ метода pomodoro">
+        <a href="/blog/ru/pomodoro-benefits.html" class="article-card-thumb" aria-label="7 научно доказанных преимуществ метода Pomodoro">
+          <img src="https://images.unsplash.com/photo-1434493789847-2f02dc6ca35d?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="7 научно доказанных преимуществ метода Pomodoro" loading="lazy">
+        </a>
+        <div class="article-card-body">
+          <div class="article-card-meta">
+            <span class="article-card-category">Productivity</span>
+            <span class="article-card-time">Mar 2, 2024 · 4 min read</span>
+          </div>
+          <h3 class="article-card-title">
+            <a href="/blog/ru/pomodoro-benefits.html">7 научно доказанных преимуществ метода Pomodoro</a>
+          </h3>
+          <p class="article-card-excerpt">Узнайте о 7 научно обоснованных преимуществах метода Pomodoro: снижение выгорания, улучшение концентрации и контроль времени. Попробуйте бесплатно уже сегодня.</p>
+          <div class="article-card-footer">
+            <span>Read Article</span>
+            <span class="read-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+        <button class="btn-bookmark mobile-card-bookmark" aria-label="Bookmark article" data-slug="pomodoro-benefits">
+          <i class="far fa-bookmark"></i>
+        </button>
+      </article>
+    
+
+      <article class="article-card" data-category="productivity" data-title="faq по технике pomodoro: ответы на все вопросы">
+        <a href="/blog/ru/pomodoro-faq.html" class="article-card-thumb" aria-label="FAQ по Технике Pomodoro: Ответы на все вопросы">
+          <img src="https://images.unsplash.com/photo-1516387938699-a93567ec168e?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="FAQ по Технике Pomodoro: Ответы на все вопросы" loading="lazy">
+        </a>
+        <div class="article-card-body">
+          <div class="article-card-meta">
+            <span class="article-card-category">Productivity</span>
+            <span class="article-card-time">Feb 26, 2024 · 6 min read</span>
+          </div>
+          <h3 class="article-card-title">
+            <a href="/blog/ru/pomodoro-faq.html">FAQ по Технике Pomodoro: Ответы на все вопросы</a>
+          </h3>
+          <p class="article-card-excerpt">Всё, что вам нужно знать о Технике Pomodoro. Ответы на 30+ популярных вопросов об интервалах, перерывах, инструментах и научных обоснованиях.</p>
+          <div class="article-card-footer">
+            <span>Read Article</span>
+            <span class="read-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+        <button class="btn-bookmark mobile-card-bookmark" aria-label="Bookmark article" data-slug="pomodoro-faq">
+          <i class="far fa-bookmark"></i>
+        </button>
+      </article>
+    
+
+      <article class="article-card" data-category="study" data-title="техника помодоро для экзаменов: лучшая система подготовки">
+        <a href="/blog/ru/pomodoro-for-exams.html" class="article-card-thumb" aria-label="Техника Помодоро для экзаменов: лучшая система подготовки">
+          <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Техника Помодоро для экзаменов: лучшая система подготовки" loading="lazy">
+        </a>
+        <div class="article-card-body">
+          <div class="article-card-meta">
+            <span class="article-card-category">Study</span>
+            <span class="article-card-time">Feb 22, 2024 · 6 min read</span>
+          </div>
+          <h3 class="article-card-title">
+            <a href="/blog/ru/pomodoro-for-exams.html">Техника Помодоро для экзаменов: лучшая система подготовки</a>
+          </h3>
+          <p class="article-card-excerpt">Используйте технику Помодоро для подготовки к экзаменам. Структурированные 25-минутные занятия улучшают запоминание, снижают тревожность и помогают получить более высокие баллы.</p>
+          <div class="article-card-footer">
+            <span>Read Article</span>
+            <span class="read-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+        <button class="btn-bookmark mobile-card-bookmark" aria-label="Bookmark article" data-slug="pomodoro-for-exams">
+          <i class="far fa-bookmark"></i>
+        </button>
+      </article>
+    
+
+      <article class="article-card" data-category="deep-work" data-title="метод помодоро в программировании: кодируйте умнее">
+        <a href="/blog/ru/pomodoro-for-programming.html" class="article-card-thumb" aria-label="Метод Помодоро в программировании: Кодируйте умнее">
+          <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Метод Помодоро в программировании: Кодируйте умнее" loading="lazy">
+        </a>
+        <div class="article-card-body">
+          <div class="article-card-meta">
+            <span class="article-card-category">Deep Work</span>
+            <span class="article-card-time">Feb 18, 2024 · 6 min read</span>
+          </div>
+          <h3 class="article-card-title">
+            <a href="/blog/ru/pomodoro-for-programming.html">Метод Помодоро в программировании: Кодируйте умнее</a>
+          </h3>
+          <p class="article-card-excerpt">Применяйте метод Помодоро в программировании. Защитите сессии глубокого написания кода, избегайте выгорания разработчика и пишите лучший софт с 25-минутными спринтами.</p>
+          <div class="article-card-footer">
+            <span>Read Article</span>
+            <span class="read-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+        <button class="btn-bookmark mobile-card-bookmark" aria-label="Bookmark article" data-slug="pomodoro-for-programming">
+          <i class="far fa-bookmark"></i>
+        </button>
+      </article>
+    
+
+      <article class="article-card" data-category="productivity" data-title="помодоро для удаленных работников: фокус дома">
+        <a href="/blog/ru/pomodoro-for-remote-workers.html" class="article-card-thumb" aria-label="Помодоро для удаленных работников: фокус дома">
+          <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Помодоро для удаленных работников: фокус дома" loading="lazy">
+        </a>
+        <div class="article-card-body">
+          <div class="article-card-meta">
+            <span class="article-card-category">Productivity</span>
+            <span class="article-card-time">Feb 14, 2024 · 5 min read</span>
+          </div>
+          <h3 class="article-card-title">
+            <a href="/blog/ru/pomodoro-for-remote-workers.html">Помодоро для удаленных работников: фокус дома</a>
+          </h3>
+          <p class="article-card-excerpt">Сохраняйте концентрацию при работе из дома с помощью техники Помодоро. Проверенные стратегии для удаленных работников против отвлечений и выгорания.</p>
+          <div class="article-card-footer">
+            <span>Read Article</span>
+            <span class="read-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+        <button class="btn-bookmark mobile-card-bookmark" aria-label="Bookmark article" data-slug="pomodoro-for-remote-workers">
+          <i class="far fa-bookmark"></i>
+        </button>
+      </article>
+    
+
+      <article class="article-card" data-category="productivity" data-title="10 ошибок помодоро, разрушающих вашу концентрацию">
+        <a href="/blog/ru/pomodoro-mistakes.html" class="article-card-thumb" aria-label="10 ошибок Помодоро, разрушающих вашу концентрацию">
+          <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="10 ошибок Помодоро, разрушающих вашу концентрацию" loading="lazy">
+        </a>
+        <div class="article-card-body">
+          <div class="article-card-meta">
+            <span class="article-card-category">Productivity</span>
+            <span class="article-card-time">Feb 10, 2024 · 5 min read</span>
+          </div>
+          <h3 class="article-card-title">
+            <a href="/blog/ru/pomodoro-mistakes.html">10 ошибок Помодоро, разрушающих вашу концентрацию</a>
+          </h3>
+          <p class="article-card-excerpt">Избегайте 10 самых распространенных ошибок при использовании техники Помодоро, которые незаметно снижают вашу продуктивность. Узнайте, как их исправить и извлечь максимум из каждой рабочей сессии.</p>
+          <div class="article-card-footer">
+            <span>Read Article</span>
+            <span class="read-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+        <button class="btn-bookmark mobile-card-bookmark" aria-label="Bookmark article" data-slug="pomodoro-mistakes">
+          <i class="far fa-bookmark"></i>
+        </button>
+      </article>
+    
+
+      <article class="article-card" data-category="study" data-title="как учиться с помощью техники помодоро">
+        <a href="/blog/ru/pomodoro-study-guide.html" class="article-card-thumb" aria-label="Как учиться с помощью техники Помодоро">
+          <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Как учиться с помощью техники Помодоро" loading="lazy">
+        </a>
+        <div class="article-card-body">
+          <div class="article-card-meta">
+            <span class="article-card-category">Study</span>
+            <span class="article-card-time">Feb 6, 2024 · 6 min read</span>
+          </div>
+          <h3 class="article-card-title">
+            <a href="/blog/ru/pomodoro-study-guide.html">Как учиться с помощью техники Помодоро</a>
+          </h3>
+          <p class="article-card-excerpt">Узнайте, как учиться по методу Помодоро. Пошаговое руководство по использованию 25-минутных сессий фокуса для лучшего усвоения материала, защиты от выгорания и высоких оценок.</p>
+          <div class="article-card-footer">
+            <span>Read Article</span>
+            <span class="read-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+        <button class="btn-bookmark mobile-card-bookmark" aria-label="Bookmark article" data-slug="pomodoro-study-guide">
+          <i class="far fa-bookmark"></i>
+        </button>
+      </article>
+    
+
+      <article class="article-card" data-category="deep-work" data-title="метод помодоро против глубокой работы: совместимы ли они?">
+        <a href="/blog/ru/pomodoro-vs-deep-work.html" class="article-card-thumb" aria-label="Метод Помодоро против Глубокой работы: совместимы ли они?">
+          <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Метод Помодоро против Глубокой работы: совместимы ли они?" loading="lazy">
+        </a>
+        <div class="article-card-body">
+          <div class="article-card-meta">
+            <span class="article-card-category">Deep Work</span>
+            <span class="article-card-time">Feb 2, 2024 · 5 min read</span>
+          </div>
+          <h3 class="article-card-title">
+            <a href="/blog/ru/pomodoro-vs-deep-work.html">Метод Помодоро против Глубокой работы: совместимы ли они?</a>
+          </h3>
+          <p class="article-card-excerpt">Метод Помодоро против Глубокой работы: совместимы ли они? Сравните оба метода, узнайте, когда применять каждый из них, и как объединить их для максимальной продуктивности.</p>
+          <div class="article-card-footer">
+            <span>Read Article</span>
+            <span class="read-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+        <button class="btn-bookmark mobile-card-bookmark" aria-label="Bookmark article" data-slug="pomodoro-vs-deep-work">
+          <i class="far fa-bookmark"></i>
+        </button>
+      </article>
+    
+
+      <article class="article-card" data-category="time-management" data-title="метод помодоро против тайм-блокинга: что лучше?">
+        <a href="/blog/ru/pomodoro-vs-time-blocking.html" class="article-card-thumb" aria-label="Метод Помодоро против Тайм-блокинга: что лучше?">
+          <img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Метод Помодоро против Тайм-блокинга: что лучше?" loading="lazy">
+        </a>
+        <div class="article-card-body">
+          <div class="article-card-meta">
+            <span class="article-card-category">Time Management</span>
+            <span class="article-card-time">Jan 28, 2024 · 6 min read</span>
+          </div>
+          <h3 class="article-card-title">
+            <a href="/blog/ru/pomodoro-vs-time-blocking.html">Метод Помодоро против Тайм-блокинга: что лучше?</a>
+          </h3>
+          <p class="article-card-excerpt">Метод Помодоро против тайм-блокинга: какой способ продуктивности эффективнее? Сравните оба подхода и узнайте, как их объединить для максимальной производительности.</p>
+          <div class="article-card-footer">
+            <span>Read Article</span>
+            <span class="read-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+        <button class="btn-bookmark mobile-card-bookmark" aria-label="Bookmark article" data-slug="pomodoro-vs-time-blocking">
+          <i class="far fa-bookmark"></i>
+        </button>
+      </article>
+    
+
+      <article class="article-card" data-category="focus" data-title="фокус на удаленке: как оставаться продуктивным дома">
+        <a href="/blog/ru/remote-work-focus.html" class="article-card-thumb" aria-label="Фокус на удаленке: как оставаться продуктивным дома">
+          <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Фокус на удаленке: как оставаться продуктивным дома" loading="lazy">
+        </a>
+        <div class="article-card-body">
+          <div class="article-card-meta">
+            <span class="article-card-category">Focus</span>
+            <span class="article-card-time">Jan 24, 2024 · 5 min read</span>
+          </div>
+          <h3 class="article-card-title">
+            <a href="/blog/ru/remote-work-focus.html">Фокус на удаленке: как оставаться продуктивным дома</a>
+          </h3>
+          <p class="article-card-excerpt">Сложно сосредоточиться при работе из дома? Узнайте о стратегиях продуктивной удаленной работы, проверенных техниках фокуса и о том, как организовать рабочее место без отвлекающих факторов.</p>
+          <div class="article-card-footer">
+            <span>Read Article</span>
+            <span class="read-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+        <button class="btn-bookmark mobile-card-bookmark" aria-label="Bookmark article" data-slug="remote-work-focus">
+          <i class="far fa-bookmark"></i>
+        </button>
+      </article>
+    
+
+      <article class="article-card" data-category="productivity" data-title="научные основы метода помодоро">
+        <a href="/blog/ru/science-behind-pomodoro.html" class="article-card-thumb" aria-label="Научные основы метода Помодоро">
+          <img src="https://images.unsplash.com/photo-1507668077129-56e32842fceb?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Научные основы метода Помодоро" loading="lazy">
+        </a>
+        <div class="article-card-body">
+          <div class="article-card-meta">
+            <span class="article-card-category">Productivity</span>
+            <span class="article-card-time">Jan 20, 2024 · 7 min read</span>
+          </div>
+          <h3 class="article-card-title">
+            <a href="/blog/ru/science-behind-pomodoro.html">Научные основы метода Помодоро</a>
+          </h3>
+          <p class="article-card-excerpt">Узнайте о нейробиологических основах метода Помодоро. Как 25-минутные интервалы согласуются с циклами внимания мозга для максимальной концентрации.</p>
+          <div class="article-card-footer">
+            <span>Read Article</span>
+            <span class="read-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+        <button class="btn-bookmark mobile-card-bookmark" aria-label="Bookmark article" data-slug="science-behind-pomodoro">
+          <i class="far fa-bookmark"></i>
+        </button>
+      </article>
+    
+
+      <article class="article-card" data-category="study" data-title="продуктивность студентов: учитесь умнее">
+        <a href="/blog/ru/student-productivity.html" class="article-card-thumb" aria-label="Продуктивность студентов: учитесь умнее">
+          <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Продуктивность студентов: учитесь умнее" loading="lazy">
+        </a>
+        <div class="article-card-body">
+          <div class="article-card-meta">
+            <span class="article-card-category">Study</span>
+            <span class="article-card-time">Jan 16, 2024 · 5 min read</span>
+          </div>
+          <h3 class="article-card-title">
+            <a href="/blog/ru/student-productivity.html">Продуктивность студентов: учитесь умнее</a>
+          </h3>
+          <p class="article-card-excerpt">Полное руководство по продуктивности для студентов: метод Помодоро, активное припоминание, тайм-менеджмент и профилактика выгорания для академического успеха.</p>
+          <div class="article-card-footer">
+            <span>Read Article</span>
+            <span class="read-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+        <button class="btn-bookmark mobile-card-bookmark" aria-label="Bookmark article" data-slug="student-productivity">
+          <i class="far fa-bookmark"></i>
+        </button>
+      </article>
+    
+
+      <article class="article-card" data-category="time-management" data-title="тайм-блокинг и метод помодоро: система фокуса">
+        <a href="/blog/ru/time-blocking-pomodoro-technique.html" class="article-card-thumb" aria-label="Тайм-блокинг и метод Помодоро: система фокуса">
+          <img src="https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Тайм-блокинг и метод Помодоро: система фокуса" loading="lazy">
+        </a>
+        <div class="article-card-body">
+          <div class="article-card-meta">
+            <span class="article-card-category">Time Management</span>
+            <span class="article-card-time">Jan 12, 2024 · 6 min read</span>
+          </div>
+          <h3 class="article-card-title">
+            <a href="/blog/ru/time-blocking-pomodoro-technique.html">Тайм-блокинг и метод Помодоро: система фокуса</a>
+          </h3>
+          <p class="article-card-excerpt">Совместите тайм-блокинг с методом Помодоро для создания идеальной системы концентрации. Пошаговое руководство для студентов, разработчиков и удаленных специалистов.</p>
+          <div class="article-card-footer">
+            <span>Read Article</span>
+            <span class="read-arrow"><i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+        <button class="btn-bookmark mobile-card-bookmark" aria-label="Bookmark article" data-slug="time-blocking-pomodoro-technique">
+          <i class="far fa-bookmark"></i>
+        </button>
+      </article>
+    
+        </div>
+
+        <!-- Search Empty State -->
+        <div id="search-empty-state" style="display:none; text-align:center; padding:4rem 1.5rem; background:var(--bg-surface); border:1px solid var(--border-color); border-radius:var(--radius-xl); margin-bottom:4rem;">
+          <i class="fas fa-search" style="font-size:2.5rem; color:var(--text-muted); margin-bottom:1rem;" aria-hidden="true"></i>
+          <h3 style="font-size:1.4rem; font-weight:700; color:var(--text-primary); margin:0 0 0.5rem 0;">No articles found.</h3>
+          <p style="color:var(--text-secondary); margin:0;">Try searching for another topic or keyword.</p>
+        </div>
+      </section>
+
+      <!-- ── Popular Reads Section ─────────────────────────────────────────── -->
+      <section class="popular-reads-section" aria-label="Popular reads">
+        <div class="blog-section-header">
+          <h2>Popular Reads</h2>
+        </div>
+        <div class="popular-reads-grid">
+          
+      <a href="/blog/ru/science-behind-pomodoro.html" class="popular-read-card">
+        <div class="popular-number">01</div>
+        <div class="popular-info">
+          <div class="popular-category">Productivity</div>
+          <div class="popular-title">Научные основы метода Помодоро</div>
+          <div class="popular-meta">7 min read</div>
+        </div>
+        <div class="popular-arrow"><i class="fas fa-arrow-right"></i></div>
+      </a>
+    
+
+      <a href="/blog/ru/how-to-beat-procrastination.html" class="popular-read-card">
+        <div class="popular-number">02</div>
+        <div class="popular-info">
+          <div class="popular-category">Focus</div>
+          <div class="popular-title">Как победить прокрастинацию: научный подход</div>
+          <div class="popular-meta">5 min read</div>
+        </div>
+        <div class="popular-arrow"><i class="fas fa-arrow-right"></i></div>
+      </a>
+    
+
+      <a href="/blog/ru/deep-work-guide.html" class="popular-read-card">
+        <div class="popular-number">03</div>
+        <div class="popular-info">
+          <div class="popular-category">Deep Work</div>
+          <div class="popular-title">Глубокая работа: Полное руководство по фокусу</div>
+          <div class="popular-meta">8 min read</div>
+        </div>
+        <div class="popular-arrow"><i class="fas fa-arrow-right"></i></div>
+      </a>
+    
+
+      <a href="/blog/ru/pomodoro-vs-time-blocking.html" class="popular-read-card">
+        <div class="popular-number">04</div>
+        <div class="popular-info">
+          <div class="popular-category">Time Management</div>
+          <div class="popular-title">Метод Помодоро против Тайм-блокинга: что лучше?</div>
+          <div class="popular-meta">6 min read</div>
+        </div>
+        <div class="popular-arrow"><i class="fas fa-arrow-right"></i></div>
+      </a>
+    
+        </div>
+      </section>
+
+      <!-- ── Product CTA ───────────────────────────────────────────────────── -->
+      <section class="blog-product-cta" aria-label="Product introduction">
+        <h3>Turn ideas into focused action.</h3>
+        <p>Read less about productivity. Start practicing it with FlowPomodoro's distraction-free timer.</p>
+        <a href="/app/index.html" class="btn-primary"><i class="fas fa-play" aria-hidden="true"></i> Start Focusing</a>
+      </section>
+
+      <!-- ── Newsletter Section ────────────────────────────────────────────── -->
+      <section class="blog-newsletter-section" aria-label="Newsletter">
+        <h3>Get better at focusing.</h3>
+        <p>Practical productivity ideas delivered occasionally. No spam.</p>
+        <form class="blog-newsletter-form" onsubmit="handleNewsletterSubmit(event)">
+          <input type="email" placeholder="Enter your email" required="" aria-label="Email address">
+          <button type="submit" class="btn-primary">Subscribe</button>
+        </form>
+      </section>
+
+    </div><!-- .container -->
+
+  </main>
+
+  <!-- ── Mobile Bottom Navigation Bar (Matching Mockup Reference) ──────────── -->
+  <nav class="mobile-bottom-bar" aria-label="Mobile application navigation">
+    <a href="/" class="bottom-bar-item">
+      <i class="fas fa-house"></i>
+      <span>Home</span>
+    </a>
+    <a href="/app/index.html" class="bottom-bar-item">
+      <i class="fas fa-stopwatch"></i>
+      <span>Timer</span>
+    </a>
+    <a href="/app/index.html#tasks" class="bottom-bar-item">
+      <i class="fas fa-list-check"></i>
+      <span>Tasks</span>
+    </a>
+    <a href="/app/index.html#stats" class="bottom-bar-item">
+      <i class="fas fa-chart-simple"></i>
+      <span>Stats</span>
+    </a>
+    <a href="/blog/ru/" class="bottom-bar-item active">
+      <i class="fas fa-newspaper"></i>
+      <span>Blog</span>
+    </a>
+  </nav>
+
+  <!-- ── Footer ────────────────────────────────────────────────────────────── -->
+  <footer class="lp-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="/" class="logo">
+            <div class="logo-dot"><i class="fas fa-stopwatch"></i></div>
+            FlowPomodoro
+          </a>
+          <p>A beautiful Pomodoro timer to help you focus deeply, beat procrastination, and build better habits.</p>
+        </div>
+        <div class="footer-col">
+          <div class="fc-title">Product</div>
+          <ul>
+            <li><a href="/app/index.html">Timer</a></li>
+            <li><a href="/#features">Features</a></li>
+            <li><a href="/pages/pricing.html">Pricing</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <div class="fc-title">Resources</div>
+          <ul>
+            <li><a href="/blog/ru/">Blog</a></li>
+            <li><a href="/pages/about.html">About</a></li>
+            <li><a href="/pages/download.html">Download</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <div class="fc-title">Legal</div>
+          <ul>
+            <li><a href="/pages/privacy.html">Privacy</a></li>
+            <li><a href="/pages/terms.html">Terms</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2026 FlowPomodoro. All rights reserved.</div>
+        <div class="fb-links">
+          <a href="/pages/privacy.html">Privacy</a>
+          <a href="/pages/terms.html">Terms</a>
+          <a href="/blog/ru/">Blog</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ── Interactive Client Scripts ────────────────────────────────────────── -->
+  <script>
+    // Theme Management
+    const themeBtn = document.getElementById('theme-toggle');
+    const html = document.documentElement;
+    const savedTheme = localStorage.getItem('flow_theme') || 'light';
+    html.setAttribute('data-theme', savedTheme);
+    if (themeBtn) {
+      themeBtn.innerHTML = savedTheme === 'dark' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+      themeBtn.addEventListener('click', () => {
+        const isDark = html.getAttribute('data-theme') === 'dark';
+        const newTheme = isDark ? 'light' : 'dark';
+        html.setAttribute('data-theme', newTheme);
+        localStorage.setItem('flow_theme', newTheme);
+        themeBtn.innerHTML = newTheme === 'dark' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+      });
+    }
+
+    // Mobile Navigation Drawer
+    const hamburger = document.getElementById('nav-hamburger');
+    const drawer = document.getElementById('nav-drawer');
+    if (hamburger && drawer) {
+      hamburger.addEventListener('click', () => {
+        const isOpen = drawer.classList.toggle('open');
+        hamburger.setAttribute('aria-expanded', isOpen);
+      });
+    }
+
+    // Language Dropdown
+    const langBtn = document.getElementById('lang-menu-btn');
+    const langDropdown = document.getElementById('lang-dropdown');
+    if (langBtn && langDropdown) {
+      langBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        langDropdown.style.display = langDropdown.style.display === 'flex' ? 'none' : 'flex';
+      });
+      document.addEventListener('click', () => {
+        langDropdown.style.display = 'none';
+      });
+    }
+
+    // Real-Time Search Filtering
+    const searchInput = document.getElementById('blog-search-input');
+    const searchBtn = document.getElementById('blog-search-btn');
+    const articleCards = document.querySelectorAll('.articles-grid .article-card');
+    const emptyState = document.getElementById('search-empty-state');
+    const countLabel = document.getElementById('article-count-label');
+
+    function performSearch() {
+      const query = (searchInput.value || '').trim().toLowerCase();
+      let visibleCount = 0;
+
+      articleCards.forEach(card => {
+        const title = card.getAttribute('data-title') || '';
+        const excerpt = card.querySelector('.article-card-excerpt')?.textContent.toLowerCase() || '';
+        const category = card.getAttribute('data-category') || '';
+        
+        if (!query || title.includes(query) || excerpt.includes(query) || category.includes(query)) {
+          card.style.display = 'flex';
+          visibleCount++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      if (emptyState) {
+        emptyState.style.display = visibleCount === 0 ? 'block' : 'none';
+      }
+      if (countLabel) {
+        countLabel.textContent = visibleCount + ' articles';
+      }
+    }
+
+    if (searchInput) {
+      searchInput.addEventListener('input', performSearch);
+    }
+    if (searchBtn) {
+      searchBtn.addEventListener('click', performSearch);
+    }
+
+    // Bookmark Persistence
+    function initBookmarks() {
+      const bookmarks = JSON.parse(localStorage.getItem('flow_bookmarks') || '[]');
+      document.querySelectorAll('.btn-bookmark').forEach(btn => {
+        const slug = btn.getAttribute('data-slug');
+        const isSaved = bookmarks.includes(slug);
+        btn.classList.toggle('bookmarked', isSaved);
+        btn.innerHTML = isSaved ? '<i class="fas fa-bookmark"></i>' : '<i class="far fa-bookmark"></i>';
+        
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          let bms = JSON.parse(localStorage.getItem('flow_bookmarks') || '[]');
+          if (bms.includes(slug)) {
+            bms = bms.filter(s => s !== slug);
+          } else {
+            bms.push(slug);
+          }
+          localStorage.setItem('flow_bookmarks', JSON.stringify(bms));
+          initBookmarks();
+        });
+      });
+    }
+    initBookmarks();
+
+    function handleNewsletterSubmit(e) {
+      e.preventDefault();
+      const input = e.target.querySelector('input');
+      if (input) {
+        input.value = '';
+        alert('Thank you for subscribing to FlowPomodoro Journal!');
+      }
+    }
+  </script>
+
+</body></html>

@@ -1,87 +1,131 @@
+/* ==========================================================================
+   FLOWPOMODORO GLOBAL DESIGN TOKENS
+   ========================================================================== */
+
 :root {
-    /* =====================
-       BRAND COLORS
-    ===================== */
-    --bg-main:        #060608;
-    --bg-secondary:   #0c0c10;
-    --bg-card:        rgba(255, 255, 255, 0.03);
-    --bg-card-hover:  rgba(255, 255, 255, 0.055);
-    --bg-input:       rgba(0, 0, 0, 0.35);
+  /* =====================
+     BRAND COLORS (CONSTANT)
+     ===================== */
+  --brand-primary:      #FFB800;
+  --brand-bright:       #FFC400;
+  --brand-soft:         #FFF7D6;
+  --brand-glow:         rgba(255, 184, 0, 0.25);
+  --brand-glow-strong:  rgba(255, 184, 0, 0.4);
 
-    --text-primary:   #f0f2f8;
-    --text-secondary: #7a839e;
-    --text-muted:     #3d4460;
+  /* Modes (Focus is Yellow, Breaks can use subtle variations or just stick to yellow, let's stick to brand for focus) */
+  --mode-focus:         var(--brand-primary);
+  --mode-short:         #22d3a0; /* Keeping a calm green for short break as secondary accent if needed, or we can use all yellow. Prompt says "Use yellow for timer progress ring, active states". */
+  --mode-long:          #00d4ff; 
+  /* Actually, to stick to the minimal philosophy, we'll use brand primary for everything active unless specified. */
 
-    /* =====================
-       ACCENTS
-    ===================== */
-    --accent-cyan:    #00d4ff;
-    --accent-purple:  #a855f7;
-    --accent-success: #22d3a0;
-    --accent-warning: #f59e0b;
-    --accent-danger:  #f43f5e;
+  /* =====================
+     SPACING SCALE
+     ===================== */
+  --space-1:   4px;
+  --space-2:   8px;
+  --space-3:   12px;
+  --space-4:   16px;
+  --space-5:   20px;
+  --space-6:   24px;
+  --space-8:   32px;
+  --space-10:  40px;
+  --space-12:  48px;
+  --space-16:  64px;
+  --space-20:  80px;
+  --space-24:  96px;
+  --space-32:  128px;
 
-    /* =====================
-       MODE COLORS
-    ===================== */
-    --mode-focus:  var(--accent-cyan);
-    --mode-short:  var(--accent-purple);
-    --mode-long:   var(--accent-success);
+  /* =====================
+     BORDER RADIUS
+     ===================== */
+  --radius-sm:   8px;
+  --radius-md:   12px;
+  --radius-lg:   16px;
+  --radius-xl:   20px;
+  --radius-2xl:  24px;
+  --radius-full: 9999px;
 
-    /* =====================
-       GRADIENTS
-    ===================== */
-    --gradient-primary:     linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
-    --gradient-focus:       linear-gradient(135deg, #00d4ff, #0099cc);
-    --gradient-short:       linear-gradient(135deg, #a855f7, #7c3aed);
-    --gradient-long:        linear-gradient(135deg, #22d3a0, #059669);
-    --gradient-hero:        radial-gradient(ellipse at 30% 30%, rgba(0, 212, 255, 0.08) 0%, transparent 60%),
-                            radial-gradient(ellipse at 70% 70%, rgba(168, 85, 247, 0.06) 0%, transparent 60%);
+  /* =====================
+     TYPOGRAPHY
+     ===================== */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Outfit', 'Inter', -apple-system, sans-serif;
+  
+  --text-xs:   0.75rem;
+  --text-sm:   0.875rem;
+  --text-base: 1rem;
+  --text-md:   1.125rem;
+  --text-lg:   1.25rem;
+  --text-xl:   1.5rem;
+  --text-2xl:  2rem;
+  --text-3xl:  2.5rem;
+  --text-4xl:  3rem;
+  --text-5xl:  4rem;
 
-    /* =====================
-       GLASS & SURFACE
-    ===================== */
-    --glass-bg:        rgba(12, 12, 20, 0.7);
-    --glass-border:    rgba(255, 255, 255, 0.07);
-    --glass-border-hover: rgba(255, 255, 255, 0.14);
-    --glass-highlight: rgba(255, 255, 255, 0.025);
-    --surface-hover:   rgba(255, 255, 255, 0.05);
-    --border-color:    rgba(255, 255, 255, 0.07);
+  /* =====================
+     TRANSITIONS
+     ===================== */
+  --ease-smooth:  cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-fast:    150ms;
+  --duration-normal:  250ms;
+  --duration-slow:    400ms;
 
-    /* =====================
-       SHADOWS / GLOWS
-    ===================== */
-    --glow-focus:   0 0 40px rgba(0, 212, 255, 0.18);
-    --glow-short:   0 0 40px rgba(168, 85, 247, 0.18);
-    --glow-long:    0 0 40px rgba(34, 211, 160, 0.18);
-    --shadow-card:  0 4px 24px rgba(0, 0, 0, 0.4), 0 1px 4px rgba(0, 0, 0, 0.3);
-    --shadow-modal: 0 25px 80px rgba(0, 0, 0, 0.7);
+  /* =====================
+     Z-INDEX SCALE
+     ===================== */
+  --z-base:     1;
+  --z-raised:   10;
+  --z-sticky:   50;
+  --z-overlay:  100;
+  --z-drawer:   200;
+  --z-modal:    1000;
+  --z-toast:    2000;
+}
 
-    /* =====================
-       SPACING & RADIUS
-    ===================== */
-    --radius-xs:   4px;
-    --radius-sm:   8px;
-    --radius-md:   14px;
-    --radius-lg:   20px;
-    --radius-xl:   28px;
-    --radius-full: 9999px;
+/* =====================
+   LIGHT THEME (DEFAULT)
+   ===================== */
+:root {
+  --bg-main:        #FAFAF7;
+  --bg-surface:     #FFFFFF;
+  --bg-surface-hover: #F3F3EF;
+  --bg-surface-active: #EBEBE5;
+  
+  --border-color:   #E6E6DF;
+  --border-subtle:  rgba(0, 0, 0, 0.05);
 
-    /* =====================
-       TRANSITIONS
-    ===================== */
-    --ease-out:     cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    --ease-spring:  cubic-bezier(0.34, 1.56, 0.64, 1);
-    --duration-fast:   150ms;
-    --duration-normal: 250ms;
-    --duration-slow:   400ms;
+  --text-primary:   #111827;
+  --text-secondary: #667085;
+  --text-muted:     #9CA3AF;
+  
+  --shadow-sm:      0 1px 3px rgba(0,0,0,0.05);
+  --shadow-md:      0 4px 12px rgba(0,0,0,0.05);
+  --shadow-lg:      0 12px 32px rgba(0,0,0,0.08);
+  
+  --bg-glass:       rgba(255, 255, 255, 0.85);
+  --ring-bg:        #E6E6DF;
+}
 
-    /* =====================
-       Z-INDEX SCALE
-    ===================== */
-    --z-base:    1;
-    --z-sticky:  50;
-    --z-overlay: 100;
-    --z-modal:   1000;
-    --z-toast:   2000;
+/* =====================
+   DARK THEME
+   ===================== */
+html[data-theme="dark"] {
+  --bg-main:        #080B12;
+  --bg-surface:     #111722;
+  --bg-surface-hover: #1A212E;
+  --bg-surface-active: #222B3B;
+  
+  --border-color:   #252B36;
+  --border-subtle:  rgba(255, 255, 255, 0.05);
+
+  --text-primary:   #F8FAFC;
+  --text-secondary: #94A3B8;
+  --text-muted:     #64748B;
+  
+  --shadow-sm:      0 1px 3px rgba(0,0,0,0.3);
+  --shadow-md:      0 4px 12px rgba(0,0,0,0.4);
+  --shadow-lg:      0 12px 32px rgba(0,0,0,0.5);
+  
+  --bg-glass:       rgba(17, 23, 34, 0.85);
+  --ring-bg:        #252B36;
 }

@@ -1,0 +1,62 @@
+<!DOCTYPE html><html lang="en" data-theme="dark"><head>
+  <script>(function(){ document.documentElement.setAttribute('data-theme', localStorage.getItem('flow_theme')||'dark'); })();</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reviews &amp; Reflection — FlowPomodoro</title>
+  <meta name="description" content="Daily and weekly reflection journals for deep work habits and continuous improvement.">
+  <meta name="theme-color" content="#080B12">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="/public/manifest.json">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;family=Outfit:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/variables.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/layout.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/platform.css">
+
+  <link rel="canonical" href="https://flowpomodoro.xyz/app/reviews.html"></head>
+<body>
+
+<div class="pf-layout" id="pf-layout">
+  <!-- Sidebar injected by sidebar.js -->
+  <div class="pf-content" id="pf-content">
+    <!-- Topbar injected by sidebar.js -->
+
+    <main class="pf-page" id="main-content">
+      
+      <!-- Tabs -->
+      <div class="pf-tabs" id="review-tabs">
+        <button class="pf-tab active" data-tab="daily">Daily Review</button>
+        <button class="pf-tab" data-tab="weekly">Weekly Review</button>
+      </div>
+
+      <!-- Tab Content Area -->
+      <div id="review-content"></div>
+
+    </main>
+  </div>
+</div>
+
+<!-- ── View Past Review Modal ────────────────────────────────────────────── -->
+<div class="pf-modal-overlay" id="past-review-modal">
+  <div class="pf-modal">
+    <div class="pf-modal-header">
+      <div class="pf-modal-title" id="p-rev-title">Review Record</div>
+      <button class="pf-modal-close" id="p-rev-close" aria-label="Close modal">
+        <i class="fas fa-xmark"></i>
+      </button>
+    </div>
+    <div class="pf-modal-body" id="p-rev-body"></div>
+    <div class="pf-modal-footer">
+      <button class="btn-secondary" id="p-rev-close-btn">Close</button>
+    </div>
+  </div>
+</div>
+
+<script type="module" src="/js/platform/reviews.js"></script>
+
+
+</body></html>
