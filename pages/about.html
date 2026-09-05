@@ -11,8 +11,8 @@
   </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About FlowPomodoro — Our Mission for Deep Work</title>
-  <meta name="description" content="FlowPomodoro is a free Pomodoro timer and deep work tool built by developers who believe focus is the most valuable skill in the modern world.">
+  <title>About FlowPomodoro — One Workspace for Planning, Focusing & Tracking</title>
+  <meta name="description" content="FlowPomodoro is an all-in-one productivity workspace built around one principle: planning, focused work, and honest progress tracking should all live in the same place.">
   <link rel="canonical" href="https://flowpomodoro.xyz/pages/about.html">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#FAFAF7">
@@ -21,24 +21,34 @@
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://flowpomodoro.xyz/pages/about.html">
-  <meta property="og:title" content="About FlowPomodoro — Our Mission for Deep Work">
-  <meta property="og:description" content="We are obsessed with flow state and deep work. Our mission: help people reclaim their attention in a distracted world.">
+  <meta property="og:title" content="About FlowPomodoro — One Workspace for Planning, Focusing & Tracking">
+  <meta property="og:description" content="FlowPomodoro exists because planning, focused work, and progress tracking should all live in the same place. Learn our productivity philosophy.">
   <meta property="og:image" content="https://flowpomodoro.xyz/og-image.jpg">
   <meta name="twitter:card" content="summary_large_image">
 
-  <!-- Schema -->
+  <!-- JSON-LD -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "AboutPage",
     "name": "About FlowPomodoro",
     "url": "https://flowpomodoro.xyz/pages/about.html",
-    "description": "FlowPomodoro is a free Pomodoro timer and deep work tool designed to help students, developers, and knowledge workers cultivate sustained focus.",
+    "description": "FlowPomodoro is an all-in-one productivity workspace for planning, focused Pomodoro sessions, and progress tracking — built around the cycle of Set Goal, Plan, Focus, Track, Review, and Improve.",
     "publisher": {
       "@type": "Organization",
       "name": "FlowPomodoro",
       "url": "https://flowpomodoro.xyz"
     }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://flowpomodoro.xyz/"},
+      {"@type":"ListItem","position":2,"name":"About","item":"https://flowpomodoro.xyz/pages/about.html"}
+    ]
   }
   </script>
 
@@ -56,11 +66,32 @@
   <link rel="stylesheet" href="/style.css">
 
   <style>
-    .about-hero { padding: clamp(80px, 10vw, 130px) 0 clamp(2rem, 4vw, 3.5rem); text-align: center; }
-    .about-hero h1 { font-size: clamp(2.2rem, 5vw, 3.5rem); font-weight: 800; letter-spacing: -0.03em; margin-bottom: 1rem; }
-    .about-hero p { font-size: 1.15rem; color: var(--text-secondary); max-width: 640px; margin: 0 auto; line-height: 1.65; }
+    .about-hero {
+      padding: clamp(90px, 14vw, 150px) 0 clamp(3rem, 6vw, 5rem);
+      text-align: center;
+    }
+    .about-hero h1 {
+      font-size: clamp(2rem, 5vw, 3.25rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.25rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .about-hero p {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      max-width: 580px;
+      margin: 0 auto;
+      line-height: 1.65;
+    }
 
-    .about-section { max-width: 800px; margin: 0 auto 5rem; padding: 0 1.5rem; }
+    .about-wrap {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 1.5rem 5rem;
+    }
     .about-card {
       background: var(--bg-surface);
       border: 1px solid var(--border-color);
@@ -69,21 +100,74 @@
       box-shadow: var(--shadow-sm);
       margin-bottom: 2rem;
     }
-    .about-card h2 { font-size: 1.6rem; font-weight: 800; color: var(--text-primary); margin: 0 0 1rem 0; letter-spacing: -0.02em; }
-    .about-card p { font-size: 1.05rem; line-height: 1.75; color: var(--text-secondary); margin: 0 0 1.25rem 0; }
+    .about-card h2 {
+      font-size: clamp(1.35rem, 3vw, 1.75rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+    .about-card p {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: var(--text-secondary);
+      margin-bottom: 1.25rem;
+    }
     .about-card p:last-child { margin-bottom: 0; }
     .about-card strong { color: var(--text-primary); font-weight: 700; }
 
-    .values-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; margin-top: 1.5rem; }
+    /* Loop display */
+    .loop-display {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+    .loop-box {
+      background: var(--bg-main);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 1.25rem;
+      text-align: center;
+    }
+    .loop-box i { font-size: 1.25rem; color: var(--brand-primary); margin-bottom: 0.625rem; display: block; }
+    .loop-box h4 { font-size: 0.875rem; font-weight: 700; margin-bottom: 0.25rem; }
+    .loop-box p { font-size: 0.78rem; color: var(--text-secondary); line-height: 1.5; margin: 0; }
+
+    /* Values grid */
+    .values-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
     .value-box {
       background: var(--bg-main);
       border: 1px solid var(--border-color);
-      border-radius: var(--radius-lg);
-      padding: 1.5rem;
+      border-radius: 12px;
+      padding: 1.25rem;
     }
-    .value-box i { font-size: 1.5rem; color: var(--brand-primary); margin-bottom: 0.75rem; display: inline-block; }
-    .value-box h3 { font-size: 1.1rem; font-weight: 700; color: var(--text-primary); margin: 0 0 0.5rem 0; }
-    .value-box p { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5; margin: 0; }
+    .value-box i { font-size: 1.25rem; color: var(--brand-primary); margin-bottom: 0.625rem; display: block; }
+    .value-box h3 { font-size: 0.9rem; font-weight: 700; margin-bottom: 0.25rem; }
+    .value-box p { font-size: 0.8rem; color: var(--text-secondary); line-height: 1.5; margin: 0; }
+
+    /* Breadcrumb */
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      max-width: 800px;
+      margin: clamp(80px,10vw,110px) auto 0;
+      padding: 0 1.5rem;
+    }
+    .breadcrumb a { color: var(--text-muted); }
+    .breadcrumb a:hover { color: var(--text-primary); }
+
+    @media (max-width: 640px) {
+      .loop-display { grid-template-columns: 1fr 1fr; }
+      .values-grid { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
@@ -97,32 +181,14 @@
     </a>
 
     <div class="nav-links" id="nav-links">
-      <a href="/app/pomodoro.html" class="nav-link">Timer</a>
-      <a href="/#features" class="nav-link">Features</a>
-      <a href="/blog/" class="nav-link">Blog</a>
-      <a href="/pages/pricing.html" class="nav-link">Pricing</a>
-      <a href="/pages/about.html" class="nav-link" aria-current="page" style="color:var(--brand-primary); font-weight:700;">About</a>
+      <a href="/pages/features.html" class="nav-link">Features</a>
+      <a href="/blog/en/" class="nav-link">Blog</a>
+      <a href="/pages/about.html" class="nav-link" aria-current="page" style="color:var(--brand-primary);font-weight:700;">About</a>
     </div>
 
     <div class="nav-actions">
-      <div class="lang-switcher" style="position:relative; display:inline-block;">
-        <button class="btn-icon lang-btn" id="lang-menu-btn" aria-label="Select Language" title="Select Language">
-          <i class="fas fa-globe"></i>
-        </button>
-        <div class="lang-dropdown" id="lang-dropdown" style="display:none; position:absolute; top:120%; right:0; background:var(--bg-surface); border:1px solid var(--border-color); border-radius:12px; padding:0.5rem; min-width:150px; z-index:999; flex-direction:column; gap:0.2rem; box-shadow:var(--shadow-lg);">
-          <a href="/pages/about.html" class="lang-option" style="display:block; padding:0.5rem 1rem; color:var(--text-primary); text-decoration:none; border-radius:6px; font-size:0.85rem;">🇺🇸 English</a>
-          <a href="/blog/hi/" class="lang-option" style="display:block; padding:0.5rem 1rem; color:var(--text-primary); text-decoration:none; border-radius:6px; font-size:0.85rem;">🇮🇳 Hindi</a>
-          <a href="/blog/ne/" class="lang-option" style="display:block; padding:0.5rem 1rem; color:var(--text-primary); text-decoration:none; border-radius:6px; font-size:0.85rem;">🇳🇵 Nepali</a>
-          <a href="/blog/es/" class="lang-option" style="display:block; padding:0.5rem 1rem; color:var(--text-primary); text-decoration:none; border-radius:6px; font-size:0.85rem;">🇪🇸 Spanish</a>
-          <a href="/blog/vi/" class="lang-option" style="display:block; padding:0.5rem 1rem; color:var(--text-primary); text-decoration:none; border-radius:6px; font-size:0.85rem;">🇻🇳 Vietnamese</a>
-          <a href="/blog/ru/" class="lang-option" style="display:block; padding:0.5rem 1rem; color:var(--text-primary); text-decoration:none; border-radius:6px; font-size:0.85rem;">🇷🇺 Русский</a>
-        </div>
-      </div>
-
-      <button class="btn-icon" id="theme-toggle" aria-label="Toggle theme">
-        <i class="fas fa-sun"></i>
-      </button>
-      <a href="/app/dashboard.html" class="nav-link">Log in</a>
+      <button class="btn-icon" id="theme-toggle" aria-label="Toggle theme"><i class="fas fa-sun"></i></button>
+      <a href="/app/dashboard.html" class="nav-link" style="font-size:0.875rem;">Open App</a>
       <a href="/app/dashboard.html" class="btn-primary">Start Focusing</a>
     </div>
 
@@ -132,60 +198,132 @@
   </div>
 </nav>
 
-<!-- Mobile Drawer -->
 <div class="nav-drawer" id="nav-drawer" role="dialog" aria-modal="true" aria-label="Mobile navigation">
-  <a href="/app/pomodoro.html" class="nav-drawer-link">Timer</a>
-  <a href="/#features" class="nav-drawer-link">Features</a>
-  <a href="/blog/" class="nav-drawer-link">Blog</a>
-  <a href="/pages/pricing.html" class="nav-drawer-link">Pricing</a>
-  <a href="/pages/about.html" class="nav-drawer-link" style="color:var(--brand-primary); font-weight:700;">About</a>
-  <div style="display:flex; gap:1rem; margin-top:2rem;">
-    <a href="/app/dashboard.html" class="btn-secondary">Log in</a>
+  <a href="/pages/features.html" class="nav-drawer-link">Features</a>
+  <a href="/blog/en/" class="nav-drawer-link">Blog</a>
+  <a href="/pages/about.html" class="nav-drawer-link" style="color:var(--brand-primary);font-weight:700;">About</a>
+  <div style="display:flex;gap:1rem;margin-top:2rem;">
+    <a href="/app/dashboard.html" class="btn-secondary">Open App</a>
     <a href="/app/dashboard.html" class="btn-primary">Start Focusing</a>
   </div>
 </div>
 
 <main id="main-content">
+
+  <!-- Breadcrumb -->
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Home</a>
+    <i class="fas fa-chevron-right" style="font-size:0.65rem;"></i>
+    <span>About</span>
+  </nav>
+
+  <!-- Hero -->
   <section class="about-hero">
-    <div class="container" style="max-width:860px; margin:0 auto; padding:0 1.5rem;">
-      <div class="badge" style="background:var(--brand-soft); color:#926000; font-weight:700; margin-bottom:1rem; display:inline-block; padding:0.35rem 0.9rem; border-radius:999px;">
-        <i class="fas fa-sparkles"></i> Our Story
-      </div>
-      <h1>Focus is your superpower.</h1>
-      <p>FlowPomodoro was built with a clear vision: help students, creators, and knowledge workers enter deep flow in a world full of constant distractions.</p>
+    <div class="container">
+      <div class="badge"><i class="fas fa-circle-info"></i> Our Story</div>
+      <h1>One workspace for planning, focusing, and tracking your work.</h1>
+      <p>FlowPomodoro started as a Pomodoro timer — and grew into something more: a complete system for turning goals into real, measurable progress.</p>
     </div>
   </section>
 
-  <div class="about-section">
+  <div class="about-wrap">
+
+    <!-- The Philosophy -->
     <div class="about-card">
-      <h2>The Flow Philosophy</h2>
-      <p>We live in an attention economy where notifications, feeds, and open tabs fight for every second of our cognitive bandwidth. Yet every meaningful achievement—writing code, studying for exams, creating art, or solving complex problems—requires uninterrupted deep focus.</p>
-      <p>The <strong>Pomodoro Technique</strong> is not just a timer; it is a psychological contract with yourself: work deeply for 25 minutes, then recharge with a clean conscience. Small, structured sessions compound into extraordinary results.</p>
-      
+      <h2>The Problem We're Solving</h2>
+      <p>Most people don't struggle with <em>wanting</em> to be productive. They struggle with the gap between intentions and action. They have goals in their head, a to-do list on paper, and a calendar that doesn't reflect any of it — and they spend their best hours reacting instead of doing focused work.</p>
+      <p>Planning, focusing, and tracking are three separate habits that most tools treat as three separate products. You need a goal-setting app, then a calendar, then a focus timer, then a habit tracker. The overhead of managing multiple tools becomes its own productivity tax.</p>
+      <p><strong>FlowPomodoro was built to close that gap.</strong> One workspace where your goals drive your schedule, your schedule drives your focus sessions, and your sessions feed back into measurable progress.</p>
+    </div>
+
+    <!-- The Productivity Loop -->
+    <div class="about-card">
+      <h2>The Productivity Loop</h2>
+      <p>FlowPomodoro is built around a simple, repeatable cycle. Every feature in the workspace serves one of these six steps:</p>
+
+      <div class="loop-display">
+        <div class="loop-box">
+          <i class="fas fa-bullseye"></i>
+          <h4>Set Goals</h4>
+          <p>Define what matters. Create goals with daily and weekly targets.</p>
+        </div>
+        <div class="loop-box">
+          <i class="fas fa-calendar-days"></i>
+          <h4>Plan</h4>
+          <p>Block time in the Planner before distractions fill your day.</p>
+        </div>
+        <div class="loop-box">
+          <i class="fas fa-stopwatch"></i>
+          <h4>Focus</h4>
+          <p>Work with distraction-free Pomodoro sessions tied to goals.</p>
+        </div>
+        <div class="loop-box">
+          <i class="fas fa-chart-bar"></i>
+          <h4>Track</h4>
+          <p>Measure actual focus time per goal, daily and weekly.</p>
+        </div>
+        <div class="loop-box">
+          <i class="fas fa-rotate-left"></i>
+          <h4>Review</h4>
+          <p>Reflect on what worked and what didn't each week.</p>
+        </div>
+        <div class="loop-box">
+          <i class="fas fa-arrow-trend-up"></i>
+          <h4>Improve</h4>
+          <p>Apply what you learned. Plan better next week. Repeat.</p>
+        </div>
+      </div>
+
+      <p>Small improvements compound. A person who plans 10 minutes better each week and reviews honestly at the end produces significantly better results over months and years than someone working harder with no system.</p>
+    </div>
+
+    <!-- The Pomodoro Technique -->
+    <div class="about-card">
+      <h2>Why the Pomodoro Technique?</h2>
+      <p>The <strong>Pomodoro Technique</strong> — developed by Francesco Cirillo — structures work into focused intervals (typically 25 minutes) separated by short breaks. It works not just as a timer, but as a psychological contract with yourself: for the next 25 minutes, this one thing gets your full attention.</p>
+      <p>Research on sustained attention suggests that the human brain is not built for uninterrupted focus over long periods. Structured work intervals with intentional breaks help maintain cognitive performance, reduce decision fatigue, and make it easier to start tasks that feel overwhelming.</p>
+      <p>FlowPomodoro supports standard 25/5 intervals, 50/10 deep work sprints, and fully customizable durations — because different types of work require different rhythms.</p>
+    </div>
+
+    <!-- Design Philosophy / Values -->
+    <div class="about-card">
+      <h2>How We Build</h2>
+      <p>A few principles guide every decision in FlowPomodoro:</p>
+
       <div class="values-grid">
         <div class="value-box">
           <i class="fas fa-shield-halved"></i>
-          <h3>Distraction Free</h3>
-          <p>No ads, no clickbait popups, and no intrusive bloatware.</p>
+          <h3>Honest, Not Inflated</h3>
+          <p>No fake statistics, no invented social proof, no dark patterns. Every claim we make is something you can verify yourself.</p>
+        </div>
+        <div class="value-box">
+          <i class="fas fa-link"></i>
+          <h3>Connected, Not Fragmented</h3>
+          <p>Every feature connects to the others. Goals feed the planner, the planner feeds focus sessions, sessions feed analytics.</p>
         </div>
         <div class="value-box">
           <i class="fas fa-bolt"></i>
-          <h3>Lightning Fast</h3>
-          <p>Starts instantly in any browser. No login required to focus.</p>
+          <h3>Fast and Simple</h3>
+          <p>Start immediately. No signup required to focus. The app opens in seconds and stays out of your way while you work.</p>
         </div>
         <div class="value-box">
-          <i class="fas fa-heart"></i>
-          <h3>Made for Humans</h3>
-          <p>Calm aesthetics with soothing ambient audio and dark mode.</p>
+          <i class="fas fa-eye-slash"></i>
+          <h3>Distraction-Free</h3>
+          <p>No ads, no clickbait, no notification noise. FlowPomodoro's job is to help you focus — not compete for your attention.</p>
         </div>
       </div>
     </div>
 
+    <!-- CTA Card -->
     <div class="about-card" style="text-align:center;">
-      <h2>Ready to enter your flow state?</h2>
-      <p style="max-width:500px; margin:0 auto 2rem auto;">Start your next 25-minute Pomodoro session today. Free forever.</p>
-      <a href="/app/dashboard.html" class="btn-primary btn-lg"><i class="fas fa-play"></i> Start Focusing Free</a>
+      <h2>Try the system.</h2>
+      <p>Set a goal. Block time in the planner. Run your first Pomodoro. See your progress in Analytics. The loop is waiting.</p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+        <a href="/app/dashboard.html" class="btn-primary btn-lg"><i class="fas fa-play"></i> Start Focusing — Free</a>
+        <a href="/pages/features.html" class="btn-secondary btn-lg">Explore Features</a>
+      </div>
     </div>
+
   </div>
 </main>
 
@@ -198,27 +336,28 @@
           <div class="logo-dot"><i class="fas fa-stopwatch"></i></div>
           FlowPomodoro
         </a>
-        <p>A beautiful Pomodoro timer to help you focus deeply, beat procrastination, and build better habits.</p>
+        <p>One workspace for planning, focusing, and tracking your work. Free forever.</p>
       </div>
       <div class="footer-col">
         <div class="fc-title">Product</div>
         <ul>
-          <li><a href="/app/pomodoro.html">Timer</a></li>
-          <li><a href="/#features">Features</a></li>
-          <li><a href="/pages/pricing.html">Pricing</a></li>
+          <li><a href="/pages/features.html">Features</a></li>
+          <li><a href="/app/dashboard.html">Open App</a></li>
+          <li><a href="/timer/pomodoro-timer.html">Online Timers</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <div class="fc-title">Resources</div>
         <ul>
-          <li><a href="/blog/">Blog</a></li>
-          <li><a href="/pages/about.html">About</a></li>
-          <li><a href="/pages/download.html">Download</a></li>
+          <li><a href="/blog/en/">Blog</a></li>
+          <li><a href="/blog/en/what-is-the-pomodoro-method.html">Pomodoro Guide</a></li>
+          <li><a href="/blog/en/daily-planning-system.html">Planning Guide</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <div class="fc-title">Legal</div>
+        <div class="fc-title">Company</div>
         <ul>
+          <li><a href="/pages/about.html">About</a></li>
           <li><a href="/pages/privacy.html">Privacy</a></li>
           <li><a href="/pages/terms.html">Terms</a></li>
         </ul>
@@ -229,7 +368,7 @@
       <div class="fb-links">
         <a href="/pages/privacy.html">Privacy</a>
         <a href="/pages/terms.html">Terms</a>
-        <a href="/blog/">Blog</a>
+        <a href="/blog/en/">Blog</a>
       </div>
     </div>
   </div>
@@ -240,7 +379,7 @@
   const html = document.documentElement;
   const savedTheme = localStorage.getItem('flow_theme') || 'light';
   html.setAttribute('data-theme', savedTheme);
-  if(themeBtn) themeBtn.innerHTML = savedTheme === 'dark' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+  if(themeBtn) themeBtn.innerHTML = savedTheme === 'dark' ? '<i class="fas fa-moon"></i>' : '<i class="fas fa-sun"></i>';
 
   if(themeBtn) {
     themeBtn.addEventListener('click', () => {
@@ -248,7 +387,7 @@
       const newTheme = isDark ? 'light' : 'dark';
       html.setAttribute('data-theme', newTheme);
       localStorage.setItem('flow_theme', newTheme);
-      themeBtn.innerHTML = newTheme === 'dark' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+      themeBtn.innerHTML = newTheme === 'dark' ? '<i class="fas fa-moon"></i>' : '<i class="fas fa-sun"></i>';
     });
   }
 
@@ -257,22 +396,17 @@
   if(hamburger && drawer) {
     hamburger.addEventListener('click', () => {
       const isOpen = drawer.classList.toggle('open');
+      hamburger.classList.toggle('open');
       hamburger.setAttribute('aria-expanded', isOpen);
     });
+    drawer.querySelectorAll('a').forEach(l => l.addEventListener('click', () => {
+      drawer.classList.remove('open');
+      hamburger.classList.remove('open');
+    }));
   }
 
-  const langBtn = document.getElementById('lang-menu-btn');
-  const langDropdown = document.getElementById('lang-dropdown');
-  if(langBtn && langDropdown) {
-    langBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      langDropdown.style.display = langDropdown.style.display === 'flex' ? 'none' : 'flex';
-    });
-    document.addEventListener('click', () => {
-      langDropdown.style.display = 'none';
-    });
-  }
+  const nav = document.getElementById('main-nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 20));
 </script>
-
 </body>
 </html>

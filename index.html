@@ -11,8 +11,8 @@
   </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FlowPomodoro — Free Pomodoro Timer, Deep Work Focus Tool</title>
-  <meta name="description" content="FlowPomodoro is a premium, distraction-free Pomodoro timer and deep work focus tool. Track sessions, set goals, and enter flow state. No signup required.">
+  <title>FlowPomodoro — Plan Your Day. Focus Deeply. Build Better Habits.</title>
+  <meta name="description" content="FlowPomodoro is an all-in-one productivity workspace. Set goals, plan your day, focus with Pomodoro sessions, track analytics, and review your progress — free, no signup required.">
   <link rel="canonical" href="https://flowpomodoro.xyz/">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#FAFAF7">
@@ -22,10 +22,32 @@
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://flowpomodoro.xyz/">
-  <meta property="og:title" content="FlowPomodoro — Free Pomodoro Timer & Deep Work Tool">
-  <meta property="og:description" content="Premium focus timer for students, developers, and professionals. Track sessions, build streaks, enter flow state.">
+  <meta property="og:title" content="FlowPomodoro — Plan, Focus & Track Your Productivity">
+  <meta property="og:description" content="One workspace for planning, focusing, and tracking your work. Goals, Planner, Pomodoro, Analytics, Challenges, Reviews — all free.">
   <meta property="og:image" content="https://flowpomodoro.xyz/og-image.jpg">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="FlowPomodoro — Plan, Focus & Track Your Productivity">
+  <meta name="twitter:description" content="One workspace for planning, focusing, and tracking your work. Goals, Planner, Pomodoro, Analytics — free.">
+  <meta name="twitter:image" content="https://flowpomodoro.xyz/og-image.jpg">
+
+  <!-- JSON-LD: WebApplication -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "FlowPomodoro",
+    "url": "https://flowpomodoro.xyz/",
+    "description": "An all-in-one productivity workspace for planning, focusing, and tracking your progress. Features include Goals, Planner, Pomodoro Timer, Analytics, Challenges, and Reviews.",
+    "applicationCategory": "ProductivityApplication",
+    "operatingSystem": "Web",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": ["Pomodoro Timer", "Goals & Habits", "Flexible Planner", "Analytics", "Challenges", "Reviews"]
+  }
+  </script>
 
   <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,6 +61,510 @@
   <link rel="stylesheet" href="/css/layout.css">
   <link rel="stylesheet" href="/css/components.css">
   <link rel="stylesheet" href="/style.css">
+
+  <style>
+    /* ── HERO MULTI-CARD VISUAL ──────────────────────────── */
+    .hero-workspace {
+      position: relative;
+      width: 100%;
+      max-width: 480px;
+    }
+    .hw-card {
+      background: #111722;
+      border: 1px solid #252B36;
+      border-radius: 16px;
+      color: #F8FAFC;
+    }
+    .hw-main {
+      padding: 1.5rem;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.18);
+    }
+    .hw-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.25rem;
+    }
+    .hw-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #FFB800;
+    }
+    .hw-dot { width: 8px; height: 8px; border-radius: 50%; background: #FFB800; }
+    .hw-goal-row {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.75rem;
+      background: rgba(255,255,255,0.04);
+      border-radius: 10px;
+      margin-bottom: 0.5rem;
+    }
+    .hw-goal-icon { font-size: 1.1rem; }
+    .hw-goal-name { font-weight: 600; font-size: 0.9rem; }
+    .hw-goal-meta { font-size: 0.75rem; color: #64748B; }
+    .hw-goal-bar-wrap { flex: 1; }
+    .hw-goal-bar-track { height: 4px; background: #252B36; border-radius: 4px; overflow: hidden; }
+    .hw-goal-bar-fill { height: 100%; background: #FFB800; border-radius: 4px; }
+
+    .hw-planner {
+      margin-top: 0.75rem;
+      padding: 1rem 1.25rem;
+      box-shadow: 0 12px 32px rgba(0,0,0,0.15);
+    }
+    .hw-planner-header {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #64748B;
+      margin-bottom: 0.75rem;
+    }
+    .hw-block {
+      display: flex;
+      gap: 0.75rem;
+      align-items: stretch;
+      margin-bottom: 0.5rem;
+    }
+    .hw-block-time { font-size: 0.7rem; color: #64748B; white-space: nowrap; padding-top: 2px; }
+    .hw-block-bar { width: 3px; border-radius: 3px; min-height: 32px; }
+    .hw-block-content { flex: 1; }
+    .hw-block-title { font-size: 0.8rem; font-weight: 600; }
+    .hw-block-sub { font-size: 0.7rem; color: #64748B; }
+
+    .hw-timer-chip {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255,184,0,0.1);
+      border: 1px solid rgba(255,184,0,0.2);
+      border-radius: 999px;
+      padding: 0.3rem 0.75rem;
+      font-size: 0.75rem;
+      color: #FFB800;
+      font-weight: 700;
+      margin-top: 0.75rem;
+      display: inline-flex;
+    }
+
+    /* ── PRODUCTIVITY LOOP ───────────────────────────────── */
+    .loop-section {
+      padding: clamp(5rem, 10vw, 7rem) 0;
+      background: var(--bg-surface-hover);
+    }
+    .loop-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      position: relative;
+    }
+    .loop-step {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 1.75rem;
+      transition: all 0.25s;
+      position: relative;
+    }
+    .loop-step:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: rgba(255,184,0,0.3); }
+    .loop-num {
+      width: 36px; height: 36px;
+      background: var(--brand-primary);
+      color: #111827;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 800; font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+    .loop-step h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .loop-step p { font-size: 0.875rem; color: var(--text-secondary); line-height: 1.6; margin: 0; }
+    .loop-repeat {
+      text-align: center;
+      grid-column: 1 / -1;
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      color: var(--brand-primary);
+      font-weight: 700;
+      font-size: 0.9rem;
+      letter-spacing: 0.05em;
+    }
+
+    /* ── FEATURE ROWS ────────────────────────────────────── */
+    .feat-rows-section {
+      padding: clamp(5rem, 10vw, 7rem) 0;
+    }
+    .feat-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(2rem, 5vw, 5rem);
+      align-items: center;
+      padding: clamp(3rem, 6vw, 5rem) 0;
+      border-bottom: 1px solid var(--border-color);
+    }
+    .feat-row:last-child { border-bottom: none; }
+    .feat-row.rev { direction: rtl; }
+    .feat-row.rev > * { direction: ltr; }
+    .feat-row-text {}
+    .feat-row-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #B28000;
+      background: var(--brand-soft);
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      margin-bottom: 1rem;
+    }
+    html[data-theme="dark"] .feat-row-eyebrow { color: var(--brand-primary); background: rgba(255,184,0,0.1); }
+    .feat-row-text h2 { font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 800; letter-spacing: -0.025em; margin-bottom: 1rem; }
+    .feat-row-text p { font-size: 1rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 1.5rem; }
+    .feat-row-text .feat-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: var(--brand-primary);
+      font-weight: 700;
+      font-size: 0.9rem;
+      transition: gap 0.2s;
+    }
+    .feat-row-text .feat-link:hover { gap: 0.65rem; }
+    .feat-row-visual {
+      background: #111722;
+      border: 1px solid #252B36;
+      border-radius: 20px;
+      padding: 1.75rem;
+      color: #F8FAFC;
+      min-height: 220px;
+    }
+    .feat-row-visual.light-bg {
+      background: var(--bg-surface);
+      border-color: var(--border-color);
+      color: var(--text-primary);
+    }
+
+    /* Goals mockup */
+    .mock-goals .mg-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.875rem 1rem;
+      background: rgba(255,255,255,0.04);
+      border-radius: 10px;
+      margin-bottom: 0.625rem;
+    }
+    .mock-goals .mg-item:last-child { margin-bottom: 0; }
+    .mock-goals .mg-icon { font-size: 1.2rem; }
+    .mock-goals .mg-name { font-weight: 600; font-size: 0.875rem; }
+    .mock-goals .mg-targets { font-size: 0.7rem; color: #64748B; }
+    .mock-goals .mg-progress {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .mock-goals .mg-pct { font-size: 0.8rem; font-weight: 700; color: #FFB800; }
+    .mg-ring-small {
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      background: conic-gradient(#FFB800 var(--pct), #252B36 var(--pct));
+      display: flex; align-items: center; justify-content: center;
+    }
+
+    /* Planner mockup */
+    .mock-planner .mp-view-tabs {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    .mp-tab {
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 0.25rem 0.625rem;
+      border-radius: 6px;
+      color: #64748B;
+    }
+    .mp-tab.active { background: rgba(255,184,0,0.15); color: #FFB800; }
+    .mock-planner .mp-blocks {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .mp-block {
+      display: flex;
+      gap: 0.75rem;
+      align-items: stretch;
+    }
+    .mp-time { font-size: 0.68rem; color: #64748B; min-width: 42px; padding-top: 4px; }
+    .mp-stripe { width: 3px; border-radius: 3px; }
+    .mp-info { flex: 1; padding: 0.5rem 0.75rem; border-radius: 8px; }
+    .mp-info-title { font-size: 0.8rem; font-weight: 600; }
+    .mp-info-sub { font-size: 0.68rem; color: #64748B; }
+
+    /* Analytics mockup */
+    .mock-analytics { }
+    .ma-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 1rem; }
+    .ma-stat {
+      background: rgba(255,255,255,0.05);
+      border-radius: 10px;
+      padding: 0.875rem;
+    }
+    .ma-val { font-size: 1.4rem; font-weight: 700; font-family: 'Outfit', sans-serif; }
+    .ma-lbl { font-size: 0.7rem; color: #64748B; }
+    .ma-chart { height: 60px; display: flex; align-items: flex-end; gap: 4px; }
+    .ma-bar { flex: 1; border-radius: 3px 3px 0 0; background: rgba(255,184,0,0.2); }
+    .ma-bar.active { background: #FFB800; }
+
+    /* Challenges mockup */
+    .mock-challenges .mc-challenge {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.875rem;
+      background: rgba(255,255,255,0.04);
+      border-radius: 10px;
+      margin-bottom: 0.625rem;
+    }
+    .mc-icon-box {
+      width: 40px; height: 40px;
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .mc-name { font-size: 0.85rem; font-weight: 600; }
+    .mc-days { font-size: 0.7rem; color: #64748B; }
+    .mc-streak { margin-left: auto; font-size: 0.8rem; font-weight: 700; color: #FFB800; }
+
+    /* Reviews mockup */
+    .mock-reviews {}
+    .mr-card {
+      background: rgba(255,255,255,0.04);
+      border-radius: 12px;
+      padding: 1rem;
+      margin-bottom: 0.625rem;
+    }
+    .mr-week { font-size: 0.7rem; color: #64748B; margin-bottom: 0.5rem; }
+    .mr-score-row { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem; }
+    .mr-score { font-size: 1.5rem; font-weight: 800; font-family: 'Outfit', sans-serif; color: #FFB800; }
+    .mr-label { font-size: 0.8rem; color: #94A3B8; }
+    .mr-note { font-size: 0.75rem; color: #64748B; font-style: italic; }
+
+    /* ── DEMO STORY ──────────────────────────────────────── */
+   .demo-section {
+  padding: clamp(5rem, 10vw, 7rem) 0;
+  background: #F8FAFC;
+  color: #111827;
+}
+
+.demo-section .section-eyebrow {
+  color: #B28000;
+  background: rgba(255, 184, 0, 0.10);
+}
+
+.demo-section h2 {
+  color: #111827 !important;
+}
+
+.demo-section .section-desc {
+  color: #64748B !important;
+}
+
+.demo-steps {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+  margin-top: 3.5rem;
+  position: relative;
+}
+
+.demo-steps::before {
+  content: '';
+  position: absolute;
+  top: 40px;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    #D1D5DB 20%,
+    #D1D5DB 80%,
+    transparent
+  );
+}
+
+.demo-step {
+  background: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-radius: 14px;
+  padding: 1.25rem 1rem;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.06);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.demo-step:hover {
+  transform: translateY(-3px);
+  border-color: rgba(255, 184, 0, 0.45);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.10);
+}
+
+.demo-step-num {
+  width: 28px;
+  height: 28px;
+  background: #FFB800;
+  color: #111827;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 0.75rem;
+  margin: 0 auto 1rem;
+  position: relative;
+  z-index: 2;
+}
+
+.demo-step-tag {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #64748B;
+  margin-bottom: 0.4rem;
+}
+
+.demo-step-title {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 0.4rem;
+}
+
+.demo-step-val {
+  font-size: 0.75rem;
+  color: #64748B;
+}
+
+.demo-step-highlight {
+  color: #B28000;
+  font-weight: 700;
+}
+
+.demo-arrow {
+  position: absolute;
+  right: -0.7rem;
+  top: 32px;
+  width: 1.4rem;
+  height: 1.4rem;
+  background: #F8FAFC;
+  border: 1px solid #E5E7EB;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #94A3B8;
+  font-size: 0.55rem;
+  z-index: 3;
+}
+
+    /* -- DEMO END ------ */
+
+    /* ── WHO IS IT FOR ───────────────────────────────────── */
+    .personas-section {
+      padding: clamp(5rem, 10vw, 7rem) 0;
+    }
+    .personas-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-top: 3rem;
+    }
+    .persona-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 1.75rem;
+      transition: all 0.25s;
+    }
+    .persona-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); border-color: rgba(255,184,0,0.25); }
+    .persona-emoji { font-size: 1.75rem; margin-bottom: 1rem; display: block; }
+    .persona-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .persona-card p { font-size: 0.875rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 1rem; }
+    .persona-link {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--brand-primary);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    /* ── BENEFITS ────────────────────────────────────────── */
+    .benefits-section {
+      padding: clamp(5rem, 10vw, 7rem) 0;
+      background: var(--bg-surface-hover);
+    }
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 3rem;
+    }
+    .benefit-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.875rem;
+      padding: 1.25rem;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+    }
+    .benefit-check {
+      width: 28px; height: 28px;
+      background: var(--brand-primary);
+      color: #111827;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.75rem;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .benefit-item h4 { font-size: 0.9rem; font-weight: 700; margin-bottom: 0.25rem; }
+    .benefit-item p { font-size: 0.8rem; color: var(--text-secondary); margin: 0; line-height: 1.5; }
+
+    /* ── RESPONSIVE ──────────────────────────────────────── */
+    @media (max-width: 960px) {
+      .loop-grid { grid-template-columns: 1fr 1fr; }
+      .feat-row { grid-template-columns: 1fr; }
+      .feat-row.rev { direction: ltr; }
+      .demo-steps { grid-template-columns: 1fr 1fr; }
+      .demo-steps::before { display: none; }
+      .demo-arrow { display: none; }
+      .personas-grid { grid-template-columns: 1fr 1fr; }
+      .benefits-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 640px) {
+      .loop-grid { grid-template-columns: 1fr; }
+      .demo-steps { grid-template-columns: 1fr; }
+      .personas-grid { grid-template-columns: 1fr; }
+      .hw-goal-bar-wrap { display: none; }
+    }
+  </style>
 </head>
 <body>
 
@@ -51,10 +577,8 @@
     </a>
 
     <div class="nav-links" id="nav-links">
-      <a href="/app/pomodoro.html" class="nav-link">Timer</a>
-      <a href="#features" class="nav-link">Features</a>
-      <a href="/blog/" class="nav-link">Blog</a>
-      <a href="/pages/pricing.html" class="nav-link">Pricing</a>
+      <a href="/pages/features.html" class="nav-link">Features</a>
+      <a href="/blog/en/" class="nav-link">Blog</a>
       <a href="/pages/about.html" class="nav-link">About</a>
     </div>
 
@@ -62,8 +586,8 @@
       <button class="btn-icon" id="theme-toggle" aria-label="Toggle theme">
         <i class="fas fa-sun"></i>
       </button>
-      <a href="/app/dashboard.html" class="nav-link">Log in</a>
-      <a href="/app/dashboard.html" class="btn-primary">Start Focusing</a>
+      <a href="/app/dashboard.html" class="nav-link" style="font-size:0.875rem;">Open App</a>
+      <a href="/app/dashboard.html" class="btn-primary" onclick="gtag('event','start_focusing_click',{location:'nav'})">Start Focusing</a>
     </div>
 
     <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false">
@@ -74,256 +598,626 @@
 
 <!-- Mobile Drawer -->
 <div class="nav-drawer" id="nav-drawer" role="dialog" aria-modal="true" aria-label="Mobile navigation">
-  <a href="/app/pomodoro.html" class="nav-drawer-link">Timer</a>
-  <a href="#features" class="nav-drawer-link">Features</a>
-  <a href="/blog/" class="nav-drawer-link">Blog</a>
-  <a href="/pages/pricing.html" class="nav-drawer-link">Pricing</a>
+  <a href="/pages/features.html" class="nav-drawer-link">Features</a>
+  <a href="/blog/en/" class="nav-drawer-link">Blog</a>
   <a href="/pages/about.html" class="nav-drawer-link">About</a>
   <div style="display:flex;gap:1rem;margin-top:2rem;">
-    <a href="/app/dashboard.html" class="btn-secondary">Log in</a>
-    <a href="/app/dashboard.html" class="btn-primary">Start Focusing</a>
+    <a href="/app/dashboard.html" class="btn-secondary">Open App</a>
+    <a href="/app/dashboard.html" class="btn-primary" onclick="gtag('event','start_focusing_click',{location:'mobile_nav'})">Start Focusing</a>
   </div>
 </div>
 
 <main id="main-content">
 
-  <!-- ── Hero ──────────────────────────────────────────────────────────────── -->
+  <!-- ── HERO ─────────────────────────────────────────────────────────────── -->
   <section class="hero-section" aria-label="Hero">
     <div class="container hero-container">
       <div class="hero-content">
-        <div class="hero-eyebrow" role="note">Your time. Your flow.</div>
-        
+        <div class="hero-eyebrow" role="note">
+          <i class="fas fa-layer-group" style="font-size:0.7rem;"></i>
+          Productivity Workspace
+        </div>
+
         <h1>
-          Focus deeply.<br>
-          Get <span class="text-brand">more</span> done.
+          Plan Your Day.<br>
+          Focus Deeply.<br>
+          <span class="text-brand">Build Better Habits.</span>
         </h1>
-        
+
         <p class="hero-subtitle">
-          A beautiful Pomodoro timer to help you stay focused, beat procrastination, and build better habits.
+          FlowPomodoro brings goals, flexible planning, focused Pomodoro sessions, analytics, challenges, and reviews into one simple productivity workspace.
         </p>
-        
+
         <div class="cta-group">
-          <a href="/app/dashboard.html" class="btn-primary btn-lg">
-            <i class="fas fa-play" aria-hidden="true"></i> Start Focusing
+          <a href="/app/dashboard.html" class="btn-primary btn-lg" onclick="gtag('event','start_focusing_click',{location:'hero'})">
+            <i class="fas fa-play" aria-hidden="true"></i> Start Focusing — Free
           </a>
           <a href="#how-it-works" class="btn-secondary btn-lg">
-            <i class="fas fa-info-circle"></i> How it works
+            See How It Works
           </a>
         </div>
-        
+
         <div class="trust-row">
           <div class="trust-item"><i class="fas fa-check"></i> No signup required</div>
           <div class="trust-item"><i class="fas fa-check"></i> Free to start</div>
-          <div class="trust-item"><i class="fas fa-check"></i> Works in your browser</div>
+          <div class="trust-item"><i class="fas fa-check"></i> Works in browser</div>
         </div>
       </div>
 
-      <!-- Hero Visual: Realistic Timer Card -->
+      <!-- Hero Visual: Multi-card workspace preview -->
       <div class="hero-visual">
-        <div class="hero-timer-card">
-          <div class="ht-tabs">
-            <div class="ht-tab active">Pomodoro</div>
-            <div class="ht-tab">Short Break</div>
-            <div class="ht-tab">Long Break</div>
-          </div>
-          
-          <div class="ht-ring-container">
-            <svg class="ring-svg" viewBox="0 0 360 360">
-              <circle cx="180" cy="180" r="160" fill="none" stroke="#252B36" stroke-width="8"></circle>
-              <circle cx="180" cy="180" r="160" fill="none" stroke="#FFB800" stroke-width="8" stroke-dasharray="1006" stroke-dashoffset="150" stroke-linecap="round"></circle>
-            </svg>
-            <div class="ht-time">
-              <div class="ht-label"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#FFB800;margin-right:6px;"></span>FOCUS TIME</div>
-              <div class="ht-time-text">25:00</div>
+        <div class="hero-workspace">
+          <!-- Goals card -->
+          <div class="hw-card hw-main">
+            <div class="hw-header">
+              <div class="hw-label"><i class="fas fa-bullseye" style="margin-right:5px;font-size:0.65rem;"></i>Goals</div>
+              <div class="hw-dot"></div>
+            </div>
+            <div class="hw-goal-row">
+              <div class="hw-goal-icon">📱</div>
+              <div>
+                <div class="hw-goal-name">Android Development</div>
+                <div class="hw-goal-meta">Daily: 5h · Weekly: 35h</div>
+              </div>
+              <div class="hw-goal-bar-wrap">
+                <div class="hw-goal-bar-track"><div class="hw-goal-bar-fill" style="width:72%"></div></div>
+              </div>
+              <div class="mg-pct" style="font-size:0.75rem;font-weight:700;color:#FFB800;margin-left:0.5rem;">72%</div>
+            </div>
+            <div class="hw-goal-row">
+              <div class="hw-goal-icon">📚</div>
+              <div>
+                <div class="hw-goal-name">IELTS Preparation</div>
+                <div class="hw-goal-meta">Daily: 4h · Weekly: 28h</div>
+              </div>
+              <div class="hw-goal-bar-wrap">
+                <div class="hw-goal-bar-track"><div class="hw-goal-bar-fill" style="width:45%"></div></div>
+              </div>
+              <div class="mg-pct" style="font-size:0.75rem;font-weight:700;color:#FFB800;margin-left:0.5rem;">45%</div>
+            </div>
+
+            <!-- Planner mini -->
+            <div class="hw-card hw-planner" style="margin-top:0.75rem;">
+              <div class="hw-planner-header"><i class="fas fa-calendar-days" style="margin-right:4px;"></i>Today's Plan</div>
+              <div class="hw-block">
+                <div class="hw-block-time">09:00</div>
+                <div class="hw-block-bar" style="background:#FFB800;"></div>
+                <div class="hw-block-content">
+                  <div class="hw-block-title">Android Development</div>
+                  <div class="hw-block-sub">2 hours · 4 Pomodoros</div>
+                </div>
+              </div>
+              <div class="hw-block">
+                <div class="hw-block-time">11:00</div>
+                <div class="hw-block-bar" style="background:#22d3a0;"></div>
+                <div class="hw-block-content">
+                  <div class="hw-block-title">IELTS Listening</div>
+                  <div class="hw-block-sub">1.5 hours · 3 Pomodoros</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="hw-timer-chip">
+              <i class="fas fa-stopwatch"></i>
+              Focus Session: 25:00 — Android Development
             </div>
           </div>
-          
-          <button class="ht-btn"><i class="fas fa-play"></i> Start</button>
-          
-          <div class="ht-footer">
-            <div class="ht-footer-item"><i class="fas fa-volume-up"></i> Sounds</div>
-            <div class="ht-footer-item"><i class="fas fa-list-check"></i> Tasks</div>
-            <div class="ht-footer-item"><i class="fas fa-expand"></i> Fullscreen</div>
-          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ── Features ────────────────────────────────────────────────────────── -->
-  <section id="features" class="features-section">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-eyebrow">Features</span>
-        <h2>Everything you need to stay in flow</h2>
-      </div>
-
-      <div class="features-grid">
-        <div class="feat-card reveal">
-          <div class="feat-icon"><i class="fas fa-stopwatch"></i></div>
-          <h3>Pomodoro Timer</h3>
-          <p>Customizable focus and break sessions to match your workflow perfectly.</p>
-        </div>
-        <div class="feat-card reveal reveal-delay-1">
-          <div class="feat-icon"><i class="fas fa-list-check"></i></div>
-          <h3>Task Management</h3>
-          <p>Know exactly what you're working on. Tie tasks directly to focus sessions.</p>
-        </div>
-        <div class="feat-card reveal reveal-delay-2">
-          <div class="feat-icon"><i class="fas fa-chart-bar"></i></div>
-          <h3>Progress Analytics</h3>
-          <p>Track focus time, sessions, and productivity habits over days and weeks.</p>
-        </div>
-        <div class="feat-card reveal">
-          <div class="feat-icon"><i class="fas fa-music"></i></div>
-          <h3>Focus Sounds</h3>
-          <p>Use ambient background sounds (rain, cafe, white noise) while working.</p>
-        </div>
-        <div class="feat-card reveal reveal-delay-1">
-          <div class="feat-icon"><i class="fas fa-moon"></i></div>
-          <h3>Dark Mode</h3>
-          <p>Comfortable, immersive late-night focus sessions that are easy on the eyes.</p>
-        </div>
-        <div class="feat-card reveal reveal-delay-2">
-          <div class="feat-icon"><i class="fas fa-keyboard"></i></div>
-          <h3>Keyboard Shortcuts</h3>
-          <p>Control your entire timer and workflow without leaving the keyboard.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── How It Works ────────────────────────────────────────────────────── -->
-  <section id="how-it-works" class="how-section">
+  <!-- ── YOUR PRODUCTIVITY LOOP ─────────────────────────────────────────── -->
+  <section id="how-it-works" class="loop-section" aria-label="Your Productivity Loop">
     <div class="container">
       <div class="section-header reveal">
         <span class="section-eyebrow">How It Works</span>
-        <h2>Simple. Effective. Powerful.</h2>
+        <h2>Your Productivity Loop</h2>
+        <p class="section-desc">FlowPomodoro is built around a simple, repeatable system that compounds into real results.</p>
       </div>
-      
-      <div class="how-grid">
-        <div class="how-step reveal">
-          <div class="how-num">1</div>
-          <h3>Choose Your Task</h3>
-          <p class="text-secondary">Pick exactly what you want to accomplish right now.</p>
+
+      <div class="loop-grid">
+        <div class="loop-step reveal">
+          <div class="loop-num">1</div>
+          <h3><i class="fas fa-bullseye" style="color:var(--brand-primary);margin-right:0.4rem;font-size:0.9rem;"></i>Set Goals</h3>
+          <p>Define what matters most. Create goals with daily and weekly targets to keep your priorities clear.</p>
         </div>
-        <div class="how-step reveal reveal-delay-1">
-          <div class="how-num">2</div>
-          <h3>Focus & Work</h3>
-          <p class="text-secondary">Start the timer and work deeply without distractions.</p>
+        <div class="loop-step reveal reveal-delay-1">
+          <div class="loop-num">2</div>
+          <h3><i class="fas fa-calendar-days" style="color:var(--brand-primary);margin-right:0.4rem;font-size:0.9rem;"></i>Plan</h3>
+          <p>Turn goals into a realistic daily schedule. Block time for what matters before distractions fill it.</p>
         </div>
-        <div class="how-step reveal reveal-delay-2">
-          <div class="how-num">3</div>
-          <h3>Take a Break</h3>
-          <p class="text-secondary">Recharge, breathe, and prepare for the next session.</p>
+        <div class="loop-step reveal reveal-delay-2">
+          <div class="loop-num">3</div>
+          <h3><i class="fas fa-stopwatch" style="color:var(--brand-primary);margin-right:0.4rem;font-size:0.9rem;"></i>Focus</h3>
+          <p>Work distraction-free with structured Pomodoro sessions connected directly to your goals.</p>
+        </div>
+        <div class="loop-step reveal">
+          <div class="loop-num">4</div>
+          <h3><i class="fas fa-chart-bar" style="color:var(--brand-primary);margin-right:0.4rem;font-size:0.9rem;"></i>Track</h3>
+          <p>Measure your actual focus time and see where your hours go — daily, weekly, and all time.</p>
+        </div>
+        <div class="loop-step reveal reveal-delay-1">
+          <div class="loop-num">5</div>
+          <h3><i class="fas fa-rotate-left" style="color:var(--brand-primary);margin-right:0.4rem;font-size:0.9rem;"></i>Review</h3>
+          <p>Reflect on what worked and what didn't. Understand your progress and adjust your approach.</p>
+        </div>
+        <div class="loop-step reveal reveal-delay-2">
+          <div class="loop-num">6</div>
+          <h3><i class="fas fa-arrow-trend-up" style="color:var(--brand-primary);margin-right:0.4rem;font-size:0.9rem;"></i>Improve</h3>
+          <p>Use what you learned to plan better next week. Small improvements compound into lasting change.</p>
+        </div>
+        <div class="loop-repeat reveal">
+          <i class="fas fa-rotate" style="font-size:1rem;"></i>
+          &nbsp;REPEAT THE LOOP
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ── Enter Your Flow ─────────────────────────────────────────────────── -->
-  <section class="focus-exp-section">
-    <div class="container">
-      <span class="section-eyebrow" style="background:rgba(255,184,0,0.1);color:#FFB800;">Enter Your Flow</span>
-      <h2 style="font-size:clamp(2rem, 5vw, 3rem);margin-bottom:1rem;">Block out distractions.<br>Focus on what matters.</h2>
-      
-      <div class="focus-ui-mockup reveal">
-        <div class="fm-label">Deep Work</div>
-        <div class="fm-task">Build CashFlow Dashboard</div>
-        <div class="fm-timer">32:41</div>
-        <button class="btn-primary btn-lg" style="margin-bottom:2rem;"><i class="fas fa-pause"></i> Pause</button>
-        <div style="display:flex;justify-content:center;gap:2rem;color:#94A3B8;font-size:0.9rem;">
-          <span><i class="fas fa-volume-up"></i> Sounds</span>
-          <span><i class="fas fa-list-check"></i> Tasks</span>
-          <span><i class="fas fa-expand"></i> Fullscreen</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── Analytics ───────────────────────────────────────────────────────── -->
-  <section class="analytics-section">
-    <div class="container">
-      <div class="section-header reveal">
-        <h2>See your progress. Stay motivated.</h2>
-        <p class="section-desc">Track focus time, completed sessions, streaks, and productivity habits over time.</p>
-      </div>
-
-      <div class="analytics-mockup reveal">
-        <div class="stat-grid-preview">
-          <div class="sg-card">
-            <div class="sg-lbl">Focus Time</div>
-            <div class="sg-val">14h 32m</div>
-          </div>
-          <div class="sg-card">
-            <div class="sg-lbl">Sessions</div>
-            <div class="sg-val">28</div>
-          </div>
-          <div class="sg-card">
-            <div class="sg-lbl">Tasks Completed</div>
-            <div class="sg-val">36</div>
-          </div>
-          <div class="sg-card">
-            <div class="sg-lbl">Current Streak</div>
-            <div class="sg-val text-brand">7 Days</div>
-          </div>
-        </div>
-        <div class="sg-card">
-          <div class="sg-lbl" style="margin-bottom:1rem;">Weekly Focus</div>
-          <div class="sg-chart">
-            <div class="sg-bar" style="height:30%"></div>
-            <div class="sg-bar" style="height:50%"></div>
-            <div class="sg-bar" style="height:40%"></div>
-            <div class="sg-bar" style="height:70%"></div>
-            <div class="sg-bar" style="height:100%"></div>
-            <div class="sg-bar" style="height:20%"></div>
-            <div class="sg-bar" style="height:10%"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── Blog Preview ────────────────────────────────────────────────────── -->
-  <section class="blog-preview-section">
+  <!-- ── FEATURE SHOWCASE ───────────────────────────────────────────────── -->
+  <section id="features" class="feat-rows-section" aria-label="Features">
     <div class="container">
       <div class="section-header reveal">
-        <h2>Practical tips to improve your focus</h2>
+        <span class="section-eyebrow">Features</span>
+        <h2>Everything You Need to Turn Plans Into Progress</h2>
+        <p class="section-desc">Six integrated tools that work together as a complete productivity system.</p>
+      </div>
+
+      <!-- 1. Goals & Habits -->
+      <div class="feat-row reveal">
+        <div class="feat-row-text">
+          <div class="feat-row-eyebrow"><i class="fas fa-bullseye"></i> Goals & Habits</div>
+          <h2>Know what you're working toward.</h2>
+          <p>Create goals with daily and weekly time targets. Track recurring habits. Connect every focus session directly to the work that matters most to you.</p>
+          <a href="/app/goals.html" class="feat-link" onclick="gtag('event','feature_cta_click',{feature:'goals'})">
+            Create a Goal <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+        <div class="feat-row-visual mock-goals">
+          <div style="font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#64748B;margin-bottom:1rem;">
+            <i class="fas fa-bullseye" style="color:#FFB800;margin-right:5px;"></i>MY GOALS
+          </div>
+          <div class="mg-item">
+            <span class="mg-icon">📱</span>
+            <div>
+              <div class="mg-name">Android Development</div>
+              <div class="mg-targets">Daily: 5h · Weekly: 35h</div>
+            </div>
+            <div class="mg-progress">
+              <div class="mg-pct">72%</div>
+            </div>
+          </div>
+          <div class="mg-item">
+            <span class="mg-icon">📚</span>
+            <div>
+              <div class="mg-name">IELTS Preparation</div>
+              <div class="mg-targets">Daily: 4h · Weekly: 28h</div>
+            </div>
+            <div class="mg-progress">
+              <div class="mg-pct">45%</div>
+            </div>
+          </div>
+          <div class="mg-item">
+            <span class="mg-icon">💪</span>
+            <div>
+              <div class="mg-name">Morning Fitness</div>
+              <div class="mg-targets">Daily: 1h · Habit</div>
+            </div>
+            <div class="mg-progress">
+              <div class="mg-pct">100%</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Planner -->
+      <div class="feat-row rev reveal">
+        <div class="feat-row-text">
+          <div class="feat-row-eyebrow"><i class="fas fa-calendar-days"></i> Flexible Planner</div>
+          <h2>Turn goals into a realistic schedule.</h2>
+          <p>Create time blocks for your goals and activities. View your plan by day, week, or month. Protect your focus time before distractions fill your calendar.</p>
+          <a href="/app/planner.html" class="feat-link" onclick="gtag('event','feature_cta_click',{feature:'planner'})">
+            Plan My Day <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+        <div class="feat-row-visual mock-planner">
+          <div class="mp-view-tabs">
+            <div class="mp-tab active">Day</div>
+            <div class="mp-tab">Week</div>
+            <div class="mp-tab">Month</div>
+          </div>
+          <div class="mp-blocks">
+            <div class="mp-block">
+              <div class="mp-time">07:00</div>
+              <div class="mp-stripe" style="background:#22d3a0;"></div>
+              <div class="mp-info" style="background:rgba(34,211,160,0.1);">
+                <div class="mp-info-title" style="color:#22d3a0;">Morning Fitness</div>
+                <div class="mp-info-sub">07:00 – 08:00 · 1h</div>
+              </div>
+            </div>
+            <div class="mp-block">
+              <div class="mp-time">09:00</div>
+              <div class="mp-stripe" style="background:#FFB800;"></div>
+              <div class="mp-info" style="background:rgba(255,184,0,0.1);">
+                <div class="mp-info-title" style="color:#FFB800;">Android Development</div>
+                <div class="mp-info-sub">09:00 – 11:00 · 2h</div>
+              </div>
+            </div>
+            <div class="mp-block">
+              <div class="mp-time">11:30</div>
+              <div class="mp-stripe" style="background:#818cf8;"></div>
+              <div class="mp-info" style="background:rgba(129,140,248,0.1);">
+                <div class="mp-info-title" style="color:#818cf8;">IELTS Listening</div>
+                <div class="mp-info-sub">11:30 – 13:00 · 1.5h</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Pomodoro -->
+      <div class="feat-row reveal">
+        <div class="feat-row-text">
+          <div class="feat-row-eyebrow"><i class="fas fa-stopwatch"></i> Pomodoro Timer</div>
+          <h2>Turn plans into focused work.</h2>
+          <p>Start focus sessions directly from your goals. Choose 25/5, 50/10, or custom intervals. Connect every Pomodoro to real work — and watch your time tracked automatically.</p>
+          <a href="/app/pomodoro.html" class="feat-link" onclick="gtag('event','feature_cta_click',{feature:'pomodoro'})">
+            Start a Focus Session <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+        <div class="feat-row-visual">
+          <div style="text-align:center;">
+            <div style="display:flex;background:#080B12;border-radius:999px;padding:3px;margin-bottom:1.5rem;">
+              <div style="flex:1;padding:0.4rem;border-radius:999px;background:#FFB800;color:#111827;font-size:0.7rem;font-weight:700;text-align:center;">Pomodoro</div>
+              <div style="flex:1;padding:0.4rem;font-size:0.7rem;color:#64748B;text-align:center;">Short Break</div>
+              <div style="flex:1;padding:0.4rem;font-size:0.7rem;color:#64748B;text-align:center;">Long Break</div>
+            </div>
+            <div style="position:relative;width:160px;height:160px;margin:0 auto 1.5rem;">
+              <svg viewBox="0 0 160 160" style="width:100%;height:100%;">
+                <circle cx="80" cy="80" r="70" fill="none" stroke="#252B36" stroke-width="6"></circle>
+                <circle cx="80" cy="80" r="70" fill="none" stroke="#FFB800" stroke-width="6" stroke-dasharray="439.8" stroke-dashoffset="65" stroke-linecap="round" transform="rotate(-90 80 80)"></circle>
+              </svg>
+              <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;">
+                <div style="font-size:0.65rem;color:#FFB800;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;">FOCUS TIME</div>
+                <div style="font-size:2.5rem;font-weight:500;font-family:'Outfit',sans-serif;line-height:1;">25:00</div>
+              </div>
+            </div>
+            <div style="font-size:0.8rem;color:#64748B;margin-bottom:1rem;">Android Development</div>
+            <button class="ht-btn" style="width:100%;border-radius:10px;"><i class="fas fa-play"></i> Start Focus</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. Analytics -->
+      <div class="feat-row rev reveal">
+        <div class="feat-row-text">
+          <div class="feat-row-eyebrow"><i class="fas fa-chart-bar"></i> Analytics</div>
+          <h2>See where your time actually goes.</h2>
+          <p>Track focus time, completed Pomodoros, daily averages, and your all-time best day. Understand your patterns and stay motivated with real data from your own sessions.</p>
+          <a href="/app/analytics.html" class="feat-link" onclick="gtag('event','feature_cta_click',{feature:'analytics'})">
+            Explore Analytics <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+        <div class="feat-row-visual mock-analytics">
+          <div class="ma-stats">
+            <div class="ma-stat">
+              <div class="ma-val">14h 32m</div>
+              <div class="ma-lbl">Focus Time</div>
+            </div>
+            <div class="ma-stat">
+              <div class="ma-val">28</div>
+              <div class="ma-lbl">Pomodoros</div>
+            </div>
+            <div class="ma-stat">
+              <div class="ma-val">2h 4m</div>
+              <div class="ma-lbl">Daily Average</div>
+            </div>
+            <div class="ma-stat">
+              <div class="ma-val" style="color:#FFB800;">4h 12m</div>
+              <div class="ma-lbl">Best Day</div>
+            </div>
+          </div>
+          <div style="font-size:0.7rem;color:#64748B;margin-bottom:0.5rem;font-weight:600;">Weekly Focus</div>
+          <div class="ma-chart">
+            <div class="ma-bar" style="height:35%;"></div>
+            <div class="ma-bar" style="height:55%;"></div>
+            <div class="ma-bar" style="height:45%;"></div>
+            <div class="ma-bar active" style="height:80%;"></div>
+            <div class="ma-bar active" style="height:100%;"></div>
+            <div class="ma-bar" style="height:25%;"></div>
+            <div class="ma-bar" style="height:15%;"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. Challenges -->
+      <div class="feat-row reveal">
+        <div class="feat-row-text">
+          <div class="feat-row-eyebrow"><i class="fas fa-trophy"></i> Challenges</div>
+          <h2>Build momentum through consistency.</h2>
+          <p>Join productivity challenges to stay motivated, build streaks, and develop the consistent habits that make real progress possible. Accountability built in.</p>
+          <a href="/app/challenges.html" class="feat-link" onclick="gtag('event','feature_cta_click',{feature:'challenges'})">
+            View Challenges <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+        <div class="feat-row-visual mock-challenges">
+          <div style="font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#64748B;margin-bottom:1rem;">
+            <i class="fas fa-fire" style="color:#FFB800;margin-right:5px;"></i>ACTIVE CHALLENGES
+          </div>
+          <div class="mc-challenge">
+            <div class="mc-icon-box" style="background:rgba(255,184,0,0.15);">🔥</div>
+            <div>
+              <div class="mc-name">30-Day Focus Streak</div>
+              <div class="mc-days">Focus for 1h+ every day</div>
+            </div>
+            <div class="mc-streak">Day 12</div>
+          </div>
+          <div class="mc-challenge">
+            <div class="mc-icon-box" style="background:rgba(34,211,160,0.15);">⚡</div>
+            <div>
+              <div class="mc-name">100 Pomodoros</div>
+              <div class="mc-days">Complete 100 sessions</div>
+            </div>
+            <div class="mc-streak">67/100</div>
+          </div>
+          <div class="mc-challenge">
+            <div class="mc-icon-box" style="background:rgba(129,140,248,0.15);">🎯</div>
+            <div>
+              <div class="mc-name">Weekly Goal Hit</div>
+              <div class="mc-days">Hit all weekly targets</div>
+            </div>
+            <div class="mc-streak">3 weeks</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6. Reviews -->
+      <div class="feat-row rev reveal">
+        <div class="feat-row-text">
+          <div class="feat-row-eyebrow"><i class="fas fa-rotate-left"></i> Reviews</div>
+          <h2>Reflect. Learn. Improve.</h2>
+          <p>Review your week's performance, reflect on what worked and what didn't, and use those insights to plan better. The loop that makes every week better than the last.</p>
+          <a href="/app/reviews.html" class="feat-link" onclick="gtag('event','feature_cta_click',{feature:'reviews'})">
+            Start Reviewing <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+        <div class="feat-row-visual mock-reviews">
+          <div style="font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#64748B;margin-bottom:1rem;">
+            <i class="fas fa-rotate-left" style="color:#FFB800;margin-right:5px;"></i>WEEKLY REVIEW
+          </div>
+          <div class="mr-card">
+            <div class="mr-week">Week of Sep 1 – Sep 7, 2026</div>
+            <div class="mr-score-row">
+              <div class="mr-score">8.2</div>
+              <div class="mr-label">/ 10 — Productive week</div>
+            </div>
+            <div style="font-size:0.75rem;color:#94A3B8;">Focus Time: <strong style="color:#FFB800;">18h 24m</strong> &nbsp;·&nbsp; Goals hit: <strong style="color:#FFB800;">3/4</strong></div>
+          </div>
+          <div class="mr-card" style="border:1px solid rgba(255,184,0,0.15);">
+            <div class="mr-week">What worked well</div>
+            <div class="mr-note">"Morning deep work blocks were highly productive. Kept distractions low before noon."</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── GOALS → PLANNER → POMODORO DEMO ──────────────────────────────── -->
+  <section class="demo-section" aria-label="How the system works together">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">The System in Action</span>
+        <h2>FlowPomodoro is a system, not just a timer.</h2>
+        <p class="section-desc">See how the pieces connect — from setting a goal to reviewing your week's progress.</p>
+      </div>
+
+      <div class="demo-steps">
+        <div class="demo-step reveal">
+          <div class="demo-step-num">1</div>
+          <div class="demo-step-tag">Goals</div>
+          <div class="demo-step-title">Web Development</div>
+          <div class="demo-step-val">Daily target: <span class="demo-step-highlight">5 hours</span></div>
+          <div class="demo-arrow"><i class="fas fa-chevron-right"></i></div>
+        </div>
+        <div class="demo-step reveal reveal-delay-1">
+          <div class="demo-step-num">2</div>
+          <div class="demo-step-tag">Planner</div>
+          <div class="demo-step-title">09:00 – 11:00</div>
+          <div class="demo-step-val">Android Dev · <span class="demo-step-highlight">2h block</span></div>
+          <div class="demo-arrow"><i class="fas fa-chevron-right"></i></div>
+        </div>
+        <div class="demo-step reveal reveal-delay-2">
+          <div class="demo-step-num">3</div>
+          <div class="demo-step-tag">Pomodoro</div>
+          <div class="demo-step-title">Focus Session</div>
+          <div class="demo-step-val"><span class="demo-step-highlight">25:00</span> timer active</div>
+          <div class="demo-arrow"><i class="fas fa-chevron-right"></i></div>
+        </div>
+        <div class="demo-step reveal">
+          <div class="demo-step-num">4</div>
+          <div class="demo-step-tag">Analytics</div>
+          <div class="demo-step-title">Focus Time</div>
+          <div class="demo-step-val"><span class="demo-step-highlight">2h 18m</span> tracked today</div>
+          <div class="demo-arrow"><i class="fas fa-chevron-right"></i></div>
+        </div>
+        <div class="demo-step reveal reveal-delay-1">
+          <div class="demo-step-num">5</div>
+          <div class="demo-step-tag">Review</div>
+          <div class="demo-step-title">Weekly Progress</div>
+          <div class="demo-step-val">Goal: <span class="demo-step-highlight">11h / 35h</span></div>
+        </div>
+      </div>
+
+      <div style="text-align:center;margin-top:3rem;">
+        <a href="/app/dashboard.html" class="btn-primary btn-lg" onclick="gtag('event','start_focusing_click',{location:'demo_section'})">
+          <i class="fas fa-play"></i> Start Your Productivity Loop
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── WHO IS IT FOR ──────────────────────────────────────────────────── -->
+  <section class="personas-section" aria-label="Who FlowPomodoro is for">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-eyebrow">Who It's For</span>
+        <h2>Built for Anyone Who Does Focused Work</h2>
+        <p class="section-desc">Whether you're a student, developer, or professional — FlowPomodoro adapts to how you work.</p>
+      </div>
+
+      <div class="personas-grid">
+        <div class="persona-card reveal">
+          <span class="persona-emoji">🎓</span>
+          <h3>Students</h3>
+          <p>Set study goals → block time on the planner → track actual study hours → review your week.</p>
+          <a href="/app/dashboard.html" class="persona-link">Start studying <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="persona-card reveal reveal-delay-1">
+          <span class="persona-emoji">💻</span>
+          <h3>Developers</h3>
+          <p>Plan coding work by project → deep work Pomodoros → measure daily focus time per goal.</p>
+          <a href="/app/dashboard.html" class="persona-link">Start coding <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="persona-card reveal reveal-delay-2">
+          <span class="persona-emoji">🏠</span>
+          <h3>Remote Workers</h3>
+          <p>Plan priorities before the day starts → protect focus blocks → review the week's output.</p>
+          <a href="/app/dashboard.html" class="persona-link">Start focusing <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="persona-card reveal">
+          <span class="persona-emoji">🎨</span>
+          <h3>Creators</h3>
+          <p>Set creative goals → schedule daily sessions → track creative hours and build consistency.</p>
+          <a href="/app/dashboard.html" class="persona-link">Start creating <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="persona-card reveal reveal-delay-1">
+          <span class="persona-emoji">🧾</span>
+          <h3>Freelancers</h3>
+          <p>Track billable focus time per project → plan client work → review weekly performance.</p>
+          <a href="/app/dashboard.html" class="persona-link">Track your work <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="persona-card reveal reveal-delay-2">
+          <span class="persona-emoji">📊</span>
+          <h3>Professionals</h3>
+          <p>Turn strategic priorities into daily focus blocks → measure deep work → improve each week.</p>
+          <a href="/app/dashboard.html" class="persona-link">Get started <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── WHY FLOWPOMODORO ───────────────────────────────────────────────── -->
+  <section class="benefits-section" aria-label="Why FlowPomodoro">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-eyebrow">Why FlowPomodoro</span>
+        <h2>Everything Connected. Nothing Wasted.</h2>
+        <p class="section-desc">Other tools give you a timer or a planner. FlowPomodoro connects them into one system.</p>
+      </div>
+
+      <div class="benefits-grid">
+        <div class="benefit-item reveal">
+          <div class="benefit-check"><i class="fas fa-check"></i></div>
+          <div>
+            <h4>Goals connected to your schedule</h4>
+            <p>Create a goal, block time in the planner, and focus — all in one workspace.</p>
+          </div>
+        </div>
+        <div class="benefit-item reveal reveal-delay-1">
+          <div class="benefit-check"><i class="fas fa-check"></i></div>
+          <div>
+            <h4>Flexible time blocking</h4>
+            <p>Plan your day, week, or month with visual time blocks that actually match your life.</p>
+          </div>
+        </div>
+        <div class="benefit-item reveal">
+          <div class="benefit-check"><i class="fas fa-check"></i></div>
+          <div>
+            <h4>Focus sessions connected to real work</h4>
+            <p>Every Pomodoro logs time against a specific goal — not just a generic timer.</p>
+          </div>
+        </div>
+        <div class="benefit-item reveal reveal-delay-1">
+          <div class="benefit-check"><i class="fas fa-check"></i></div>
+          <div>
+            <h4>Real progress analytics</h4>
+            <p>Daily, weekly, and all-time focus data. Know exactly where your hours are going.</p>
+          </div>
+        </div>
+        <div class="benefit-item reveal">
+          <div class="benefit-check"><i class="fas fa-check"></i></div>
+          <div>
+            <h4>Habit and consistency tracking</h4>
+            <p>Build streaks, join challenges, and develop the routines that create lasting results.</p>
+          </div>
+        </div>
+        <div class="benefit-item reveal reveal-delay-1">
+          <div class="benefit-check"><i class="fas fa-check"></i></div>
+          <div>
+            <h4>Weekly reflection built in</h4>
+            <p>Review your week, learn from it, and come back stronger — every single time.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── BLOG PREVIEW ───────────────────────────────────────────────────── -->
+  <section class="blog-preview-section" aria-label="From the blog">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-eyebrow">From the Blog</span>
+        <h2>Practical guides for focused, intentional work.</h2>
       </div>
 
       <div class="blog-preview-grid">
-        <a href="/blog/en/what-is-the-pomodoro-technique.html" class="preview-card reveal">
-          <div class="pc-img" style="background-image:url('https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=600&q=80');background-size:cover;background-position:center;height:160px;border-radius:12px;margin-bottom:1rem;"></div>
-          <span class="badge" style="background:var(--brand-soft);color:#926000;font-weight:700;">Productivity</span>
-          <h3 class="pc-title">What Is the Pomodoro Technique? Guide</h3>
-          <div class="pc-meta">May 12, 2024 • 5 min read</div>
+        <a href="/blog/en/what-is-the-pomodoro-method.html" class="preview-card reveal">
+          <div class="pc-img" style="background:linear-gradient(135deg,#1a1f2e,#252b36);height:140px;border-radius:12px;margin-bottom:1.25rem;display:flex;align-items:center;justify-content:center;font-size:2.5rem;">⏱️</div>
+          <span class="badge">Pomodoro</span>
+          <h3 class="pc-title">The Complete Pomodoro Technique Guide</h3>
+          <div class="pc-meta">8 min read</div>
         </a>
-        <a href="/blog/en/how-to-beat-procrastination.html" class="preview-card reveal reveal-delay-1">
-          <div class="pc-img" style="background-image:url('https://images.unsplash.com/photo-1507842229451-79b1be897a20?auto=format&fit=crop&w=600&q=80');background-size:cover;background-position:center;height:160px;border-radius:12px;margin-bottom:1rem;"></div>
-          <span class="badge" style="background:var(--brand-soft);color:#926000;font-weight:700;">Focus</span>
-          <h3 class="pc-title">How to Stop Procrastinating and Get Things Done</h3>
-          <div class="pc-meta">Mar 18, 2024 • 5 min read</div>
+        <a href="/blog/en/daily-planning-system.html" class="preview-card reveal reveal-delay-1">
+          <div class="pc-img" style="background:linear-gradient(135deg,#1a1f2e,#252b36);height:140px;border-radius:12px;margin-bottom:1.25rem;display:flex;align-items:center;justify-content:center;font-size:2.5rem;">📅</div>
+          <span class="badge">Planning</span>
+          <h3 class="pc-title">Build a Daily Planning System That Actually Works</h3>
+          <div class="pc-meta">6 min read</div>
         </a>
         <a href="/blog/en/deep-work-guide.html" class="preview-card reveal reveal-delay-2">
-          <div class="pc-img" style="background-image:url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=600&q=80');background-size:cover;background-position:center;height:160px;border-radius:12px;margin-bottom:1rem;"></div>
-          <span class="badge" style="background:var(--brand-soft);color:#926000;font-weight:700;">Deep Work</span>
+          <div class="pc-img" style="background:linear-gradient(135deg,#1a1f2e,#252b36);height:140px;border-radius:12px;margin-bottom:1.25rem;display:flex;align-items:center;justify-content:center;font-size:2.5rem;">🧠</div>
+          <span class="badge">Deep Work</span>
           <h3 class="pc-title">The Ultimate Guide to Deep Work in a Distracted World</h3>
-          <div class="pc-meta">Apr 16, 2024 • 8 min read</div>
+          <div class="pc-meta">8 min read</div>
         </a>
       </div>
 
-      <div style="text-align:center;">
-        <a href="/blog/" class="btn-secondary btn-lg">View all posts →</a>
+      <div style="text-align:center;margin-top:2.5rem;">
+        <a href="/blog/en/" class="btn-secondary btn-lg">View All Articles →</a>
       </div>
     </div>
   </section>
 
-  <!-- ── Final CTA ───────────────────────────────────────────────────────── -->
-  <section style="padding:6rem 0;background:var(--brand-primary);color:#111827;text-align:center;">
+  <!-- ── FINAL CTA ──────────────────────────────────────────────────────── -->
+  <section style="padding:clamp(5rem,10vw,7rem) 0;background:var(--brand-primary);color:#111827;text-align:center;">
     <div class="container">
-      <h2 style="font-size:clamp(2rem,4vw,3rem);margin-bottom:1rem;color:#111827;">Ready to get into your flow?</h2>
-      <p style="font-size:1.1rem;margin-bottom:2.5rem;color:rgba(0,0,0,0.7);">Start your next focused session in seconds.</p>
-      <a href="/app/dashboard.html" class="btn-primary btn-lg" style="background:#111827;color:#fff;">Start Focusing Now →</a>
+      <div style="max-width:620px;margin:0 auto;">
+        <h2 style="font-size:clamp(1.75rem,4vw,2.75rem);margin-bottom:1rem;color:#111827;font-weight:800;letter-spacing:-0.025em;">
+          One workspace for planning, focusing, and tracking your work.
+        </h2>
+        <p style="font-size:1.05rem;margin-bottom:2.5rem;color:rgba(0,0,0,0.65);">
+          No signup required. Start your first session in seconds.
+        </p>
+        <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+          <a href="/app/dashboard.html" class="btn-primary btn-lg" onclick="gtag('event','start_focusing_click',{location:'final_cta'})">
+            <i class="fas fa-play"></i> Start Focusing — Free
+          </a>
+          <a href="/pages/features.html" class="btn-secondary btn-lg" style="border-color:rgba(0,0,0,0.2);color:#111827;">
+            Explore Features
+          </a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -338,22 +1232,23 @@
           <div class="logo-dot"><i class="fas fa-stopwatch"></i></div>
           FlowPomodoro
         </a>
-        <p>A beautiful Pomodoro timer to help you focus deeply and get more done.</p>
+        <p>One workspace for planning, focusing, and tracking your work. Goals, Planner, Pomodoro, Analytics, Challenges, and Reviews — all free.</p>
       </div>
       <div class="footer-col">
         <div class="fc-title">Product</div>
         <ul>
-          <li><a href="/app/pomodoro.html">Timer</a></li>
-          <li><a href="#features">Features</a></li>
-          <li><a href="/pages/pricing.html">Pricing</a></li>
+          <li><a href="/pages/features.html">Features</a></li>
+          <li><a href="/app/dashboard.html">Open App</a></li>
+          <li><a href="/timer/pomodoro-timer.html">Online Timers</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <div class="fc-title">Resources</div>
         <ul>
-          <li><a href="/blog/">Blog</a></li>
-          <li><a href="#">Guides</a></li>
-          <li><a href="#">Help Center</a></li>
+          <li><a href="/blog/en/">Blog</a></li>
+          <li><a href="/blog/en/what-is-the-pomodoro-method.html">Pomodoro Guide</a></li>
+          <li><a href="/blog/en/daily-planning-system.html">Daily Planning</a></li>
+          <li><a href="/blog/en/deep-work-guide.html">Deep Work</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -370,7 +1265,7 @@
       <div class="fb-links">
         <a href="/pages/privacy.html">Privacy</a>
         <a href="/pages/terms.html">Terms</a>
-        <a href="/blog/">Blog</a>
+        <a href="/blog/en/">Blog</a>
       </div>
     </div>
   </div>
@@ -380,13 +1275,14 @@
   // Navbar scroll
   const nav = document.getElementById('main-nav');
   window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 20));
-  
+
   // Mobile menu
   const btn = document.getElementById('nav-hamburger');
   const drawer = document.getElementById('nav-drawer');
   btn.addEventListener('click', () => {
-    drawer.classList.toggle('open');
+    const isOpen = drawer.classList.toggle('open');
     btn.classList.toggle('open');
+    btn.setAttribute('aria-expanded', isOpen);
   });
 
   // Close drawer on link click
@@ -394,14 +1290,13 @@
     link.addEventListener('click', () => {
       drawer.classList.remove('open');
       btn.classList.remove('open');
+      btn.setAttribute('aria-expanded', false);
     });
   });
 
   // Theme toggle
   const themeBtn = document.getElementById('theme-toggle');
   const html = document.documentElement;
-  
-  // Init theme
   const savedTheme = localStorage.getItem('flow_theme') || 'light';
   html.setAttribute('data-theme', savedTheme);
   if(themeBtn) themeBtn.innerHTML = savedTheme === 'dark' ? '<i class="fas fa-moon"></i>' : '<i class="fas fa-sun"></i>';
@@ -420,7 +1315,7 @@
   if ('IntersectionObserver' in window) {
     const obs = new IntersectionObserver(e => e.forEach(en => {
       if(en.isIntersecting) { en.target.classList.add('visible'); obs.unobserve(en.target); }
-    }), { threshold: 0.1 });
+    }), { threshold: 0.08 });
     document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
   }
 </script>

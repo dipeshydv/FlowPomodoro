@@ -471,3 +471,41 @@ html[data-theme="dark"] .feat-icon { background: rgba(255, 184, 0, 0.1); color: 
     .footer-top { grid-template-columns: 1fr; }
     .footer-bottom { flex-direction: column; text-align: center; gap: 1rem; }
 }
+
+
+/* =========================================================
+   FLOWPOMODORO PRIMARY BUTTON
+   Prevent hover/click color fading
+   ========================================================= */
+
+a.btn-primary {
+  background: var(--brand-primary) !important;
+  color: #111827 !important;
+  opacity: 1 !important;
+  border: none !important;
+}
+
+a.btn-primary:hover {
+  background: var(--brand-primary) !important;
+  color: #111827 !important;
+  opacity: 1 !important;
+  transform: translateY(-2px);
+}
+
+a.btn-primary:active {
+  background: var(--brand-primary) !important;
+  color: #111827 !important;
+  opacity: 1 !important;
+  transform: translateY(0);
+}
+
+a.btn-primary:focus,
+a.btn-primary:focus-visible {
+  background: var(--brand-primary) !important;
+  color: #111827 !important;
+  opacity: 1 !important;
+}
+
+a.btn-primary i {
+  color: #111827 !important;
+}

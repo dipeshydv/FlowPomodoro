@@ -1,195 +1,195 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://flowpomodoro.xyz/blog/vi/adhd-focus.html</loc>
-    <lastmod>2026-08-05</lastmod>
+    <loc>https://flowpomodoro.xyz/blog/vi/</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flowpomodoro.xyz/blog/vi/productivity.html</loc>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://flowpomodoro.xyz/blog/vi/adhd-productivity-methods.html</loc>
-    <lastmod>2026-08-05</lastmod>
+    <loc>https://flowpomodoro.xyz/blog/vi/focus.html</loc>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://flowpomodoro.xyz/blog/vi/study.html</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://flowpomodoro.xyz/blog/vi/time-management.html</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://flowpomodoro.xyz/blog/vi/habits.html</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://flowpomodoro.xyz/blog/vi/deep-work.html</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://flowpomodoro.xyz/blog/vi/what-is-the-pomodoro-method.html</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://flowpomodoro.xyz/blog/vi/benefits-of-pomodoro-technique.html</loc>
-    <lastmod>2026-08-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://flowpomodoro.xyz/blog/vi/best-pomodoro-apps.html</loc>
-    <lastmod>2026-08-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://flowpomodoro.xyz/blog/vi/best-productivity-techniques.html</loc>
-    <lastmod>2026-08-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://flowpomodoro.xyz/blog/vi/daily-planning-system.html</loc>
-    <lastmod>2026-08-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://flowpomodoro.xyz/blog/vi/deep-work-guide.html</loc>
-    <lastmod>2026-08-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://flowpomodoro.xyz/blog/vi/developer-focus-workflow.html</loc>
-    <lastmod>2026-08-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://flowpomodoro.xyz/blog/vi/distraction-control.html</loc>
-    <lastmod>2026-08-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://flowpomodoro.xyz/blog/vi/flow-state-explained.html</loc>
-    <lastmod>2026-08-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://flowpomodoro.xyz/blog/vi/focus-techniques-for-developers.html</loc>
-    <lastmod>2026-08-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://flowpomodoro.xyz/blog/vi/focus-techniques.html</loc>
-    <lastmod>2026-08-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://flowpomodoro.xyz/blog/vi/how-many-pomodoros-per-day.html</loc>
-    <lastmod>2026-08-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://flowpomodoro.xyz/blog/vi/how-to-beat-procrastination.html</loc>
-    <lastmod>2026-08-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://flowpomodoro.xyz/blog/vi/how-to-build-better-habits.html</loc>
-    <lastmod>2026-08-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://flowpomodoro.xyz/blog/vi/how-to-study-for-long-hours.html</loc>
-    <lastmod>2026-08-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://flowpomodoro.xyz/blog/vi/index.html</loc>
-    <lastmod>2026-08-05</lastmod>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://flowpomodoro.xyz/blog/vi/overcome-procrastination-pomodoro.html</loc>
-    <lastmod>2026-08-05</lastmod>
+    <loc>https://flowpomodoro.xyz/blog/vi/science-behind-pomodoro.html</loc>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://flowpomodoro.xyz/blog/vi/pomodoro-benefits.html</loc>
-    <lastmod>2026-08-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://flowpomodoro.xyz/blog/vi/pomodoro-faq.html</loc>
-    <lastmod>2026-08-05</lastmod>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://flowpomodoro.xyz/blog/vi/pomodoro-for-exams.html</loc>
-    <lastmod>2026-08-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://flowpomodoro.xyz/blog/vi/pomodoro-for-programming.html</loc>
-    <lastmod>2026-08-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://flowpomodoro.xyz/blog/vi/pomodoro-for-remote-workers.html</loc>
-    <lastmod>2026-08-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://flowpomodoro.xyz/blog/vi/pomodoro-mistakes.html</loc>
-    <lastmod>2026-08-05</lastmod>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://flowpomodoro.xyz/blog/vi/pomodoro-study-guide.html</loc>
-    <lastmod>2026-08-05</lastmod>
+    <loc>https://flowpomodoro.xyz/blog/vi/how-many-pomodoros-per-day.html</loc>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://flowpomodoro.xyz/blog/vi/pomodoro-vs-deep-work.html</loc>
-    <lastmod>2026-08-05</lastmod>
+    <loc>https://flowpomodoro.xyz/blog/vi/best-pomodoro-apps.html</loc>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://flowpomodoro.xyz/blog/vi/pomodoro-vs-time-blocking.html</loc>
-    <lastmod>2026-08-05</lastmod>
+    <loc>https://flowpomodoro.xyz/blog/vi/flow-state-explained.html</loc>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://flowpomodoro.xyz/blog/vi/remote-work-focus.html</loc>
-    <lastmod>2026-08-05</lastmod>
+    <loc>https://flowpomodoro.xyz/blog/vi/adhd-focus.html</loc>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://flowpomodoro.xyz/blog/vi/science-behind-pomodoro.html</loc>
-    <lastmod>2026-08-05</lastmod>
+    <loc>https://flowpomodoro.xyz/blog/vi/adhd-productivity-methods.html</loc>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flowpomodoro.xyz/blog/vi/how-to-beat-procrastination.html</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flowpomodoro.xyz/blog/vi/distraction-control.html</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flowpomodoro.xyz/blog/vi/focus-techniques.html</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flowpomodoro.xyz/blog/vi/pomodoro-for-programming.html</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flowpomodoro.xyz/blog/vi/focus-techniques-for-developers.html</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flowpomodoro.xyz/blog/vi/pomodoro-for-exams.html</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flowpomodoro.xyz/blog/vi/how-to-study-for-long-hours.html</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://flowpomodoro.xyz/blog/vi/student-productivity.html</loc>
-    <lastmod>2026-08-05</lastmod>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://flowpomodoro.xyz/blog/vi/time-blocking-pomodoro-technique.html</loc>
-    <lastmod>2026-08-05</lastmod>
+    <loc>https://flowpomodoro.xyz/blog/vi/pomodoro-for-remote-workers.html</loc>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://flowpomodoro.xyz/blog/vi/what-is-the-pomodoro-technique.html</loc>
-    <lastmod>2026-08-05</lastmod>
+    <loc>https://flowpomodoro.xyz/blog/vi/daily-planning-system.html</loc>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flowpomodoro.xyz/blog/vi/pomodoro-vs-time-blocking.html</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flowpomodoro.xyz/blog/vi/deep-work-guide.html</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flowpomodoro.xyz/blog/vi/pomodoro-vs-deep-work.html</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flowpomodoro.xyz/blog/vi/how-to-build-better-habits.html</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flowpomodoro.xyz/blog/vi/best-productivity-techniques.html</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>

@@ -273,7 +273,7 @@ function runMigration(dryRunMode = true) {
     let filesToProcess = files;
     if (dryRunMode) {
       if (lang === 'en') {
-        filesToProcess = files.filter(f => f === 'what-is-the-pomodoro-technique.html');
+        filesToProcess = files.filter(f => f === 'what-is-the-pomodoro-method.html');
       } else {
         filesToProcess = [files.find(f => f !== 'index.html')]; // Just grab one
       }

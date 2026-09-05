@@ -1,5 +1,5 @@
 // ── Cache version: bump this string to force all clients to evict old cache ──
-const CACHE_NAME = 'flowpomodoro-v5';
+const CACHE_NAME = 'flowpomodoro-v6';
 
 // Static assets that are safe to serve from cache (rarely change)
 const PRECACHE_ASSETS = [
@@ -114,6 +114,23 @@ self.addEventListener('fetch', (event) => {
         // Return 404 response if static asset is missing rather than HTML index
         return new Response('Not found', { status: 404, statusText: 'Not Found' });
       })
+  );
+});
+
+// Focus open window or open pomodoro page when notification is clicked
+self.addEventListener('notificationclick', (event) => {
+  event.notification.close();
+  event.waitUntil(
+    clients.matchAll({ type: 'window', includeUncontrolled: true }).then((clientList) => {
+      for (const client of clientList) {
+        if ('focus' in client) {
+          return client.focus();
+        }
+      }
+      if (clients.openWindow) {
+        return clients.openWindow('/app/pomodoro.html');
+      }
+    })
   );
 });
 

@@ -65,8 +65,8 @@
         "url": "https://flowpomodoro.xyz/assets/favicon.svg"
       }
     },
-    "datePublished": "{{article.publishedDate}}",
-    "dateModified": "{{article.modifiedDate}}",
+    "datePublished": "{{article.schemaDatePublished}}",
+    "dateModified": "{{article.schemaDateModified}}",
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https://flowpomodoro.xyz/blog/{{article.language}}/{{article.slug}}.html"
@@ -217,7 +217,7 @@
         </div>
         <div class="author-info">
           <span class="author-name">{{article.author}}</span>
-          <span class="author-details">{{article.publishedDate}} · {{article.readingTime}}</span>
+          <span class="author-details">{{article.visibleDateStr}} · {{article.readingTime}}</span>
         </div>
       </div>
     </header>

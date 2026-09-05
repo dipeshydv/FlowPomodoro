@@ -27,140 +27,29 @@ const CATEGORIES = [
   { id: 'deep-work', name: 'Deep Work', slug: 'deep-work' }
 ];
 
-// Curated metadata registry for all 31 articles
+// Curated metadata registry for the 25 active authoritative articles
 const ARTICLE_CATALOG = {
-  'what-is-the-pomodoro-technique': {
+  'what-is-the-pomodoro-method': {
     category: 'Productivity',
     heroImage: 'https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=1200&q=80',
     publishedDate: 'May 12, 2024',
-    readingTime: '5 min read',
+    updatedDate: 'September 5, 2026',
+    readingTime: '9 min read',
     author: 'Dipesh Yadav',
     isFeatured: true
-  },
-  'adhd-focus': {
-    category: 'Focus',
-    heroImage: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1200&q=80',
-    publishedDate: 'May 10, 2024',
-    readingTime: '5 min read',
-    author: 'FlowPomodoro Team'
-  },
-  'adhd-productivity-methods': {
-    category: 'Productivity',
-    heroImage: 'https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=1200&q=80',
-    publishedDate: 'May 8, 2024',
-    readingTime: '6 min read',
-    author: 'FlowPomodoro Team'
   },
   'benefits-of-pomodoro-technique': {
     category: 'Productivity',
     heroImage: 'https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?auto=format&fit=crop&w=1200&q=80',
     publishedDate: 'May 5, 2024',
-    readingTime: '5 min read',
-    author: 'FlowPomodoro Team'
-  },
-  'best-pomodoro-apps': {
-    category: 'Productivity',
-    heroImage: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80',
-    publishedDate: 'Apr 28, 2024',
     readingTime: '7 min read',
     author: 'FlowPomodoro Team'
   },
-  'best-productivity-techniques': {
+  'science-behind-pomodoro': {
     category: 'Productivity',
-    heroImage: 'https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=1200&q=80',
-    publishedDate: 'Apr 24, 2024',
-    readingTime: '6 min read',
-    author: 'FlowPomodoro Team'
-  },
-  'daily-planning-system': {
-    category: 'Time Management',
-    heroImage: 'https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=1200&q=80',
-    publishedDate: 'Apr 20, 2024',
-    readingTime: '5 min read',
-    author: 'FlowPomodoro Team'
-  },
-  'deep-work-guide': {
-    category: 'Deep Work',
-    heroImage: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80',
-    publishedDate: 'Apr 16, 2024',
+    heroImage: 'https://images.unsplash.com/photo-1507668077129-56e32842fceb?auto=format&fit=crop&w=1200&q=80',
+    publishedDate: 'Jan 20, 2024',
     readingTime: '8 min read',
-    author: 'FlowPomodoro Team'
-  },
-  'developer-focus-workflow': {
-    category: 'Deep Work',
-    heroImage: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80',
-    publishedDate: 'Apr 12, 2024',
-    readingTime: '6 min read',
-    author: 'FlowPomodoro Team'
-  },
-  'distraction-control': {
-    category: 'Focus',
-    heroImage: 'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=1200&q=80',
-    publishedDate: 'Apr 8, 2024',
-    readingTime: '5 min read',
-    author: 'FlowPomodoro Team'
-  },
-  'flow-state-explained': {
-    category: 'Focus',
-    heroImage: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1200&q=80',
-    publishedDate: 'Apr 4, 2024',
-    readingTime: '6 min read',
-    author: 'FlowPomodoro Team'
-  },
-  'focus-techniques-for-developers': {
-    category: 'Focus',
-    heroImage: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80',
-    publishedDate: 'Mar 30, 2024',
-    readingTime: '6 min read',
-    author: 'FlowPomodoro Team'
-  },
-  'focus-techniques': {
-    category: 'Focus',
-    heroImage: 'https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?auto=format&fit=crop&w=1200&q=80',
-    publishedDate: 'Mar 26, 2024',
-    readingTime: '5 min read',
-    author: 'FlowPomodoro Team'
-  },
-  'how-many-pomodoros-per-day': {
-    category: 'Time Management',
-    heroImage: 'https://images.unsplash.com/photo-1501139083538-0139583c060f?auto=format&fit=crop&w=1200&q=80',
-    publishedDate: 'Mar 22, 2024',
-    readingTime: '4 min read',
-    author: 'FlowPomodoro Team'
-  },
-  'how-to-beat-procrastination': {
-    category: 'Focus',
-    heroImage: 'https://images.unsplash.com/photo-1507842229451-79b1be897a20?auto=format&fit=crop&w=1200&q=80',
-    publishedDate: 'Mar 18, 2024',
-    readingTime: '5 min read',
-    author: 'FlowPomodoro Team'
-  },
-  'how-to-build-better-habits': {
-    category: 'Habits',
-    heroImage: 'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=1200&q=80',
-    publishedDate: 'Mar 14, 2024',
-    readingTime: '6 min read',
-    author: 'FlowPomodoro Team'
-  },
-  'how-to-study-for-long-hours': {
-    category: 'Study',
-    heroImage: 'https://images.unsplash.com/photo-1457369804613-52c61a468e7d?auto=format&fit=crop&w=1200&q=80',
-    publishedDate: 'Mar 10, 2024',
-    readingTime: '7 min read',
-    author: 'FlowPomodoro Team'
-  },
-  'overcome-procrastination-pomodoro': {
-    category: 'Focus',
-    heroImage: 'https://images.unsplash.com/photo-1499209974431-9dddcece7f88?auto=format&fit=crop&w=1200&q=80',
-    publishedDate: 'Mar 6, 2024',
-    readingTime: '5 min read',
-    author: 'FlowPomodoro Team'
-  },
-  'pomodoro-benefits': {
-    category: 'Productivity',
-    heroImage: 'https://images.unsplash.com/photo-1434493789847-2f02dc6ca35d?auto=format&fit=crop&w=1200&q=80',
-    publishedDate: 'Mar 2, 2024',
-    readingTime: '4 min read',
     author: 'FlowPomodoro Team'
   },
   'pomodoro-faq': {
@@ -170,10 +59,66 @@ const ARTICLE_CATALOG = {
     readingTime: '6 min read',
     author: 'FlowPomodoro Team'
   },
-  'pomodoro-for-exams': {
-    category: 'Study',
-    heroImage: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80',
-    publishedDate: 'Feb 22, 2024',
+  'pomodoro-mistakes': {
+    category: 'Productivity',
+    heroImage: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80',
+    publishedDate: 'Feb 10, 2024',
+    readingTime: '6 min read',
+    author: 'FlowPomodoro Team'
+  },
+  'how-many-pomodoros-per-day': {
+    category: 'Time Management',
+    heroImage: 'https://images.unsplash.com/photo-1501139083538-0139583c060f?auto=format&fit=crop&w=1200&q=80',
+    publishedDate: 'Mar 22, 2024',
+    readingTime: '5 min read',
+    author: 'FlowPomodoro Team'
+  },
+  'best-pomodoro-apps': {
+    category: 'Productivity',
+    heroImage: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80',
+    publishedDate: 'Apr 28, 2024',
+    readingTime: '8 min read',
+    author: 'FlowPomodoro Team'
+  },
+  'flow-state-explained': {
+    category: 'Focus',
+    heroImage: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1200&q=80',
+    publishedDate: 'Apr 4, 2024',
+    readingTime: '8 min read',
+    author: 'Dipesh Yadav'
+  },
+  'adhd-focus': {
+    category: 'Focus',
+    heroImage: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1200&q=80',
+    publishedDate: 'May 10, 2024',
+    readingTime: '6 min read',
+    author: 'FlowPomodoro Team'
+  },
+  'adhd-productivity-methods': {
+    category: 'Productivity',
+    heroImage: 'https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=1200&q=80',
+    publishedDate: 'May 8, 2024',
+    readingTime: '7 min read',
+    author: 'FlowPomodoro Team'
+  },
+  'how-to-beat-procrastination': {
+    category: 'Focus',
+    heroImage: 'https://images.unsplash.com/photo-1507842229451-79b1be897a20?auto=format&fit=crop&w=1200&q=80',
+    publishedDate: 'Mar 18, 2024',
+    readingTime: '7 min read',
+    author: 'FlowPomodoro Team'
+  },
+  'distraction-control': {
+    category: 'Focus',
+    heroImage: 'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=1200&q=80',
+    publishedDate: 'Apr 8, 2024',
+    readingTime: '6 min read',
+    author: 'FlowPomodoro Team'
+  },
+  'focus-techniques': {
+    category: 'Focus',
+    heroImage: 'https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?auto=format&fit=crop&w=1200&q=80',
+    publishedDate: 'Mar 26, 2024',
     readingTime: '6 min read',
     author: 'FlowPomodoro Team'
   },
@@ -181,6 +126,34 @@ const ARTICLE_CATALOG = {
     category: 'Deep Work',
     heroImage: 'https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1200&q=80',
     publishedDate: 'Feb 18, 2024',
+    readingTime: '8 min read',
+    author: 'FlowPomodoro Team'
+  },
+  'focus-techniques-for-developers': {
+    category: 'Focus',
+    heroImage: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80',
+    publishedDate: 'Mar 30, 2024',
+    readingTime: '7 min read',
+    author: 'FlowPomodoro Team'
+  },
+  'pomodoro-for-exams': {
+    category: 'Study',
+    heroImage: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80',
+    publishedDate: 'Feb 22, 2024',
+    readingTime: '8 min read',
+    author: 'FlowPomodoro Team'
+  },
+  'how-to-study-for-long-hours': {
+    category: 'Study',
+    heroImage: 'https://images.unsplash.com/photo-1457369804613-52c61a468e7d?auto=format&fit=crop&w=1200&q=80',
+    publishedDate: 'Mar 10, 2024',
+    readingTime: '8 min read',
+    author: 'FlowPomodoro Team'
+  },
+  'student-productivity': {
+    category: 'Study',
+    heroImage: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1200&q=80',
+    publishedDate: 'Jan 16, 2024',
     readingTime: '6 min read',
     author: 'FlowPomodoro Team'
   },
@@ -188,63 +161,49 @@ const ARTICLE_CATALOG = {
     category: 'Productivity',
     heroImage: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80',
     publishedDate: 'Feb 14, 2024',
-    readingTime: '5 min read',
-    author: 'FlowPomodoro Team'
-  },
-  'pomodoro-mistakes': {
-    category: 'Productivity',
-    heroImage: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80',
-    publishedDate: 'Feb 10, 2024',
-    readingTime: '5 min read',
-    author: 'FlowPomodoro Team'
-  },
-  'pomodoro-study-guide': {
-    category: 'Study',
-    heroImage: 'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=1200&q=80',
-    publishedDate: 'Feb 6, 2024',
     readingTime: '6 min read',
     author: 'FlowPomodoro Team'
   },
-  'pomodoro-vs-deep-work': {
-    category: 'Deep Work',
-    heroImage: 'https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=1200&q=80',
-    publishedDate: 'Feb 2, 2024',
-    readingTime: '5 min read',
+  'daily-planning-system': {
+    category: 'Time Management',
+    heroImage: 'https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=1200&q=80',
+    publishedDate: 'Apr 20, 2024',
+    readingTime: '7 min read',
     author: 'FlowPomodoro Team'
   },
   'pomodoro-vs-time-blocking': {
     category: 'Time Management',
     heroImage: 'https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=1200&q=80',
     publishedDate: 'Jan 28, 2024',
-    readingTime: '6 min read',
-    author: 'FlowPomodoro Team'
-  },
-  'remote-work-focus': {
-    category: 'Focus',
-    heroImage: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80',
-    publishedDate: 'Jan 24, 2024',
-    readingTime: '5 min read',
-    author: 'FlowPomodoro Team'
-  },
-  'science-behind-pomodoro': {
-    category: 'Productivity',
-    heroImage: 'https://images.unsplash.com/photo-1507668077129-56e32842fceb?auto=format&fit=crop&w=1200&q=80',
-    publishedDate: 'Jan 20, 2024',
     readingTime: '7 min read',
     author: 'FlowPomodoro Team'
   },
-  'student-productivity': {
-    category: 'Study',
-    heroImage: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1200&q=80',
-    publishedDate: 'Jan 16, 2024',
-    readingTime: '5 min read',
+  'deep-work-guide': {
+    category: 'Deep Work',
+    heroImage: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80',
+    publishedDate: 'Apr 16, 2024',
+    readingTime: '9 min read',
     author: 'FlowPomodoro Team'
   },
-  'time-blocking-pomodoro-technique': {
-    category: 'Time Management',
-    heroImage: 'https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=1200&q=80',
-    publishedDate: 'Jan 12, 2024',
+  'pomodoro-vs-deep-work': {
+    category: 'Deep Work',
+    heroImage: 'https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=1200&q=80',
+    publishedDate: 'Feb 2, 2024',
     readingTime: '6 min read',
+    author: 'FlowPomodoro Team'
+  },
+  'how-to-build-better-habits': {
+    category: 'Habits',
+    heroImage: 'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=1200&q=80',
+    publishedDate: 'Mar 14, 2024',
+    readingTime: '7 min read',
+    author: 'FlowPomodoro Team'
+  },
+  'best-productivity-techniques': {
+    category: 'Productivity',
+    heroImage: 'https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=1200&q=80',
+    publishedDate: 'Apr 24, 2024',
+    readingTime: '8 min read',
     author: 'FlowPomodoro Team'
   }
 };
@@ -320,7 +279,7 @@ LANGUAGES.forEach(lang => {
       catalog: ARTICLE_CATALOG[slug] || {
         category: 'Productivity',
         heroImage: 'https://flowpomodoro.xyz/og-image.jpg',
-        publishedDate: 'June 2026',
+        publishedDate: 'September 5, 2026',
         readingTime: '5 min read',
         author: 'FlowPomodoro Team'
       }
@@ -434,6 +393,20 @@ LANGUAGES.forEach(lang => {
       </a>
     `;
 
+    // Helper to format ISO date safely
+    function formatIsoDate(dStr) {
+      if (!dStr) return '';
+      const d = new Date(dStr);
+      if (isNaN(d.getTime())) return '2024-01-01'; // Fallback
+      return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+    }
+
+    const schemaDatePublished = formatIsoDate(catalog.publishedDate);
+    const schemaDateModified = formatIsoDate(catalog.updatedDate || catalog.publishedDate);
+    const visibleDateStr = catalog.updatedDate 
+      ? `Updated ${catalog.updatedDate}` 
+      : catalog.publishedDate;
+
     // Replace template tokens
     let rendered = templateHtml
       .replace(/{{article\.language}}/g, lang)
@@ -443,8 +416,9 @@ LANGUAGES.forEach(lang => {
       .replace(/{{article\.description}}/g, article.description)
       .replace(/{{article\.category}}/g, catalog.category)
       .replace(/{{article\.heroImage}}/g, catalog.heroImage)
-      .replace(/{{article\.publishedDate}}/g, catalog.publishedDate)
-      .replace(/{{article\.modifiedDate}}/g, catalog.publishedDate)
+      .replace(/{{article\.schemaDatePublished}}/g, schemaDatePublished)
+      .replace(/{{article\.schemaDateModified}}/g, schemaDateModified)
+      .replace(/{{article\.visibleDateStr}}/g, visibleDateStr)
       .replace(/{{article\.readingTime}}/g, catalog.readingTime)
       .replace(/{{article\.author}}/g, catalog.author || 'FlowPomodoro Team')
       .replace(/{{article\.authorInitial}}/g, (catalog.author || 'F')[0])
@@ -477,9 +451,10 @@ function generateBlogHome(lang, activeCategory = 'all') {
   }
 
   // Featured Article
-  const featuredSlug = 'what-is-the-pomodoro-technique';
+  const featuredSlug = 'what-is-the-pomodoro-method';
   const featuredArticle = articlesInLang[featuredSlug] || parsedStore['en'][featuredSlug];
   const featuredCatalog = ARTICLE_CATALOG[featuredSlug];
+  const featuredVisibleDateStr = featuredCatalog.updatedDate ? `Updated ${featuredCatalog.updatedDate}` : featuredCatalog.publishedDate;
 
   // Latest Articles (exclude featured from main grid if displaying 'all')
   const gridSlugs = activeCategory === 'all' ? displaySlugs.filter(s => s !== featuredSlug) : displaySlugs;
@@ -489,6 +464,7 @@ function generateBlogHome(lang, activeCategory = 'all') {
     const art = articlesInLang[slug] || parsedStore['en'][slug];
     const cat = ARTICLE_CATALOG[slug];
     const catSlug = cat.category.toLowerCase().replace(/[^a-z0-9]/g, '-');
+    const visibleDateStr = cat.updatedDate ? `Updated ${cat.updatedDate}` : cat.publishedDate;
 
     return `
       <article class="article-card" data-category="${catSlug}" data-title="${art.title.toLowerCase()}">
@@ -498,7 +474,7 @@ function generateBlogHome(lang, activeCategory = 'all') {
         <div class="article-card-body">
           <div class="article-card-meta">
             <span class="article-card-category">${cat.category}</span>
-            <span class="article-card-time">${cat.publishedDate} · ${cat.readingTime}</span>
+            <span class="article-card-time">${visibleDateStr} · ${cat.readingTime}</span>
           </div>
           <h3 class="article-card-title">
             <a href="/blog/${lang}/${slug}.html">${art.title}</a>
@@ -741,7 +717,7 @@ function generateBlogHome(lang, activeCategory = 'all') {
         <div class="featured-content">
           <div class="featured-meta-row">
             <span class="article-category-tag">${featuredCatalog.category}</span>
-            <span class="featured-meta-date">${featuredCatalog.publishedDate} · ${featuredCatalog.readingTime}</span>
+            <span class="featured-meta-date">${featuredVisibleDateStr} · ${featuredCatalog.readingTime}</span>
           </div>
           <h2 class="featured-title">
             <a href="/blog/${lang}/${featuredSlug}.html" style="color:inherit; text-decoration:none;">${featuredArticle.title}</a>

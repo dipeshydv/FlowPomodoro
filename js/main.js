@@ -99,6 +99,10 @@ class App {
     onSessionComplete(mode, duration) {
         UI.playAlarm();
 
+        // Fire the completion notification immediately when the session ends —
+        // this is the reliable signal for users in other tabs/minimized windows.
+        this._sendCompletionNotification(mode);
+
         if (mode === 'focus') {
             const selEl = (typeof document !== 'undefined') ? document.getElementById('goal-selector') : null;
             let activeGoalId = (selEl && selEl.value) ? selEl.value : (localStorage.getItem('flow_active_goal') || sessionStorage.getItem('flow_active_goal') || null);
@@ -182,13 +186,6 @@ class App {
             UI.switchModeStyle(nextMode);
             this.timer.start();
             UI.showToast(`Starting ${nextMode === 'focus' ? 'focus' : nextMode + ' break'}…`);
-
-            if (Notification.permission === 'granted') {
-                new Notification('FlowPomodoro', {
-                    body: `Time for ${nextMode === 'focus' ? 'a focus session' : 'a break'}!`,
-                    icon: '/assets/icon-192.png',
-                });
-            }
         }, 1500);
     }
 
@@ -200,6 +197,55 @@ class App {
             id2 => this._toggleTask(id2),
             id2 => this._deleteTask(id2)
         );
+    }
+
+    // ─── Completion Notification ───────────────────────────────────────────
+    /**
+     * Sends a Web Notification when a Pomodoro or break session ends.
+     * This is the primary alert mechanism for users in background tabs.
+     *
+     * Audio (UI.playAlarm) handles the in-tab signal; notifications handle
+     * the background signal. The two work together — audio may be blocked by
+     * browser autoplay policies when the page is hidden.
+     */
+    _sendCompletionNotification(mode) {
+        if (typeof Notification === 'undefined') return;
+        if (Notification.permission !== 'granted') return;
+
+        const isFocus = mode === 'focus';
+        const title   = isFocus ? '✅ Focus session complete' : '☕ Break complete';
+        const body    = isFocus
+            ? 'Your Pomodoro is done. Time for a break!'
+            : 'Break is over. Ready for your next focus session?';
+
+        const options = {
+            body,
+            icon: '/icons/icon-192.png',
+            badge: '/assets/favicon.svg',
+            tag: 'flow-session-complete',  // replaces any previous unread notification
+            renotify: true,
+            silent: false,
+        };
+
+        // Prefer ServiceWorkerRegistration.showNotification if available (standard for PWAs and mobile)
+        if ('serviceWorker' in navigator && navigator.serviceWorker.controller) {
+            navigator.serviceWorker.ready.then(registration => {
+                return registration.showNotification(title, options);
+            }).catch(() => {
+                this._fallbackWindowNotification(title, options);
+            });
+        } else {
+            this._fallbackWindowNotification(title, options);
+        }
+    }
+
+    _fallbackWindowNotification(title, options) {
+        try {
+            const n = new Notification(title, options);
+            setTimeout(() => n.close(), 8000);
+        } catch (_) {
+            // Non-fatal if browser blocks or throws constructor error
+        }
     }
 
     _addTask(text) {
@@ -240,6 +286,10 @@ class App {
             if (this.timer.isActive) {
                 this.timer.pause();
             } else {
+                // Request notification permission on explicit user interaction
+                if (typeof Notification !== 'undefined' && Notification.permission === 'default') {
+                    Notification.requestPermission();
+                }
                 this.timer.start();
                 this._track('timer_start', { mode: this.timer.currentMode });
             }
@@ -367,14 +417,6 @@ class App {
             }
         });
 
-        // ── Visibility resume ──
-        document.addEventListener('visibilitychange', () => {
-            if (!document.hidden && this.timer.isActive) {
-                // Recalc because RAF was paused by browser
-                this.timer._tick();
-            }
-        });
-
         // ── Fullscreen icon toggle ──
         document.addEventListener('fullscreenchange', () => {
             const icon = UI.dom.fullscreenBtn?.querySelector('i');
@@ -398,11 +440,6 @@ class App {
 function initApp() {
     if (!window.FlowApp) {
         window.FlowApp = new App();
-    }
-
-    // Request notification permission once
-    if (typeof Notification !== 'undefined' && Notification.permission === 'default') {
-        Notification.requestPermission();
     }
 }
 

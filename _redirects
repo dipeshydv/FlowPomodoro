@@ -16,9 +16,74 @@
 /app/settings /app/settings.html 200
 
 # Blog Clean Category & Subdirectory Rewrites
+/blog/what-is-the-pomodoro-method/ /blog/en/what-is-the-pomodoro-method.html 200
+/blog/what-is-the-pomodoro-method /blog/en/what-is-the-pomodoro-method.html 200
 /blog/productivity /blog/en/productivity.html 200
 /blog/focus /blog/en/focus.html 200
 /blog/study /blog/en/study.html 200
 /blog/time-management /blog/en/time-management.html 200
 /blog/habits /blog/en/habits.html 200
 /blog/deep-work /blog/en/deep-work.html 200
+
+# Legacy GSC Blog Posts Redirects (Permanent 301)
+/blog/posts/what-is-the-pomodoro-technique.html /blog/en/what-is-the-pomodoro-method.html 301!
+/blog/en/what-is-the-pomodoro-technique.html /blog/en/what-is-the-pomodoro-method.html 301!
+/blog/hi/what-is-the-pomodoro-technique.html /blog/hi/what-is-the-pomodoro-method.html 301!
+/blog/es/what-is-the-pomodoro-technique.html /blog/es/what-is-the-pomodoro-method.html 301!
+/blog/ne/what-is-the-pomodoro-technique.html /blog/ne/what-is-the-pomodoro-method.html 301!
+/blog/ru/what-is-the-pomodoro-technique.html /blog/ru/what-is-the-pomodoro-method.html 301!
+/blog/vi/what-is-the-pomodoro-technique.html /blog/vi/what-is-the-pomodoro-method.html 301!
+/blog/posts/daily-planning-system.html /blog/en/daily-planning-system.html 301!
+/blog/posts/adhd-productivity-methods.html /blog/en/adhd-productivity-methods.html 301!
+/blog/posts/:slug.html /blog/en/:slug.html 301!
+/blog/posts/:slug /blog/en/:slug.html 301!
+/blog/posts/* /blog/en/:splat 301!
+
+# Consolidated Duplicate Articles - English (Permanent 301)
+/blog/en/pomodoro-benefits.html /blog/en/benefits-of-pomodoro-technique.html 301!
+/blog/en/overcome-procrastination-pomodoro.html /blog/en/how-to-beat-procrastination.html 301!
+/blog/en/developer-focus-workflow.html /blog/en/pomodoro-for-programming.html 301!
+/blog/en/pomodoro-study-guide.html /blog/en/pomodoro-for-exams.html 301!
+/blog/en/remote-work-focus.html /blog/en/pomodoro-for-remote-workers.html 301!
+/blog/en/time-blocking-pomodoro-technique.html /blog/en/pomodoro-vs-time-blocking.html 301!
+
+# Consolidated Duplicate Articles - Hindi (Permanent 301)
+/blog/hi/pomodoro-benefits.html /blog/hi/benefits-of-pomodoro-technique.html 301!
+/blog/hi/overcome-procrastination-pomodoro.html /blog/hi/how-to-beat-procrastination.html 301!
+/blog/hi/developer-focus-workflow.html /blog/hi/pomodoro-for-programming.html 301!
+/blog/hi/pomodoro-study-guide.html /blog/hi/pomodoro-for-exams.html 301!
+/blog/hi/remote-work-focus.html /blog/hi/pomodoro-for-remote-workers.html 301!
+/blog/hi/time-blocking-pomodoro-technique.html /blog/hi/pomodoro-vs-time-blocking.html 301!
+
+# Consolidated Duplicate Articles - Nepali (Permanent 301)
+/blog/ne/pomodoro-benefits.html /blog/ne/benefits-of-pomodoro-technique.html 301!
+/blog/ne/overcome-procrastination-pomodoro.html /blog/ne/how-to-beat-procrastination.html 301!
+/blog/ne/developer-focus-workflow.html /blog/ne/pomodoro-for-programming.html 301!
+/blog/ne/pomodoro-study-guide.html /blog/ne/pomodoro-for-exams.html 301!
+/blog/ne/remote-work-focus.html /blog/ne/pomodoro-for-remote-workers.html 301!
+/blog/ne/time-blocking-pomodoro-technique.html /blog/ne/pomodoro-vs-time-blocking.html 301!
+
+# Consolidated Duplicate Articles - Spanish (Permanent 301)
+/blog/es/pomodoro-benefits.html /blog/es/benefits-of-pomodoro-technique.html 301!
+/blog/es/overcome-procrastination-pomodoro.html /blog/es/how-to-beat-procrastination.html 301!
+/blog/es/developer-focus-workflow.html /blog/es/pomodoro-for-programming.html 301!
+/blog/es/pomodoro-study-guide.html /blog/es/pomodoro-for-exams.html 301!
+/blog/es/remote-work-focus.html /blog/es/pomodoro-for-remote-workers.html 301!
+/blog/es/time-blocking-pomodoro-technique.html /blog/es/pomodoro-vs-time-blocking.html 301!
+
+# Consolidated Duplicate Articles - Vietnamese (Permanent 301)
+/blog/vi/pomodoro-benefits.html /blog/vi/benefits-of-pomodoro-technique.html 301!
+/blog/vi/overcome-procrastination-pomodoro.html /blog/vi/how-to-beat-procrastination.html 301!
+/blog/vi/developer-focus-workflow.html /blog/vi/pomodoro-for-programming.html 301!
+/blog/vi/pomodoro-study-guide.html /blog/vi/pomodoro-for-exams.html 301!
+/blog/vi/remote-work-focus.html /blog/vi/pomodoro-for-remote-workers.html 301!
+/blog/vi/time-blocking-pomodoro-technique.html /blog/vi/pomodoro-vs-time-blocking.html 301!
+
+# Consolidated Duplicate Articles - Russian (Permanent 301)
+/blog/ru/pomodoro-benefits.html /blog/ru/benefits-of-pomodoro-technique.html 301!
+/blog/ru/overcome-procrastination-pomodoro.html /blog/ru/how-to-beat-procrastination.html 301!
+/blog/ru/developer-focus-workflow.html /blog/ru/pomodoro-for-programming.html 301!
+/blog/ru/pomodoro-study-guide.html /blog/ru/pomodoro-for-exams.html 301!
+/blog/ru/remote-work-focus.html /blog/ru/pomodoro-for-remote-workers.html 301!
+/blog/ru/time-blocking-pomodoro-technique.html /blog/ru/pomodoro-vs-time-blocking.html 301!
+
