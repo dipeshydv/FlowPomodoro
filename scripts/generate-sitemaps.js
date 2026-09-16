@@ -60,7 +60,7 @@ const STATIC_PAGES = [
   { path: '/pages/download.html', priority: '0.6', changefreq: 'monthly' }
 ];
 
-const TODAY = new Date().toISOString().split('T')[0];
+const TODAY = '2026-09-05';
 
 function buildUrlEntry(urlPath, priority = '0.7', changefreq = 'weekly', lastmod = TODAY) {
   return `  <url>
